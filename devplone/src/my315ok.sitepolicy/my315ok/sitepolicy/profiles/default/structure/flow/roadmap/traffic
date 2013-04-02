@@ -1,0 +1,23 @@
+id: traffic
+title: 我们在这里欢迎您！
+description: 龙华医院位置及公交路线
+subject: 
+relatedItems: 
+location: 
+language: zh-cn
+effectiveDate: 2013/02/19 00:35:00 US/Central
+expirationDate: None
+creation_date: 2013/02/02 17:19:40.971624 US/Central
+modification_date: 2013/02/19 14:57:47.440421 US/Central
+creators: admin
+contributors: 
+rights: 
+allowDiscussion: False
+excludeFromNav: False
+presentation: False
+tableContents: False
+Content-Type: text/html
+
+<p>来院路线：</p>
+<p><b>公交车来院路线</b></p>
+<p>乘1、15、23、101、102、106、108等公共汽车到环保局下车即到。</p>

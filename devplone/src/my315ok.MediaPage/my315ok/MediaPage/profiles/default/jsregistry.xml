@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+  <javascript id="++resource++my315ok.MediaPage.js/mediapage_javascript.js"
+    cacheable="False" compression="safe" cookable="False"
+    enabled="True" expression="python:object.meta_type == 'mediapage'" inline="False"/>
+ <javascript id="++resource++my315ok.MediaPage.js/lightbox.js"
+    cacheable="False" compression="safe" cookable="False"
+    enabled="True" expression="python:object.meta_type == 'mediapage'" inline="False"/>
+
+</object>

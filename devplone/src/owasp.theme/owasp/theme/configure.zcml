@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="owasp.theme">
+  <includeDependencies package="." />
+  <include file="upgrades.zcml"/>
+
+  <genericsetup:registerProfile
+      name="default"
+      title="owasp.theme"
+      directory="profiles/default"
+      description='Extension profile for the "A diazo theme based 960 grid css for Plone4.x" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <include package=".upgrades" />
+
+  <plone:static directory="static" type="theme" 
+    name="owasp.theme"/>
+
+</configure>

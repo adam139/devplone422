@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<zodb-users>
+ <user user_id="webmaster" login_name="webmaster" password_hash="{SSHA}1M0EBoRqO/1xj+W1PqIdrAmpqy/WypJmTF/w"/>
+</zodb-users>

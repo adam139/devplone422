@@ -1,0 +1,20 @@
+<dl class="portlet portletbaidumap"
+    i18n:domain="my315ok.portlet.baidumap">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span tal:content="view/data/header" />
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+      <div tal:attributes="id view/data/mapcontainerid" id="baidumap"><!--map container--></div>            
+
+      <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>	
+		<!-- this will install flowplayer inside previous A- tag. -->
+		<script type="text/javascript"  charset="utf-8" tal:content="structure python:view.jscode()"></script>		
+
+    </dd>
+
+
+</dl>

@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: my315ok.policy\n"
+"POT-Creation-Date: 2011-11-16 09:50+0000\n"
+"PO-Revision-Date: 2012-09-23 21:21+0800\n"
+"Last-Translator: adam <yuejun.tang@gmail.com>\n"
+"Language-Team: eisoo.policy <it@eisoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: zh_TW\n"
+"Language-Name: Chinese\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+msgid "products"
+msgstr "产品"
+
+msgid "company"
+msgstr "公司"
+
+msgid "application"
+msgstr "应用"
+
+msgid "services"
+msgstr "服务"
+

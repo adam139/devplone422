@@ -1,0 +1,77 @@
+
+.Inline {
+    display: inline;  
+}
+#prd_zone {margin: 5px 20px;}
+
+/* for the edit view of ATMP */
+#archetypes-fieldname-AutoChangeViewLabel {
+    font-size: 150%;
+    color: white;
+    background-color: #849BC4;  
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 2em 0em 0.6em 0em;
+}
+.perrow {
+clear:both;
+}
+.perrow img {
+margin: 0 1em;
+}
+
+.floatleft {
+float:left;
+clear:both;
+margin:0 10px 10px 0;
+padding:2px;
+}
+
+.ATMP_ImageDescription_right a {
+margin:2.5em 0 2.5em 0;
+text-indent:2em;
+border:0;
+text-decoration:none;
+}
+
+
+.ATMP_ImageTitle
+{
+color:red;
+align:center;
+font-weight:bold;
+margin-top:5px;
+text-decoration:none;
+}
+
+.ATMP_ImageDescription a
+{
+margin:2.5em 0 2.5em 0;
+text-indent:2em;
+border:0;
+text-decoration:none;
+}
+
+.perrow div.floatright {
+float:right;
+clear:both;
+margin:0 0 10px 10px;
+padding:2px;
+}
+
+#ATMP_ZoomBox {
+    position: absolute;
+    border: 2px solid orange;
+}
+#ATMP_ZoomTitle {
+    background: blue;
+    height: 2.0em;
+}
+#ATMP_TitleX {
+    background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+

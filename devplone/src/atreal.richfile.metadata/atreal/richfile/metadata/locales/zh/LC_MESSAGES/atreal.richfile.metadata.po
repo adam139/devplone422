@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-06-15 00:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./browser/viewlet.pt:27
+msgid "Label"
+msgstr ""
+
+#: ./browser/viewlet.pt:9
+msgid "Metadata"
+msgstr "元数据"
+
+#: ./browser/views.py:23
+msgid "Metadatas activated."
+msgstr "元数据已激活"
+
+#: ./browser/views.py:24
+msgid "Metadatas un-activated."
+msgstr "元数据未激活"
+
+#: ./profiles/default/controlpanel.xml
+msgid "RichFileMetadata"
+msgstr "富文件元数据"
+
+#: ./browser/controlpanel.py:44
+msgid "RichFileMetadata settings"
+msgstr "富文件元数据设置"
+
+#: ./browser/controlpanel.py:45
+msgid "RichFileMetadata settings for this site."
+msgstr "富文件元数据设置"
+
+#: ./browser/views.py:22
+msgid "The metadatas have been updated."
+msgstr "元数据已更新"
+
+#: ./browser/viewlet.pt:38
+msgid "This file doesn't provide any metadata"
+msgstr "该文件没有提供任何元数据"
+
+#: ./browser/viewlet.pt:28
+msgid "Value"
+msgstr ""
+
+#. Default: "Do you want the plugin's display to be collapsed ?"
+#: ./browser/controlpanel.py:25
+msgid "help_rf_streaming_collapsed"
+msgstr "是否需要该插件的显示被折叠？"
+
+#. Default: "(Required)"
+#: ./browser/controlpanel.pt:167
+msgid "label_required"
+msgstr "（要求填写）"
+
+#. Default: "Display collapsed ?"
+#: ./browser/controlpanel.py:23
+msgid "label_rf_metadata_collapsed"
+msgstr "显示折叠?"
+
+#. Default: "Required"
+#: ./browser/controlpanel.pt:167
+msgid "title_required"
+msgstr "要求"
+

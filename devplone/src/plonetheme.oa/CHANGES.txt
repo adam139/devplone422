@@ -1,0 +1,10 @@
+Changelog
+=========
+
+1.1.4 - 2011-06-16
+------------------
+
+- create oa theme package based sunburst 1.1.4 
+- Add some portletmanagers to original viewlet
+  [adam]
+

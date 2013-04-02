@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_skins" default_skin="OA Theme">
+
+ <object name="oa_images"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_images"/>
+ <object name="oa_templates"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_templates"/>
+ <object name="oa_styles"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_styles"/>
+
+ <skin-path name="OA Theme" based-on="Plone Default">
+  <layer name="oa_images"
+     insert-after="custom"/>
+  <layer name="oa_templates"
+     insert-after="oa_images"/>
+  <layer name="oa_styles"
+     insert-after="oa_templates"/>
+ </skin-path>
+
+</object>

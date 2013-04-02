@@ -1,0 +1,48 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="my315ok.MediaPage">
+
+<!-- Resource directory for stylesheets -->
+    <browser:resourceDirectory
+        name="my315ok.MediaPage.stylesheets"
+        directory="stylesheets"
+        
+        />
+
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="my315ok.MediaPage.images"
+        directory="images"
+        
+        />
+   <!-- Resource directory for js -->
+    <browser:resourceDirectory
+        name="my315ok.MediaPage.js"
+        directory="js"        
+        />
+
+
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+      for="..interfaces.Imediapage"
+      name="mediapage_view"
+      class=".mediapageview.mediapageView"
+      template="mediapageview.pt"
+      allowed_interface=".mediapageview.ImediapageView"
+      permission="zope.Public"
+      /> 
+
+ <browser:menuItem
+        for="..interfaces.Imediapage"
+        menu="plone_displayviews"
+        title="Media Page"
+        action="@@mediapage_view"
+        description="A Media page view"
+        />
+
+</configure>

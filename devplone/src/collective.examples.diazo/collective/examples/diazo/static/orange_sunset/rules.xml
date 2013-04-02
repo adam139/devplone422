@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- Base tag -->
+    <!-- <replace theme="/html/head/base" content="/html/head/base" /> -->
+
+    <!-- Drop styles in the head - these are added back by including them from Plone -->
+    <!--
+    <drop theme="/html/head/link" />
+    <drop theme="/html/head/style" />
+    -->
+
+    <!-- Pull in Plone CSS -->
+    <!-- <append theme="/html/head" content="/html/head/link | /html/head/style " />  -->
+
+    <!-- HEAD: title -->
+    <replace theme="/html/head/title" content="/html/head/title" />
+    <replace theme="//*[@id='logo']/h1" content="//*[@id='content']/h1"/>
+    <!-- <drop  content="//*[@id='content']/h1"/>  -->
+
+    <!-- SITE ACTIONS / PERSONAL TOOLS links -->
+	<!-- Ex. replaces just first link successfully with link to user-name from Plone side.
+	    If you wanted to just replace one link with content from the #user-name link in Plone, you could use:
+	    <replace theme="//*[@id='links']/a[1]"   css:content="#user-name"  />   -->
+    <!-- The #links section below actually pulls both the #portal-siteactions and #portal-personaltools links from Plone -->
+	<!--Example of doing transform without xsl:template syntax -->
+	<replace css:theme="#links" >
+	    <div id="links">
+	      <!-- Just to prove that we can randomly inject whatever we want, let's prepend a static link not from content source -->
+          <a href="http://plone.org" target="_blank">Plone.org</a>
+	      <xsl:for-each select="id('portal-siteactions')/li">
+	          | <a href="{a/@href}"><xsl:value-of  select="a/text()"/></a>
+	      </xsl:for-each>
+          <!-- The dt rule below is to handle the #user-name link from Plone's #portal-personaltools -->
+	      <xsl:for-each select="id('portal-personaltools')/dt">
+	          | <a href="{a/@href}"><xsl:value-of  select="a/text()"/></a>
+	      </xsl:for-each>
+          <!-- The dd rule below is to handle the remaining links from Plone's #portal-personaltools -->
+	      <xsl:for-each select="id('portal-personaltools')/dd/ul/li">
+	          | <a href="{a/@href}"><xsl:value-of  select="a/text()"/></a>
+	      </xsl:for-each>
+
+	    </div>
+	</replace>
+
+    <!-- GLOBAL SECTIONS / Top / Global Navigation menu bar -->
+    <replace  theme="//*[@id='menu']/ul" content="//*[@id='portal-globalnav']"  />
+    <!-- necessary to handle special handling of the li that gets identified as selected, since plone uses <a class='selected' and 
+         theme uses <li id='selected'> -->
+    <xsl:template match="li[@class = 'selected']/a">
+        <xsl:copy>
+	        <xsl:attribute name="id">selected</xsl:attribute>
+            <xsl:apply-templates select="@*|node()"/>
+	    </xsl:copy>
+	</xsl:template>
+
+
+    <!-- MAIN CONTENT area -->
+    <prepend css:theme="#column2" css:content="#content > *"/>
+    <drop css:theme="#column2 > *" />
+
+    <!-- Transform all H2 tags from source/Plone content area into H1 tags that theme uses in main content -->
+    <xsl:template match="*[@id = 'parent-fieldname-text']/h2"><h1><xsl:apply-templates     select="@*|node()"/></h1></xsl:template>
+
+
+    <!-- SIDE PORTLETS -->
+    <!-- Copy the Plone content source left column to the top of the right column (column1) in the static theme.
+         Assumes for this illustration that the Plone navigation portlet was added to the Plone left column. 
+         The rule set below that moves the Plone left col to the theme right col has no effect on pages/sections that
+         have no left column portlets.  In those cases, the Plone right col portlets will automatically move up in the 
+         themed page, assuming there are Plone right column portlets.  
+    -->
+    <prepend css:theme="#column1" css:content="#portal-column-one > *"/>
+    <!-- Transform the side navigation menu -->
+    <xsl:template match="dl[@class = 'portlet portletNavigationTree']">
+		<div class="sidebaritem">
+			<div class="sbihead">
+				<h1><xsl:apply-templates select="./dt/a/text()"/></h1>
+			</div>
+
+			<div class="sbilinks">
+              <ul>
+	            <!--The select condition below will process only portletItem dd nodes and not the portletFooter that reads 'more news...' in Plone source -->
+		       <xsl:for-each select="dd/ul/li">
+		          <li><a href="{a/@href}"><xsl:value-of  select="a/span/text()"/></a></li>
+		       </xsl:for-each>
+              </ul>
+			</div>
+		</div>
+	</xsl:template>
+    <drop  theme="//*[@class='sidebaritem'][2]"/>
+    <!-- Note: by prepending the Plone left column to the theme right column, and then doing the same for the Plone right column, we are reordering the 
+         Navigation portlet to appear above the News and the Static Portlet; perhaps our client or user experience architect decided we needed to do so. 
+    -->
+
+    <!-- The prepend below takes the entire right column of portlets from Plone and inserts into top of the right column of the theme
+         We must then use multiple xsl:template match blocks to style our content and then drop the original static portlets -->
+    <prepend css:theme="#column1" css:content="#portal-column-two > *"/>
+    <!-- <replace css:theme="div.sbihead h1" css:content="dt.portletHeader > *"/> -->
+
+    <!--Example of completely transforming the dl/dd structure from the source into the div/p structure of theme -->
+    <xsl:template match="dl[@class = 'portlet portletNews']">
+		<div class="sidebaritem">
+			<div class="sbihead">
+				<h1><xsl:apply-templates select="./dt/a/text()"/></h1>
+			</div>
+
+		<div class="sbicontent">
+            <!--The select condition below will process only portletItem dd nodes and not the portletFooter that reads 'more news...' in Plone source -->
+			<xsl:for-each select="dd[@class='portletItem even']|dd[@class='portletItem odd']">
+				<h2><xsl:apply-templates select="span[@class='portletItemDetails']/text()" /></h2>
+				<p><xsl:apply-templates select="a/text()"/></p>
+                <p><a href="{a/@href}">read more ...</a></p><p></p><p></p>
+			</xsl:for-each>
+			<xsl:for-each select="dd[@class='portletFooter']">
+                <p><a href="{a/@href}">more news ...</a></p>
+			</xsl:for-each>
+		</div>
+	</div>
+	</xsl:template>
+    <!--Example of more explicit rule that would accomplish the same effect, but without using {} 
+       <p><a href=""><xsl:attribute name="href"><xsl:value-of select="a/@href"/></xsl:attribute>read more ...</a></p><p></p><p></p>
+    -->
+    <drop  theme="//*[@class='sidebaritem'][1]"/>
+
+    <!-- Example below assumes we've created a static portlet in Plone with the heading of 'Quick Links' (Plone then assigns portlet-static-quick-links for us in the CSS class) -->
+    <xsl:template match="dl[@class='portlet portletStaticText portlet-static-quick-links']">
+		<div class="sidebaritem">
+			<div class="sbihead">
+				<h1><xsl:apply-templates select="dt[@class='portletHeader']/span[2]/text()"/></h1>
+			</div>
+
+		<div class="sbicontent">
+			<xsl:for-each select="dd[@class='portletItem odd']">
+				<xsl:apply-templates select="node()" />
+			</xsl:for-each>
+		</div>
+	</div>
+	</xsl:template>
+    <drop  theme="//*[@class='sidebaritem'][3]"/>
+    <!--  Note: you can always cheat a little and add an id= into the static html theme file for the element you need to drop and drop by 'theme="#my-element-id" ', rather than dropping by location (e.g. the 3rd element, as we are doing here), but I wanted to prove we can fully theme without touching the static html/css
+    -->
+    <!-- END OF SIDE PORTLETS -->
+
+
+    <!-- FOOTER -->
+	<replace css:theme="#footer" >
+	    <div id="footer">
+	      <xsl:for-each select="id('portal-footer')/p">
+	          <p><xsl:value-of  select="."/></p>
+	      </xsl:for-each>
+	    </div>
+	</replace>
+
+
+
+
+    <!--    <prepend  css:theme="#footer" css:content="#portal-footer > *"  /> -->
+    <!-- Note: We are only copying the plone portal-footer, and not the colophon.  You might need to append the colophon to the bottom of the theme #content, if you want it, because the portal-footer and colophon are not going to fit into the static theme's #footer area.  In fact, the default Plone portal-footer is even a little to long to fit, but you will probably modify the portal-footer anyhow. -->
+
+</rules>
+

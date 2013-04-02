@@ -1,0 +1,42 @@
+<dl class="portlet portletPixviewer"
+    i18n:domain="plone"
+    tal:define="collection_url view/collection_url;plone_state context/@@plone_portal_state;
+                                                                              portal python:plone_state.portal()">                
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href collection_url" tal:omit-tag="not:view/data/show_more">
+		    <span class="portletHeadImg"></span>
+            <span tal:content="view/data/header" />
+			<span class="moreurl"></span>
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">		
+		<script type="text/javascript" src="swfobject.js"
+			tal:attributes="src portal/++resource++collective.portlet.pixviewer.jss/swfobject.js">
+		</script>
+		<div id="switchpics_id" ><!--flash--></div>
+		<script type="text/javascript" tal:content="structure view/js_settings"></script>
+  		<script type="text/javascript"><!--
+    var fo = new FlashObject('/++resource++collective.portlet.pixviewer.swf/pixviewer.swf',"switchpics",swf_width_str,swf_height_str,"6",color_bg);
+    fo.addParam("menu","false");
+    fo.addVariable("pics", pics);
+    fo.addVariable("links", links);
+    fo.addVariable("texts", texts);
+    fo.addVariable("borderwidth",focus_width);
+    fo.addVariable("borderheight",focus_height);
+    fo.addVariable("textheight",text_height); 
+    fo.addVariable("curhref","http://315ok.org/");   
+    fo.addParam("quality","best");
+    fo.addParam("scale","noscale");
+    fo.addParam("wmode", "opaque"); 
+    fo.addParam("height", swf_height);
+    fo.addParam("width", swf_width);
+    fo.addParam("allowScriptAccess","sameDomain")
+    fo.write("switchpics_id");
+		--></script> 
+	
+    </dd>    
+</dl>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.portalfooter" skinname="OA Theme">
+    <viewlet name="plone.colophon" />
+	<viewlet name="plone.footer" />
+  </hidden>
+   <hidden manager="plone.portaltop" skinname="OA Theme">
+    <viewlet name="plone.header" />
+  </hidden>
+  <hidden manager="plone.portalheader" skinname="OA Theme">
+    <viewlet name="plone.global_sections" />
+  </hidden>
+  <hidden manager="plone.abovecontent" skinname="OA Theme">
+    <viewlet name="plone.path_bar" />
+  </hidden> 
+   
+  <order manager="plone.portaltop" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="plone.global_sections"
+             insert-after="*" />
+  </order>  
+
+  
+  <order manager="plone.contentviews" skinname="OA Theme"
+         based-on="Plone Default">
+    <viewlet name="mynew.abovecontentview"
+    insert-before="*" />	   
+    <viewlet name="mynew.abovecontent"
+             insert-after="*" />
+  </order>
+  <order manager="plone.belowcontent" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="mynew.belowcontent"
+             insert-after="*" />
+  </order>
+  <order manager="mynew.sidebar" skinname="OA Theme" >	   
+    <viewlet name="mynew.onlineservice"
+             insert-after="*" />
+  </order>
+  
+  <order manager="plone.portalfooter" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="myfooter.portalfooter"
+             insert-before="*" />
+  </order>  
+
+</object>

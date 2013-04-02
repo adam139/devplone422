@@ -1,0 +1,31 @@
+<dl class="portlet portletFlowPlayer"
+    i18n:domain="collective.portlet.pixviewer"
+    tal:define="target_url python:view.target_url();playerid string:player;plone_state context/@@plone_portal_state;
+                                                                              portal python:plone_state.portal()">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href target_url" tal:omit-tag="not:view/data/show_more">
+            <span tal:content="view/data/header" />
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+    
+    <dd class="portletItem">
+        <div class="flowPlaylist">            
+       <a  
+			 href="http://e1h13.simplecdn.net/flowplayer/flowplayer.flv"  
+			 style="display:block;width:320px;height:330px"  
+			 id="player"
+			 tal:attributes="id view/data/locid|playerid;href target_url;style python:view.player_css()">
+			 <img tal:condition="nocall:view/splash" tal:replace="structure view/splash"/> 
+		</a> 
+		<script type="text/javascript" src="swfobject.js"
+			tal:attributes="src portal/++resource++collective.portlet.pixviewer.jss/flowplayer-3.2.4.min.js">
+		</script>
+	
+		<!-- this will install flowplayer inside previous A- tag. -->
+		<script type="text/javascript"  charset="utf-8" tal:content="structure python:view.js_settings()"></script>		
+	 </div>
+    </dd>
+</dl>

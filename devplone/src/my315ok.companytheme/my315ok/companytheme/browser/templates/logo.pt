@@ -1,0 +1,9 @@
+<a metal:define-macro="portal_logo"
+   id="portal-logo"
+   accesskey="1"
+   tal:attributes="href view/navigation_root_url"
+   define="portal_url view/portal_url"
+   i18n:domain="plone">
+    <img src="logo.jpg" alt="" class="hack-png"         
+		 tal:attributes="src string:$portal_url/logo.jpg;
+		                 alt view/portal_title" /></a>

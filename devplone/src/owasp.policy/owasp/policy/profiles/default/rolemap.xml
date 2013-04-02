@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions> 
+    <!-- This allows anonymous visitors to register for the site  -->
+    <permission name="Add portal member" acquire="False">
+        <role name="Manager" />
+        <role name="Anonymous" />
+    </permission>
+
+  </permissions>
+ </rolemap>

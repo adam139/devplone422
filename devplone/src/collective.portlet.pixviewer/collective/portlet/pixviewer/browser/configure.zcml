@@ -1,0 +1,23 @@
+ <configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.portlet.pixviewer">
+
+    <browser:resourceDirectory
+        name="collective.portlet.pixviewer.stylesheets"
+        directory="stylesheets"
+        />
+
+    <browser:resourceDirectory
+        name="collective.portlet.pixviewer.swf"
+        directory="swf"
+        />
+    <browser:resourceDirectory
+        name="collective.portlet.pixviewer.jss"
+        directory="jss"
+        />
+
+	
+
+
+</configure>

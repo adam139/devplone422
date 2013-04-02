@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-08-03 10:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../browser/templates/managemyportlets.pt:15
+msgid "Manage My Portlets"
+msgstr "管理面板"
+
+#: ../browser/templates/managemyportlets.pt:28
+msgid "Manage myfooter portalfooter Portlets"
+msgstr "管理页脚区域面板"
+
+#: ../browser/templates/managemyportlets.pt:16
+msgid "Manage mylogo portalheader Portlets"
+msgstr "管理标志面板"
+
+#: ../browser/templates/managemyportlets.pt:24
+msgid "Manage mynew abovecontent Portlets"
+msgstr "管理主内容上边区域面板"
+
+#: ../browser/templates/managemyportlets.pt:22
+msgid "Manage mynew abovecontentview Portlets"
+msgstr "管理主内容视图上边区域面板"
+
+#: ../browser/templates/managemyportlets.pt:26
+msgid "Manage mynew belowcontent Portlets"
+msgstr "管理主内容下面区域面板"
+
+#: ../browser/templates/managemyportlets.pt:20
+msgid "Manage mynew portalheader Portlets"
+msgstr "管理新增的顶部面板"
+
+#: ../browser/templates/managemyportlets.pt:18
+msgid "Manage mynew sidebar Portlets"
+msgstr "管理侧边区域面板"
+
+#: manual 
+msgid "contactus"
+msgstr "联系我们"
+

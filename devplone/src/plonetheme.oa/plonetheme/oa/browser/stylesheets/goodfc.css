@@ -1,0 +1,216 @@
+*:link, :visited{text-decoration:none; color:#000}
+* ul, ol{list-style:none}
+* a img, :link img, :visited img{border:none}
+*{margin:0; padding:0}
+body{font-family:Arial; background-color:White; color:Black}
+img{border:none; vertical-align:middle}
+.visualClear{clear:both}
+
+p{margin:0 0 0.75em 0; line-height:1.5em}
+
+#visual-portal-wrapper{margin-left:auto; margin-right:auto; padding:0; width:969px}
+#leftbg{background:url("/pub/images/lefttop.jpg") no-repeat scroll 0 0 transparent; height:124px; width:15px}
+#portal-top{background:transparent url('/pub/images/topjb.jpg') repeat-x 0 0; width:926px; height:124px}
+#rightbg{background:transparent url('/pub/images/righttop.jpg') no-repeat 0 0; height:124px; width:28px}
+.topbg{float:left}
+#portal-logo img{margin-left:13px; margin-top:39px}
+
+#total{margin-top:14px; _margin-top:65px; padding-left:7px; width:550px; position:absolute}
+#total li{display:inline; color:#666; font-size:15px}
+#total li span{color:#f00}
+#portletwrapper-6d796e65772e706f7274616c6865616465720a636f6e746578740a2f676f6f6466630a66616e6763616e746f74616c706f72746c6574{height:19px; _margin-top:-50px}
+.portletfangcantotalportlet{height:19px}
+
+#wrapper-globalsections{background:transparent url(/pub/images/caidan.jpg) no-repeat scroll 0 0; float:right; height:52px; line-height:52px; position:relative; right:14px; top:-48px; width:580px}
+#portal-globalnav{height:52px; width:100%; padding-left:48px; white-space:nowrap}
+
+#portal-globalnav li{display:inline; float:left; height:52px; line-height:52px; padding:0 10px}
+
+#portal-globalnav .selected a{color:#f00}
+
+#portal-globalnav li a{font-family:&#40657; &#20307; ; color:#fff; font-size:18px}
+
+#portal-globalnav li a:hover{background-color:transparent; border:none; color:#f00}
+
+#portal-columns{clear:both; float:none; left:5px; top:18px; _top:0px; width:956px; position:relative}
+#portal-column-one{vertical-align:top; width:260px}
+#portal-column-one .visualPadding{width:260px; margin-right:10px}
+#portal-column-content{vertical-align:top; width:100%}
+.portletfangcansearch{background-color:#75242A; font-size:12px; height:120px; margin:0 auto; width:99%}
+.portletfangcansearch dt{display:none}
+.portletfangcansearch dd{margin-left:9px; _margin-left:5px}
+.portletfangcansearch dd.searchurl{margin-top:12px; height:85px}
+.portletfangcansearch ul{padding:0px; margin-top:7px}
+.portletfangcansearch ul li a{color:#fff}
+div.searchurl{background-color:#75242A; font-size:15px; height:100px; margin:0 auto; width:100%}
+div.searchurl a{color:#fff}
+div.searchurl ul{padding-top:12px; margin-left:20px}
+.searchurl{color:#FFF600}
+.searchurl ul li{display:inline; padding:0 3px; _padding:0 2px}
+
+.portletfangcansearch form .searchButton{background:transparent url(/pub/images/zhfan.jpg) no-repeat scroll 0 0; border:medium none; color:#FFF; font-size:14px; font-weight:bold; height:32px; width:116px}
+.row_2 .portletslidebar_portlet{border:1px solid #d14d19; width:99%; height:222px; margin:0 auto}
+.portletfangcanportlet{border:1px solid #d14d19; width:99%; height:auto; margin:0 auto}
+.portletfangcanportlet dt{background:transparent url(/pub/images/fjdh.jpg) no-repeat scroll 6px 3px; height:42px; width:667px}
+.portletfangcanportlet dt span{background-color:#FFF; color:#75242A; display:block; font-size:14px; font-weight:bold; line-height:40px; left:50px; position:relative; width:80px; font-family:&#40657; &#20307; ; float:left; text-align:center; border-right:1px solid #6f6f6f}
+.portletfangcanportlet dt .portletTopRight, .portletfangcanportlet dt .portletTopLeft{display:none}
+
+.portletfangcanportlet td{height:157px; overflow:hidden}
+.hot_fangcan{width:98%; padding:0 7px; color:#6f6f6f; font-weight:bold; font-size:11px; line-height:15px}
+.hot_fangcan td{width:206px; background-color:transparent}
+.hot_fangcan td .fangcan{width:200px; height:150px; background-color:#f0f0f0; text-align:left; margin-top:5px}
+.hot_fangcan{border-right:2px solid #6f6f6f; border-bottom:2px solid #6f6f6f}
+
+.hot_fangcan .img{width:110px; margin-left:0; float:left; margin-top:3px}
+.hot_fangcan .img a img{width:112px}
+.hot_fangcan .row3{float:none; clear:both; margin-bottom:15px}
+.row1 .title{padding-left:10px}
+.row1 .totalprice{display:inline; float:right; _margin-top:-20px}
+.row1 .unit{float:none; clear:right}
+.row1{background:transparent url(/pub/images/erfdh.jpg) no-repeat scroll 0 0; color:#75242A; font-size:12px; height:20px; line-height:20px; font-weight:bold; width:200px}
+.row2 .parameter{display:block; float:right; font-size:11px; line-height:15px; padding:0; width:86px; margin-top:3px; _margin-left:0}
+.row2 .parameter li{}
+
+.row_5 .portletStaticText, .row_6 .portletStaticText{width:99%; margin:0 auto; text-align:center}
+.collage-last-row{margin:0 auto; width:100%}
+
+.row_7 .four-columns-equal .column-block{width:24%; display:inline}
+.row_7 .portletStaticText{border:1px solid #75242A; color:#762429; font-family:&#40657; &#20307; ; width:150px; height:130px; margin:0 auto}
+
+.row3 a{color:#6f6f6f}
+.section-front-page .row_4{display:none}
+.section-front-page .collage-item{position:relative;     top:-19px;     vertical-align:middle; margin-bottom:-8px}
+.section-front-page .row_1 .column-block{height:120px}
+.section-front-page .row_2 .column-block{height:228px}
+.section-front-page .row_3 .column-block{height:auto}
+.section-front-page .row_5 .column-block{height:140px}
+.section-front-page .row_6 .column-block{height:88px}
+.section-front-page .row_7 .column-block{height:140px}
+
+.kuaisuzhaofang{background:transparent url(/pub/images/kf.jpg) no-repeat right bottom}
+.zhaojjr{background:transparent url(/pub/images/jjr.jpg) no-repeat right bottom}
+.xiaoqufangjia{background:transparent url(/pub/images/ks.jpg) no-repeat right bottom}
+.fangchanggujia{background:transparent url(/pub/images/kj.jpg) no-repeat right bottom}
+.row_7 .portletStaticText a{color:#762429}
+.xiaoqufangjia .l-5th{margin-top:52px}
+.l-2nd, .l-3rd, .l-4th, .l-5th{display:block; margin-top:8px; margin-left:5px; font-size:12px; font-weight:bold}
+.l-1st{display:block; margin-top:10px; margin-left:5px; font-size:14px; font-weight:bolder}
+#portal-column-two{width:260px; vertical-align:top; padding-left:8px}
+#portal-column-two .visualPadding{position:relative; top:-17px; width:260px}
+#portal-column-two .portlet{margin:6px 0}
+#portal-column-two .visualPadding .portletLogin{background-color:#75242A; color:#fff; font-family:&#40657; &#20307; ; width:260px; margin-top:16px}
+.portletLogin table{margin:0 auto}
+.portletLogin dd{padding-bottom:10px}
+#__ac_password, #__ac_name{width:68px}
+.portletLogin .portletHeader{text-align:center; height:28px}
+.portletLogin .portletHeader a{font-size:14px; font-weight:bold; color:#fff; line-height:26px}
+.portletLogin .formControls input{background:transparent url(/pub/images/dlan.jpg) no-repeat 0 0; border:none; width:73px; height:34px; color:#fff; font-size:12px; font-weight:bold; cursor:pointer}
+#reglink{background:transparent url(/pub/images/dlan.jpg) no-repeat 0 0; border:none; width:73px; height:34px; text-align:center}
+#reglink a{color:#FFF; display:block; font-size:12px; font-weight:bold; padding-top:8px}
+#loginform .field label{width:48px}
+.portletFlowPlayer .portletItem{position:relative; margin-left:0}
+#portal-column-two .portletStaticText{margin-top:7px}
+#portal-column-two .portlet-static-hide-fangdai{margin-top:-9px}
+.portletrecommendBrokerPortlet{width:258px; height:400px; border:1px solid #d14d19}
+.portletrecommendHousePortlet{width:258px; height:400px; border:1px solid #d14d19}
+.portletrecommendHousePortlet .portletHeader, .portletrecommendBrokerPortlet .portletHeader, .portletNavigationTree .portletHeader{background:transparent url(http://www.goodfc.cn/pub/images/xfdh.jpg) no-repeat scroll 7px 3px; height:41px; width:252px; font-size:14px}
+.portletrecommendHousePortlet .portletHeader span, .portletrecommendBrokerPortlet .portletHeader span{color:#FFF; font-weight:bold; line-height:45px; padding-left:15px}
+dl.portletNavigationTree{border:1px solid #D14D19}
+.portletNavigationTree .portletHeader a{color:#FFF; font-weight:bold; line-height:45px; text-align:center; display:block}
+#tuijianjingjiren{height:350px; margin-left:0}
+#tuijianjingjiren .rollarea{    color:#6F6F6F;     display:inline;     float:left;     font-weight:bolder;     height:350px;     overflow:hidden;     width:253px}
+
+#tuijianjingjiren .rolltext{padding:0; width:260px}
+#tuijianjingjiren li.rollitem{line-height:120px; height:120px; display:block}
+#tuijianjingjiren img{margin-left:8px; margin-top:8px; width:100px}
+
+#tuijianjingjiren .rightli{float:right; display:block; width:130px; margin-left:10px; margin-top:8px; height:114px}
+* html #tuijianjingjiren .rightli{height:114px,overflow:hidden; display:inline}
+#tuijianjingjiren .rightli span{font-size:12px; line-height:25px}
+
+#tuijian{height:359px; margin-left:0}
+#tuijian .rollzone{ color:#6F6F6F;     display:inline;     float:left;     font-weight:bold;     height:359px;     margin-left:8px;     overflow:hidden;     width:250px}
+#tuijian .rolltext{padding:0; width:260px}
+#tuijian .rollitem{width:100%; height:128px}
+#tuijian .image{width:110px; border:1px solid #d14d19}
+#tuijian img{width:95%; display:block; margin:auto auto}
+#tuijian .rightli{float:right; display:block; width:140px}
+#tuijian .rightli span{font-size:12px; line-height:17px; padding-left:5px}
+#tuijian a{color:#fff; font-size:12px; font-weight:bold; line-height:27px}
+#tuijian .linkbt{background:transparent url(/pub/images/xianxi.jpg) no-repeat scroll 0 0; display:block; height:26px; text-align:center; width:80px}
+.zhuti .bt{    color:white;     float:left;     font-size:14px;     margin-left:79px}
+.zhuti{background-color:#762429; border:1px solid #762429; font-size:12px; height:130px; margin:0 auto; width:670px}
+.bigt{width:100%; margin-top:10px}
+.bigt tr td{margin:0 auto; width:50%}
+
+#portal-siteactions{background-color:transparent; white-space:nowrap; list-style-image:none; margin:1px 0 0 0; height:auto; line-height:normal; float:right; padding:3px 20px 3px 0}
+#portal-siteactions li{display:inline}
+#portal-siteactions li a{background-color:transparent; border:none; color:#76797c; font-size:14px; height:auto; text-decoration:none; text-transform:none}
+#portal-siteactions li.selected a{background-color:#dee7ec; color:#436976; border:0px solid #8cacbb}
+#portal-siteactions li a:hover{background-color:transparent; color:#436976; border:0px solid #8cacbb}
+
+.section-front-page .documentFirstHeading, .managePortletsFallback, .managePortletsLink, dd.portletFooter, #portaltab-Members, .hiddenStructure, .portletFlowPlayer .portletHeader{display:none !important}
+
+.portletFetchOuterPortlet{margin-bottom:0}
+#qushi{margin:0 auto; text-align:center; width:100%}
+#qushi img{width:947px; border:2px solid #762429}
+#portal-footer{color:#762429; float:none; line-height:1.5em; margin:8px auto 0; padding-top:10px; text-align:center; width:951px; font-size:13px; font-family:&#40657; &#20307; }
+
+#portal-footer p{margin-bottom:0; padding-top:0}
+#portal-footer a{color:#762429; text-decoration:none; border:none}
+.lian{padding:10px 5px 0 5px; border:1px solid #762429; text-align:left; vertical-align:middle; width:940px; *width:951px; height:100px}
+
+#portal-footer a:hover{text-decoration:underline}
+
+.row_2 .block_1 .portletslidebar_portlet #topslider2{border:medium none; list-style-type:none; margin-right:auto; position:relative; width:650px}
+#topslider2 .img{height:165px; padding-left:0; position:relative; width:650px; margin:auto auto}
+
+#topslider2 .img li{height:165px; left:0; margin:10px 10px 35px 10px; list-style-image:none; list-style-position:outside; list-style-type:none; position:absolute; z-index:100}
+#topslider2 .img li a img{height:165px; width:650px; border:none; margin:auto auto}
+#picture2 .img li a img{margin:auto auto; height:165px; width:650px; border:none}
+#topslider2 .panel{background-color:#762429; border-top:medium none; margin-top:18px; height:25px; opacity:0.3; width:100%; z-index:200}
+
+#topslider2 .num{bottom:21px; float:right; padding:0; position:relative; right:1px; z-index:301}
+#topslider2 .num li{background-color:transparent; border:1px solid #d14d19; display:inline; float:left; margin:0 1px; width:20px; text-align:center}
+#topslider2 .num li.over .numVal{background-color:#762429; border-color:#d14d19; display:block}
+#topslider2 .num li.over .numVal{background-color:#762429; border-color:#d14d19}
+#topslider2 .title{bottom:-40px; _bottom:22px; color:#FFF; font-size:17px; font-weight:bold; left:90px; position:absolute; text-decoration:none; z-index:400}
+#topslider2 .numVal{color:#fff; font-weight:bold}
+.row_2 .block_1 .portletslidebar_portlet #topslider{background-color:#762429; width:678px; height:222px; margin:0 auto}
+.posttime{float:right}
+.houseinfo h1{text-align:center}
+div.house-summary{text-align:center; color:#00f}
+div.house-summary .split{color:#75242A}
+.houseinfo .house-image{float:right; position:relative; right:22px}
+table.data tr td{border-bottom:1px dotted; height:27px; padding-bottom:3px; padding-left:7px; vertical-align:bottom; width:49%}
+table.data .value, table.searchResults .value{color:#F60}
+ul.contactBox{margin:10px; width:300px; float:left}
+ul.contactBox li .value{color:#F60}
+#phonenumber{background:transparent url(/pub/images/houseContactBg.gif) no-repeat scroll 0 0; display:block; height:42px; line-height:42px; text-align:center; width:290px}
+.tips{color:#F60; font-size:12px; padding-left:32px}
+li.phone{margin-bottom:7px}
+.add2fav{padding-left:27px}
+.add2fav a{color:#690}
+.documentFirstHeading{text-align:center}
+#photo{margin:10px 0}
+#photo img{float:left; clear:left; margin:0 20px}
+table.searchResults{width:98%; text-align:center}
+
+table.searchResults tr.contenttype-house td, table.searchResults tr.contenttype-subdistrict td{padding-top:3px; border-bottom:1px dashed #000}
+table.searchResults td.page-next, table.data td.floor, table.searchResults .floor{display:none}
+
+.subdistrict-info .subdistrict-image{float:left; margin-left:2px; margin-top:12px}
+.subdistrict-info #data{}
+div.contact-image{float:left; clear:left; width:337px}
+div.txt{margin-left:337px}
+
+.section-contactus p img{display:block; float:left; margin-left:10px; margin-right:20px}
+.section-contactus h1{display:none}
+
+.section-contactus{color:#762429; font-size:16px; font-family:&#40657; &#20307; ; line-height:18px}
+.section-contactus span p strong{text-align:left; font-size:26px; line-height:40px}
+.section-contactus .rd1 strong{color:red; font-size:20px}
+.section-contactus .foot-youni strong{color:yellow; display:block; width:712px; font-size:32px; background-color:#762429; padding-top:20px}
+.section-contactus #parent-fieldname-text{width:712px}
+.portletNavigationTree ul.navTree{height:690px; overflow:auto}
+

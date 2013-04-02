@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.portalfooter" skinname="OA Theme">
+    <viewlet name="plone.colophon" remove="True"/>
+  </hidden>
+  <hidden manager="plone.portalfooter" skinname="OA Theme">
+    <viewlet name="plone.footer" remove="True"/>
+  </hidden>
+   <hidden manager="plone.portalheader" skinname="OA Theme">
+    <viewlet name="plone.logo" remove="True"/>
+  </hidden>
+  <hidden manager="plone.abovecontent" skinname="OA Theme">
+    <viewlet name="plone.path_bar" remove="True"/>
+  </hidden>
+  <hidden manager="plone.portaltop" skinname="OA Theme">
+    <viewlet name="plone.personal_bar" remove="True"/>
+  </hidden>
+  
+  
+  <order manager="plone.portalheader" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="mylogo.portalheader"
+             insert-before="plone.global_sections" remove="True"/>
+  </order>
+  
+  <order manager="plone.portalheader" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="mynew.portalheader"
+             insert-after="plone.global_sections" remove="True"/>
+  </order>
+  
+  <order manager="plone.contentviews" skinname="OA Theme"
+         based-on="Plone Default">
+    <viewlet name="mynew.abovecontentview"
+    insert-before="*" remove="True"/>	   
+    <viewlet name="mynew.abovecontent"
+             insert-after="*" remove="True"/>
+  </order>
+  <order manager="plone.belowcontent" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="mynew.belowcontent"
+             insert-after="*" remove="True"/>
+  </order>
+  <order manager="mynew.sidebar" skinname="OA Theme" >	   
+    <viewlet name="mynew.onlineservice"
+             insert-after="*" remove="True"/>
+  </order>
+  
+  <order manager="plone.portalfooter" skinname="OA Theme"
+         based-on="Plone Default">	   
+    <viewlet name="myfooter.portalfooter"
+             insert-before="*" remove="True"/>
+  </order>  
+
+</object>

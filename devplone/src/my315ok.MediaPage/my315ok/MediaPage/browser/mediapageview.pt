@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="my315ok.MediaPage">
+<body>
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading">
+            <span metal:use-macro="python:context.widget('title', mode='view')" />
+        </h1>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <div class="documentDescription">
+            <span metal:use-macro="python:context.widget('description', mode='view')" />
+        </div>
+        
+        <div tal:replace="structure provider:plone.abovecontentbody" />        
+		
+        
+        
+   		<div tal:define="results view/results;
+                     resCount   python: len(results);
+                     useZoom    view/UseImageZoom;
+                     perPageNum view/PerPagePrdtNum;
+					 perRowNum	view/PerRowPrdtNum;
+		     		 Batch python:modules['Products.CMFPlone'].Batch;
+                     b_size python:int(perPageNum);
+                     b_start python:0;
+                     b_start request/b_start | b_start;
+					 row_cols python:int(perRowNum);
+					 displaymdl view/Displaymodel;"
+				tal:omit-tag="">			      
+	 
+    <div tal:condition="python:displaymdl !='banner'" tal:omit-tag="">      
+       <div class="ATMP_ImageBox1"
+               tal:condition="resCount">
+		   <div id="ATMP_Image-1"
+					 tal:define="rndImages  view/createAutoImagesJSCode;
+								 img       nocall: rndImages/firstImage;">
+			<script type="text/javascript"
+						  tal:content="rndImages/jsCode" />
+			 <a href="" title="" rel="" 
+				tal:attributes="rel    python: view.test(useZoom, 'lightbox', None);
+								href   python: view.test(useZoom, img.absolute_url() + '/image_large', img.absolute_url() + '/@@image_view_large');
+								title  string:${img/Title} ;">
+			  <h2 align="center"> 
+			   <img src="" id="ATMP_AutochangeImage" alt="" title=""
+						 tal:attributes="src    python: img.absolute_url() + '/image_preview';
+										 alt    img/Title;
+										 title  img/Title;" />
+			  </h2>
+			 </a>
+				 <div align="center" id="ATMediaPageAutoImageTitle"
+						   class="ATMP_ImageTitle" 
+						   tal:content="img/Title">
+						Title
+				 </div>
+			</div>
+         </div>       
+		  
+        <div tal:condition="results"
+               tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);"
+			   tal:omit-tag="">			   
+        <div metal:use-macro="context/batch_macros/macros/navigation" />                         
+	    		<tal:loop repeat="result batch" > 
+				 <div class="perrow">              <!-- row display area include text description and float image display:inline -->
+				  <div class="floatright" tal:attributes="class python:'float' + displaymdl">	 	<!-- float area incude image and image title --> 
+				   <a href="" title=""  rel="lightbox"
+					  tal:attributes="rel    python: view.test(useZoom, 'lightbox', None);
+									  href   python: view.test(useZoom, result.getURL() + '/image_large', result.getURL() + '/@@image_view_large');
+									  title  string:${result/Title} ;">
+					  
+					  <img src="" alt="" title="Zoom Image"
+						   i18n:attributes="title zoom_image"
+						   tal:attributes="src    python: result.getURL() + '/image_thumb';
+										   alt    result/Description;
+										   " />
+				   </a>
+				   <div align="center" class="ATMP_ImageTitle"
+						   tal:content="result/Title" /> 
+				  </div>
+				  <div class="ATMP_ImageDescription" tal:define="imgobj python:result.getObject()"  >  <!-- text area incude image description -->
+				   <a 
+					   href=""  title="click for edit"
+					   i18n:attributes="title click_for_edit"
+					   tal:attributes="href   python: result.getURL() + '/@@image_view_large'"
+					   tal:content="structure imgobj/getComment">
+						 description
+				   </a>
+				  </div> 
+				 </div>                                             
+				</tal:loop>
+       </div>
+	 
+	 </div>
+	 <div tal:condition="python:displaymdl =='banner'" tal:omit-tag="">	   
+       <div tal:condition="results"
+          tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);
+                            p_size python:len(batch)">		
+	    <div metal:use-macro="here/batch_macros/macros/navigation" />                                                  
+         <table id="prodtab">
+          <tr tal:repeat = "rows python:range(int((p_size + row_cols - 1)/row_cols))" >
+           <td tal:repeat ="tds  python:range(row_cols)" valign="bottom" align="center"> 
+            <div tal:define="s   python:int((rows)*row_cols + tds);                         
+                          cont python:(s < p_size)" 
+                tal:condition="cont" tal:omit-tag="">
+             <div tal:define="result python:batch[s]" class="prd_zone">
+              <a href="" title=""  rel="lightbox"
+                tal:attributes="rel   python: view.test(useZoom, 'lightbox', None);
+                               href  python: view.test(useZoom, result.getURL() + '/image_large', result.getURL() + '/@@image_view_large');
+                               title string:${result/Title} | ${result/Description} ;">
+				 <!--load product description to lightbox-->
+              <img src="" alt="" title="Zoom Image" align="middle"
+		           i18n:attributes="title zoom_image"
+                   tal:attributes="src    python: result.getURL() + '/image_thumb';
+                                  alt    result/Description;
+                                  " />
+	     </a>
+             <a  href=""  title="click for edit"
+			     i18n:attributes="title click_for_edit"
+             
+               tal:attributes="href python: result.getURL() + '/@@image_view_large' ;
+                              "   >   
+              <div align="center" class="ATMP_ImageTitle"                                           
+                  tal:content="result/Title" /> 
+             </a>
+            </div>                                
+           </div>
+          </td>                    
+         </tr>               
+        </table>                       
+       </div>	
+	  </div>
+   </div>
+	<div metal:use-macro="context/document_relateditems/macros/relatedItems">
+		show related items if they exist
+	</div>
+
+	<div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<dl class="portlet portletPixviewer"
+    i18n:domain="plone"
+    tal:define="collection_url view/collection_url;plone_state context/@@plone_portal_state;
+                                                                              portal python:plone_state.portal()">                
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a tal:attributes="href collection_url" tal:omit-tag="not:view/data/show_more">
+		    <span class="portletHeadImg"></span>
+            <span tal:content="view/data/header" />
+			<span class="moreurl"></span>
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">		
+		<script type="text/javascript" src="swfobject.js"
+			tal:attributes="src string:http://images.315ok.org/swfobject.js">
+		</script>
+		<div id="switchpics_id" tal:attributes="id view/data/local_id"><!--flash--></div>
+		<script type="text/javascript" tal:content="structure view/js_settings"></script>
+ 
+    </dd>    
+</dl>

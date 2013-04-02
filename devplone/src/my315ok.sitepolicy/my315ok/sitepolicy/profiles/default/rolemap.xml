@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>  
+	<role name="Knowledge Manager"/>
+	<role name="Maintenance Engineer"/>
+ 	<role name="sysadmin"/>
+ 	<role name="omadmin"/>
+	<role name="sysadmin"/>
+	<role name="kmadmin"/>
+	<role name="coo"/>
+	<role name="Industry Director"/>
+	<role name="Manager Director"/>
+	<role name="sales manager"/>
+	<role name="industry manager"/>
+	<role name="industry group manager"/>
+	<role name="area_manager"/>
+	<role name="agency_manager"/>
+	<role name="product_manager"/>
+	<role name="bussiness_person"/>
+	<role name="pre-sale engineer"/>
+	<role name="project manager"/>
+	<role name="channel manager"/>
+	<role name="Channel Director"/>
+	<role name="channel products commissioner"/>
+	<role name="channel marketing manager"/>
+	<role name="channel products manager"/>
+	<role name="channel promotion commissioner"/>
+	<role name="channel sales manager"/>
+	<role name="channel marketing commissioner"/>
+	<role name="Market Director"/>
+	<role name="market manager"/>
+	<role name="Exhibition manager"/>
+	<role name="market commissioner"/>
+	<role name="exhibition commissioner"/>
+	<role name="brand commissioner"/>
+	<role name="Media Engineer"/>
+	<role name="brand manager"/>
+	<role name="media manager"/>
+	<role name="Solution Director"/>
+	<role name="solution manager"/>
+	<role name="solution consultant"/>
+	<role name="solution researcher"/>
+  </roles>
+  <permissions>
+    <permission name="Eisoo: Change Settings" acquire="False">
+		<role name="Site Administrator"/>
+		<role name="Manager"/>
+	</permission>
+	<permission name="Eisoo: Add Comment" acquire="False">
+    	<role name="Member"/>
+		<role name="Site Administrator"/>
+		<role name="Manager"/>
+	</permission>
+	<permission name="Eisoo: Add Thread" acquire="False">
+    	<role name="Member"/>
+		<role name="Owner"/>
+		<role name="Site Administrator"/>
+		<role name="Manager"/>
+	</permission>
+	<permission name="Eisoo: End Thread" acquire="False">
+    	<role name="Owner"/>
+		<role name="Site Administrator"/>
+		<role name="Manager"/>
+	</permission>
+	<permission name="Eisoo: Add Forum" acquire="False">
+		<role name="Manager"/>
+		<role name="Site Administrator"/>
+	</permission>
+	<permission name="Eisoo: Add Knowledge" acquire="False">
+       <role name="Maintenance Engineer"/>
+		<role name="Manager"/>
+		<role name="Site Administrator"/>
+	</permission>
+	<permission name="Eisoo: Audit Knowledge" acquire="False">
+		<role name="Knowledge Manager"/>
+		<role name="Manager"/>
+		<role name="Site Administrator"/>
+	</permission>
+		<permission name="Eisoo: Add Knowledge Base" acquire="False">
+		<role name="Manager"/>
+		<role name="Site Administrator"/>
+	</permission>
+	<permission name="Add portal content" acquire="False">
+		<role name="Member"/>
+		<role name="Site Administrator"/>
+		<role name="Maintenance Engineer"/>
+		<role name="Knowledge Manager"/>
+		<role name="Manager"/>
+	</permission>
+	<permission name="Modify portal content" acquire="False">
+		<role name="Member"/>
+		<role name="Owner"/>
+		<role name="Site Administrator"/>
+		<role name="Maintenance Engineer"/>
+		<role name="Knowledge Manager"/>
+		<role name="Manager"/>
+	</permission>
+	
+	    <!-- This disables the dashboard for regular members -->
+    <permission name="Portlets: Manage own portlets" acquire="False">
+        <role name="Manager" />
+        <role name="Member" />
+    </permission>
+    <!-- This allows anonymous visitors to register for the site  -->
+    <permission name="Add portal member" acquire="False">
+        <role name="Manager" />
+        <role name="Anonymous" />
+    </permission>
+  </permissions>
+ </rolemap>

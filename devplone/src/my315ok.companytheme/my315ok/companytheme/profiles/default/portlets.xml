@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<portlets>
+    
+ <portletmanager name="mynew.belowcontent"
+    type="my315ok.companytheme.browser.interfaces.IMyNewBelowContent"/>
+ <portletmanager name="mynew.abovecontent"
+    type="my315ok.companytheme.browser.interfaces.IMyNewAboveContent"/>
+ <portletmanager name="myfooter.portalfooter"
+    type="my315ok.companytheme.browser.interfaces.IMyFooterPortalFooter"/>
+ <portletmanager name="mynew.onlineservice"
+    type="my315ok.companytheme.browser.interfaces.IMyNewBesideContent"/>
+ <portletmanager 
+   name="mynew.abovecontentview"
+   type="my315ok.companytheme.browser.interfaces.IMyNewAboveContentView"
+ />
+ <portletmanager name="mynew.portalheader"
+    type="my315ok.companytheme.browser.interfaces.IMyNewPortalHeader"/>
+ <portletmanager name="mylogo.portalheader"
+    type="my315ok.companytheme.browser.interfaces.IMyLogoPortalHeader"/>
+ <portletmanager name="collage.portletmanager"
+  type="plone.app.portlets.interfaces.IColumn"/>      
+
+ 
+</portlets>

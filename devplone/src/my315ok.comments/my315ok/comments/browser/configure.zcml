@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="my315ok.comments">
+
+
+  <include package=".portlets" />	      
+    
+
+  <browser:page
+    name="comment-form"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="zope2.View"
+    class=".views.CommentFormView"
+    />       
+
+</configure>

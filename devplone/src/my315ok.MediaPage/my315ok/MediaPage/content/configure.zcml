@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="my315ok.MediaPage">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".rich_image.rich_image">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.Irich_image"
+        />
+  </class>
+  <class class=".mediapage.mediapage">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.Imediapage"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        set_schema="..interfaces.Imediapage"
+        />
+  </class>
+
+</configure>

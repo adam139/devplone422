@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Plone Default">
+
+ <object name="oa_images"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_images" remove="True"/>
+ <object name="oa_templates"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_templates" remove="True"/>
+ <object name="oa_styles"
+    meta_type="Filesystem Directory View"
+    directory="plonetheme.oa:skins/oa_styles" remove="True"/>
+
+ <skin-path name="OA Theme" based-on="Plone Default" remove="True"/>
+
+
+</object>

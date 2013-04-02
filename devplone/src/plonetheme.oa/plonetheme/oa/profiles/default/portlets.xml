@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<portlets>
+    
+ <portletmanager name="mynew.belowcontent"
+    type="plonetheme.oa.browser.interfaces.IMyNewBelowContent"/>
+ <portletmanager name="mynew.abovecontent"
+    type="plonetheme.oa.browser.interfaces.IMyNewAboveContent"/>
+ <portletmanager name="myfooter.portalfooter"
+    type="plonetheme.oa.browser.interfaces.IMyFooterPortalFooter"/>
+ <portletmanager name="mynew.onlineservice"
+    type="plonetheme.oa.browser.interfaces.IMyNewBesideContent"/>
+ <portletmanager 
+   name="mynew.abovecontentview"
+   type="plonetheme.oa.browser.interfaces.IMyNewAboveContentView"
+ />
+ <portletmanager name="mynew.portalheader"
+    type="plonetheme.oa.browser.interfaces.IMyNewPortalHeader"/>
+ <portletmanager name="mylogo.portalheader"
+    type="plonetheme.oa.browser.interfaces.IMyLogoPortalHeader"/>
+ <portletmanager name="collage.portletmanager"
+  type="plone.app.portlets.interfaces.IColumn"/>      
+ <assignment name="logo-portlet" category="context" key="/"
+    manager="mylogo.portalheader" type="my315ok.portlet.logo.LogoPortlet">
+  <property
+     name="imgsrc">++resource++plonetheme.oa.images/logo.png</property>
+ </assignment> 
+
+</portlets>

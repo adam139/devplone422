@@ -1,0 +1,35 @@
+# Translation of plone.pot to Chinese
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"POT-Creation-Date: 2010-12-03 12:17+0000\n"
+"PO-Revision-Date: 2010-12-03 20:01+0800\n"
+"Last-Translator: adam tang <yuejun.tang@gmail.com>\n"
+"Language-Team: 315ok.org <yuejun.tang@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: zh\n"
+"Language-Name: 简体中文\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plone\n"
+"X-Is-Fallback-For: zh-cn zh-hk zh-mo zh-sg\n"
+"X-Poedit-Language: Chinese\n"
+
+#: ../profiles/default/portlets.xml
+msgid "Pixviewer portlet"
+msgstr "动画轮转面板"
+
+#: ../profiles/default/portlets.xml
+msgid "a portlet for playing video using flash player"
+msgstr "播放flv的视频播放器"
+
+#: ../profiles/default/portlets.xml
+msgid "a portlet for switching image using flash"
+msgstr "用flash技术实现多种动画效果轮转面板"
+
+#: ../profiles/default/portlets.xml
+msgid "video portlet"
+msgstr "视频面板"
+

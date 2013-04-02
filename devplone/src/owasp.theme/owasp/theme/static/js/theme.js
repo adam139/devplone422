@@ -1,0 +1,5 @@
+
+function initializeowasptheme(){
+
+}
+jQuery(initializeowasptheme);

@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: eisoo.topic\n"
+"POT-Creation-Date: 2013-02-16 08:49+0000\n"
+"PO-Revision-Date: 2012-02-25 07:36+0800\n"
+"Last-Translator: panlei <pan.lei@eisoo.com>\n"
+"Language-Team: 315ok.org <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: zh_CN\n"
+"Language-Name: Chinese\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./profiles/default/types/collective.conference.conference.xml
+msgid "A conference event"
+msgstr ""
+
+#: ./profiles/default/types/collective.conference.conference.xml
+msgid "Conference"
+msgstr ""
+
+#: ./profiles/default/types/collective.conference.participant.xml
+msgid "Conference Participant"
+msgstr ""
+
+#: ./profiles/default/types/collective.conference.session.xml
+msgid "Conference Session"
+msgstr ""
+
+#: ./session.py:62
+msgid "More details on proposed session"
+msgstr ""
+
+#: ./profiles/default/types/collective.conference.participant.xml
+msgid "Participant"
+msgstr ""
+
+#: ./profiles/default/types/collective.conference.session.xml
+msgid "Session"
+msgstr ""
+

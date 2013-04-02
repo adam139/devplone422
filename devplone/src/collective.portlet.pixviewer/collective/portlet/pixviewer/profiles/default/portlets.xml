@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="collective.portlet.pixviewer.PixviewerPortlet"
+   title="Pixviewer portlet"
+   description="a portlet for switching image using flash"
+   i18n:attributes="title; description"
+   />
+ <portlet
+   addview="collective.portlet.pixviewer.FlashplayerPortlet"
+   title="video portlet"
+   description="a portlet for playing video using flash player"
+   i18n:attributes="title; description"
+   />
+
+
+</portlets>

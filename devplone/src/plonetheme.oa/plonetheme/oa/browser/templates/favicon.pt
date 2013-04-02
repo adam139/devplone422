@@ -1,0 +1,4 @@
+<tal:favicon define="portal_url view/portal_url">
+<link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:$portal_url/favicon.ico" />
+<link rel="icon" type="image/gif" tal:attributes="href string:$portal_url/favicon1.gif" />
+</tal:favicon> 

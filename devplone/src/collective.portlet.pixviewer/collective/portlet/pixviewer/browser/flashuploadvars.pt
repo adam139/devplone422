@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<var xmlns:i18n = "http://xml.zope.org/namespaces/i18n"
+     xmlns:tal = "http://xml.zope.org/namespaces/tal"
+     i18n:domain="z3c.widget.flashupload">
+ <document>
+	<item repeat="m python:view.resultes()">
+		<image tal:content="python:m['img']">media/01.jpg</image>
+		<smallimage tal:content="python:m['simg']dia/01s.jpg</smallimage>
+		<video tal:content="python:m['url']">new.asp</video>
+		<captionlines>4</captionlines>
+		<headline>11</headline>
+		<caption><a href="new.asp" >111111111</a></caption>
+		<photocaption>111</photocaption>
+	</item>
+	
+</document>    
+</var>

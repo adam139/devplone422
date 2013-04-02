@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<portlets>
+ <portletmanager 
+   name="mynew.onlineservice"
+   type="my315ok.theme.company.browser.interfaces.IMyNewBesideContent"
+ remove="True"/> 
+ <portletmanager 
+   name="mynew.abovecontent"
+   type="my315ok.theme.company.browser.interfaces.IMyNewAboveContent"
+ remove="True"/>
+ <portletmanager 
+   name="mynew.belowcontent"
+   type="my315ok.theme.company.browser.interfaces.IMyNewBelowContent"
+ remove="True"/> 
+  <portletmanager 
+   name="myfooter.portalfooter"
+   type="my315ok.theme.company.browser.interfaces.IMyFooterPortalFooter"
+ remove="True"/>
+ <portletmanager 
+   name="mynew.portalheader"
+   type="my315ok.theme.company.browser.interfaces.IMyNewPortalHeader"
+ remove="True"/>
+ <portletmanager 
+   name="mylogo.portalheader"
+   type="my315ok.theme.company.browser.interfaces.IMyLogoPortalHeader"
+ remove="True"/>
+ 
+</portlets>

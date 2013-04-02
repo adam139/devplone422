@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<site>
+ <property name="title">Eisoo KOM</property>
+ <property name="description">上海爱数软件KOM——基于知识的运营管理系统</property>
+ <property name="default_page" type="string">indexview</property>
+</site>

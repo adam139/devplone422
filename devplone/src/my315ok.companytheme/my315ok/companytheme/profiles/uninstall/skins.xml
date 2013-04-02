@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration for the portal_skins tool -->
+
+
+<object name="classic_styles" allow_any="False" cookie_persistence="False"
+   default_skin="Plone Classic Theme">
+
+ <object name="my315ok_company_custom_images"
+    meta_type="Filesystem Directory View"
+    directory="my315ok.company:skins/my315ok_company_custom_images" remove="True"/>
+ <object name="my315ok_commontheme_custom_templates"
+    meta_type="Filesystem Directory View"
+    directory="my315ok.company:skins/my315ok_company_custom_templates" remove="True"/>
+ <object name="my315ok_commontheme_styles"
+    meta_type="Filesystem Directory View"
+    directory="my315ok.company:skins/my315ok_company_styles" remove="True"/>
+
+
+ <skin-path name="CompanyTheme"  remove="True"/>
+
+
+</object>

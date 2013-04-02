@@ -1,0 +1,143 @@
+# German translation of ATMediaPage.
+# Derstappen IT - Maik Derstappen <maik.derstappen@derstappen-it.de>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaPage 1.0\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2009-12-02 05:34+0800\n"
+"Last-Translator: adam tang <yuejun.tang@gmail.com>\n"
+"Language-Team: 315ok <admin@315ok.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: zh\n"
+"Language-Name: Chinese\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: ../content/mediapage.py:47
+#: ../interfaces/mediapage.py:26
+msgid "Configurations for ImageAutoChange View"
+msgstr "配置自动改变视图"
+
+#: ../content/mediapage.py:22
+#: ../interfaces/mediapage.py:14
+msgid "Display Model"
+msgstr "显示模式"
+
+#: ../content/mediapage.py:102
+#: ../interfaces/mediapage.py:58
+msgid "If you want use the image-zoom feature (Javscript), then check this box."
+msgstr "如果要应用图片缩放功能，请点击选择框"
+
+#: ../content/mediapage.py:58
+#: ../interfaces/mediapage.py:34
+msgid "Should we show images randomized in AutoChange views?"
+msgstr "是否在自动轮回时随机选择图片"
+
+#: ../content/mediapage.py:48
+msgid "a configurative page for mediapage"
+msgstr "一个可配置的富媒体页面"
+
+#. Default: "a free control display model content type"
+msgid "a free control display model content type"
+msgstr "一个自由控制显示模式的页面类型"
+
+msgid "a image attached rich text comment and a url link"
+msgstr "一个带有富文本和url链接的图片类型"
+
+#: ../content/mediapage.py:37
+msgid "a rich textbox that will be a description of the mediapage"
+msgstr "富文本格式的页面描述"
+
+#: ../content/mediapage.py:36
+#: ../interfaces/mediapage.py:20
+msgid "body"
+msgstr "正文"
+
+#: ../browser/mediapageview.pt:87
+#: ../browser/mediapageviewOld.pt:88
+#. Default: "click for edit"
+msgid "click_for_edit"
+msgstr "点击编辑产品"
+
+#: ../content/rich_image.py:27
+#: ../interfaces/rich_image.py:13
+msgid "comment details"
+msgstr "详细描述"
+
+#: ../content/mediapage.py:80
+#: ../interfaces/mediapage.py:46
+msgid "here you can set every page display product numbers"
+msgstr "配置每页显示的产品数"
+
+#: ../content/mediapage.py:91
+#: ../interfaces/mediapage.py:52
+msgid "here you can set every row display product numbers"
+msgstr "配置每行显示的产品数"
+
+#: ../content/mediapage.py:69
+#: ../interfaces/mediapage.py:40
+msgid "here you can set the delaytime for image autochange view"
+msgstr "设置图片延时."
+
+#: ../content/mediapage.py:68
+#: ../interfaces/mediapage.py:38
+msgid "image autochange delay (in milliseconds)"
+msgstr "图片跑马灯(毫秒)"
+
+#: ../content/mediapage.py:28
+msgid "image float left"
+msgstr "图片浮动左边"
+
+#: ../content/mediapage.py:28
+msgid "image float right"
+msgstr "图片浮动右边"
+
+#: ../content/mediapage.py:28
+msgid "image matrix"
+msgstr "图象阵列"
+
+#: ../content/rich_image.py:37
+#: ../interfaces/rich_image.py:19
+msgid "link to url"
+msgstr "链接到url"
+
+#. Default: "mediapage"
+msgid "mediapage"
+msgstr "富媒体页面"
+
+#: ../content/mediapage.py:90
+#: ../interfaces/mediapage.py:50
+msgid "product numbers will be display in a row(default 4)"
+msgstr "每行显示的产品数"
+
+#: ../content/mediapage.py:79
+#: ../interfaces/mediapage.py:44
+msgid "product numbers will be display in every page(default 12)"
+msgstr "每页显示的产品数"
+
+msgid "rich_image"
+msgstr "富媒体图片"
+
+#: ../content/mediapage.py:23
+msgid "select a layou for this media page"
+msgstr "为该页面选择一个显示模式"
+
+#: ../content/mediapage.py:57
+#: ../interfaces/mediapage.py:32
+msgid "show images randomized"
+msgstr "随机显示图片"
+
+#: ../content/mediapage.py:101
+#: ../interfaces/mediapage.py:56
+msgid "use the image-zoom feature"
+msgstr "启用图片缩放机制"
+
+#: ../browser/mediapageview.pt:77
+#: ../browser/mediapageviewOld.pt:78
+#. Default: "Zoom Image"
+msgid "zoom_image"
+msgstr "放大图片"
+

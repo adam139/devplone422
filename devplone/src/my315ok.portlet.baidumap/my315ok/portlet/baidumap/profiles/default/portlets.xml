@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="my315ok.portlet.baidumap.baidumap"
+   title="baidumap Portlet"
+   description="a portlet for rendering Baidu map"
+   />
+
+</portlets>

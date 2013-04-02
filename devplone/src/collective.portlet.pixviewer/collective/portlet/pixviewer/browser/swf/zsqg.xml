@@ -1,0 +1,48 @@
+﻿ <document>
+	<item>
+		<image>media/01.jpg</image>
+		<smallimage>media/01s.jpg</smallimage>
+		<video>new.asp</video>
+		<captionlines>4</captionlines>
+		<headline>11</headline>
+		<caption><a href="new.asp" >111111111</a></caption>
+		<photocaption>111</photocaption>
+	</item>
+	<item>
+		<image>media/02.jpg</image>
+		<smallimage>media/02s.jpg</smallimage>
+		<video>new.asp</video>
+		<captionlines>4</captionlines>
+		<headline>22</headline>
+		<caption><a href="new.asp">222222222</a></caption>
+		<photocaption>222</photocaption>
+	</item>
+	<item>
+		<image>media/03.jpg</image>
+		<smallimage>media/03s.jpg</smallimage>
+		<video>new.asp</video>
+		<captionlines>4</captionlines>
+		<headline>站酷(Zcool)</headline>
+		<caption><a href="new.asp"></a></caption>
+		<photocaption></photocaption>
+	</item>
+	<item>
+		<image>media/04.jpg</image>
+		<smallimage>media/04s.jpg</smallimage>
+		<video>new.asp</video>
+		<captionlines>4</captionlines>
+		<headline></headline>
+		<caption><a href="new.asp"></a></caption>
+		<photocaption></photocaption>
+	</item>
+	<item>
+		<image>media/05.jpg</image>
+		<smallimage>media/05s.jpg</smallimage>
+		<video>new.asp</video>
+		<captionlines>4</captionlines>
+		<headline></headline>
+		<caption><a href="new.asp" target="_blank"></a></caption>
+		<photocaption></photocaption>
+	</item>
+</document>
+

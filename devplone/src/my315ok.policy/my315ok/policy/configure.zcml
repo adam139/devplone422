@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"    
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="my315ok.policy">
+ <!-- 
+  <five:registerPackage package="." /> 
+ --> 
+  <i18n:registerTranslations directory="locales" />         
+  <include package="collective.collage.ploneformgen" />    
+  <includeDependencies package="." />
+    <browser:viewlet
+        name="plone.global_sections"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="webcouturier.dropdownmenu.browser.dropdown.DropdownMenuViewlet"
+        layer="my315ok.diazo960.browser.interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+  <genericsetup:registerProfile
+      name="default"
+      title="my315ok.policy"
+      directory="profiles/default"
+      description="Installs the my315ok.policy package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+  
+</configure>

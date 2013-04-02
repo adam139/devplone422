@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.portalfooter" skinname="CompanyTheme">
+    <viewlet name="plone.colophon" />
+  </hidden>
+  <hidden manager="plone.portalfooter" skinname="CompanyTheme">
+    <viewlet name="plone.footer" />
+  </hidden>
+   <hidden manager="plone.portalheader" skinname="CompanyTheme">
+    <viewlet name="plone.logo" />
+  </hidden>
+  <hidden manager="plone.belowcontenttitle" skinname="CompanyTheme">
+    <viewlet name="plone.belowcontenttitle.documentbyline" />
+  </hidden> 
+  <hidden manager="plone.belowcontentbody" skinname="CompanyTheme">
+    <viewlet name="plone.belowcontentbody.contenthistory" />
+  </hidden>
+
+  <hidden manager="plone.belowcontentbody" skinname="CompanyTheme">
+    <viewlet name="plone.abovecontenttitle.documentactions" />
+  </hidden>     
+  
+  <order manager="plone.portalheader" skinname="CompanyTheme"
+         based-on="Plone Classic Theme">	   
+    <viewlet name="mylogo.portalheader"
+             insert-before="plone.global_sections" />
+  </order>
+  
+  <order manager="plone.portalheader" skinname="CompanyTheme"
+         based-on="Plone Classic Theme">	   
+    <viewlet name="mynew.portalheader"
+             insert-after="plone.global_sections" />
+  </order>
+  
+  <order manager="plone.contentviews" skinname="CompanyTheme"
+         based-on="Plone Classic Theme">
+    <viewlet name="mynew.abovecontentview"
+    insert-before="*" />	   
+    <viewlet name="mynew.abovecontent"
+             insert-after="*" />
+  </order>
+  <order manager="plone.belowcontent" skinname="CompanyTheme"
+         based-on="Plone Classic Theme">	   
+    <viewlet name="mynew.belowcontent"
+             insert-after="*" />
+  </order>
+  <order manager="mynew.sidebar" skinname="CompanyTheme" >	   
+    <viewlet name="mynew.onlineservice"
+             insert-after="*" />
+  </order>
+  
+  <order manager="plone.portalfooter" skinname="CompanyTheme"
+         based-on="Plone Classic Theme">	   
+    <viewlet name="myfooter.portalfooter"
+             insert-before="*" />
+  </order>  
+
+</object>

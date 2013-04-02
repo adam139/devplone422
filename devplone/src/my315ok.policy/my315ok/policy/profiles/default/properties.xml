@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<site>
+ <property name="title">易智网站系统</property>
+ <property name="description">大同网络科技有限公司EZsite——基于部件体型架构的网站系统</property>
+ <property name="default_page" type="string">indexview</property>
+</site>

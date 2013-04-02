@@ -1,0 +1,10 @@
+<metadata>
+    <version>100</version>
+    <dependencies>
+ 
+        <dependency>profile-dexterity.membrane:default</dependency>
+        <dependency>profile-collective.conference:default</dependency>  
+        <dependency>profile-diazotheme.bootstrap:default</dependency>
+        <dependency>profile-Products.ContentWellPortlets:default</dependency>                          
+    </dependencies>
+</metadata>

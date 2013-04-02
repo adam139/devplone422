@@ -1,0 +1,65 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.portlet.pixviewer">
+    <include package=".browser" />
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <i18n:registerTranslations directory="locales"/>
+
+    <genericsetup:registerProfile
+       name="default"
+       title="Pixviewer portlet"
+       directory="profiles/default"
+       description="a serials portlets for switching image using flash"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <!-- Register the portlet -->
+
+     <!-- If the portlet has no configurable parameters, you can remove
+          the EditForm declaration in pixviewerportlet.py and delete
+          the 'editview' attribute from this statement.
+       -->
+
+     <plone:portlet
+         name="collective.portlet.pixviewer.PixviewerPortlet"
+         interface=".pixviewerportlet.IPixviewerPortlet"
+         assignment=".pixviewerportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".pixviewerportlet.Renderer"
+         addview=".pixviewerportlet.AddForm"
+         editview=".pixviewerportlet.EditForm"
+         />
+     <plone:portlet
+         name="collective.portlet.pixviewer.FlashplayerPortlet"
+         interface=".flashplayerportlet.IVideoPortlet"
+         assignment=".flashplayerportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".flashplayerportlet.Renderer"
+         addview=".flashplayerportlet.AddForm"
+         editview=".flashplayerportlet.EditForm"
+         />
+         <!--
+     <plone:portlet
+         name="collective.portlet.pixviewer.SliderPortlet"
+         interface=".sliderportlet.IPixviewerPortlet"
+         assignment=".sliderportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".sliderportlet.Renderer"
+         addview=".sliderportlet.AddForm"
+         editview=".sliderportlet.EditForm"
+         /> -->
+     <utility
+         component=".vocabularies.ImageSizeVocabularyFactory"
+         name="pixviewer.ImageSizeVocabulary"
+         />
+
+</configure>

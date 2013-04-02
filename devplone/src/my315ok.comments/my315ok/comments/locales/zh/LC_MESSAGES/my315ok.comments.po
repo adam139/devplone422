@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-01-07 05:09+0000\n"
+"PO-Revision-Date: 2011-01-07 13:09+0800\n"
+"Last-Translator: adam tang <yuejun.tang@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../browser/viewlets/commentviewlet.py:26
+#: ../commentviewlet.py:26
+msgid "Add Comment"
+msgstr "添加意见"
+
+#: ../comment.py:51
+msgid "Add a comment"
+msgstr "添加一个意见"
+
+#: ../browser/interfaces.py:11
+#: ../browser/views.py:30
+#: ../comment.py:13
+msgid "Author"
+msgstr "作者"
+
+#: ../browser/portlets/commentportlet.py:81
+msgid "Comment Form"
+msgstr "意见表单"
+
+#: ../browser/portlets/commentportlet.pt:6
+msgid "Comment and suggestion"
+msgstr "意见建议"
+
+#: ../browser/portlets/commentportlet.py:48
+msgid "Find the folder which will provides to store comments in it"
+msgstr "找到一个用于保存意见建议的文件夹。"
+
+#: ../browser/views.py:63
+msgid "If you are interested in our services leave your comment or suggestion and our sales representatives will contact you."
+msgstr "如果您愿意，请留下您的意见建议！"
+
+#: ../browser/views.py:160
+msgid "Please correct the errors below"
+msgstr "请更正下列错误"
+
+#: ../browser/views.py:127
+#: ../comment.py:65
+msgid "Post comment"
+msgstr "提交意见"
+
+#: ../browser/portlets/commentportlet.py:47
+msgid "Target folder"
+msgstr "目标文件夹"
+
+#: ../browser/interfaces.py:14
+#: ../browser/views.py:33
+#: ../comment.py:16
+msgid "Text"
+msgstr "正文"
+
+#: ../browser/views.py:141
+msgid "Thank you for your comments. Our customer services will come back to you in few days"
+msgstr "感谢您提交的意见建议，我们的客服人员将及时处理并可能联系您。"
+
+#: ../browser/interfaces.py:10
+#: ../browser/views.py:29
+#: ../comment.py:12
+msgid "Title"
+msgstr "标题"
+
+#. Default: "Longer contact form…"
+#: ../browser/portlets/commentportlet.pt:18
+msgid "box_more_news_link"
+msgstr "更多"
+
+#: ../browser/views.py:61
+msgid "your comment"
+msgstr "您的意见"
+

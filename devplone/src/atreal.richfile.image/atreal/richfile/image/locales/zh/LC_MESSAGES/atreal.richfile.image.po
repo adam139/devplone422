@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-06-15 00:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./browser/viewlet.pt:9
+msgid "Image preview"
+msgstr "图片预览"
+
+#: ./browser/views.py:15
+msgid "Image preview activated."
+msgstr "图片预览已激活"
+
+#: ./browser/views.py:16
+msgid "Image preview un-activated."
+msgstr "图片预览未激活"
+
+#: ./profiles/default/controlpanel.xml
+msgid "RichFileImage"
+msgstr "富文件图片"
+
+#: ./browser/controlpanel.py:41
+msgid "RichFileImage settings"
+msgstr "富文件图片设置"
+
+#: ./browser/controlpanel.py:42
+msgid "RichFileImage settings for this site."
+msgstr "富文件图片设置"
+
+#: ./browser/views.py:14
+msgid "The image preview has been updated."
+msgstr "该图片预览已被更新"
+
+#. Default: "Do you want the plugin's display to be collapsed ?"
+#: ./browser/controlpanel.py:24
+msgid "help_rf_image_collapsed"
+msgstr "是否需要该插件的显示被折叠？"
+
+#. Default: "(Required)"
+#: ./browser/controlpanel.pt:167
+msgid "label_required"
+msgstr "（要求填写）"
+
+#. Default: "Display collapsed ?"
+#: ./browser/controlpanel.py:22
+msgid "label_rf_image_collapsed"
+msgstr "显示折叠?"
+
+#. Default: "Required"
+#: ./browser/controlpanel.pt:167
+msgid "title_required"
+msgstr "要求"
+

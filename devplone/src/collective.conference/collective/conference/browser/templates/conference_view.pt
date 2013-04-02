@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+<head>
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+</head>
+<body>
+   <div metal:fill-slot="content-title"></div>
+   <div metal:fill-slot="content-description"></div>
+   <div metal:fill-slot="content-core">
+      <div class="row-fluid banner"
+         tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html">
+         <div class="span1">&nbsp;</div>
+         <div class="span6">
+            <h1><span tal:content="context/title"></span>
+            <span  i18n:translate="">we have<span id="follow-num" i18n:name="num" tal:content="python:view.getFollowNum()"></span> follow this</span></h1>
+            <p tal:replace="structure python:text_to_html(context.description)"></p>
+            <div id="follow-box" tal:define="follow python:view.isFollowed();
+            	id context/id">
+					<span id="fire-follow" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
+						data-ajax-target string:${portal_url}/@@ajax-follow">
+						<img tal:attributes="src string:${view/static}/plus.png" />&nbsp;
+						<a class="followjq btn btn-primary" href="javascript:void(0)" i18n:translate="follow">follow</a>
+						<input type="hidden" tal:attributes="value id" />
+					</span>
+					<span id="fire-unfollow" tal:attributes="style python: follow and 'display:inline;;' or 'display:none;;';
+						data-ajax-target string:${portal_url}/@@ajax-unfollow">
+						<img  tal:attributes="src string:${view/static}/subtract.png"/>&nbsp;
+						<a class="unfollowjq btn btn-primary" href="javascript:void(0)" i18n:translate="unfollowed">unfollowed</a>
+						<input type="hidden" tal:attributes="value id" />						
+					</span>
+				</div>		
+            <a  i18n:translate=""  class="btn btn-primary btn-large"
+               tal:attributes="href string:${context/absolute_url}/register">Register NOW</a>
+            <a  i18n:translate=""  class="btn btn-primary btn-large"
+               tal:attributes="href string:${context/absolute_url}/propose">Propose Session</a>
+
+         </div>
+         <div class="span4"
+            tal:define="scale context/@@images;
+            small python:scale.scale('logo_image', width=400, height=400)">
+            <img tal:attributes="src small/url;
+            width small/width;
+            height small/height"/>
+         </div>
+      </div>
+      <div class="row-fluid">
+         <div class="span12" style="padding-top:20px;">
+            <div style="float:right;padding-top:20px;margin:15px 40px;"
+               tal:define="startDate context/startDate;
+                           endDate context/endDate">
+               <metal:m use-macro="here/@@collective-conference-macros/macros/datebox"></metal:m>
+            </div>
+            <div style="font-size:12px" tal:content="structure context/text"></div>
+         </div>
+
+      </div>
+   </div>
+   <metal:js fill-slot="javascript_bottom_slot">
+			  <script type="text/javascript">
+  	//ajax-follow-question
+jq(".followjq").live("click",function() {
+	var before = jq("#follow-num").val();
+	var current = int(before) + 1;
+	q("#follow-num").html(str(current));
+	jq(this).siblings("input").addClass("followform");
+	var id = jq(".followform").attr('value');
+	var questionid = {'questionid': id};
+	if (jq(".followform").attr('id')) {
+		var ida = jq(".followform").attr('id');
+		var action = jq("#ajax-question-follow-" + id + ida).attr('data-ajax-target');
+		jq.post(action, questionid, function(){
+			jq("#ajax-question-follow-" + id + ida).hide();
+			jq("#ajax-question-unfollow-" + id + ida).show();
+		}, 'json');
+		jq(this).siblings("input").removeClass("followform");
+	}else{
+		var action = jq("#fire-follow").attr('data-ajax-target');
+		jq.post(action, questionid, function(){
+			jq("#fire-follow").hide();
+			jq("#fire-unfollow").show();
+		}, 'json');
+		jq(this).siblings("input").removeClass("followform");
+	}return false;
+});
+
+//ajax-unfollow-question
+jq(".unfollowjq").live("click",function() {
+	jq(this).siblings("input").addClass("unfollowform");
+	var id = jq(".unfollowform").attr('value');
+	var questionid = {'questionid':id};
+	if (jq(".unfollowform").attr('id')){
+		var ida = jq(".unfollowform").attr('id');
+		var action = jq("#ajax-question-unfollow-" + id + ida).attr('data-ajax-target');
+		jq.post(action, questionid, function(){
+			jq("#ajax-unfollow-" + id + ida).hide();
+			jq("#ajax-follow-" + id + ida).show();
+		}, 'json');
+		jq(this).siblings("input").removeClass("unfollowform");
+	}else{
+		var action = jq("#ajax-unfollow-").attr('data-ajax-target');
+		jq.post(action, questionid, function(){
+			jq("#ajax-unfollow").hide();
+			jq("#ajax-follow").show();
+		}, 'json');
+		jq(this).siblings("input").removeClass("unfollowform");
+	}return false;
+});
+</script>	
+</metal:js>
+
+</body>
+</html>

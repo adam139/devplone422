@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">      
+      <head>
+
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+
+</head>
+<body>
+   <div metal:fill-slot="content-title"> 
+      <h1>[<span tal:replace="context/session_type"></span>]
+            <span tal:content="context/title"></span>
+      </h1> 
+   </div>
+
+   <div metal:fill-slot="content-description"></div>
+
+   <div metal:fill-slot="content-core">
+
+      <div class="row-fluid" tal:define="persons context/owners;
+         text_to_html nocall:here/@@collective-conference-macros/text_to_html">
+         <div class="span9">
+            <h3 i18n:translate="session_summary">Summmary</h3>
+            <div><p tal:replace="structure python:text_to_html(context.description)"/></div>
+            <tal:c condition="persons">
+            <h3 i18n:translate="">Presented By</h3>
+            <metal:photo use-macro="here/@@collective-conference-macros/macros/persongallery"></metal:photo>
+            </tal:c>
+            <tal:c condition="context/text">
+            <h3 i18n:translate="">Additional Information</h3>
+            <div tal:content="structure context/text">
+            </div>
+            </tal:c>
+         </div>
+         <div class="span3">
+            <tal:c condition="view/roomName">
+            <tal:d define="startDate context/startDate;
+            endDate context/endDate;
+            label string:Schedule;
+            roomName view/roomName">
+            <metal:m use-macro="here/@@collective-conference-macros/macros/datebox"></metal:m>
+            </tal:d>
+            </tal:c>
+         </div>
+      </div>
+
+      <div class="visualClear"></div>
+   </div>
+
+</body>
+</html>

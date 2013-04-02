@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+      <head>
+
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+
+</head>
+<body>
+   <div metal:fill-slot="content-title"></div>
+   <div metal:fill-slot="content-description"></div>
+
+   <div metal:fill-slot="content-core">
+       <section id="profile" 
+            tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html">
+       <div class="page-header">
+           <h3 tal:content="context/title">Name</h3>
+       </div>  
+       <div class="row-fluid">
+          <div class="span1">&nbsp;</div>
+        <div class="span3" tal:define="person python:context">
+            <metal:photo use-macro="here/@@collective-conference-macros/macros/profilephoto"></metal:photo>
+        </div>
+        <div class="span8">
+          <dl class="dl-horizontal">
+            <dt i18n:translate="">Email:</dt>
+            <dd tal:content="python:(context.email or '').replace('@',' (at) ')">vader@empire.com</dd>
+
+            <tal:block condition="context/organization">
+            <dt i18n:translate="">Organization / Company</dt>
+            <dd tal:content="context/organization"></dd>
+            </tal:block>
+
+            <tal:block condition="context/position">
+            <dt i18n:translate="">Position / Role in Organization</dt>
+            <dd tal:content="context/position">cfo</dd>
+            </tal:block>
+
+            <tal:block condition="context/country">
+            <dt i18n:translate="">Country:</dt>
+            <dd tal:content="context/country">Tatooine</dd>
+            </tal:block>
+
+            <tal:block condition="context/description">
+            <dt i18n:translate="">Bio:</dt>
+            <dd><p tal:replace="structure python:text_to_html(context.description)"></p></dd>
+            </tal:block>
+         </dl>
+       </div>
+      </div>
+      </section>
+      <section id="topic" tal:define="sessions context/sessions;
+                        text_to_html nocall:here/@@collective-conference-macros/text_to_html"
+                        tal:condition="sessions">
+      <div class="row-fluid">
+        <div class="page-header">
+          <h3 i18n:translate="">Sessions</h3>
+        </div>
+        <div class="span1">&nbsp;</div>
+        <div class="span11">
+           <div tal:repeat="session sessions">
+              <h4><a tal:attributes="href session/absolute_url" tal:content="session/title"></a></h4>
+              <div>
+                 <p tal:replace="structure python:text_to_html(session.description)"></p>
+              </div>
+           </div>
+        </div>
+      </div>
+      </section>
+   </div>
+</body>
+</html>

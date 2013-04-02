@@ -1,0 +1,629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="plone">        
+<head>
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+</head>
+<body>
+
+	<div metal:fill-slot="main">
+		<div id="ajaxsearch" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajaxsearch"></div>
+		<div id="ajaxmorearea" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajax-conference-province"></div>		
+		<div id="ajaxmoretype" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajax-conference-type"></div>			
+
+        <!--左边内容-->
+        <div class="event_list_page container">
+            <!--搜索框、搜索条件选择-->
+            <div class="event_list_search row-fluid">
+                <ul class="search">
+                    <li class="a">
+                        <input type="text" onkeypress="if(event.keyCode==13) {searchEventParent();return false}" id="searchKeyword">
+                    </li>
+                    <!-- onkeydown="enterSearch(event,'searchKeyword','currEventText');"-->
+                    <li class="b">
+                        <a href="javascript:searchEventParent()">&nbsp;&nbsp;搜索</a><!-- 搜索 -->
+                    </li>
+                </ul>
+                <input type="hidden" value="0" id="dateSearch">
+                <input type="hidden" value="0" id="addressSearch">
+                <input type="hidden" value="0" id="categorySearch">                
+                <input type="hidden" value="conference_startDate" id="solrSortColumn">
+                <input type="hidden" value="reverse" id="solrSortDirection">
+                
+                <ul class="fenlei" id="dateRangeSearchUl">
+                    <li class="title">
+                        按日期：<!-- 按日期： -->
+                    </li>
+                    <li name="0" class="all over">
+                        <a href="javascript:void(0)">所有</a><!-- 所有 -->
+                    </li>
+                    <li name="1">
+                        <a href="javascript:void(0)">今天</a><!-- 今天 -->
+                    </li>
+                    <li name="2">
+                        <a href="javascript:void(0)">明天</a><!-- 明天 -->
+                    </li>
+                    <li name="3">
+                        <a href="javascript:void(0)">7天内</a><!-- 7天内 -->
+                    </li>
+                    <li name="4">
+                        <a href="javascript:void(0)">30天内</a><!-- 30天内 -->
+                    </li>
+                    <li name="5">
+                        <a href="javascript:void(0)">30天后</a><!-- 30天后 -->
+                    </li>
+                </ul>
+
+                <ul id="addressSelectSearch" class="fenlei">                	
+                    <li class="title">
+                    				按地区：
+                    </li>
+
+                    <li class="all">
+                        <span class="over" name="0"><a href="javascript:void(0)">所有</a></span><!-- 所有 -->
+                    </li>
+                    <li id="province_list_div" class="fenlei_a" style="background: none;padding: 0">
+                    	<span name="3"><a href="javascript:void(0)">北京</a></span>
+                    	<span name="17"><a href="javascript:void(0)">上海</a></span>
+                    	<span name="23"><a href="javascript:void(0)">广东</a></span>                    	
+                    	<span name="27"><a href="javascript:void(0)">深圳</a></span>
+                    </li>
+
+                    <li id="li_province_more" style="z-index: 3;" class="more">
+                        <a href="javascript:innerMoreArea()">更多&gt;&gt;</a><!-- 更多 -->
+                        <div style="display: none" class="diqu_more" id="address_more_div">
+                            <div class="a">
+                                <div class="city" id="addressSearchMore1">
+                                </div>
+                            </div>
+                        </div>
+                    </li>                    
+                </ul>
+
+                <ul id="categorySelectSearch" class="fenlei">
+                    <li class="title">
+                        按分类：<!-- 按分类： -->
+                    </li>
+
+
+                    <!--活动列表循环-->
+                    <li class="all">
+                        <span name="0" class="over"><a href="javascript:void(0)">所有</a></span><!-- 所有 -->
+                    </li>
+                    
+                    <li id="event_category_div" class="fenlei_a" style="background: none;padding: 0">
+                    	<span name="1"><a href="javascript:void(0)">区域沙龙</a></span>
+                    	<span name="2"><a href="javascript:void(0)">年度峰会</a></span>
+                    	<span name="3"><a href="javascript:void(0)">专题研究</a></span>
+                    </li>
+<!--
+                    <li style="z-index: 2;" class="more">
+
+                        <a href="javascript:innerMoreEventCategory()">更多&gt;&gt;</a>
+
+                        <div style="display: none" class="fenlei_more" id="cata_more_div">
+                            <div style="width:150px; height:150px;" class="a">
+                                <div class="city" id="groupRangeSearchMore1"></div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <!--搜索框、搜索条件选择 End-->
+
+            <!--搜索选择结果-->
+            <div class="event_list_search_select row-fluid">
+                <ul id="all_result_recordinfo"><li class="a">已选择：</li><li id="show_site_result"><div onclick="closeSearchEventsDiv(1)" class="select">时间：<span style="cursor: pointer;vertical-align: middle;">2天内&nbsp;</span></div></li><li id="searchresultinfor" class="info">的信息有“<span id="searchresult_count">0</span>”条！</li></ul>
+
+            </div>
+            <!--搜索选择结果 End-->
+
+            <!--搜索选择结果排序-->
+            <div class="event_list_search_paixu row-fluid">
+                <div id="eventListSort" class="paixu span9">
+                    <span>排序：</span><!-- 排序： -->                    
+                    <a style="" class="a" name="conference_startDate" id="startTimestamp" href="javascript:void(0)">开始时间</a><!-- 开始时间 -->
+                    <a class="b" name="created" id="publishTimestamp" href="javascript:void(0)" style="font-weight:bold;color:#279006;">发布时间</a><!-- 发布时间 -->                  
+
+                </div>
+
+                <!--快速翻页-->
+                <div id="fastPageList" class="q_page span3"><a href="javascript:void(0)">
+                	<img tal:attributes="src string:${view/static}/event_list_bg10.png"/></a>
+                	<span>1/16</span><a href="javascript:searchEvent(2,10)"><img tal:attributes="src string:${view/static}/event_list_bg11.png"/></a></div>
+                <!--快速翻页 End-->
+            </div>
+            <!--搜索选择结果排序 End-->
+
+            <!--搜索结果列表-->
+            <div id="searchResultDiv" class="row-fluid">
+            	<div class="event_list_search_list">
+            		<ul>
+            			<li class="pic"><p>2013-05-07</p><a target="_blank" href="http://gmic-cn-expo.eventdove.com/">
+            			</a>
+            			</li>
+            			<li class="title"><div>
+            				<h3><a target="_blank" href="http://gmic-cn-expo.eventdove.com/">全球移动互联网大会·北京·2013-展览</a></h3>
+            				<p>地点: <span>北京.东城区.天辰东路7号国家会议中心</span></p><p>时间: <span>2013-05-07 09:00 - 2013-05-08 18:00</span></p>
+            				<p>主办: <span><a href="http://www.eventdove.com/org/2044">长城会</a></span></p><p class="jianjie">与移动互联网浪潮在全球的发展一同前行，做为行业最领先的全球性大会，全球移动互联网大会（英文简称：GMIC）正式走入第五年。主办方长城会宣布，第五届GMIC大会（GMIC 2013）将于2013年5月在国家会议中心•北京拉开序幕。
+从沟通、娱乐、消费等生活的细节…… <a target="_blank" href="http://gmic-cn-expo.eventdove.com/">详细</a></p>
+</div></li></ul></div>
+</div>
+            <!--搜索结果列表 End-->
+            <div class="row">
+            <div id="bottomPageId" class="page_div offset5 pagination pagination-centered">
+            	<a class="page" href="javascript:void(0)">首页</a>
+            	<a class="page" href="javascript:void(0)">上一页</a>
+            	<a class="page_over num" href="#">1</a>
+            	<a class="page num" href="javascript:searchEvent(2,10)">2</a>
+            	<a class="page num" href="javascript:searchEvent(3,10)">3</a>
+            	<a class="page" href="javascript:searchEvent(2,10)">下一页</a>
+            	<a class="page" href="javascript:searchEvent(16,10)">末页</a>
+            	</div>
+				</div>
+        <!--左边内容 End-->
+</div>
+</div>
+   <metal:js fill-slot="javascript_bottom_slot">
+			  <script type="text/javascript">
+
+jq(document).ready(function(){
+
+    searchEvent();
+    jq("#dateRangeSearchUl li").live("click",function() {
+        
+                 if (jq(this).attr("class") == "title") {} else {
+                    jq("#dateRangeSearchUl > .over").removeClass("over");
+                    jq(this).addClass("over");
+                    jq("#dateSearch").attr("value", $(this).attr("name"));
+                    searchEvent();}       
+       return false;
+    });
+
+   jq("#addressSelectSearch li span").live("click",function() {
+
+                if (jq(this).attr("class") == "title" || $(this).attr("class") == "more") {} else 
+                {
+                    jq("#addressSelectSearch li> .over").removeClass("over");
+                    jq(this).addClass("over");
+                    jq("#addressSearch").attr("value", $(this).attr("name"));
+                    searchEvent();
+                    document.getElementById("address_more_div").style.display = "none"
+                }
+       return false; 
+    }); 
+   jq("#categorySelectSearch li span").live("click",function() {    
+                    if (jq(this).attr("class") == "title" || jq(this).attr("class") == "more") {} else 
+                    {
+                    jq("#categorySelectSearch li> .over").removeClass("over");
+                    jq(this).addClass("over");
+                    jq("#categorySearch").attr("value", jq(this).attr("name"));
+                    searchEvent();
+                    document.getElementById("cata_more_div").style.display = "none"
+                }
+       return false; 
+    });                     
+
+
+
+   jq("#eventListSort a").live("click",function() {             
+                jq("#solrSortColumn").attr("value", jq(this).attr("name"));
+                if (jq(this).attr("class") == "a") {
+                    jq(this).attr("class", "b");
+                    jq("#solrSortDirection").attr("value", "ascending")
+                } else {
+                    jq(this).attr("class", "a");
+                    jq("#solrSortDirection").attr("value", "reverse")
+                }
+                searchEvent();
+       return false; 
+        });
+        
+   jq("#eventListSort a").live("click",function() { 
+                jq("#eventListSort > .over").removeClass("over");
+                jq("#eventListSort a").attr("style", "");
+                jq(this).attr("style", "font-weight:bold;color:#279006;");
+       return false;               
+        }); 
+                 
+});
+function closeEventMore() {
+    jq("#cata_more_div").hide();
+    jq("#address_more_div").hide();
+}
+
+
+function innerMoreArea() {        
+      var action = jq("#ajaxmorearea").attr('data-ajax-target');
+	   var senddata = {"demo":2}
+	   
+       jq.post(action, 
+           senddata,
+           function(data) {
+           try {
+                jq("#addressSearchMore1").html("");
+                var str = data['provincelist'];
+                jq(str).appendTo("#province_list_div");
+                jq("#li_province_more").hide();
+
+//                    jq("#addressSearchMore1").html(str);
+//                    jq("#addressSearchMore1 > .over").removeClass("over");
+//                    document.getElementById("address_more_div").style.display = "block";               
+
+            } catch (e) {
+                alert(e)
+            }
+            },
+            'json');
+}
+
+
+function closeSearchEventsDiv(flag) {
+    if (flag == 1) {
+        jq("#dateSearch").val("0");
+        jq("#dateRangeSearchUl > .over").removeClass("over");
+        jq("#dateRangeSearchUl").find("li[name='0']").addClass("over");
+        searchEvent();
+    } else if (flag == 2) {
+        jq("#addressSearch").val("0");
+        jq("#addressSelectSearch li> .over").removeClass("over");
+        jq("#addressSelectSearch").find("li span[name='0']").addClass("over");
+        searchEvent();
+    } else if (flag == 3) {
+        jq("#categorySearch").val("0");
+        jq("#categorySelectSearch li> .over").removeClass("over");
+        jq("#categorySelectSearch").find("li span[name='0']").addClass("over");
+        searchEvent();
+    }
+
+}
+
+
+
+// base lib
+function searchEventParent() {
+    searchEvent()
+}
+var searchEvent = function(jumpPage, rows, initKeyword) {
+    var keyword;
+    if (initKeyword != undefined && initKeyword != "") {
+        keyword = initKeyword
+    } else {
+        keyword = jq("#searchKeyword").val()
+    }
+    var dateSearchType = jq("#dateSearch").val();
+    var address = jq("#addressSearch").val();
+    var categoryId = jq("#categorySearch").val();   
+    var sortColumn = jq("#solrSortColumn").val();    
+    var sortDirection = jq("#solrSortDirection").val();
+        
+    var data = {'datetype':dateSearchType,'province':address,'type':categoryId};
+    data['sortcolumn'] = sortColumn;
+    data['sortdirection'] = sortDirection;    
+    
+    if (keyword == undefined || keyword == null || keyword == "") {
+           data['searchabletext'] = "";
+    } else {
+           data['searchabletext'] = keyword;
+    }
+    if (jumpPage != undefined && jumpPage != "") 
+    {   var start = jumpPage > 0 ? (jumpPage - 1) * rows : 0;
+        data['start'] = start;
+        data['size'] = rows;
+    } else {
+        data['start'] = 0;
+        data['size'] =10;
+    }        
+       var action = jq("#ajaxsearch").attr('data-ajax-target');
+       jq.post(action, 
+           data,
+           function(resp) {
+                       try {
+                showSearchEventResult(resp, true, keyword)
+                showResultRemind(keyword, dateSearchType, address, categoryId)
+            } catch (e) {alert(e)} 				
+            },
+            'json'); 
+//    var searchCount = 0;
+//    showResultRemind(keyword, dateSearchType, address, categoryId)
+};
+var totalCountSearchEvent = 0;
+var showSearchEventResult = function(D, u, C) {
+//function showSearchEventResult(D, u, C) {
+//D json response
+// u true
+// c keyword
+//size batch size
+//start batch start
+//total return result total
+
+    var a = "";
+    var h = "";
+    var o = parseInt(D['size']);
+    var l = parseInt(D['start']);
+    var p = parseInt(D['total']);
+    totalCountSearchEvent = p;
+    var e = (l + o) > p ? (p - l) : o;
+//    var n = new DateFormat("yyyy-MM");
+//    var k = new DateFormat("yyyy-MM-dd");
+//    var b = new DateFormat("yyyy-MM-dd HH:mm");
+    if (e > 0) {
+        generatePageLink(l, o, p); 
+       a +=  D['searchresult']; 
+    } else {
+     document.getElementById("bottomPageId").innerHTML = "";
+
+        a += '<div class="div_tip">';
+        a += '<span class="alert alert-block">警告！：没有搜索到您要找的信息。</span></div>'
+    }
+
+     document.getElementById("searchResultDiv").innerHTML = a;    
+
+};
+function showResultRemind(d, a, c, e) {
+// d search by keyword
+// a search by Date
+// c search by Address
+// e search by type
+    var b = "";
+    if (d == "" && (a != "0" || c != "0" || e != "0")) {
+        b = createStringSearch(d, a, c, e)
+    } else {
+        if (d != "" && (a != "0" || c != "0" || e != "0")) {
+            b = createStringSearch(d, a, c, e)
+        }
+    }
+    if (d == "" && a == "0" && c == "0" && e == "0") {
+        b = "<li class='a'>已选择：</li><li id='show_site_result'></li><li class='info' id='searchresultinfor'>“<span id='keyworkshow'>所有</span>”的活动信息有“<span id='searchresult_count'>" + totalCountSearchEvent + "</span>”条！</li>"
+    }
+    if (d != "" && a == "0" && c == "0" && e == "0") {
+        b = "<li class='a'>已选择：</li><li id='show_site_result'></li><li class='info' id='searchresultinfor'>有关“<span id='keyworkshow'>" + d + "</span>”的活动信息有“<span id='searchresult_count'>" + totalCountSearchEvent + "</span>”条！</li>"
+    }
+    document.getElementById("all_result_recordinfo").innerHTML = b
+//    jq("#all_result_recordinfo").html(b)
+}
+var addDate = function(d, a, e) {
+    var b = new Date(e);
+    d = parseInt(d);
+    var c = parseInt(a);
+    switch (d) {
+    case 6:
+        b.setYear(b.getYear() + c);
+        break;
+    case 7:
+        b.setMonth(b.getMonth() + (c * 3));
+        break;
+    case 5:
+        b.setMonth(b.getMonth() + c);
+        break;
+    case 4:
+        b.setDate(b.getDate() + c);
+        break;
+    case 3:
+        b.setHours(b.getHours() + c);
+        break;
+    case 2:
+        b.setMinutes(b.getMinutes() + c);
+        break;
+    case 1:
+        b.setSeconds(b.getSeconds() + c);
+        break;
+    default:
+    }
+    return b
+};
+var generatePageLink = function(c, n, a) {
+    var f = document.getElementById("bottomPageId");
+    var k = Math.floor(a / n) + (a % n == 0 ? 0 : 1);
+    if (k == 0) {
+        k = 1
+    }
+    var l = Math.floor(c / n) + 1;
+    var j = jq("#fastPageList");
+    j.html("");
+    var d = "";
+    var e = "";
+    var m = jq("#searchtext").val();
+    if (m == undefined || m == null || m == "") {
+        m = ""
+    }
+    if (l <= 1) {
+        e += "<a href='javascript:void(0)'><img src='++resource++collective.conference.browser/event_list_bg10.png'/></a>";
+        d += "<a href='javascript:void(0)' class='page'>首页</a>";
+        d += "<a href='javascript:void(0)' class='page'>上一页</a>"
+    } else {
+        e += "<a href='javascript:searchEvent(" + (l - 1) + ",10)'><img src='++resource++collective.conference.browser/event_list_bg10.png'/></a>";
+        d += "<a href=javascript:searchEvent(1,10) class='page'>首页</a><a href=javascript:searchEvent(" + (l - 1) + ",10) class='page'>上一页</a>"
+    }
+    e += "<span>" + l + "/" + k + "</span>";
+    var b = 1;
+    var h = 3;
+    if (l == 1) {
+        b = 1;
+        h = l + 2;
+        if (h >= k) {
+            h = k
+        }
+    } else {
+        if (l == k) {
+            b = k - 2;
+            if (b <= 0) {
+                b = 1
+            }
+            h = k
+        } else {
+            b = l - 1;
+            h = l + 1
+        }
+    }
+    for (var g = b; g <= h; g++) {
+        if (l == g) {
+            d += "<a href='#' class='page_over num active'>" + g + "</a>"
+        } else {
+            d += "<a href=javascript:searchEvent(" + g + ",10) class='page num'>" + g + "</a>"
+        }
+    }
+    if (l == k || k < 2) {
+        e += "<a href='javascript:void(0)'><img src='++resource++collective.conference.browser/event_list_bg11.png'/></a>";
+        d += "<a href='javascript:void(0)' class='page'>下一页</a>";
+        d += "<a href='javascript:void(0)' class='page'>末页</a>"
+    } else {
+        e += "<a href='javascript:searchEvent(" + (l + 1) + ",10)'><img src='++resource++collective.conference.browser/event_list_bg11.png'/></a>";
+        d += "<a href=javascript:searchEvent(" + (l + 1) + ",10) class='page'>下一页</a><a href=javascript:searchEvent(" + (k) + ",10) class='page'>末页</a>"
+    }
+    f.innerHTML = d;
+//    f.html(d);
+//    j.html(e)
+//    var j = document.getElementById("fastPageList");
+    j.innerHTML = e;
+
+};
+
+
+function formatEventTime(c, a) {
+    var b = "";
+    var d = c.indexOf("T");
+    b += c.substring(0, d);
+    if (a == 0) {
+        b += " " + c.substr(d + 1, 5)
+    }
+    return b
+}
+
+function createStringSearch(d, a, c, g) {
+    var b = "<li class='a'>已选择：</li><li id='show_site_result'>";
+    var h = "";
+    switch (a) {
+    case "1":
+        h = "1天内";
+        b += "<div class='select'  onclick=\"closeSearchEventsDiv(1)\" >时间：<span id='search_site_desc' style='cursor: pointer;vertical-align: middle;'>" + h + " </span></div>";
+        break;
+    case "2":
+        h = "2天内";
+        b += "<div class='select'  onclick=\"closeSearchEventsDiv(1)\" >时间：<span  style='cursor: pointer;vertical-align: middle;'>" + h + " </span></div>";
+        break;
+    case "3":
+        h = "7天内";
+        b += "<div class='select' onclick=\"closeSearchEventsDiv(1)\">时间：<span  style='cursor: pointer;vertical-align: middle;'>" + h + " </span></div>";
+        break;
+    case "4":
+        h = "30天内";
+        b += "<div class='select' onclick=\"closeSearchEventsDiv(1)\">时间：<span style='cursor: pointer;vertical-align: middle;'>" + h + " </span></div>";
+        break;
+    case "5":
+        h = "30天后";
+        b += "<div class='select' onclick=\"closeSearchEventsDiv(1)\">时间：<span style='cursor: pointer;vertical-align: middle;'>" + h + " </span></div>";
+        break
+    }
+    var f = "";
+    if (c == "0") {
+        f = "所有"
+    } else {
+        f = $(document.getElementById("addressSelectSearch")).find("span[name='" + c + "'] a").html();
+        b += "<div class='select' onclick=\"closeSearchEventsDiv(2)\">地点：<span style='cursor: pointer;vertical-align: middle;' >" + f + " </span></div>"
+    }
+    var e = "";
+    if (g == "0") {
+        e = "所有"
+    } else {
+        e = $(document.getElementById("categorySelectSearch")).find("span[name='" + g + "'] a").html();
+        b += "<div class='select' onclick=\"closeSearchEventsDiv(3)\">分类：<span style='cursor: pointer;vertical-align: middle;' >" + e + " </span></div>"
+    }
+    if (d == "") {
+        b += "</li><li class='info' id='searchresultinfor'>的信息有“<span id='searchresult_count'>" + totalCountSearchEvent + "</span>”条！</li>"
+    } else {
+        b += "</li><li class='info' id='searchresultinfor'>中有关“<span>" + d + "</span>”的信息有“<span id='searchresult_count'>" + totalCountSearchEvent + "</span>”条！</li>"
+    }
+    return b
+}	
+
+
+function pageAction() {
+    var a = jq("#pageNow").val() * 1;
+    var b = a - 1;
+    var c = a + 1;
+    var e = jq("#pageTotal").val() * 1;
+    var d = pageCenterString(a, e);
+    var f = "<div class='page_div'>";
+    f += '<a href="javascript:pageButtonAction(1)" class="page">首页</a><a href="javascript:pageButtonAction(' + b + ')" class="page">上一页</a>  ';
+    f += d;
+    f += '  <a href="javascript:pageButtonAction(' + c + ')" class="page">下一页</a><a href="javascript:pageButtonAction(' + e + ')" class="page">尾页</a>';
+    f += " </div>";
+    if (d == "") {
+        f = ""
+    }
+    return f
+}
+function pageCenterString(e, b) {
+    var f = "";
+    var a = e * 1 - 1;
+    var c = e * 1 - 2;
+    var g = e * 1 + 1;
+    var d = e * 1 + 2;
+    if (e == 1 && b > 2) {
+        f += '<a href="javascript:pageButtonAction(' + e + ')" class="page_over num">' + e + '</a><a href="javascript:pageButtonAction(' + g + ')" class="page num">' + g + '</a><a href="javascript:pageButtonAction(' + d + ')" class="page num">' + d + "</a>"
+    } else {
+        if (e == 1 && b == 2) {
+            f += '<a href="javascript:pageButtonAction(' + e + ')" class="page_over num">' + e + '</a><a href="javascript:pageButtonAction(' + g + ')" class="page num">' + g + "</a>"
+        } else {
+            if (e == 2 && b == 2) {
+                f += '<a href="javascript:pageButtonAction(' + a + ')" class="page num">' + a + '</a><a href="javascript:pageButtonAction(' + e + ')" class="page_over num">' + e + "</a>"
+            } else {
+                if (e == jq("#pages").val() && b > 2) {
+                    f += '<a href="javascript:pageButtonAction(' + c + ')" class="page num">' + c + '</a><a href="javascript:pageButtonAction(' + a + ')" class="page num">' + a + '</a><a href="javascript:pageButtonAction(' + e + ')" class="page_over num">' + e + "</a>"
+                } else {
+                    if (b > 2) {
+                        f += '<a href="javascript:pageButtonAction(' + a + ')" class="page num">' + a + '</a><a href="javascript:pageButtonAction(' + e + ')" class="page_over num">' + e + '</a><a href="javascript:pageButtonAction(' + g + ')" class="page num">' + g + "</a>"
+                    }
+                }
+            }
+        }
+    }
+    return f
+}
+function quickPage() {
+    var b = "";
+    var c = jq("#pageNow").val() * 1;
+    var d = jq("#pageTotal").val() * 1;
+    var a = c - 1;
+    var e = c + 1;
+    b += '<a href="javascript:pageButtonAction(' + a + ')">style="vertical-align:middle"</a>';
+    b += "<span >" + c + "/" + d + "</span>";
+    b += '<a href="javascript:pageButtonAction(' + e + ')"><img src="++resource++collective.conference.browser/event_list_bg11.png"/></a>';
+    jq("#quick_page").html(b)
+}
+function iReplace(c, b) {
+    try {
+        jq("#" + c).val(b);
+        document.getElementById(c).onfocus = function() {
+            if (this.value != "") {
+                this.value = ""
+            }
+        };
+        document.getElementById(c).onblur = function() {
+            if (this.value == "") {
+                this.value = b
+            }
+        }
+    } catch (a) {}
+}
+function enterSearch(a, c, b) {
+    var a = a ? a : (window.event ? window.event : null);
+    if (a.keyCode == 13) {
+        if (b == "currGroupText" || b == "currEventText") {
+            searchInAction(c, b)
+        } else {
+            searchAction(c, b)
+        }
+    }
+}		  	
+				</script>	
+	</metal:js>
+</body>
+</html>

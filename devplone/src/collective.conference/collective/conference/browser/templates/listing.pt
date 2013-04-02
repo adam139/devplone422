@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+      <head>
+
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+
+</head>
+<body>
+   <div metal:fill-slot="content-title">
+      <h1 tal:content="view/title|nothing"></h1>
+   </div>
+   <div metal:fill-slot="content-description"></div>
+
+   <div metal:fill-slot="content-core">
+      <tal:block define="provider view/provider;">
+         <div class="row-fluid">
+            <div class="span12">
+             <table class="table table-condensed table-striped" tal:replace="structure provider/render">
+               <thead>
+                  <th>Name</th>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td></td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+        </div>
+      </tal:block>
+   </div>
+</body>
+</html>

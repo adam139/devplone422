@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+    <index name="conference_rooms" meta_type="KeywordIndex">
+        <indexed_attr value="conference_rooms"/>
+    </index>
+    <column value="conference_rooms"/>
+    <index name="conference_province" meta_type="FieldIndex">
+        <indexed_attr value="conference_province"/>
+    </index>
+    <column value="conference_province"/>
+    <index name="conference_type" meta_type="FieldIndex">
+        <indexed_attr value="conference_type"/>
+    </index>
+    
+    <index name="conference_sponsor" meta_type="FieldIndex">
+        <indexed_attr value="conference_sponsor"/>
+    </index>
+    <column value="conference_sponsor"/>    
+    
+    <index name="conference_startDate" meta_type="DateIndex">
+        <indexed_attr value="conference_startDate"/>
+    </index>
+    <column value="conference_startDate"/>        
+    <index name="emails" meta_type="KeywordIndex">
+        <indexed_attr value="emails"/>
+    </index>
+    <column value="emails"/>
+    
+	<index name="followernum" meta_type="FieldIndex">
+        <indexed_attr value="followernum"/>
+    </index>   
+    <column value="followernum"/>
+
+
+</object>

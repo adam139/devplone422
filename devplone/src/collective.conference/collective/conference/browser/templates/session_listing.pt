@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+      <head>
+
+   <metal:block fill-slot="style_slot">
+   <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+
+</head>
+<body>
+   <div metal:fill-slot="content-title">
+      <h1 tal:content="view/title">Listing</h1>
+   </div>
+   <div metal:fill-slot="content-description"></div>
+
+   <div metal:fill-slot="content-core">
+      <script tal:attributes="src string:${view/static}/equalHeights.js"></script>
+      <script>
+         $(document).ready(function () {
+            $('.conference-session').equalHeights();
+         });
+      </script>
+
+      <div class="row-fluid" style="border-top:1px solid #eee; margin-top:20px; padding-top:10px;padding-bottom:10px">
+         <div class="span12" tal:define="sessions view/items;
+            text_to_html nocall:here/@@collective-conference-macros/text_to_html">
+            <ul class="thumbnails">
+               <li style="width:240px" tal:repeat="session sessions">
+            <section>
+               <div class="thumbnail conference-session">
+                  <h2><a tal:attributes="href session/absolute_url">
+                        [<span tal:replace="session/session_type"></span>] 
+                        <span tal:replace="session/title"></span></a></h2>
+                  <p tal:replace="structure python:text_to_html(session.description)"></p>
+                  <p style="text-align:right">
+                     <a class="btn btn-primary" tal:attributes="href session/absolute_url" i18n:translate="read_more">Read more &raquo;</a>
+                  </p>
+               </div>
+            </section>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

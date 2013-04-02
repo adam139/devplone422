@@ -1,0 +1,6 @@
+<div i18n:domain="my315ok.portlet.flash" tal:omit-tag="">
+<script type="text/javascript" src="test.js" 
+    tal:attributes="src string:http://images.315ok.org/jquery.swfobj.min.js"></script> 	
+		<div id="swfLocid" tal:attributes="id python:view.locid()">here will be replaced by swf</div>		
+		<script type="text/javascript"  charset="utf-8" tal:content="structure python:view.js_settings()"></script> 	
+</div>

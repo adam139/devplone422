@@ -1,0 +1,99 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-05-20 22:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: my315ok.portlet.onlineservice\n"
+
+#: ../onlineservice.py:30
+msgid "Portlet header"
+msgstr ""
+
+#: ../onlineservice.py:53
+msgid "Specify start x position of the qq float portlet."
+msgstr ""
+
+#: ../onlineservice.py:56
+msgid "Specify start y position of the qq float portlet."
+msgstr ""
+
+#: ../onlineservice.py:43
+msgid "Specify the second qq number that provided customer service."
+msgstr ""
+
+#: ../onlineservice.py:46
+msgid "Specify the telphone number that provided customer service."
+msgstr ""
+
+#: ../onlineservice.py:40
+msgid "Specify the tencenter qq number that provided customer service."
+msgstr ""
+
+#: ../onlineservice.py:31
+msgid "Title of the rendered portlet"
+msgstr ""
+
+#: ../onlineservice.py:49
+msgid "css id"
+msgstr ""
+
+#: ../onlineservice.py:50
+msgid "css id of the float qq portlet"
+msgstr ""
+
+#: ../onlineservice.py:36
+msgid "mail address"
+msgstr ""
+
+#: ../onlineservice.py:34
+msgid "name of the web site"
+msgstr ""
+
+#: ../onlineservice.py:39
+msgid "number"
+msgstr ""
+
+#: ../onlineservice.py:45
+msgid "phone"
+msgstr ""
+
+#: ../onlineservice.py:42
+msgid "second number"
+msgstr ""
+
+#: ../onlineservice.py:166
+msgid "send mail"
+msgstr ""
+
+#: ../onlineservice.py:33
+msgid "site name"
+msgstr ""
+
+#: ../vocabularies.py:9
+msgid "stay on top"
+msgstr ""
+
+#: ../vocabularies.py:8
+msgid "trace mouse float"
+msgstr ""
+
+#: ../onlineservice.py:52
+msgid "x position"
+msgstr ""
+
+#: ../onlineservice.py:55
+msgid "y position"
+msgstr ""
+

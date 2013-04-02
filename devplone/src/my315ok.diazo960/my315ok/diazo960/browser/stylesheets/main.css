@@ -1,0 +1,1167 @@
+.portalMessage{
+color:#828282;
+font-size:12px;
+margin:0;
+}
+.portalMessage dt{
+text-align:center;
+background-color:#EEEEEE;
+}
+.portalMessage dd{
+text-indent:2em;
+}
+#content #parent-fieldname-text p{
+font-size:14px}
+.section-Partner #parent-fieldname-text p{padding-top:10px}
+.section-Partner #parent-fieldname-text p .external-link{
+color:red; 
+text-decoration:underline; 
+padding-top:5px}
+.image-lianxiwomen{
+float:right; 
+width:23%}
+.image-hezuohuoban{
+float:right; 
+width:23%}
+dd.portletFooter{display:none}
+#tuijian{
+margin:20px 0pt 0pt 10px; font-size:100%; 
+_font-size:110%}
+
+.portlet-static-53cb60c594fe63a5{
+background-color:#5DB8CA; 
+width:930px; 
+margin:0 auto}
+.portlet-static-53cb60c594fe63a5 .portletHeader span{
+padding-top:3px; 
+text-align:center; 
+font-size:16px; 
+font-weight:blod}
+.portlet-static-53cb60c594fe63a5 dd{
+height:45px; 
+margin:0 0 15px 0; 
+padding-top:0}
+
+.portlet-static-53cb60c594fe63a5 dd p{
+text-align:center; 
+margin:0}
+div.product_page{
+border-bottom:1px dashed; 
+height:314px}
+#mainswf{
+_margin-top:-23px}
+.specialTable tr th{
+width:90px; 
+background-color:#C4E5FF}
+.tabCot .specialTable{
+width:68%; 
+float:right; 
+margin-top:-232px; 
+border-collapse:collapse}
+div.prdimage{
+width:200px; 
+clear:left}
+.portlet-static-4ea754c163a88350{
+background-color:#69C1D3; 
+margin-top:0; 
+width:210px; 
+height:270px}
+.portlet-static-4ea754c163a88350 .portletHeader{
+background:transparent url('++resource++my315ok.companytheme.images/daohangtop.png') no-repeat 0 0 !important; 
+height:57px !important; 
+margin-left:0 !important}
+.portlet-static-4ea754c163a88350 dd p{
+background:transparent url('++resource++my315ok.companytheme.images/daohangfenge.png') repeat-x center bottom; 
+margin-right:10px; 
+padding-left:10px}
+#portaltab-Home{
+width:84px}
+.portlet-static-4ea754c163a88350 .portletHeader span{
+padding-top:9px; 
+text-align:center}
+.title a{
+display:block}
+.specialTable .thcenter{
+display:block; 
+font-size:14px; 
+color:#000; 
+text-align:center; 
+padding:3px; 
+font-weight:bold}
+.specialTable tr td, .specialTable tr th{
+border:1px solid #000; 
+color:#000; 
+font-weight:100}
+.specialTable tr td{
+font-size:14px; 
+padding:3px; 
+background-color:#e0e1e1}
+#multiproducts_simple {
+margin-top:10px}
+.title{
+clear:both; 
+font-size:20px; 
+font-weight:bold; 
+text-align:center}
+.mainphoto{
+clear:left; 
+margin-left:2px; 
+margin-top:45px; 
+width:200px}
+.parameters{
+color:#095BAD; 
+font-size:12pt; 
+font-weight:bold}
+#multiproducts_simple .parameters{
+padding-bottom:0}
+.proditem{
+border-top:1px dashed #6F6F6F; 
+padding-top:20px}
+#multiproducts_simple .mainphoto{
+margin-left:2px}
+#multiproducts_simple .specialTable{
+border:1px solid #000000; 
+margin-bottom:25px; 
+margin-right:7px; 
+margin-top:-190px; 
+*margin-top:-160px; 
+_margin-top:-160px; 
+*margin-right:-190px; 
+_margin-right:-190px; 
+width:68%}
+
+.section-Subscribing #content, .section-Recruiting #content{
+margin-left:12px}
+.section-Subscribing #content h1, .section-Recruiting #content h1{
+margin-left:-12px !important}
+.hiddenStructure{
+display:none}
+
+#portal-top{
+background:transparent url('++resource++my315ok.companytheme.images/top.png') no-repeat scroll 0 0; 
+margin-top:0; 
+width:930px}
+.portletflowrate .portletHeader span{
+display:block; 
+padding-left:55px; 
+padding-top:7px}
+.portletflowrate dd{
+border:1px solid #0C92C3; 
+height:30px; 
+margin-top:-8px; 
+padding-left:20px; 
+padding-top:10px}
+.portletOnlineService{
+float:left}
+
+.template-logged_out #login-form{
+width:200px}
+#portaltab-Members, #portaltab-news, #portaltab-events{
+display:none !important}
+.formControls input{
+background:transparent url('++resource++my315ok.companytheme.images/denglu.png') no-repeat 0 0; 
+border:none; 
+height:51px; 
+margin-right:10px; 
+margin-bottom:15px; 
+_margin-bottom:0; 
+width:51px; 
+margin-top:15px}
+.managePortletsLink{display:none}
+#wrapper-globalsections{
+height:63px; 
+margin-top:0; 
+*margin-top:-22px; 
+_margin-top:0; 
+width:930px; 
+padding-top:72px; 
+_padding-top:50px}
+dd.portletItem_link{
+text-align:center; 
+margin:0; 
+padding:0}
+
+
+#topslider2 .img {
+height:272px;
+margin-left:0;
+position:relative;
+padding-left:0;
+}
+#topslider2 .img li {
+left:0;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+position:absolute;
+z-index:100;
+}
+#topslider2 .img li a img{
+width:695px;
+}
+#topslider2 .panel {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background-color:#2C2C2C;
+*display:none;
+_display:none;
+border-top:none;
+bottom:0;
+height:35px;
+opacity:0.3;
+position:absolute;
+width:100%;
+z-index:200;
+}
+#topslider2 .num {
+bottom:8px;
+*bottom:0;
+_bottom:5px;
+position:absolute;
+right:5px;
+padding:0;
+margin:0;
+z-index:301;
+}
+#topslider2 .num li.over .numVal {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background-color:#FFB900;
+border-color:#FDE59D;
+}
+#topslider2 .num li {
+background-color:#095BAD;
+border:1px solid #095BAD;
+display:inline;
+float:left;
+margin:0 1px;
+width:20px;
+}
+#topslider2 .num li .numVal {
+background-color:#CCCCCC;
+display:block;
+text-align:center;
+*padding-left:0;
+_padding-left:0;
+}
+#topslider2 .title {
+bottom:6px;
+color:#FFFFFF;
+font-size:18px;
+left:27px;
+position:absolute;
+text-decoration:none;
+z-index:400;
+}
+
+
+
+.portlet-static-4ea754c17c7b522b .portletHeader{
+background:#fff url('++resource++my315ok.companytheme.images/daohangtop.png') no-repeat 0 0 !important; 
+height:57px !important; 
+margin-left:0 !important}
+.portlet-static-4ea754c17c7b522b .portletHeader span{
+padding-top:8px; 
+text-align:center; 
+display:block; 
+color:#000}
+.portlet-static-4ea754c17c7b522b{
+background:#fff url('++resource++my315ok.companytheme.images/daohangbg.png') repeat-x 0 57px; 
+margin-top:0; 
+width:210px}
+.portlet-static-4ea754c17c7b522b dd{
+margin-top:5px; 
+margin-bottom:0}
+.portlet-static-4ea754c17c7b522b dd p{
+font-size:16px; 
+line-height:1.74em; 
+padding-left:60px}
+.portletNavigationTree{
+margin-top:0}
+.portletNavigationTree .portletHeader a{
+padding-left:65px; 
+padding-top:12px}
+.portletNavigationTree dd{
+border:1px solid #0C92C3; 
+margin-top:-8px}
+.portletNavigationTree dd ul{
+padding-left:0; 
+padding-top:10px; 
+*margin-left:0; 
+_margin-left:0}
+.portletNavigationTree dd ul li{
+border-bottom:1px dashed #0C92C3; 
+padding-bottom:6px; 
+padding-left:1.3em}
+.navTreeLevel0{
+font-size:15px; 
+color:#009}
+.navTreeLevel1{
+font-size:12px; 
+color:#000}
+#portal-column-one{
+vertical-align:top; 
+margin-top:20px}
+#portal-column-one .portletHeader{
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+height:43px; 
+margin-left:0}
+#portal-column-one .portletHeader span{
+display:block;
+text-align:center;
+padding-top:3px;
+*padding-top:5px;
+_padding-top:5px;
+}
+#portal-column-two .portletHeader {
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+height:43px; 
+margin-left:0;
+}
+#portal-column-two .portletHeader span {
+display:block;
+text-align:center;
+padding-top:5px;
+}
+.portletCalendar{display:none}
+.searchSection{display:none}
+.LSBox input.searchButton{
+background-color:transparent; 
+border:none;
+margin-left:-17px}
+input.searchButton{
+color:#fff; 
+border:1px solid transparent; 
+height:23px; 
+margin-left:5px; 
+margin-top:-1px; 
+text-align:right; 
+width:64px}
+#searchGadget{
+background-color:transparent; 
+border:none; 
+margin-left:22px; 
+margin-top:14px}
+
+.state-private{
+color:Red !important}
+.state-visible{
+color:#74AE0B !important}
+.state-published{
+color:#000 !important}
+.state-pending{
+color:#FFA500 !important}
+.state-expired{
+color:Red !important}
+.syndicated{
+color:#008000 !important}
+
+.portlet-static-xitu .portletHeader{
+display:none}
+
+.portletLogin .portletHeader{
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+height:43px; 
+margin-left:0}
+
+.portletLogin .portletHeader a{
+padding-left:70px; 
+padding-top:14px; 
+color:#000 !important}
+.portletLogin dd{
+border:1px solid #2CA4D4; 
+margin-top:-8px; 
+padding-left:25px; 
+padding-top:10px}
+.portletLogin dd #__ac_name, .portletLogin dd #__ac_password{
+width:120px}
+.portletLogin .even{
+height:15px; 
+margin-left:30px; 
+border:none; 
+display:none}
+.portletFetchOuterPortlet{
+margin-top:0; 
+_margin-top:-20px; 
+margin-bottom:0}
+.portletFetchOuterPortlet .portletHeader{
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+height:43px; 
+margin-left:0}
+.portletFetchOuterPortlet .portletHeader span{
+color:#000; 
+display:block; 
+padding-left:40px; 
+padding-top:4px}
+.portletFetchOuterPortlet dd{
+border:1px solid #0C92C3; 
+height:210px; 
+margin-bottom:0; 
+margin-top:-8px; 
+overflow:hidden}
+.portletFetchOuterPortlet dd ul li{
+font-size:14px; 
+border-bottom:1px dashed #ccc; 
+padding-left:15px; 
+padding-right:10px}
+.newslist18px, .hr{
+display:none}
+.portlet-static-xitu dd{
+
+margin-bottom:0; 
+*padding-top:10px; 
+_margin-top:-24px; 
+_padding-top:0}
+#portal-columns{
+width:100% !important; 
+border-collapse:collapse; 
+border-spacing:0; 
+margin-top:0; 
+_margin-top:18px; 
+*margin-top:18px}
+.portletEmbedIframePortlet{
+margin-top:0}
+.portletEmbedIframePortlet .portletHeader a {padding-top:4px;}
+.portletEmbedIframePortlet dd{
+border:1px solid #0C92C3; 
+height:75px; 
+margin-top:-8px; 
+padding-left:15px; 
+padding-top:25px}
+.portlet-static-contactus{margin-top:3px; margin-bottom:0}
+.portlet-static-contactus .portletHeader{}
+.portlet-static-contactus .portletHeader span{
+display:block; 
+text-align:center; 
+padding-top:6px}
+.portlet-static-contactus dd{
+background:transparent url('++resource++my315ok.companytheme.images/kefu.gif') no-repeat right bottom; 
+border:1px solid #0C92C3; 
+height:155px; 
+margin-top:-8px; 
+padding-bottom:5px}
+.portlet-static-516c53f87b804ecb{
+margin-top:-21px !important;}
+.portlet-static-516c53f87b804ecb dd{
+border:1px solid #0C92C3;
+margin-bottom:0;
+margin-top:-6px;
+padding:10px;}
+.portlet-static-516c53f87b804ecb dd p{
+font-size:14px;
+}
+.portlet-static-contactus dd p{
+padding-left:1em; 
+margin-top:55px; 
+margin-bottom:0;
+font-size:90%; 
+line-height:1.3em}
+.portlet-static-contactus dd p a{
+_display:block; 
+_margin-top:-2px}
+.row_1 .block_1 dd p{
+text-indent:2em}
+
+#collage div.collage-last-object div.collage-item{
+margin-bottom:0; 
+_margin-bottom:13px}
+.row_1 .block_1 .portletslidebar_portlet{
+margin-bottom:0; 
+margin-top:-21px !important; 
+_margin-top:-18px !important}
+.row_1 .block_1 .portletslidebar_portlet .roll_image {
+width:695px;
+
+height:136px;
+margin-top:-5px;
+background-color:transparent; 
+border:1px solid #2CA4D4; 
+display:inline; 
+float:left; 
+overflow:hidden;
+}
+.row_2 .block_1 .portletslidebar_portlet {
+margin-top:-4px;
+}
+.row_2 .block_1 .portletslidebar_portlet #topslider2 {
+width:695px;
+height:200px;
+margin-top:-14px;
+*margin-top:0;
+_margin-top:-2px;
+border:none;
+height:271px !important;
+list-style-type:none;
+margin-right:auto;
+position:relative;
+}
+.collage-row .row_3 {
+*margin-top:270px;
+_margin-top:0;
+}
+#collage .two-columns-equal .block_1 {
+*width:335px;
+_width:335px;
+}
+#collage .two-columns-equal .block_2 {
+*width:335px;
+*margin-left:18px;
+_width:335px;
+_margin-left:18px;
+}
+#portal-column-content .portlet {
+margin-bottom:0;
+margin-top:0;
+}
+#portal-column-content .portlet dd{
+
+}
+#portal-column-content{
+width:100%; 
+vertical-align:top; 
+padding:0 20px 20px 20px; 
+*padding-right:0;
+margin:0em 0em 2em 0em}
+#portal-column-content .portletHeader{
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+height:43px; 
+margin-left:0}
+#portal-column-content .portletHeader span{
+display:block;
+padding-left:46px;
+padding-top:5px;
+}
+#portal-column-two{
+vertical-align:top; 
+width:202px
+padding:0; 
+}
+
+body.fullscreen #portal-column-one, 
+body.fullscreen #portal-column-two{
+display:none}
+body.fullscreen #portal-column-content{
+width:100%; 
+margin:0; 
+padding:0}
+
+
+*:link, :visited{text-decoration:none;color:#000}
+* ul, ol{list-style:none}
+* h1, h2, h3, h4, h5, h6, pre, code{font-size:1em}
+* a img, :link img, :visited img{border:none}
+body{
+font:85% &#26999; &#20307; ; 
+background-color:White; 
+color:Black; 
+margin:0; 
+padding:0}
+img{
+border:none; 
+vertical-align:middle}
+p{
+margin:0 0 0.75em 0; 
+line-height:1.5em}
+dt{
+font-weight:bold}
+dd{
+line-height:1.5em; 
+margin-bottom:0; 
+margin-left:0; 
+margin-top:0}
+#portal-column-one .visualPadding{
+border:none; 
+margin-top:0; 
+*margin-top:-4px; 
+_margin-top:-4px; 
+width:210px}
+#portal-column-two .visualPadding{
+margin-top:0; 
+*padding-left:20px;
+width:210px}
+.documentFirstHeading{
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0; 
+font-size:18px; 
+margin-top:0; 
+padding-bottom:6px; 
+padding-top:10px; 
+text-align:center; 
+font-weight:bold}
+#parent-fieldname-text{
+border:1px solid #0C92C3;
+margin-top:-12px;
+padding-bottom:10px;
+padding-top:10px;
+}
+.portlet-static-516c53f87b804ecb .portletHeader {
+background:transparent url('++resource++my315ok.companytheme.images/biaotibg.png') repeat-x 0 0 !important; 
+font-size:18px;
+font-weight:bold;
+margin-left:0 !important;
+padding-bottom:0;
+padding-top:0;
+text-align:center;
+width:464px;
+}
+.portlet-static-516c53f87b804ecb .portletHeader span{
+padding-left:0 !important;
+}
+.section-front-page .documentFirstHeading {
+display:none;
+}
+.documentContent{
+border:1px solid #0C92C3; 
+font-size:110%; 
+background:White}
+.documentContent ul{
+margin:0.5em 0 0 0}
+.documentContent ol{
+margin:0.5em 0 0 2.5em}
+.documentContent #content dl dt{
+padding-top:10px; 
+border-bottom:1px dashed #B5D6E1; 
+padding-bottom:5px; 
+padding-left:1em}
+.documentContent #content dl dd{
+display:none}
+.documentContent p a{
+text-decoration:none}
+.documentContent p a:visited{
+color:Purple; 
+background-color:transparent}
+.documentContent p a:active{
+color:Red; 
+background-color:transparent}
+#content a:target{
+background-color:#fd7 !important}
+.documentContent li a{
+text-decoration:none}
+.documentContent li a:visited{
+color:Purple}
+.documentContent li a:active{
+color:Red}
+.documentContent dd a{
+text-decoration:none;
+font-size:14px}
+.documentContent dd a:visited{
+color:black; 
+background-color:transparent}
+.documentContent dd a:active{
+color:Red; 
+background-color:transparent}
+#visual-portal-wrapper{
+margin-left:auto; 
+margin-right:auto; 
+padding:0; 
+width:930px}
+
+.roll_image li{
+float:left; 
+list-style:none outside none; 
+padding-left:2px; 
+padding-right:10px; 
+text-align:center; 
+width:180px}
+.roll_image li a img{
+width:80%}
+.roll_image li .imgtitle{
+font-size:12px}
+#portal-logo img{
+border:0 none; 
+margin-bottom:-5px; 
+margin-left:22px; 
+margin-top:25px; 
+padding:0}
+#portletPageTopRow #portal-logo img{
+height:32px; 
+margin:-1px 0 0 -1px; 
+width:787px}
+#portletPageColumns .portletFooter span a{
+display:block; 
+margin-right:12px; 
+text-align:right}
+#portletPageColumns{
+border:1px solid #B1D6E5 !important; 
+width:100%; 
+margin-top:0 !important}
+#portletPageColumns .portletFooter
+{border:none !important}
+.portletCollection{
+border:1px solid #0C92C3;
+margin-top:0;}
+.portletCollection dd{
+padding-left:10px;
+padding-right:10px;
+}
+.portletCollection dd a{
+font-size:14px;}
+#portletPageColumns .portletCollection{
+border:1px solid #B1D6E5; 
+font-size:14px; 
+margin-left:
+27px; 
+margin-top:10px; 
+text-decoration:none; 
+text-transform:none; 
+width:224px}
+#portletPageColumns .portletCollection dd a{
+border-bottom:none}
+#portletPageColumns .portletHeader{
+background-color:#b1d6e5; 
+width:224px; 
+height:37px; 
+text-align:center; 
+font-size:16px}
+#portletPageColumns .portletHeader a span{
+display:block; 
+padding-top:9px}
+#portal-siteactions{
+background-color:transparent; 
+white-space:nowrap; 
+list-style-image:none; 
+margin:1px 0 0 0; 
+height:auto; 
+line-height:normal; 
+float:right; 
+padding:3px 20px 3px 0}
+#portal-siteactions li{display:inline}
+#portal-siteactions li a{
+background-color:transparent; 
+border:none; 
+color:#76797c; 
+font-size:14px; 
+height:auto; 
+text-decoration:none; 
+text-transform:none}
+#portal-siteactions li.selected a{
+background-color:#dee7ec; 
+color:#436976; 
+border:0px solid #8cacbb}
+#portal-siteactions li a:hover{
+background-color:transparent; 
+color:#436976; 
+border:0px solid #8cacbb}
+#portal-searchbox{
+background:transparent url('++resource++my315ok.companytheme.images/search.png') no-repeat scroll center center; 
+clear:right; 
+float:right; 
+height:48px; 
+margin:20px 16px 0 0; 
+text-align:right; 
+text-transform:none; 
+white-space:nowrap; 
+width:250px; 
+z-index:20}
+#portal-advanced-search{
+margin-top:0.2em; 
+clear:both}
+#portal-advanced-search a{
+color:#76797c; 
+font-size:16px; 
+text-decoration:none; 
+text-transform:none}
+dl.searchResults dt{
+font-size:140%; 
+font-weight:normal}
+form.searchPage{
+text-align:center}
+input.searchPage{
+font-size:200% !important}
+form.searchPage input.searchButton{
+background-position:5px 7px; 
+padding:1px 10px 1px 25px}
+.LSRes{
+font-family:&#26999; &#20307; ; 
+visibility:visible; 
+color:#436976; 
+background-color:White; 
+vertical-align:middle; 
+display:block; 
+list-style-image:none; 
+list-style-type:none; 
+text-align:left; 
+min-width:16.5em; 
+text-transform:none; 
+margin-left:0; 
+line-height:1.1em}
+#LSHighlight, 
+.LSHighlight{
+background-color:#dee7ec; 
+border:1px solid #8cacbb; 
+color:#436976}
+.LSRow{
+border:1px solid White; 
+white-space:normal; 
+padding:0; 
+margin:0; 
+list-style-image:none; 
+list-style-type:none}
+.LSRow a{
+text-decoration:none; 
+font-weight:bold; 
+white-space:nowrap
+}
+.LSDescr{
+color:#76797c; 
+text-transform:none; 
+padding-left:2.1em; 
+margin-top:-0.1em}
+.LSResult{
+position:relative; 
+display:block; 
+text-align:right; 
+padding-top:5px; 
+margin:0; 
+left:3px; 
+z-index:3}
+.LSShadow{
+position:relative; 
+text-align:right}
+.livesearchContainer{
+background-color:White; 
+margin-top:0; 
+padding:0 !important; 
+position:absolute; 
+right:0px; 
+top:0; 
+white-space:normal; 
+font-family:&#26999; &#20307; ; 
+visibility:visible; 
+text-align:left; 
+color:#436976; 
+border:1px solid #8cacbb; 
+width:30em; 
+text-transform:none}
+* html .livesearchContainer{
+padding:1px !important; 
+padding-top:0 !important; 
+background-color:#8cacbb; 
+border:0}
+#livesearchLegend{
+line-height:1em; 
+margin-top:-2em; 
+margin-left:-0.1em; 
+border:1px solid #8cacbb; 
+border-bottom:0}
+* html #livesearchLegend{
+margin-top:-1.9em; 
+margin-left:-8px; 
+position:relative}
+.LSIEFix{
+background-color:White; 
+padding:0.5em !important; 
+z-index:20}
+.LSBox{
+clear:left; 
+display:block; 
+float:left; 
+margin-top:11px;
+padding-right:1px; 
+text-align:right}
+.inputLabel{background-color:transparent;
+border:none;
+margin-left:20px;}
+.LSBox label{
+font-weight:normal}
+#portal-globalnav{
+background:transparent url('++resource++my315ok.companytheme.images/menu.gif') no-repeat scroll 0 0; 
+height:63px; 
+line-height:60px; 
+list-style-image:none; 
+list-style-position:outside; 
+list-style-type:none; 
+padding-left:10px; 
+padding-top:3px; 
+white-space:nowrap; 
+margin-top:0;
+*margin-left:0; 
+*margin-top:33px; 
+_margin-left:0
+}
+#portal-globalnav li{
+margin-bottom:0; 
+text-align:center}
+#portal-globalnav .plain, #portal-globalnav .selected{
+display:inline; 
+float:left; 
+margin-left:5px;
+_margin-left:0;}
+#portal-globalnav .selected a{
+color:#f00}
+#portal-globalnav .plain .item, #portal-globalnav .selected .item{
+background:transparent url('/pub/images/fenge.gif') no-repeat right center; 
+margin-bottom:0; 
+margin-left:12px; 
+margin-top:8px; 
+padding-right:9px}
+.last-item{
+margin-bottom:0; 
+margin-top:8px; 
+margin-left:0
+}
+#portal-globalnav li a{
+font-family:黑体; 
+font-size:18px; 
+padding:0 10px; 
+}
+#portal-globalnav li a.last-item{
+background:transparent}
+#portal-globalnav li.selected a{
+background-color:transparent; 
+border:none; 
+color:#f00}
+#portal-globalnav li a:hover{
+background-color:transparent; 
+border:none; 
+color:#f00}
+#portal-personaltools{
+background-color:transparent; 
+border:none; 
+line-height:1.6em; 
+color:Black; 
+padding-right:20px; 
+width:300px; 
+float:right; 
+clear:right; 
+text-align:right; 
+text-transform:none; 
+margin-top:-23px;
+*margin-top:-20px;
+_margin-top:-20px;}
+#portal-personaltools .portalUser{
+background:transparent url(/user.gif) center left no-repeat; 
+padding-left:18px}
+#portal-personaltools .portalNotLoggedIn{
+color:Black; 
+padding:0; 
+background:transparent; 
+background-image:none}
+#portal-personaltools li{
+color:#436976; 
+margin-left:1em; 
+display:inline}
+#portal-personaltools li a{
+text-decoration:none; 
+font-size:15px; 
+color:#000}
+#portal-personaltools .visualIconPadding{
+padding-left:10px}
+.visualCaseSensitive{
+text-transform:none}
+#portal-languageselector{
+margin:0 1em 0 1em; 
+float:right}
+#portal-languageselector li{
+display:inline}
+#portal-breadcrumbs{
+background-color:#EEF3F5; 
+padding-left:2em; 
+_padding-left:2em; 
+_width:930px; 
+text-transform:none; 
+line-height:1.6em; 
+height:20px; 
+*margin-top:-19px;
+_margin-top:-18px;
+*width:903px;
+_width:903px}
+#portal-breadcrumbs a{
+text-decoration:none}
+.breadcrumbSeparator{
+font-size:120%}
+.addFavorite{
+vertical-align:bottom}
+.documentEditable{
+margin:0; 
+width:100%}
+#content-news h1{
+margin-bottom:1em}
+
+#content h5, 
+#content h6{
+color:#76797c}
+.newsItem{
+margin-bottom:1em; 
+border-bottom:1px solid #8cacbb}
+.newsImage{
+border:1px solid #ccc}
+.newsImageContainer{
+float:right; 
+margin:0 0 0.5em 1em; 
+width:202px}
+.newsContent{
+padding:0 1em 1em 1em}
+.newsContent ul, 
+.newsContent li{
+display:block; 
+list-style:none; 
+list-style-image:none; 
+margin:0; 
+padding:0}
+.newsAbout{
+display:block; 
+color:#76797c; 
+font-size:90%; 
+padding:0; 
+margin-top:0; 
+list-style:none; 
+list-style-image:none; 
+float:right; 
+text-align:right}
+.newsAbout li{
+display:inline}
+.newsFooter li{
+display:inline; 
+margin:0 1em 0 0}
+
+.documentDescription{
+font-weight:bold; 
+display:block; 
+margin:0em 0em 0.5em 0em; 
+line-height:1.5em}
+.documentByLine{
+font-size:90%; 
+font-weight:normal; 
+color:#76797c; 
+margin-bottom:0.5em}
+.discussion{
+margin-top:1em}
+.visualHighlight{
+background-color:#ffc}
+.discreet{
+color:#76797c; 
+font-size:90%; 
+font-weight:normal; 
+text-indent:2em}
+.pullquote{
+padding:0 1em 0 1em; 
+margin:0 0 1em 1em; 
+font-weight:bold; 
+color:#CC9933; 
+float:right; 
+width:35%; 
+clear:right; 
+background-color:White; 
+border-left:4px solid #8cacbb}
+.callout{
+font-weight:bold; 
+color:#CC9933; 
+padding:0px 1em}
+.notify, 
+.documentEditable * .notify{
+border:1px solid #ffa500}
+.card{
+background-color:#dee7ec; 
+border-color:#8cacbb; 
+border-width:1px; 
+border-style:solid; 
+float:left; 
+margin:1em; 
+text-align:center; 
+width:110px; 
+padding:1em 0}
+.card a{
+text-decoration:none}
+.portrait{
+background-color:#dee7ec; 
+border-color:#8cacbb; 
+border-width:1px; 
+border-style:solid; 
+font-size:90%; 
+margin:0.5em; 
+padding:1em 0 0.5em 0; 
+text-align:center; 
+width:100px}
+.portraitPhoto{
+border:1px solid black}
+.eventDetails{
+float:right; 
+width:20em; 
+clear:right}
+#parent-fieldname-text p{
+text-indent:2em; 
+padding-left:15px; 
+padding-right:10px; 
+margin-bottom:0}
+.productCredits{
+text-align:right; 
+font-size:90%; 
+clear:both; 
+font-weight:normal; 
+color:#76797c}
+#portal-footer{
+color:#000; 
+float:none; 
+height:55px; 
+line-height:1.2em; 
+text-align:center; 
+background:transparent url('++resource++my315ok.companytheme.images/yejiao.gif') repeat-x center center; 
+margin:0 auto; 
+padding-top:10px;
+width:930px}
+#portal-footer p{
+margin-bottom:0; 
+padding-top:0}
+#portal-footer a{
+text-decoration:none; 
+color:#000; 
+border:none}
+#portal-footer a:visited{
+color:#000}
+#portal-footer a:hover{
+text-decoration:underline}
+
+#portal-sitemap{
+list-style:none; 
+list-style-image:none; 
+margin:0; 
+font-size:90%; 
+border:none}
+#portal-sitemap a{
+border:1px solid White}
+#portal-sitemap a:hover{
+border:1px solid #8cacbb}
+#portal-sitemap .navTreeLevel1{
+padding-left:1em; 
+border-left:0.5em solid #8cacbb; 
+margin:0 0 0 0.5em}
+#portal-sitemap .navTreeLevel2{
+padding-left:1em; 
+border-left:0.5em solid #dee7ec; 
+margin:0 0 0 0.6em}
+.visualGhosted{
+opacity:0.2}
+body.fullscreen #portal-logo, 
+body.fullscreen #portal-siteactions{
+display:none}
+body.fullscreen #portal-globalnav{
+margin-top:4em}
+body.fullscreen #portal-searchbox{
+margin:0.5em 2em 0 0.5em; 
+padding:0; 
+position:relative; 
+z-index:3}
+
+.image-left{
+float:left; 
+clear:both; 
+margin:0.5em 1em 0.5em 0; 
+border:1px solid Black}
+.image-inline{
+float:none}
+.image-right{
+float:right; 
+clear:both; 
+margin:0.5em; 
+border:1px solid Black}
+dd.image-caption{
+text-align:left; 
+padding:0; margin:0}
+dl.captioned{
+padding:10px}
+
+.section div{
+padding-top:0.5em; 
+padding-bottom:0.5em}

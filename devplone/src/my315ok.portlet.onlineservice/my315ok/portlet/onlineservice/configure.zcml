@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="my315ok.portlet.onlineservice">
+
+    <five:registerPackage package="." initialize=".initialize" />
+    <include package=".browser" />
+
+    <genericsetup:registerProfile
+       name="default"
+       title="OnlineService"
+       directory="profiles/default"
+       description="a online customer service portlet"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <!-- Register the portlet -->
+
+     <!-- If the portlet has no configurable parameters, you can remove
+          the EditForm declaration in onlineservice.py and delete
+          the 'editview' attribute from this statement.
+       -->
+
+     <plone:portlet
+         name="my315ok.portlet.onlineservice.OnlineService"
+         interface=".onlineservice.IOnlineService"
+         assignment=".onlineservice.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".onlineservice.Renderer"
+         addview=".onlineservice.AddForm"
+         editview=".onlineservice.EditForm"
+         />
+     <utility
+         component=".vocabularies.FloatStyleVocabularyFactory"
+         name="onlineservice.FloatStyleVocabulary"
+         />
+
+</configure>

@@ -1,0 +1,4 @@
+<tal:favicon >
+<link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:http://images.315ok.org/favicon.ico" />
+<link rel="icon" type="image/gif" tal:attributes="href string:http://images.315ok.org/favicon1.gif" />
+</tal:favicon> 

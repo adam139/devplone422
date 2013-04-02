@@ -1,0 +1,19 @@
+<dl class="portlet portletEmbedIframePortlet"
+    i18n:domain="my315ok.portlet.embediframe" tal:condition="view/available">
+    <dt class="portletHeader"  tal:define="collection_url view/data/framesrc">
+        <span class="portletTopLeft"></span>
+         <a tal:attributes="href collection_url">
+		    <span class="portletHeadImg"></span>
+            <span tal:content="view/data/header" />
+			<span class="moreurl"></span>
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+    <dd class="portletItem odd" tal:content="structure view/results">
+        Body text
+    </dd>
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>        
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>

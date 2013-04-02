@@ -1,0 +1,129 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:browser="http://namespaces.zope.org/browser"     
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"    
+    i18n_domain="plone">
+
+  <five:registerPackage package="." />
+
+  <!-- Zope 3 browser resources -->
+   
+    <include package="plone.app.portlets" />
+
+
+<!-- Viewlets registration -->
+
+     <browser:viewletManager
+        name="mynew.sidebar"
+        provides=".interfaces.ISidebar"
+        permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"        
+        />
+ 
+
+   <browser:viewlet
+		name="mynew.onlineservice"
+		manager=".interfaces.ISidebar"
+		template="templates/onlineservice.pt"		
+		layer=".interfaces.IThemeSpecific"
+		permission="zope2.View"
+	/>   
+
+    <browser:viewlet
+		name="plone.links.favicon"
+		manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+		class=".viewlets.MyFaviconViewlet"
+		layer=".interfaces.IThemeSpecific"
+		permission="zope2.View"
+	/>     	     	
+	
+    <browser:viewlet
+    	name="mylogo.portalheader"
+    	manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    	template="templates/mylogo_portalheader.pt"
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/> 
+    <browser:viewlet
+   		name="plone.global_sections"
+   		for="*"
+   		class=".viewlets.GlobalSectionsViewlet"
+   		manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+   		layer=".interfaces.IThemeSpecific"
+   		permission="zope.Public"
+   		/>
+
+     <browser:viewlet
+   	  name="plone.site_actions"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.SiteActionsViewlet"
+   	  layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+   		/>
+   	<browser:viewlet
+   	  name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"        
+        class=".viewlets.PersonalViewlet"
+   	  layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+   		/>
+   	<browser:viewlet
+   	  name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"        
+        class=".viewlets.PathBarViewlet"
+   	  layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+   		/>
+        
+     <browser:viewlet
+    	name="mynew.portalheader"
+    	manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    	template="templates/mynew_portalheader.pt"
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/> 
+
+     <browser:viewlet
+    	name="mynew.abovecontentview"
+    	manager="plone.app.layout.viewlets.interfaces.IContentViews"
+    	template="templates/mynew_abovecontentview.pt "
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/> 
+  
+     <browser:viewlet
+    	name="mynew.abovecontent"
+    	manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    	template="templates/mynew_abovecontent.pt "
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/> 
+
+     <browser:viewlet
+    	name="mynew.belowcontent"
+    	manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+    	template="templates/mynew_belowcontent.pt "
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/>
+
+     <browser:viewlet
+    	name="myfooter.portalfooter"
+    	manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    	template="templates/myfooter_portalfooter.pt"
+      layer=".interfaces.IThemeSpecific"
+    	permission="zope2.View" 
+	/> 
+
+    <browser:page
+   	for="plone.portlets.interfaces.ILocalPortletAssignable"
+    	class="plone.app.portlets.browser.manage.ManageContextualPortlets"
+		name="manage-portlets"
+	   template="templates/managemyportlets.pt"
+      layer=".interfaces.IThemeSpecific"
+	   permission="plone.app.portlets.ManagePortlets"
+	/>                
+
+</configure>

@@ -1,0 +1,10 @@
+<object name="portal_catalog">
+    <index name="text" meta_type="FieldIndex">
+        <indexed_attr value="text"/>
+    </index>	
+    <column value="text"/>
+    <index name="linkurl" meta_type="FieldIndex">
+        <indexed_attr value="linkurl"/>
+    </index>	
+    <column value="linkurl"/>    
+</object>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="diazotheme.bootstrap">
+
+ <object name="diazotheme_bootstrap_custom"
+    meta_type="Filesystem Directory View"
+    directory="diazotheme.bootstrap:skins/diazotheme_bootstrap_custom"/>
+
+ <skin-path name="diazotheme.bootstrap" based-on="Sunburst Theme">
+  <layer name="diazotheme_bootstrap_custom"
+     insert-after="custom"/>
+ </skin-path>
+
+</object>

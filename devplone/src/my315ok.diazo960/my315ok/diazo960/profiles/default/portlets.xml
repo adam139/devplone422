@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<portlets>    
+ <portletmanager name="mynew.belowcontent"
+    type="my315ok.diazo960.browser.interfaces.IMyNewBelowContent"/>
+ <portletmanager name="mynew.abovecontent"
+    type="my315ok.diazo960.browser.interfaces.IMyNewAboveContent"/>
+ <portletmanager name="myfooter.portalfooter"
+    type="my315ok.diazo960.browser.interfaces.IMyFooterPortalFooter"/>
+ <portletmanager name="mynew.onlineservice"
+    type="my315ok.diazo960.browser.interfaces.IMyNewBesideContent"/>
+ <portletmanager 
+   name="mynew.abovecontentview"
+   type="my315ok.diazo960.browser.interfaces.IMyNewAboveContentView"
+ />
+ <portletmanager name="mynew.portalheader"
+    type="my315ok.diazo960.browser.interfaces.IMyNewPortalHeader"/>
+ <portletmanager name="mylogo.portalheader"
+    type="my315ok.diazo960.browser.interfaces.IMyLogoPortalHeader"/>   
+</portlets>

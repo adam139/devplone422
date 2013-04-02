@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="my315ok.diazo960">
+
+ <object name="my315ok_diazo960_custom"
+    meta_type="Filesystem Directory View"
+    directory="my315ok.diazo960:skins/my315ok_diazo960_custom"/>
+
+ <skin-path name="my315ok.diazo960" based-on="Sunburst Theme">
+  <layer name="my315ok_diazo960_custom"
+     insert-after="custom"/>
+ </skin-path>
+
+</object>

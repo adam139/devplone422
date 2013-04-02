@@ -1,0 +1,10 @@
+<layers>
+    
+    <!-- Enable the Diazo960 Theme layer when installed -->
+    
+    <layer
+        name="my315ok.diazo960"
+        interface="my315ok.diazo960.browser.interfaces.IThemeSpecific"
+        />
+
+</layers>

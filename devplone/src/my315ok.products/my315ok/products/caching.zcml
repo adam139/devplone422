@@ -1,0 +1,45 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cache="http://namespaces.zope.org/cache"
+    i18n_domain="my315ok.products">
+    
+    <include package="z3c.caching" file="meta.zcml" />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.baseview"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.barsview_mini"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.barsview_orig"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.barsview"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.barsview_preview"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.multiproducts.barsview_thumb"
+        ruleset="plone.content.folderView"
+        />
+    
+    <cache:ruleset
+        for=".browser.product.view"
+        ruleset="plone.content.itemView"
+        />
+    
+
+    
+</configure>

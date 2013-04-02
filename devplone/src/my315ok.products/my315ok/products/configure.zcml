@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:browser="http://namespaces.zope.org/browser"     
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="my315ok.products">
+
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
+  <include package=".browser" /> 
+  <include package=".portlets" /> 
+  <include file="caching.zcml" />    
+  <!-- Grok the package to initialise schema interfaces and content classes -->
+  <grok:grok package="." />
+  
+  <i18n:registerTranslations directory="locales" />
+  
+  <!-- Register the control panel for My315okProducts settings -->
+  <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="my315okproducts-controlpanel"
+      class=".controlpanel.My315okProductsControlPanelView"
+      permission="cmf.ManagePortal" 
+      />
+  <!-- Register an extension profile to make the product installable
+       in Plone -->
+  <genericsetup:registerProfile
+      name="default"
+      title="A product showing system based dexterity"
+      directory="profiles/default"
+      description="Extension profile for A product showing system based dexterity"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+        <adapter factory=".product.text" name="text" />   
+        <adapter factory=".product.linkurl" name="linkurl" />           
+</configure>

@@ -1,0 +1,70 @@
+    <div class="portletItem odd" tal:define="plone_state context/@@plone_portal_state;
+                                                                              portal python:plone_state.portal()">
+
+      <script type="text/javascript" charset="utf-8"
+			tal:content="structure python:view.qq_js()">			
+		</script> 
+<div id="divStayTop"  style="position: absolute;z-index:1024;" tal:attributes="id view/data/cssid">
+  <table cellspacing="0" cellpadding="0" width="109" align="center" style="background-color:transparent;">
+  <tr>
+   <td id="qq_top" colspan="3" align="center"  >
+   <a onClick="CloseQQ()" href="javascript:CloseQQ();" style="border-bottom:none;">
+   <span class="qqtext toptext"  tal:content="view/data/header">online service</span> 
+   </a></td>
+  </tr>
+  <tr style="background-color:#fff;">
+   <td  width="6"><img height="142" tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_life.gif" width="6" alt="qq" /></td>
+   <td  width="96">
+   <table cellspacing="0" cellpadding="0" width="90" align="center"  >
+    <tr>
+     <td height="30">
+     <table cellspacing="0" cellpadding="0" width="90" >
+      <tr>
+       <td>
+       <img height="13" tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_ico1.gif" width="16" alt="" />      
+       <span class="qqtext">客户服务</span></td>
+      </tr>
+     </table>
+     </td>
+    </tr>
+    <tr>
+     <td>
+     <table  width="100%" cellpadding="2" id="table47">
+      <tr>
+       <td width="15"  height="23">
+       <img  tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_v01.gif" width="16" height="16" alt="" /></td>
+       <td >
+	   <a target="blank" tal:attributes="href python:view.parameters()" href="tencent://message/?uin=178010108&Site=315ok&Menu=yes"><img  src="http://wpa.qq.com/pa?p=1:615050000:10" alt="[315ok]" /></a></td>
+      </tr>
+      <tr>
+       <td width="15"  height="23">
+       <img  tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_v01.gif" width="16" height="16" alt="" /></td>
+       <td >
+	   <a target="blank" tal:attributes="href python:view.qqsupporter()" href="tencent://message/?uin=178010108&Site=315ok&Menu=yes"><img  src="http://wpa.qq.com/pa?p=1:615050000:10" alt="[315ok]" /></a></td>
+      </tr>
+      <tr>
+       <td width="15"  height="23">
+       <img  tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/mail.jpg" width="16" height="16" alt="mail" /></td>
+       <td >
+	   <a target="blank" tal:attributes="href python:view.maillink()" href="mailto:" tal:content="python:view.mailcontent()">mail</a></td>
+      </tr>
+     </table>
+     </td>
+    </tr>
+   </table>
+   </td>
+   <td  width="7"><img height="142" tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_right.gif" width="7" alt="qq right"/></td>
+  </tr>
+  <tr>
+   <td colspan="3">
+   <img height="30" tal:attributes="src portal/++resource++my315ok.portlet.onlineservice.images/qq_bottom1.gif" width="109" alt="qq" /></td>
+  </tr>
+  <tr>
+   <td id="qq_bottom" align="center" colspan="3" >
+   <span class="qqtext" tal:content="view/data/sitename">qq logo </span> 
+   </td>
+  </tr>
+ </table>
+</div>  		
+    </div>    
+

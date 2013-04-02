@@ -1,0 +1,44 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="my315ok.portlet.embediframe">
+
+    <five:registerPackage package="." initialize=".initialize" />
+    <i18n:registerTranslations directory="locales"/>
+    <genericsetup:registerProfile
+       name="default"
+       i18n:domain="plone"
+       title="Embed iframe portlet"
+       directory="profiles/default"
+       description="A portlet that embed outer iframe doc"
+       i18n:attributes="title description"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <!-- Register the portlet -->
+
+     <!-- If the portlet has no configurable parameters, you can remove
+          the EditForm declaration in embediframeportlet.py and delete
+          the 'editview' attribute from this statement.
+       -->
+
+     <plone:portlet
+         name="my315ok.portlet.embediframe.EmbedIframePortlet"
+         interface=".embediframeportlet.IEmbedIframePortlet"
+         assignment=".embediframeportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".embediframeportlet.Renderer"
+         addview=".embediframeportlet.AddForm"
+         editview=".embediframeportlet.EditForm"
+         />
+    <utility
+         component=".vocabularies.ScrollingVocabularyFactory"
+         name="embediframeportlet.ScrollingVocabulary"
+         />
+
+
+</configure>

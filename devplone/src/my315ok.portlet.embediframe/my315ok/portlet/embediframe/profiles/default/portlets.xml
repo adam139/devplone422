@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="my315ok.portlet.embediframe.EmbedIframePortlet"
+   title="Embed iframe portlet"
+   description="A portlet that embed outer iframe doc"
+   />
+
+</portlets>

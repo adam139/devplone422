@@ -1,0 +1,239 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-02-25 11:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./profiles/default/types/my315ok.products.productfolder.xml
+msgid "A container that contain multiple products"
+msgstr ""
+
+# zcml
+msgid "A product showing system based dexterity"
+msgstr ""
+
+#: ./interfaces.py:14
+msgid "Allowable max number for product overview"
+msgstr ""
+
+#: ./portlets/hot_goods_portlet.py:51
+#: ./portlets/hotportlet.py:60
+#: ./portlets/recommendportlet.py:53
+msgid "Choose source image size"
+msgstr ""
+
+#: ./portlets/hot_goods_portlet.py:93
+#: ./portlets/recommendportlet.py:96
+msgid "Hot goods portlet"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:49
+msgid "Interval"
+msgstr ""
+
+#: ./controlpanel.py:12
+msgid "My315okProducts control panel"
+msgstr ""
+
+#: ./profiles/default/controlpanel.xml
+msgid "My315okProducts settings"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:103
+msgid "Slide bar"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:60
+msgid "Specify the height of the images bar."
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:50
+msgid "Specify the maximum number(ms) of slide image change."
+msgstr ""
+
+#: ./product.py:53
+msgid "a main image of the product"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.products.product.xml
+msgid "a product content that contain product image,rich text product spec and product parameters table etc."
+msgstr ""
+
+#. Default: "addtocart"
+#: ./browser/multiproducts_templates/storeview.pt:69
+msgid "add2cart"
+msgstr ""
+
+#. Default: "addtofavi"
+#: ./portlets/hot_goods_portlet.pt:24
+msgid "add2f"
+msgstr ""
+
+#. Default: "addtofavi"
+#: ./browser/multiproducts_templates/storeview.pt:72
+msgid "add2favi"
+msgstr ""
+
+#: ./behaviors/goods.py:31
+msgid "brand"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:57
+msgid "cash gift:"
+msgstr ""
+
+#: ./behaviors/goods.py:37
+msgid "details description"
+msgstr ""
+
+#: ./product.py:60
+msgid "details spec of the product"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:59
+msgid "focus_height"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:49
+msgid "goods brand:"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:53
+msgid "goods model:"
+msgstr ""
+
+#: ./portlets/hot_goods_portlet.py:50
+#: ./portlets/hotportlet.py:59
+#: ./portlets/recommendportlet.py:52
+msgid "image size"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:67
+msgid "images bar's innerlocated CSS id"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:63
+msgid "images bar's located CSS id"
+msgstr ""
+
+#: ./portlets/vocabularies.py:10
+msgid "large image"
+msgstr ""
+
+#: ./product.py:56
+msgid "link to target URI"
+msgstr ""
+
+#: ./behaviors/goods.py:21
+msgid "market price"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:39
+#: ./portlets/hot_goods_portlet.pt:17
+#: ./portlets/recommendportlet.pt:22
+msgid "market price:"
+msgstr ""
+
+#: ./interfaces.py:13
+msgid "max number of word"
+msgstr ""
+
+#: ./portlets/vocabularies.py:8
+msgid "mini image"
+msgstr ""
+
+#: ./behaviors/goods.py:34
+msgid "model"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:77
+msgid "more details"
+msgstr ""
+
+#: ./portlets/vocabularies.py:11
+msgid "original image"
+msgstr ""
+
+#: ./behaviors/goods.py:26
+msgid "our price"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:44
+#: ./portlets/hot_goods_portlet.pt:18
+#: ./portlets/recommendportlet.pt:27
+msgid "our price:"
+msgstr ""
+
+#: ./portlets/vocabularies.py:9
+msgid "preview image"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.products.product.xml
+msgid "product"
+msgstr ""
+
+#: ./product.py:52
+msgid "product image"
+msgstr ""
+
+#: ./productfolder.py:42
+msgid "product numbers will be display in a row(default 4)"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.products.productfolder.xml
+msgid "productfolder"
+msgstr ""
+
+#. Default: "purchase it"
+#: ./portlets/hot_goods_portlet.pt:21
+msgid "purchase"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:40
+#: ./portlets/hot_goods_portlet.pt:17
+#: ./portlets/recommendportlet.pt:23
+msgid "rmb"
+msgstr ""
+
+#: ./behaviors/goods.py:42
+msgid "sales"
+msgstr ""
+
+#: ./browser/multiproducts_templates/storeview.pt:62
+msgid "stock status:"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:45
+msgid "target URI"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:46
+msgid "the URI of the resouce images view"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:64
+msgid "the images bar's outer position will put"
+msgstr ""
+
+#: ./portlets/slidebar_portlet.py:68
+msgid "the images bar's top position will put"
+msgstr ""
+
+#: ./productfolder.py:37
+msgid "the number that will be displayed on one page"
+msgstr ""
+
+#: ./portlets/vocabularies.py:7
+msgid "thumb image"
+msgstr ""
+

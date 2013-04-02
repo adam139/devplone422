@@ -1,0 +1,7 @@
+<registry>
+  
+  <!-- Create records for our settings -->
+    
+  <records interface="my315ok.products.interfaces.IMy315okProductsSettings" />
+
+</registry>

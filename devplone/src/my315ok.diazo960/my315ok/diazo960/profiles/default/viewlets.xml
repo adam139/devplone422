@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.portalfooter" skinname="my315ok.diazo960">
+    <viewlet name="plone.colophon" />
+  </hidden>
+  <hidden manager="plone.portalfooter" skinname="my315ok.diazo960">
+    <viewlet name="plone.footer" />
+  </hidden>
+   <hidden manager="plone.portalheader" skinname="my315ok.diazo960">
+    <viewlet name="plone.logo" />
+  </hidden>
+  <hidden manager="plone.portalheader" skinname="my315ok.diazo960">
+    <viewlet name="plone.site_actions" />
+  </hidden>
+  <hidden manager="plone.abovecontent" skinname="my315ok.diazo960">
+    <viewlet name="plone.path_bar" />
+  </hidden>
+  <hidden manager="plone.portaltop" skinname="my315ok.diazo960">
+    <viewlet name="plone.personal_bar" />
+  </hidden>
+   <hidden manager="plone.belowcontent" skinname="my315ok.diazo960">
+    <viewlet name="plone.comments" />
+  </hidden>
+  
+  
+  <order manager="plone.portalheader" skinname="my315ok.diazo960"
+         based-on="Plone Default">	   
+    <viewlet name="mylogo.portalheader"
+             insert-before="plone.global_sections" />
+  </order>
+  
+  <order manager="plone.portalheader" skinname="my315ok.diazo960"
+         based-on="Plone Default">	   
+    <viewlet name="plone.searchbox"
+             insert-after="plone.global_sections" />
+  </order>
+  <order manager="plone.portalheader" skinname="my315ok.diazo960"
+         based-on="Plone Default">	   
+    <viewlet name="mylogo.portalheader"
+             insert-before="plone.global_sections" />
+  </order>  
+  <order manager="plone.contentviews" skinname="my315ok.diazo960"
+         based-on="Plone Default">
+    <viewlet name="mynew.abovecontentview"
+    insert-before="*" />	   
+    <viewlet name="mynew.abovecontent"
+             insert-after="*" />
+  </order>
+  <order manager="plone.belowcontent" skinname="my315ok.diazo960"
+         based-on="Plone Default">	   
+    <viewlet name="mynew.belowcontent"
+             insert-after="*" />
+  </order>
+  <order manager="mynew.sidebar" skinname="my315ok.diazo960" >	   
+    <viewlet name="mynew.onlineservice"
+             insert-after="*" />
+  </order>
+
+  <order manager="plone.portalfooter" skinname="my315ok.diazo960"
+         based-on="Plone Default">	   
+    <viewlet name="myfooter.portalfooter"
+             insert-before="*" />
+  </order>  
+
+</object>

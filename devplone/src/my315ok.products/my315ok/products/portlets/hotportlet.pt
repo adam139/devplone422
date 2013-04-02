@@ -1,0 +1,41 @@
+<dl class="portlet portletHotPortlet"
+    i18n:domain="my315ok.products">
+
+    <dt class="portletHeader" tal:condition="view/data/show_more">
+        <span class="portletTopLeft"></span>
+        <span tal:content="view/data/header">
+           Header
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">
+     <div tal:define="items python:view.main_parameters();
+                      rows python:view.rows();
+                      cols python:view.cols()" tal:omit-tag ="">
+	     <table align="center" id="hot_products">
+          <tr tal:repeat = "row python:range(rows)" >
+           <td tal:repeat ="td  python:range(cols)" valign="bottom" align="center"> 
+            <div tal:define="s   python:int(row*cols + td)" tal:omit-tag="">
+             <div tal:define="result python:items[s]" class="product">
+             <div class="img">
+             	<a href="" tal:attributes="href python: result['img_url']" tal:content="structure python: result['photo']">render goods thumb image</a>
+             </div>
+             <div class="title">
+             	<a tal:content="python: result['title']" tal:attributes="href python:result['goods_url']">title</a>
+             </div>		                 
+            </div>                                
+           </div>
+          </td>                    
+         </tr>               
+        </table> 
+	 </div>
+   </dd>
+    <dd class="portletFooter" tal:omit-tag="">
+        <span class="portletBottomLeft"></span>
+        <span>
+           Footer
+        </span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>

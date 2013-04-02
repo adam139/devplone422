@@ -1,0 +1,10 @@
+<layers>
+    
+    <!-- Enable the Eisoo Theme layer when installed -->
+    
+    <layer
+        name="eisoo.theme"
+        interface="eisoo.theme.interfaces.IEisooTheme"
+        />
+
+</layers>

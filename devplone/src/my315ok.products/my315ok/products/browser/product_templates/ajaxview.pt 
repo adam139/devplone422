@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="my315ok.products">
+<head>
+    <metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css" 
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++my315ok.products/multiproducts.css"
+            />
+    </metal:block>
+</head>      
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+    	<h1 class="title" tal:content="python:context.title">title</h1>
+<tal:reviewer tal:condition="python: checkPermission('Review portal content', context)">    	
+		<ul class="action_link">
+			<li class="ajax_form"><a tal:attributes="href python:context.absolute_url() + '/@@edit'" i18n:domain="plone" i18n:translate="edit">edit</a>
+			</li>
+		</ul>
+</tal:reviewer>		
+		<h2 class="description" tal:content="python:context.description">description</h2>     	
+       <div class="prducts">
+		     <div class="mainphoto"
+             tal:condition="python:view.isImageAvalable()">        
+               	<img tal:replace="structure python:view.img_tag(scale='mini',fieldname='image')" />
+           </div>
+ 
+	        <div class="details" 
+	        tal:define="con context/text" tal:content="structure python:view.transfer2text(con)">content
+	        </div>            
+        </div>
+    </tal:main-macro>
+</metal:main>
+<metal:js fill-slot="javascript_bottom_slot">
+<script type="text/javascript" src="test.js"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="src string:${navroot}/++resource++my315ok.products/ajax.js"></script>
+</metal:js>    
+</body>
+</html>

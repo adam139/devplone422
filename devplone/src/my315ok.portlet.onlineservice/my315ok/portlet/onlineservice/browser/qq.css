@@ -1,0 +1,30 @@
+#divStayTop td {
+vertical-align:middle;
+text-align:center;}
+#divStayTop img{
+border:none;
+}
+#qq_top {
+background-image:url("++resource++my315ok.portlet.onlineservice.images/qq_top.png");
+background-position:center bottom;
+background-repeat:no-repeat;
+background-color:transparent;
+height:34px;
+width:109px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="++resource++my315ok.portlet.onlineservice.images/qq_top.png");
+_background-image:none;
+}
+#qq_bottom {
+background-image:url("++resource++my315ok.portlet.onlineservice.images/qq_logo.png");
+background-position:center bottom;
+background-repeat:no-repeat;
+background-color:transparent;
+height:33px;
+width:109px;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="++resource++my315ok.portlet.onlineservice.images/qq_logo.png");
+_background-image:none;
+}
+.qqtext {
+text-decoration:none;
+font-size:16px;}
+.toptext {margin-right:17px;}

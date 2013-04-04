@@ -43,11 +43,13 @@
   <adapter name="Title" factory=".indexers.Title" />
 
   <!-- -*- extra stuff goes here -*- -->
+  <!--
     <monkey:patch
      description="patch when create Member area function fire a createMemberArea event"
      class ="plone.app.users.browser.register.BaseRegistrationForm"
      original=" handle_join_success"
      replacement=".patch.membership.handle_join_success"
+     -->
   />   
 
 </configure>

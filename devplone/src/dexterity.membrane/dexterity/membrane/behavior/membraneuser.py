@@ -35,6 +35,7 @@ class IMembraneUser(Interface):
 
 
 def get_full_name(context):
+    if context.title != "":return context.title
     try:
         portal_state = context.unrestrictedTraverse("@@plone_portal_state")
 #        import pdb

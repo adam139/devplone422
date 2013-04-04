@@ -52,7 +52,7 @@ class RegistrationForm(form.SchemaAddForm):
 
 
     def create(self, data):
-        inc = getattr(self.context, 'registrant_increment', 0) + 1
+        inc = getattr(self.context, 'registrant_increment', 0) + 1000000
         data['id'] = '%s' % inc
         self.context.registrant_increment = inc
         obj = _createObjectByType("collective.conference.participant", 

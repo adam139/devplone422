@@ -92,12 +92,12 @@ class IEmail(form.Schema):
 
     email = schema.TextLine(
         # String with validation in place looking for @, required.
-        # Note that a person's email address will be their username.
-        title=_(u"E-mail Address"),
+        # Note that a person's email address will be their username.                            
+        title=_(u"Email address"),
+        description=_(u"Please input correct mail address,the active code will be sent to it"),        
         required=True,
-        constraint=is_email,
-        )
-
+        constraint=is_email,        
+    ) 
     @invariant
     def email_unique(data):
         """The email must be unique, as it is the login name (user name).
@@ -119,19 +119,15 @@ class IMember(IEmail,IImageScaleTraversable):
     """
     Member
     """
+    title = schema.TextLine(title=_(u"Full name"),
+            required=True)
 
 
-
-
-    last_name = schema.TextLine(
-        title=_(u"Last Name"),
-        required=True,
-        )
-    
-    first_name = schema.TextLine(
-        title=_(u"First Name"),
-        required=True,
-        )    
+    description = schema.Text(
+        title=_(u"Short Bio"),
+        description=_(u"Tell us more about yourself"),
+        required=False,
+    )
     
     homepage = schema.TextLine(
         # url format
@@ -157,10 +153,8 @@ class IMember(IEmail,IImageScaleTraversable):
     
     sector = schema.Choice(
         title=_(u"Sector"),
-#        description=_(u"Where you are from"),
-        required=False,
+        required=True,
         vocabulary="dexterity.membrane.vocabulary.sector"
-
         )        
 
     position = schema.TextLine(
@@ -211,17 +205,74 @@ class IMember(IEmail,IImageScaleTraversable):
         required=False,
 
         )          
-
-    form.widget(bio="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
-    bio = schema.Text(
-        title=_(u"Biography"),
-        required=False,
-        )
+#  by description field replace
+#    form.widget(bio="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
+#    bio = schema.Text(
+#        title=_(u"Biography"),
+#        required=False,
+#        )
     
     photo = NamedBlobImage(
         title=_(u"Photo"),
         description=_(u"Your photo or avatar. Recommended size is 150x195"),
         required=False
     )
+
+
+    form.fieldset('sponsorship',
+            label=_(u"Funding"),
+            fields=['need_sponsorship', 'roomshare', 'tshirt_size ','is_vegetarian','comment']
+    )
+
+    need_sponsorship = schema.Bool(
+            title=_(u"Need funding"),
+            description=_(u"Check this option if you need funding to attend."), required=False)
+
+    roomshare = schema.Bool(
+            title=_(u"Roomshare"),
+            description=_(u"If you want or need a room, check this option"),
+            required=False)
+
+    comment = schema.Text(
+        title=_(u"Comments"),
+        description=_(u"Fill in this field with things you need the organizers to know.\
+        If you are roomsharing and already have a roommate, please mention your roommate's name here"),
+        required=False
+    )
+    is_vegetarian = schema.Bool(
+        title=_(u"Vegetarian?"),
+        required=False
+    )
+
+    tshirt_size = schema.Choice(
+        title=_(u"T-shirt size"),
+        vocabulary="collective.conference.vocabulary.tshirtsize",
+        required=False
+    )
     
-    form.omitted('bonus')        
+
+    form.widget(color="collective.z3cform.colorpicker.colorpickeralpha.ColorpickerAlphaFieldWidget")
+    color = schema.TextLine(
+        title=_(u"Person Color Tag"),
+        default=u'cccccc',
+        required=False
+    )
+
+    
+    form.omitted('bonus')   
+
+
+@form.validator(field=IMember['photo'])
+def maxPhotoSize(value):
+    if value is not None:
+        if value.getSize()/1024 > 512:
+            raise schema.ValidationError(_(u"Please upload image smaller than 512KB"))
+
+
+#
+#@form.validator(field=IParticipant['email'])
+#def emailValidator(value):
+#    try:
+#        return checkEmailAddress(value)
+#    except:
+#        raise Invalid(_(u"Invalid email address"))

@@ -30,8 +30,7 @@ class MemberView(grok.View):
     
     def fullname(self):
         context = self.context
-#        import pdb
-#        pdb.set_trace()
+
         if self.language() == 'en':            
                 names = [
                          context.first_name,

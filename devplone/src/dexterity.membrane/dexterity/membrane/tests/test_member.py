@@ -50,7 +50,12 @@ class TestMember(TestCase):
         member = self._createType(
             self.portal, 'dexterity.membrane.member', 'jane')
         self.assertEqual(member.portal_type, 'dexterity.membrane.member')
-
+        
+    def test_create_member(self):
+        memberfolder = self._createType(
+            self.portal, 'dexterity.membrane.memberfolder', 'memberfolder')
+        self.assertEqual(memberfolder.portal_type, 'dexterity.membrane.memberfolder')
+        
     def test_member_is_membrane_type(self):
         membrane = getToolByName(self.portal, 'membrane_tool')
         self.assertTrue('dexterity.membrane.member' in
@@ -82,9 +87,11 @@ class TestMember(TestCase):
             self.portal, 'dexterity.membrane.member', 'joe')
         member.first_name = 'Joe'
         member.last_name = 'User'
+        member.title = 'Joe User'
         member.email = 'joe@example.org'
         member.homepage = 'http://example.org/'
         member.bio = u'I am Joe.  I want to set a good example.'
+        member.description = u'I am Joe.  I want to set a good example.'        
         membrane = getToolByName(self.portal, 'membrane_tool')
         membrane.reindexObject(member)
         # Currently the user_id is an intid, so we need to query for
@@ -306,12 +313,15 @@ class TestMember(TestCase):
         member = self._createType(
             self.portal, 'dexterity.membrane.member', 'joe')
         name_title = INameFromTitle(member)
+#        import pdb
+#        pdb.set_trace()
         self.assertEqual(name_title.title, u'')
-        member.title = u"Title field"
-        self.assertEqual(name_title.title, u'')
-        member.last_name = u"User"
-        self.assertEqual(name_title.title, u'User')
-        member.first_name = u"Joe"
+        member.title = u"Joe User"
+
+#        self.assertEqual(name_title.title, u'')
+#        member.last_name = u"User"
+#        self.assertEqual(name_title.title, u'User')
+#        member.first_name = u"Joe"
         self.assertEqual(name_title.title, u'Joe User')
         self.assertEqual(get_full_name(member), u'Joe User')
 

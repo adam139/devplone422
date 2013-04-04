@@ -88,7 +88,16 @@
     <permission-role>Site Administrator</permission-role>
    </permission-map>
   </state>
-
+  <transition transition_id="anon_hide" title="" new_state="pending" trigger="USER" before_script="" after_script="">
+  
+  <guard>
+  </guard>
+  </transition>
+  <transition transition_id="anon_publish" title="" new_state="enabled" trigger="USER" before_script="" after_script="">
+  
+  <guard>
+  </guard>
+  </transition>
 
   <transition transition_id="approve" new_state="enabled"
                title="Approve this member"

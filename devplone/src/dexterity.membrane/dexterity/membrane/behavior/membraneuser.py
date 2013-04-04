@@ -36,30 +36,31 @@ class IMembraneUser(Interface):
 
 def get_full_name(context):
     if context.title != "":return context.title
-    try:
-        portal_state = context.unrestrictedTraverse("@@plone_portal_state")
-#        import pdb
-#        pdb.set_trace()
-        lang = portal_state.language() or portal_state.default_language() 
-        if lang == 'en':            
-                names = [
-                         context.first_name,
-                         context.last_name,
-                         ]
-                return u' '.join([name for name in names if name])
-        else:
-                names = [
-                         context.last_name,                         
-                         context.first_name,
-                         ]            
-                return u''.join([name for name in names if name])              
-            
-    except:
-        names = [
-                    context.last_name,                         
-                    context.first_name,
-                    ]            
-        return u''.join([name for name in names if name])              
+    return u""
+#    try:
+#        portal_state = context.unrestrictedTraverse("@@plone_portal_state")
+##        import pdb
+##        pdb.set_trace()
+#        lang = portal_state.language() or portal_state.default_language() 
+#        if lang == 'en':            
+#                names = [
+#                         context.first_name,
+#                         context.last_name,
+#                         ]
+#                return u' '.join([name for name in names if name])
+#        else:
+#                names = [
+#                         context.last_name,                         
+#                         context.first_name,
+#                         ]            
+#                return u''.join([name for name in names if name])              
+#            
+#    except:
+#        names = [
+#                    context.last_name,                         
+#                    context.first_name,
+#                    ]            
+#        return u''.join([name for name in names if name])              
 #    names = [
 #        context.first_name,
 #        context.last_name,

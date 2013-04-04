@@ -272,7 +272,7 @@ class MyUserProperties(grok.Adapter, MembraneUser):
     property_map = dict(
         email='email',
         home_page='homepage',
-        description='bio',
+        description='description',
         )
 
     @property

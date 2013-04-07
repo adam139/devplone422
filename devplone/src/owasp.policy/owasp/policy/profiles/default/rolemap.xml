@@ -6,6 +6,5 @@
         <role name="Manager" />
         <role name="Anonymous" />
     </permission>
-
   </permissions>
  </rolemap>

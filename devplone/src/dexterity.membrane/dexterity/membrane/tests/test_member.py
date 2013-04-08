@@ -90,7 +90,7 @@ class TestMember(TestCase):
         member.title = 'Joe User'
         member.email = 'joe@example.org'
         member.homepage = 'http://example.org/'
-        member.bio = u'I am Joe.  I want to set a good example.'
+#        member.bio = u'I am Joe.  I want to set a good example.'
         member.description = u'I am Joe.  I want to set a good example.'        
         membrane = getToolByName(self.portal, 'membrane_tool')
         membrane.reindexObject(member)

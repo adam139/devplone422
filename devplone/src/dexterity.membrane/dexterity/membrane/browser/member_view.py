@@ -15,34 +15,19 @@ from plone.directives import dexterity
 
 grok.templatedir('templates')
 
-class MemberView(grok.View):
+class MembraneMemberView(grok.View):
     grok.context(IMember)     
     grok.template('member_view')
     grok.name('view')
     grok.require('zope2.View')
 
 
-    def language(self):        
-        context = aq_inner(self.context)
-        portal_state = getMultiAdapter((context, self.request), name=u'plone_portal_state')
-        current_language = portal_state.language()
-        return current_language
+
     
     def fullname(self):
         context = self.context
-
-        if self.language() == 'en':            
-                names = [
-                         context.first_name,
-                         context.last_name,
-                         ]
-                return u' '.join([name for name in names if name])
-        else:
-                names = [
-                         context.last_name,                         
-                         context.first_name,
-                         ]            
-                return u''.join([name for name in names if name])            
+        return context.title
+         
     
 class EditProfile(dexterity.EditForm):
     grok.name('edit-baseinfo')
@@ -53,7 +38,7 @@ class EditProfile(dexterity.EditForm):
         pass
     @property
     def fields(self):
-        return field.Fields(IMember).select('last_name','first_name','email','bio','photo')
+        return field.Fields(IMember).select('title','description','email','photo')
 
 class EditProfilePassword(dexterity.EditForm):
     grok.name('edit-password')
@@ -98,3 +83,15 @@ class EditProfileGeography(dexterity.EditForm):
     @property
     def fields(self):
         return field.Fields(IMember).select('country', 'province','address')
+    
+
+class EditConfInfo(dexterity.EditForm):
+    grok.name('edit-conference')
+    grok.context(IMember)    
+    label = _(u'conference information')
+# avoid autoform functionality
+    def updateFields(self):
+        pass
+    @property
+    def fields(self):
+        return field.Fields(IMember).select('need_sponsorship', 'roomshare', 'tshirt_size','is_vegetarian','color','comment')    

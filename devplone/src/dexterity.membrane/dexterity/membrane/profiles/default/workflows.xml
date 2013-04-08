@@ -5,5 +5,8 @@
     <type type_id="dexterity.membrane.member">
       <bound-workflow workflow_id="dexterity_membrane_workflow" />
     </type>
+    <type type_id="dexterity.membrane.memberfolder">
+      
+    </type>    
   </bindings>
 </object>

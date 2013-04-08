@@ -1,6 +1,6 @@
 import re
-
-from plone.directives import form
+from five import grok
+from plone.directives import dexterity, form
 from zope import schema
 from zope.interface import Invalid, invariant
 
@@ -178,6 +178,7 @@ class IMember(IEmail,IImageScaleTraversable):
         title=_(u"Country"),
         description=_(u"Where you are from"),
         required=False,
+        default='China',
         vocabulary="collective.conference.vocabulary.countries"
     )
 
@@ -205,12 +206,6 @@ class IMember(IEmail,IImageScaleTraversable):
         required=False,
 
         )          
-#  by description field replace
-#    form.widget(bio="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
-#    bio = schema.Text(
-#        title=_(u"Biography"),
-#        required=False,
-#        )
     
     photo = NamedBlobImage(
         title=_(u"Photo"),
@@ -221,7 +216,7 @@ class IMember(IEmail,IImageScaleTraversable):
 
     form.fieldset('sponsorship',
             label=_(u"Funding"),
-            fields=['need_sponsorship', 'roomshare', 'tshirt_size ','is_vegetarian','comment']
+            fields=['need_sponsorship', 'roomshare', 'tshirt_size','is_vegetarian','comment']
     )
 
     need_sponsorship = schema.Bool(
@@ -267,6 +262,10 @@ def maxPhotoSize(value):
     if value is not None:
         if value.getSize()/1024 > 512:
             raise schema.ValidationError(_(u"Please upload image smaller than 512KB"))
+
+class member(dexterity.Item):
+    grok.implements(IMember)
+    grok.provides(IMember)
 
 
 #

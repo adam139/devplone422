@@ -25,21 +25,23 @@ class TestView(unittest.TestCase):
 #        pdb.set_trace()
         start = datetime.datetime.today()
         end = start + datetime.timedelta(7)
-
-        portal.invokeFactory('dexterity.membrane.member', 'member1',
+        portal.invokeFactory('dexterity.membrane.memberfolder', 'memberfolder')
+        
+        portal['memberfolder'].invokeFactory('dexterity.membrane.member', 'member1',
                              email="12@qq.com",
                              last_name=u"唐",
                              first_name=u"岳军",
+                             title = u"tangyuejun",
                              password="391124",
                              confirm_password ="391124",
                              homepae = 'http://315ok.org/',
                              bonus = 300,
-                             bio="I am member1")     
+                             description="I am member1")     
      
           
  
         data = getFile('image.jpg').read()
-        item = portal['member1']
+        item = portal['memberfolder']['member1']
         item.photo = NamedImage(data, 'image/jpg', u'image.jpg')
            
         self.portal = portal
@@ -55,12 +57,14 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
-        obj = portal['member1'].absolute_url() + '/@@view'        
+        obj = portal['memberfolder']['member1'].absolute_url() + '/view'        
 
         browser.open(obj)
+#        import pdb
+#        pdb.set_trace()
         outstr = "I am member1"        
         self.assertTrue(outstr in browser.contents)   
-        outstr = "唐岳军"        
+        outstr = "12@qq.com"        
         self.assertTrue(outstr in browser.contents)          
         
    

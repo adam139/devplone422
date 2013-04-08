@@ -10,3 +10,7 @@ def Title(object, **kw):
     if name is not None:
         return name.title
     return object.Title()
+
+@indexer(IMember)
+def member_email(obj, **kw):
+    return obj.email

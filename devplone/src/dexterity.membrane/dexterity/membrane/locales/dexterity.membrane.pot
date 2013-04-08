@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-30 03:29+0000\n"
+"POT-Creation-Date: 2013-04-08 05:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Aomen"
 msgstr ""
 
-#: ./browser/memer.py:51
+#: ./browser/member_view.py:35
 #: ./browser/templates/member_view.pt:23
 msgid "Base information"
 msgstr ""
@@ -39,29 +39,41 @@ msgid "Beijing"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:41
-#: ./content/member.py:217
 msgid "Biography"
+msgstr ""
+
+#: ./browser/register.py:29
+msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
+msgstr ""
+
+#: ./content/member.py:224
+msgid "Check this option if you need funding to attend."
 msgstr ""
 
 #: ./vocabulary.py:39
 msgid "Chongqing"
 msgstr ""
 
-#: ./behavior/membraneuser.py:199
+#: ./browser/templates/member_view.pt:181
+#: ./content/member.py:232
+msgid "Comments"
+msgstr ""
+
+#: ./browser/templates/member_view.pt:148
+msgid "Conference information"
+msgstr ""
+
+#: ./behavior/membraneuser.py:201
 msgid "Confirm Password"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:126
-#: ./content/member.py:184
+#: ./content/member.py:178
 msgid "Country"
 msgstr ""
 
 #: ./profiles/behavior/controlpanel.xml
 msgid "Dexterity Membrane Behavior Settings"
-msgstr ""
-
-#: ./content/member.py:96
-msgid "E-mail Address"
 msgstr ""
 
 #: ./vocabulary.py:55
@@ -72,32 +84,44 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: ./content/member.py:96
+msgid "Email address"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:36
-#: ./content/member.py:138
+#: ./content/member.py:134
 msgid "External Homepage"
+msgstr ""
+
+#: ./content/member.py:233
+msgid "Fill in this field with things you need the organizers to know.        If you are roomsharing and already have a roommate, please mention your roommate's name here"
 msgstr ""
 
 #: ./vocabulary.py:57
 msgid "Finance"
 msgstr ""
 
-#: ./content/member.py:132
-msgid "First Name"
-msgstr ""
-
 #: ./vocabulary.py:30
 msgid "Fujian"
+msgstr ""
+
+#: ./content/member.py:122
+msgid "Full name"
+msgstr ""
+
+#: ./content/member.py:218
+msgid "Funding"
 msgstr ""
 
 #: ./vocabulary.py:42
 msgid "Gansu"
 msgstr ""
 
-#: ./content/member.py:179
+#: ./content/member.py:173
 msgid "Geography"
 msgstr ""
 
-#: ./browser/memer.py:95
+#: ./browser/member_view.py:79
 #: ./browser/templates/member_view.pt:118
 msgid "Geography information"
 msgstr ""
@@ -146,6 +170,10 @@ msgstr ""
 msgid "If checked, the value in the email field will be used as a username/login. If unchecked, your content type must provide a username field."
 msgstr ""
 
+#: ./content/member.py:228
+msgid "If you want or need a room, check this option"
+msgstr ""
+
 #: ./vocabulary.py:27
 msgid "Jiangsu"
 msgstr ""
@@ -158,10 +186,6 @@ msgstr ""
 msgid "Jilin"
 msgstr ""
 
-#: ./content/member.py:127
-msgid "Last Name"
-msgstr ""
-
 #: ./behavior/settings.py:16
 msgid "Local Roles"
 msgstr ""
@@ -170,15 +194,20 @@ msgstr ""
 msgid "Member"
 msgstr ""
 
-#: ./behavior/membraneuser.py:186
+#: ./behavior/membraneuser.py:188
 msgid "Membership"
+msgstr ""
+
+#: ./browser/templates/member_view.pt:156
+#: ./content/member.py:223
+msgid "Need funding"
 msgstr ""
 
 #: ./vocabulary.py:19
 msgid "Neimenggu"
 msgstr ""
 
-#: ./browser/memer.py:73
+#: ./browser/member_view.py:57
 #: ./browser/templates/member_view.pt:88
 msgid "Network information"
 msgstr ""
@@ -196,30 +225,43 @@ msgid "Not an email address"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:63
-#: ./content/member.py:154
+#: ./content/member.py:150
 msgid "Organization / Company"
 msgstr ""
 
-#: ./behavior/membraneuser.py:194
+#: ./behavior/membraneuser.py:196
 msgid "Password"
 msgstr ""
 
+#: ./browser/templates/member_view.pt:176
+#: ./content/member.py:251
+msgid "Person Color Tag"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:101
-#: ./content/member.py:144
+#: ./content/member.py:140
 msgid "Phone number"
 msgstr ""
 
-#: ./content/member.py:222
+#: ./content/member.py:211
 msgid "Photo"
 msgstr ""
 
+#: ./content/member.py:97
+msgid "Please input correct mail address,the active code will be sent to it"
+msgstr ""
+
+#: ./content/member.py:264
+msgid "Please upload image smaller than 512KB"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:68
-#: ./content/member.py:167
+#: ./content/member.py:161
 msgid "Position / Role in Organization"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:106
-#: ./content/member.py:210
+#: ./content/member.py:205
 msgid "QQ Number"
 msgstr ""
 
@@ -227,7 +269,16 @@ msgstr ""
 msgid "Qinghai"
 msgstr ""
 
-#: ./content/member.py:159
+#: ./browser/register.py:58
+msgid "Register for site member"
+msgstr ""
+
+#: ./browser/templates/member_view.pt:161
+#: ./content/member.py:227
+msgid "Roomshare"
+msgstr ""
+
+#: ./content/member.py:155
 msgid "Sector"
 msgstr ""
 
@@ -247,19 +298,36 @@ msgstr ""
 msgid "Shenzhen"
 msgstr ""
 
+#: ./content/member.py:127
+msgid "Short Bio"
+msgstr ""
+
+#: ./browser/register.py:28
+msgid "Show me in attendee list"
+msgstr ""
+
 #: ./vocabulary.py:29
 msgid "Sichuan"
+msgstr ""
+
+#: ./browser/templates/member_view.pt:166
+#: ./content/member.py:243
+msgid "T-shirt size"
 msgstr ""
 
 #: ./vocabulary.py:38
 msgid "Taiwan"
 msgstr ""
 
+#: ./content/member.py:128
+msgid "Tell us more about yourself"
+msgstr ""
+
 #: ./behavior/settings.py:17
 msgid "The list of additional local roles members will be granted in the context of their own profile objects"
 msgstr ""
 
-#: ./behavior/membraneuser.py:210
+#: ./behavior/membraneuser.py:212
 msgid "The password and confirmation do not match."
 msgstr ""
 
@@ -267,7 +335,7 @@ msgstr ""
 msgid "Tianjin"
 msgstr ""
 
-#: ./browser/memer.py:62
+#: ./browser/member_view.py:46
 msgid "Update password"
 msgstr ""
 
@@ -279,15 +347,20 @@ msgstr ""
 msgid "Use object UUID for the userid?"
 msgstr ""
 
-#: ./content/member.py:185
+#: ./browser/templates/member_view.pt:171
+#: ./content/member.py:238
+msgid "Vegetarian?"
+msgstr ""
+
+#: ./content/member.py:179
 msgid "Where you are from"
 msgstr ""
 
-#: ./content/member.py:149
+#: ./content/member.py:145
 msgid "Work"
 msgstr ""
 
-#: ./browser/memer.py:84
+#: ./browser/member_view.py:68
 #: ./browser/templates/member_view.pt:55
 msgid "Work information"
 msgstr ""
@@ -304,7 +377,7 @@ msgstr ""
 msgid "Xizang"
 msgstr ""
 
-#: ./content/member.py:223
+#: ./content/member.py:212
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr ""
 
@@ -312,12 +385,16 @@ msgstr ""
 msgid "Zhejiang"
 msgstr ""
 
-#: ./content/member.py:203
+#: ./content/member.py:198
 msgid "bonus"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:49
 msgid "change password"
+msgstr ""
+
+#: ./browser/member_view.py:91
+msgid "conference information"
 msgstr ""
 
 #: ./vocabulary.py:59
@@ -349,12 +426,20 @@ msgstr ""
 msgid "manufacture"
 msgstr ""
 
-#: ./content/member.py:197
+#: ./profiles/default/types/dexterity.membrane.memberfolder.xml
+msgid "memberfolder"
+msgstr ""
+
+#: ./profiles/default/types/dexterity.membrane.memberfolder.xml
+msgid "memberfolder for site member"
+msgstr ""
+
+#: ./content/member.py:192
 msgid "personal address"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:77
-#: ./content/member.py:173
+#: ./content/member.py:167
 msgid "research domain"
 msgstr ""
 
@@ -373,7 +458,7 @@ msgid "telecommunication"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:131
-#: ./content/member.py:191
+#: ./content/member.py:186
 msgid "the province of your company"
 msgstr ""
 

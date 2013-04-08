@@ -17,6 +17,8 @@
 
   <include package=".behavior" />
   <include package=".content" />
+  <include package=".browser" />
+  <include package="collective.conference" />  
   <i18n:registerTranslations directory="locales" />  
     <browser:page
         name="dexterity-membrane-macros"
@@ -41,6 +43,7 @@
       />
 
   <adapter name="Title" factory=".indexers.Title" />
+  <adapter name="email" factory=".indexers.member_email" />  
 
   <!-- -*- extra stuff goes here -*- -->
   <!--

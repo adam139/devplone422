@@ -23,7 +23,7 @@ body {
 /* start customize for owasp 
  * 
  */
-#content ul#tab {list-style-type: none;} 
+#content .nav {list-style-type: none;} 
 #portletFooterManager h4 {margin-bottom: 6px;}
 .pagination a:first-child {border-left-width: 1px;}
 .div_tip {text-align: center;} 

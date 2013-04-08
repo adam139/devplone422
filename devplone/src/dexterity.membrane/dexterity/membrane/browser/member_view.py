@@ -21,8 +21,10 @@ class MembraneMemberView(grok.View):
     grok.name('view')
     grok.require('zope2.View')
 
-
-
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
     
     def fullname(self):
         context = self.context

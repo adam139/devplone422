@@ -15,18 +15,20 @@ class Allcontents(unittest.TestCase):
     def setUp(self):
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ('Manager',))
+        
+        portal.invokeFactory('collective.conference.conferencefolder','conferencefolder1')
 
-        portal.invokeFactory('collective.conference.conference','conference1',
+        portal['conferencefolder1'].invokeFactory('collective.conference.conference','conference1',
                                          title=u"conference1",
                                          description=u"a conference",
                                          rooms=['room1','room2'],
 
                                          )
         data = getFile('image.jpg').read()
-        item = portal['conference1']
+        item = portal['conferencefolder1']['conference1']
         item.logo_image = NamedImage(data, 'image/png', u'image.jpg')        
         
-        portal['conference1'].invokeFactory('collective.conference.session','session1',
+        portal['conferencefolder1']['conference1'].invokeFactory('collective.conference.session','session1',
                                          title=u"session1",
                                          description=u"a session1",
                                          email=u"adam@qq.com",
@@ -37,10 +39,10 @@ class Allcontents(unittest.TestCase):
         self.portal = portal
     
     def test_conference(self):
-        self.assertEqual(self.portal['conference1'].id,'conference1')
+        self.assertEqual(self.portal['conferencefolder1']['conference1'].id,'conference1')
         
     def test_session(self):
-        self.assertEqual(self.portal['conference1']['session1'].id,'session1')        
+        self.assertEqual(self.portal['conferencefolder1']['conference1']['session1'].id,'session1')        
         
       
     

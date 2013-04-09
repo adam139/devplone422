@@ -10,6 +10,8 @@ from zope.component import getUtility
 from collective.conference.events import FollowedEvent
 from collective.conference.events import UnfollowedEvent
 
+from collective.conference.events import RegisteredConfEvent,RegisteredSessionEvent
+
 
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
@@ -24,7 +26,8 @@ class TestEvent(unittest.TestCase):
 
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ('Manager',))
-        portal.invokeFactory('collective.conference.conference', 'conference1')
+        portal.invokeFactory('collective.conference.conference', 'conference1',
+                             participants=['member1'])
         portal['conference1'].invokeFactory('collective.conference.session', 'session1',
                              description=u"description",
                              additional=u"additional"
@@ -38,8 +41,8 @@ class TestEvent(unittest.TestCase):
         mp = getToolByName(portal,'portal_membership')
         userobject = mp.getAuthenticatedMember()
         username = userobject.getId()
-        import pdb
-        pdb.set_trace()
+#        import pdb
+#        pdb.set_trace()
         questionlist = list(userobject.getProperty('myquestions'))
         evlute = IEvaluate(file)
         
@@ -59,9 +62,23 @@ class TestEvent(unittest.TestCase):
         self.assertFalse(file.id in questionlist)
         self.assertFalse(evlute.available(username))
         self.assertEqual(0, evlute.followerNum)
-
-
-
+# fire register conf event        
+        event.notify(RegisteredConfEvent(file))
+        clists = list(userobject.getProperty('conferences'))
+        plists = file.participants
+        
+        self.assertFalse(file.id in questionlist)
+#        import pdb
+#        pdb.set_trace()
+        username = '12@qq.com'
+        self.assertTrue(username in plists)
+# fire register session event        
+        event.notify(RegisteredSessionEvent(file))
+#        clists = list(userobject.getProperty('conferences'))
+        plists = file.speakers
+        
+#        self.assertFalse(file.id in questionlist)
+        self.assertTrue(username in plists)
            
 
        

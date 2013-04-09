@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_memberdata">
     <property name="myquestions" type="lines"></property>
+    <property name="conferences" type="lines"></property>    
     <property name="mytopics" type="lines"></property>
     <property name="myratings" type="lines"></property>
     <property name="subscribemail" type="boolean"></property>

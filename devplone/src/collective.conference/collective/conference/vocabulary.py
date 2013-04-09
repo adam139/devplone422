@@ -1,6 +1,7 @@
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from five import grok
 from zope.schema.interfaces import IVocabularyFactory
+import unicodedata
 from incf.countryutils import data as countrydata
 from collective.conference import MessageFactory as _
 
@@ -67,6 +68,21 @@ class SessionLevels(object):
 grok.global_utility(SessionLevels, IVocabularyFactory,
         name="collective.conference.vocabulary.sessionlevel")
 
+class RoomsVocabulary(object):
+    """Creates a vocabulary with the sections stored in the registry; the
+    vocabulary is normalized to allow the use of non-ascii characters.
+    """
+    grok.implements(IVocabularyFactory)
 
+    def __call__(self, context):
+#        registry = getUtility(IRegistry)
+#        settings = registry.forInterface(INITFSettings)
+        conference = context.getConference()
+        items = []
+        for section in conference.rooms:
+            token = unicodedata.normalize('NFKD', section).encode('utf-8', 'ignore').lower()
+            items.append(SimpleVocabulary.createTerm(token, token, section))
+        return SimpleVocabulary(items)
 
+grok.global_utility(RoomsVocabulary, name=u'collective.conference.rooms')
 

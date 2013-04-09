@@ -17,12 +17,21 @@
       <div class="row-fluid banner"
          tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html">
          <div class="span1">&nbsp;</div>
-         <div class="span6">
-            <h1><span tal:content="context/title"></span>
-            <span  i18n:translate="">we have<span id="follow-num" i18n:name="num" tal:content="python:view.getFollowNum()"></span> follow this</span></h1>
+         <div class="span6" tal:define="id context/id;isAnonymous python:view.isAnonymous">
+            <h1><span tal:content="context/title"></span></h1>
+            <h3><span  i18n:translate="">we have
+            	<span id="follow-num" i18n:name="num" tal:content="python:view.getFollowNum()">0</span> follow this</span>
+            </h3>
             <p tal:replace="structure python:text_to_html(context.description)"></p>
-            <div id="follow-box" tal:define="follow python:view.isFollowed();
-            	id context/id">
+            <div tal:condition="isAnonymous">
+						<a class="btn btn-primary" tal:attributes="href string:${portal_url}/memberfolder/@@register" i18n:translate="">Register member</a>
+						<div class="alert alert-success">
+        					<a data-dismiss="alert" class="close">×</a>
+        					<strong i18n:translate="">Tips:</strong><span i18n:translate="">you should register as member for join the event.</span></div>            	
+            </div>
+            <div tal:condition="python:not isAnonymous">
+            <div  id="follow-box" tal:define="follow python:view.isFollowed();
+            	">
 					<span id="fire-follow" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
 						data-ajax-target string:${portal_url}/@@ajax-follow">
 						<img tal:attributes="src string:${view/static}/plus.png" />&nbsp;
@@ -36,11 +45,15 @@
 						<input type="hidden" tal:attributes="value id" />						
 					</span>
 				</div>		
-            <a  i18n:translate=""  class="btn btn-primary btn-large"
-               tal:attributes="href string:${context/absolute_url}/register">Register NOW</a>
-            <a  i18n:translate=""  class="btn btn-primary btn-large"
-               tal:attributes="href string:${context/absolute_url}/propose">Propose Session</a>
-
+<!--            <a  i18n:translate=""  id="regconf" class="btn btn-primary btn-large"
+               tal:attributes="href string:${context/absolute_url}/register">Register NOW</a> -->
+            <a  tal:condition="python:view.isRegister()" i18n:translate=""  href="javascript:void(0)" id="regconf" class="btn btn-primary btn-large"
+               tal:attributes="data-ajax-target string:${context/absolute_url}/@@ajax-register-conf">Register NOW</a>
+                          
+            <a  tal:condition="python:view.isRegisterSpeaker()" i18n:translate=""  id="regsession" class="btn btn-primary btn-large"
+               tal:attributes="href string:${context/absolute_url}/propose;
+               data-ajax-target string:${context/absolute_url}/@@ajax-register-session">Propose Session</a>
+         </div>
          </div>
          <div class="span4"
             tal:define="scale context/@@images;
@@ -66,18 +79,18 @@
 			  <script type="text/javascript">
   	//ajax-follow-question
 jq(".followjq").live("click",function() {
-	var before = jq("#follow-num").val();
-	var current = int(before) + 1;
-	q("#follow-num").html(str(current));
+	var before = jq("#follow-num").html();
+	var current = parseInt(before) + 1;
+	jq("#follow-num").html(current.toString());
 	jq(this).siblings("input").addClass("followform");
 	var id = jq(".followform").attr('value');
 	var questionid = {'questionid': id};
 	if (jq(".followform").attr('id')) {
 		var ida = jq(".followform").attr('id');
-		var action = jq("#ajax-question-follow-" + id + ida).attr('data-ajax-target');
+		var action = jq("#fire-follow").attr('data-ajax-target');
 		jq.post(action, questionid, function(){
-			jq("#ajax-question-follow-" + id + ida).hide();
-			jq("#ajax-question-unfollow-" + id + ida).show();
+			jq("#fire-follow").hide();
+			jq("#fire-unfollow").show();
 		}, 'json');
 		jq(this).siblings("input").removeClass("followform");
 	}else{
@@ -92,26 +105,39 @@ jq(".followjq").live("click",function() {
 
 //ajax-unfollow-question
 jq(".unfollowjq").live("click",function() {
+	var before = jq("#follow-num").html();
+	var current = parseInt(before) - 1;
+	jq("#follow-num").html(current.toString());
 	jq(this).siblings("input").addClass("unfollowform");
 	var id = jq(".unfollowform").attr('value');
 	var questionid = {'questionid':id};
-	if (jq(".unfollowform").attr('id')){
-		var ida = jq(".unfollowform").attr('id');
-		var action = jq("#ajax-question-unfollow-" + id + ida).attr('data-ajax-target');
+	
+		var action = jq("#fire-unfollow").attr('data-ajax-target');
 		jq.post(action, questionid, function(){
-			jq("#ajax-unfollow-" + id + ida).hide();
-			jq("#ajax-follow-" + id + ida).show();
+			jq("#fire-unfollow").hide();
+			jq("#fire-follow").show();
 		}, 'json');
 		jq(this).siblings("input").removeClass("unfollowform");
-	}else{
-		var action = jq("#ajax-unfollow-").attr('data-ajax-target');
-		jq.post(action, questionid, function(){
-			jq("#ajax-unfollow").hide();
-			jq("#ajax-follow").show();
-		}, 'json');
-		jq(this).siblings("input").removeClass("unfollowform");
-	}return false;
+	return false;
 });
+//ajax-register-conf
+jq("#regconf").live("click",function() {	
+		var action = jq(this).attr('data-ajax-target');
+		jq.post(action, function(){
+			jq("#regconf").hide();
+		}, 'json');
+	return false;
+});
+//ajax-register-session
+/*
+jq("#regsession").live("click",function() {	
+		var action = jq(this).attr('data-ajax-target');
+		jq.post(action, function(){
+			jq("#regsession").hide();
+		}, 'json');
+	return false;
+});
+*/
 </script>	
 </metal:js>
 

@@ -1,4 +1,8 @@
 from five import grok
+from zope import event
+
+from collective.conference.events import RegisteredConfEvent,RegisteredSessionEvent
+
 from collective.conference.session import ISession, Session
 from collective.conference.conference import IConference
 from plone.formwidget.captcha import CaptchaFieldWidget
@@ -14,14 +18,11 @@ from Products.CMFPlone.utils import _createObjectByType
 from collective.conference import MessageFactory as _
 from Products.statusmessages.interfaces import IStatusMessage
 
-
-
 class IProposalForm(ISession):
     form.widget(captcha=CaptchaFieldWidget)
     captcha = schema.TextLine(title=u"",
                             required=False)
     form.omitted('conference_rooms', 'color', 'textColor')
-
 
 @form.validator(field=IProposalForm['captcha'])
 def validateCaptca(value):
@@ -39,7 +40,8 @@ def validateCaptca(value):
 class ProposalForm(form.SchemaAddForm):
     grok.name('propose')
     grok.context(IConference)
-    grok.require("zope.Public")
+#    grok.require("zope.Public")
+    grok.require('zope2.View')    
     schema = IProposalForm
     label = _(u"Propose a session")
 
@@ -56,10 +58,13 @@ class ProposalForm(form.SchemaAddForm):
         for k, v in data.items():
             setattr(obj, k, v)
         IStatusMessage(self.request).addStatusMessage(
-        'Thank you for your submission.' +
+        _(u'Thank you for your submission.' +
         'Your submission is now held for approval and will appear on the ' + 
-        'site once it is approved')
+        'site once it is approved'))
         obj.reindexObject()
+#        import pdb
+#        pdb.set_trace()
+        event.notify(RegisteredSessionEvent(self.context))
         return obj
 
     def add(self, obj):

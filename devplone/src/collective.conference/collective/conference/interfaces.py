@@ -12,6 +12,13 @@ class IFollowedEvent(IObjectEvent):
 class IUnfollowedEvent(IObjectEvent):
     """ pass"""
 
+class IRegisteredConfEvent(IObjectEvent):
+    """ pass"""    
+    
+
+class IRegisteredSessionEvent(IObjectEvent):
+    """ pass"""    
+        
 class ILikeEvent(IObjectEvent):
     """ pass"""
 

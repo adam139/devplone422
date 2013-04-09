@@ -1,6 +1,9 @@
 #-*- coding: UTF-8 -*-
+from zope import event
 from Products.CMFCore.utils import getToolByName
-from collective.conference.testing import FUNCTIONAL_TESTING 
+from collective.conference.testing import FUNCTIONAL_TESTING
+
+from collective.conference.events import RegisteredConfEvent 
 
 from plone.app.testing import TEST_USER_ID, login, TEST_USER_NAME, \
     TEST_USER_PASSWORD, setRoles
@@ -25,6 +28,22 @@ class TestView(unittest.TestCase):
 #        pdb.set_trace()
         start = datetime.datetime.today()
         end = start + datetime.timedelta(7)
+        portal.invokeFactory('dexterity.membrane.memberfolder', 'memberfolder')
+        
+        portal['memberfolder'].invokeFactory('dexterity.membrane.member', 'member1',
+                             email="12@qq.com",
+                             title = u"tangyuejun",
+                             password="391124",
+                             confirm_password ="391124",
+                             homepae = 'http://315ok.org/',
+                             bonus = 300,
+                             description="I am member1")     
+     
+          
+ 
+        data = getFile('image.jpg').read()
+        item = portal['memberfolder']['member1']
+        item.photo = NamedImage(data, 'image/jpg', u'image.jpg')        
 
         portal.invokeFactory('collective.conference.conference', 'conference1',
                              province="Beijin",
@@ -58,7 +77,10 @@ class TestView(unittest.TestCase):
  
         data = getFile('image.jpg').read()
         item = portal['conference1']
+        
         item.logo_image = NamedImage(data, 'image/gif', u'image.gif')
+# fire   event for conference      
+        event.notify(RegisteredConfEvent(item))        
         data2 = getFile('image.jpg').read()        
         item2 = portal['conference1']['participant1']
         item2.photo = NamedImage(data2, 'image/jpeg', u'image.jpg')  
@@ -78,10 +100,27 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
-        obj = portal['conference1']['participant1'].absolute_url() + '/@@view'        
+        obj = portal['conference1']['participant1'].absolute_url() + '/@@view'
+        obj = portal['memberfolder']['member1'].absolute_url() + '/@@view'                  
 
         browser.open(obj)
-        outstr = "participant1"        
-        self.assertTrue(outstr in browser.contents)   
+        outstr = "qq.com"        
+        self.assertTrue(outstr in browser.contents)  
         
+    def test_participant_list_view(self):         
+        app = self.layer['app']
+        portal = self.layer['portal']
+       
+        browser = Browser(app)
+        browser.handleErrors = False
+        browser.addHeader('Authorization', 'Basic %s:%s' % (TEST_USER_NAME, TEST_USER_PASSWORD,))
+        
+        import transaction
+        transaction.commit()
+        obj = portal['conference1'].absolute_url() + '/@@participants'
+                 
+
+        browser.open(obj)
+        outstr = "tangyuejun"        
+        self.assertTrue(outstr in browser.contents)          
    

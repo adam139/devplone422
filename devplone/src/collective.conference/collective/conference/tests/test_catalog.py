@@ -71,6 +71,8 @@ class CatalogSetupTest(unittest.TestCase):
                  
     
     def test_catalog_installed(self):
+        self.assertTrue('id' in
+                        self.portal.portal_catalog.indexes())        
         self.assertTrue('conference_rooms' in
                         self.portal.portal_catalog.indexes())
         self.assertTrue('conference_province' in

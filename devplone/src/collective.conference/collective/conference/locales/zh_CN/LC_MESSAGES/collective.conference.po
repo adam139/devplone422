@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eisoo.topic\n"
-"POT-Creation-Date: 2013-03-29 07:56+0000\n"
-"PO-Revision-Date: 2013-04-02 09:09+0800\n"
+"POT-Creation-Date: 2013-04-08 12:56+0000\n"
+"PO-Revision-Date: 2013-04-08 20:57+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,13 @@ msgstr ""
 msgid "A conference event"
 msgstr "一个会务活动"
 
-#: ./interfaces.py:50
+#: ./interfaces.py:57
 msgid "A score from 1-100"
 msgstr ""
+
+#: ./browser/templates/conference_listings.pt:150
+msgid "Add conference"
+msgstr "添加活动"
 
 #: ./browser/templates/session_view.pt:36
 msgid "Additional Information"
@@ -34,7 +38,7 @@ msgstr "地址："
 msgid "Admin"
 msgstr "活动管理"
 
-#: ./vocabulary.py:58
+#: ./vocabulary.py:59
 msgid "Advanced"
 msgstr "高级"
 
@@ -43,11 +47,11 @@ msgstr "高级"
 msgid "Agenda"
 msgstr "日程"
 
-#: ./session.py:85
+#: ./session.py:95
 msgid "Agenda Background Color"
 msgstr "日程背景颜色"
 
-#: ./session.py:92
+#: ./session.py:102
 msgid "Agenda Text Color"
 msgstr "日程文本颜色"
 
@@ -59,11 +63,11 @@ msgstr "所有参会者"
 msgid "All Sessions"
 msgstr "所有会议"
 
-#: ./session.py:71
+#: ./session.py:80
 msgid "Attach your talks document (slide, code, etc).        If there are multiple files, include them in a zip By uploading the file here,        you hereby agreed to grants us permission to redistribute this file"
 msgstr "上载您的演讲文档（ppt等）。如果有多个文件，请务必压缩成一个zip文件。"
 
-#: ./session.py:70
+#: ./session.py:79
 msgid "Attachment"
 msgstr "附件"
 
@@ -75,7 +79,7 @@ msgstr "与会者列表"
 msgid "Available Rooms"
 msgstr "有效的会议厅"
 
-#: ./vocabulary.py:56
+#: ./vocabulary.py:57
 msgid "Beginner"
 msgstr "初级"
 
@@ -83,15 +87,19 @@ msgstr "初级"
 msgid "Bio:"
 msgstr "个人简介"
 
+#: ./participant.py:177
+msgid "Biography"
+msgstr "自我介绍"
+
 #: ./browser/register.py:23
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr "如果你希望您的名称及联系信息发布在与会者列表中，请选择此选项。"
 
-#: ./participant.py:101
+#: ./participant.py:237
 msgid "Check this option if you need funding to attend."
 msgstr "选择这个选项，如果你需要主办方支持。"
 
-#: ./participant.py:109
+#: ./participant.py:245
 msgid "Comments"
 msgstr "留言"
 
@@ -103,8 +111,8 @@ msgstr "会务管理"
 msgid "Conference Participant"
 msgstr "会议参与者"
 
-#: ./browser/listings.py:79
-#: ./session.py:78
+#: ./browser/listings.py:108
+#: ./session.py:87
 msgid "Conference Rooms"
 msgstr "会议厅"
 
@@ -116,7 +124,7 @@ msgstr "会议"
 msgid "Conference Type"
 msgstr "活动类型"
 
-#: ./participant.py:69
+#: ./participant.py:144
 msgid "Country"
 msgstr "国家"
 
@@ -128,15 +136,15 @@ msgstr "国家："
 msgid "Day${curday}"
 msgstr "第${curday}天"
 
-#: ./vocabulary.py:30
+#: ./vocabulary.py:31
 msgid "Discussion"
 msgstr "论坛"
 
-#: ./session.py:48
+#: ./session.py:57
 msgid "E-mail addresses of speakers"
 msgstr "演讲人邮件地址"
 
-#: ./participant.py:43
+#: ./participant.py:87
 msgid "Email address"
 msgstr "Email地址"
 
@@ -144,32 +152,40 @@ msgstr "Email地址"
 msgid "Email:"
 msgstr "电子邮件："
 
-#: ./participant.py:110
+#: ./participant.py:100
+msgid "External Homepage"
+msgstr "不是有效的链接"
+
+#: ./participant.py:246
 msgid "Fill in this field with things you need the organizers to know.        If you are roomsharing and already have a roommate, please mention your roommate's name here"
 msgstr "将你需要主办方知道的信息填写在下面。如果你打算和他人共住客房并且已有了同住房客，请在此留下同住房客的姓名。"
 
-#: ./participant.py:40
+#: ./participant.py:84
 msgid "Full name"
 msgstr "名称"
 
-#: ./participant.py:95
+#: ./participant.py:231
 msgid "Funding"
 msgstr "会务支持"
 
-#: ./participant.py:105
+#: ./participant.py:139
+msgid "Geography"
+msgstr "地理"
+
+#: ./participant.py:241
 msgid "If you want or need a room, check this option"
 msgstr "如果你需要预定客房，请选择此选项"
 
-#: ./vocabulary.py:57
+#: ./vocabulary.py:58
 msgid "Intermediate"
 msgstr "中级"
 
-#: ./participant.py:138
+#: ./participant.py:275
 msgid "Invalid email address"
 msgstr "无效的邮件地址"
 
-#: ./browser/listings.py:74
-#: ./session.py:59
+#: ./browser/listings.py:103
+#: ./session.py:68
 msgid "Level"
 msgstr "级别"
 
@@ -177,16 +193,24 @@ msgstr "级别"
 msgid "Logo"
 msgstr "标志"
 
-#: ./session.py:65
+#: ./session.py:74
 msgid "More details on proposed session"
 msgstr "会议的详细情况"
 
-#: ./participant.py:100
+#: ./participant.py:236
 msgid "Need funding"
 msgstr "需要会务支持"
 
+#: ./participant.py:62
+msgid "Not a valid link"
+msgstr "不是有效的链接"
+
+#: ./vocabulary.py:44
+msgid "OWASP Conference"
+msgstr "年度峰会"
+
 #: ./browser/templates/participant_view.pt:36
-#: ./participant.py:59
+#: ./participant.py:116
 msgid "Organization / Company"
 msgstr "单位或公司"
 
@@ -199,29 +223,37 @@ msgstr "与会者"
 msgid "Participants"
 msgstr "参会者"
 
-#: ./browser/listings.py:111
+#: ./conference.py:58
+msgid "Participants list"
+msgstr "参会者列表"
+
+#: ./browser/listings.py:140
 #: ./browser/templates/macros.pt:70
 msgid "Pending Sessions"
 msgstr "待批准的会议"
 
-#: ./participant.py:117
+#: ./participant.py:253
 msgid "Person Color Tag"
 msgstr "个性彩色标签"
 
-#: ./participant.py:54
+#: ./participant.py:106
 msgid "Phone number"
 msgstr "电话号码"
 
-#: ./participant.py:89
+#: ./participant.py:182
 msgid "Photo"
 msgstr "相片"
 
-#: ./participant.py:129
+#: ./participant.py:88
+msgid "Please input correct mail address,the active code will be sent to it"
+msgstr "请输入正确的邮箱，激活码将会发到您的邮箱中。"
+
+#: ./participant.py:266
 msgid "Please upload image smaller than 512KB"
 msgstr "请上载小于512KB的图片"
 
 #: ./browser/templates/participant_view.pt:41
-#: ./participant.py:64
+#: ./participant.py:127
 msgid "Position / Role in Organization"
 msgstr "职位"
 
@@ -229,31 +261,39 @@ msgstr "职位"
 msgid "Presented By"
 msgstr "演讲由"
 
-#: ./browser/templates/conference_view.pt:41
+#: ./browser/templates/conference_view.pt:53
 msgid "Propose Session"
 msgstr "申请演讲"
 
-#: ./browser/propose.py:44
+#: ./browser/propose.py:46
 msgid "Propose a session"
 msgstr "申请一次演讲"
 
-#: ./vocabulary.py:42
+#: ./participant.py:170
+msgid "QQ Number"
+msgstr "QQ号码"
+
+#: ./vocabulary.py:43
 msgid "Regional Events"
 msgstr "区域峰会"
 
-#: ./browser/templates/conference_view.pt:39
+#: ./browser/templates/conference_view.pt:50
 msgid "Register NOW"
 msgstr "马上报名"
 
-#: ./browser/register.py:51
+#: ./browser/register.py:52
 msgid "Register for this event"
 msgstr "注册参入本次活动"
+
+#: ./browser/templates/conference_view.pt:27
+msgid "Register member"
+msgstr "注册会员"
 
 #: ./browser/templates/macros.pt:139
 msgid "Room"
 msgstr "会议厅"
 
-#: ./participant.py:104
+#: ./participant.py:240
 msgid "Roomshare"
 msgstr "共用客房"
 
@@ -261,16 +301,20 @@ msgstr "共用客房"
 msgid "Schedule for ${curday}Day"
 msgstr "第${curday}天日程安排"
 
+#: ./participant.py:121
+msgid "Sector"
+msgstr "行业"
+
 #: ./profiles/default/types/collective.conference.session.xml
 msgid "Session"
 msgstr "会议"
 
-#: ./session.py:52
+#: ./session.py:61
 msgid "Session Title"
 msgstr "会议标题"
 
-#: ./browser/listings.py:69
-#: ./session.py:55
+#: ./browser/listings.py:98
+#: ./session.py:64
 msgid "Session Type"
 msgstr "会议类型"
 
@@ -280,7 +324,7 @@ msgstr "会议类型"
 msgid "Sessions"
 msgstr "会议"
 
-#: ./participant.py:48
+#: ./participant.py:93
 msgid "Short Bio"
 msgstr "个人简介"
 
@@ -297,32 +341,40 @@ msgstr "演讲嘉宾"
 msgid "Sponsor"
 msgstr "主办单位"
 
-#: ./browser/listings.py:90
+#: ./browser/listings.py:119
 msgid "Submitted Sessions"
 msgstr "已提交的会议"
 
 #: ./conference.py:40
-#: ./session.py:53
+#: ./session.py:62
 msgid "Summary"
 msgstr "摘要"
 
-#: ./participant.py:83
+#: ./participant.py:219
 msgid "T-shirt size"
 msgstr "文化衫大小"
 
-#: ./vocabulary.py:28
+#: ./vocabulary.py:29
 msgid "Talk"
 msgstr "演讲"
 
-#: ./participant.py:49
+#: ./participant.py:94
 msgid "Tell us more about yourself"
 msgstr "告诉我们关于你自己的情况"
 
-#: ./browser/register.py:74
+#: ./browser/propose.py:61
+msgid "Thank you for your submission.Your submission is now held for approval and will appear on the site once it is approved"
+msgstr "感谢您的提交，您的提交将等待网站审核后，发布出来。"
+
+#: ./browser/register.py:75
 msgid "Thank you. You are now registered."
 msgstr "你已完成了注册，多谢！"
 
-#: ./browser/listings.py:65
+#: ./browser/templates/conference_view.pt:30
+msgid "Tips:"
+msgstr "提示："
+
+#: ./browser/listings.py:94
 #: ./conference.py:38
 msgid "Title"
 msgstr "标题"
@@ -331,55 +383,67 @@ msgstr "标题"
 msgid "To"
 msgstr "到"
 
+#: ./vocabulary.py:45
+msgid "Topic Research"
+msgstr "专题研究"
+
 #: ./browser/templates/macros.pt:60
 msgid "Vegetarian Attendees List"
 msgstr "素食与会者列表"
 
-#: ./participant.py:78
+#: ./participant.py:214
 msgid "Vegetarian?"
 msgstr "素食吗？"
 
-#: ./browser/listings.py:45
+#: ./browser/listings.py:57
 msgid "Vegetarians listing"
 msgstr "素食者列表"
 
-#: ./session.py:49
+#: ./session.py:58
 msgid "We will find speakers' profile in the registration using these emails. One in each line"
 msgstr "我们将通过此处留存的邮件地址查询到演讲嘉宾的其他信息。邮件地址每行一个。"
 
-#: ./participant.py:70
+#: ./participant.py:145
 msgid "Where you are from"
 msgstr "来自哪里"
 
-#: ./vocabulary.py:29
+#: ./participant.py:111
+msgid "Work"
+msgstr "工作"
+
+#: ./vocabulary.py:30
 msgid "Workshop"
 msgstr "专题研究"
 
-#: ./participant.py:90
+#: ./participant.py:183
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr "你的相片，建议尺寸为150x195px"
 
-#: ./browser/templates/conference_listings.pt:56
+#: ./browser/templates/conference_listings.pt:59
 msgid "address:"
 msgstr "地址："
 
-#: ./conference.py:58
-msgid "click number"
-msgstr ""
+#: ./participant.py:163
+msgid "bonus"
+msgstr "积分"
 
-#: ./browser/templates/conference_view.pt:29
+#: ./profiles/default/types/collective.conference.conferencefolder.xml
+msgid "conferencefolder"
+msgstr "活动文件夹"
+
+#: ./browser/templates/conference_view.pt:38
 msgid "follow"
 msgstr "关注"
 
-#: ./browser/templates/conference_listings.pt:15
+#: ./browser/templates/conference_listings.pt:18
 msgid "hottest events"
 msgstr "热门活动"
 
-#: ./browser/templates/conference_listings.pt:148
+#: ./browser/templates/conference_listings.pt:159
 msgid "more events"
 msgstr "更多活动"
 
-#: ./browser/templates/conference_listings.pt:14
+#: ./browser/templates/conference_listings.pt:17
 msgid "newest events"
 msgstr "最新活动"
 
@@ -387,6 +451,10 @@ msgstr "最新活动"
 #: ./browser/templates/speaker_listing.pt:37
 msgid "part_sessions"
 msgstr "分会"
+
+#: ./participant.py:157
+msgid "personal address"
+msgstr "个人联系地址"
 
 #: ./conference.py:48
 msgid "province"
@@ -397,20 +465,36 @@ msgstr "省份"
 msgid "read_more"
 msgstr "更多"
 
+#: ./participant.py:133
+msgid "research domain"
+msgstr "研究领域"
+
 #. Default: "Summmary"
 #: ./browser/templates/session_view.pt:29
 msgid "session_summary"
 msgstr "会议概览"
 
-#: ./browser/templates/conference_listings.pt:53
+#: ./conference.py:62
+msgid "speakers list"
+msgstr "演讲人列表"
+
+#: ./browser/templates/conference_listings.pt:56
 msgid "sponsor:"
 msgstr "主办者"
 
-#: ./browser/templates/conference_view.pt:35
+#: ./participant.py:151
+msgid "the province of your company"
+msgstr "所在省份"
+
+#: ./browser/templates/conference_view.pt:44
 msgid "unfollowed"
 msgstr "取消关注"
 
-#: ./browser/templates/conference_view.pt:22
-msgid "we have${num} follow this"
-msgstr "已有${num}个关注"
+#: ./browser/templates/conference_view.pt:23
+msgid "we have ${num} follow this"
+msgstr "有${num}人关注本活动"
+
+#: ./browser/templates/conference_view.pt:30
+msgid "you should register as member for join the event."
+msgstr "为了能参加本站活动，你应注册成为会员。"
 

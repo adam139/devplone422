@@ -17,7 +17,11 @@ class AgendaView(grok.View):
     grok.require('zope2.View')
 
     title = _(u'Agenda')
-
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
     def days(self):
         result = []
         delta = self.context.endDate-self.context.startDate

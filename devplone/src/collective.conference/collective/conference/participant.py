@@ -24,7 +24,42 @@ from dexterity.membrane.content.member import IMember
 
 from collective.conference import MessageFactory as _
 
+def is_url(value):
+    """Is this a URL?
 
+    >>> is_url("http://google.com/")
+    True
+    >>> is_url("https://google.com")
+    True
+    >>> is_url("http://example.org/folder/somepage")
+    True
+    >>> is_url("ssh://google.com")
+    Traceback (most recent call last):
+    ...
+    Invalid: Not a valid link
+    >>> is_url("nothing")
+    Traceback (most recent call last):
+    ...
+    Invalid: Not a valid link
+    >>> is_url("")
+    Traceback (most recent call last):
+    ...
+    Invalid: Not a valid link
+    >>> is_url(None)
+    Traceback (most recent call last):
+    ...
+    Invalid: Not a valid link
+    >>> is_url(object())
+    Traceback (most recent call last):
+    ...
+    Invalid: Not a valid link
+
+    """
+    if isinstance(value, basestring):
+        pattern = re.compile(r"^https?://[^\s\r\n]+")
+        if pattern.search(value.strip()):
+            return True
+    raise Invalid(_(u"Not a valid link"))
 # Interface class; used to define content-type schema.
 
 class IParticipant(form.Schema, IImageScaleTraversable):
@@ -37,40 +72,141 @@ class IParticipant(form.Schema, IImageScaleTraversable):
     # If you want a model-based interface, edit
     # models/participant.xml to define the content type
     # and add directives here as necessary.
+#    last_name = schema.TextLine(
+#        title=_(u"Last Name"),
+#        required=True,
+#        )
+#    
+#    first_name = schema.TextLine(
+#        title=_(u"First Name"),
+#        required=True,
+#        )   
     title = schema.TextLine(title=_(u"Full name"),
             required=True)
     email = schema.TextLine(
         title=_(u"Email address"),
+        description=_(u"Please input correct mail address,the active code will be sent to it"),        
         required=True,
-    )
+    ) 
 
     description = schema.Text(
         title=_(u"Short Bio"),
         description=_(u"Tell us more about yourself"),
         required=False,
     )
-
+    
+    homepage = schema.TextLine(
+        # url format
+        title=_(u"External Homepage"),
+        required=False,
+        constraint=is_url,
+        )   
+    
     phone = schema.TextLine(
         title=_(u"Phone number"),
-        required=False
+        required=True
     )
-
+    
+    form.fieldset('work',
+            label=_(u"Work"),
+            fields=['organization', 'sector','position', 'research_domain']
+    )
+    
     organization = schema.TextLine(
         title=_(u"Organization / Company"),
-        required=False,
+        required=True,
     )
+    
+    sector = schema.Choice(
+        title=_(u"Sector"),
+        required=True,
+        vocabulary="dexterity.membrane.vocabulary.sector"
+        )        
 
     position = schema.TextLine(
         title=_(u"Position / Role in Organization"),
-        required=False,
-    )
+        required=True,
+    )     
+        
+    research_domain = schema.TextLine(
 
+        title=_(u"research domain"),
+        required=False,
+
+        )
+           
+    form.fieldset('geography',
+            label=_(u"Geography"),
+            fields=['country', 'province','address']
+    )
+    
     country = schema.Choice(
         title=_(u"Country"),
         description=_(u"Where you are from"),
         required=False,
         vocabulary="collective.conference.vocabulary.countries"
     )
+
+    province = schema.Choice(
+        title=_(u"the province of your company"),
+        vocabulary="dexterity.membrane.vocabulary.province",        
+        required=True,
+        ) 
+
+    address = schema.TextLine(
+        title=_(u"personal address"),       
+        required=False,
+        ) 
+            
+    bonus = schema.Int(
+        # url format
+        title=_(u"bonus"),
+        required=False,
+#        constraint=is_url,
+        )    
+    
+    qq_number = schema.Int(
+        # url format
+        title=_(u"QQ Number"),
+        required=False,
+
+        )          
+
+    form.widget(bio="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
+    bio = schema.Text(
+        title=_(u"Biography"),
+        required=False,
+        )
+    
+    photo = NamedBlobImage(
+        title=_(u"Photo"),
+        description=_(u"Your photo or avatar. Recommended size is 150x195"),
+        required=False
+    )
+      
+
+
+#    phone = schema.TextLine(
+#        title=_(u"Phone number"),
+#        required=False
+#    )
+#
+#    organization = schema.TextLine(
+#        title=_(u"Organization / Company"),
+#        required=False,
+#    )
+#
+#    position = schema.TextLine(
+#        title=_(u"Position / Role in Organization"),
+#        required=False,
+#    )
+#
+#    country = schema.Choice(
+#        title=_(u"Country"),
+#        description=_(u"Where you are from"),
+#        required=False,
+#        vocabulary="collective.conference.vocabulary.countries"
+#    )
 
 
 
@@ -119,7 +255,8 @@ class IParticipant(form.Schema, IImageScaleTraversable):
         required=False
     )
 
-
+    
+    form.omitted('bonus')   
 
 
 @form.validator(field=IParticipant['photo'])

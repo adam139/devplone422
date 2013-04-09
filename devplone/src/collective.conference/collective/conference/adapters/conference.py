@@ -62,6 +62,8 @@ class evalute(grok.Adapter):
     
     #Editing statistics concern the number of               
     def addfollow(self, userToken):
+#        import pdb
+#        pdb.set_trace()
         if not self.available(userToken):
             self.followed.insert(userToken)
         else:

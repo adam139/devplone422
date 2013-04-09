@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-29 07:56+0000\n"
+"POT-Creation-Date: 2013-04-08 12:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,12 @@ msgstr ""
 msgid "A conference event"
 msgstr ""
 
-#: ./interfaces.py:50
+#: ./interfaces.py:57
 msgid "A score from 1-100"
+msgstr ""
+
+#: ./browser/templates/conference_listings.pt:150
+msgid "Add conference"
 msgstr ""
 
 #: ./browser/templates/session_view.pt:36
@@ -37,7 +41,7 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: ./vocabulary.py:58
+#: ./vocabulary.py:59
 msgid "Advanced"
 msgstr ""
 
@@ -46,11 +50,11 @@ msgstr ""
 msgid "Agenda"
 msgstr ""
 
-#: ./session.py:85
+#: ./session.py:95
 msgid "Agenda Background Color"
 msgstr ""
 
-#: ./session.py:92
+#: ./session.py:102
 msgid "Agenda Text Color"
 msgstr ""
 
@@ -62,11 +66,11 @@ msgstr ""
 msgid "All Sessions"
 msgstr ""
 
-#: ./session.py:71
+#: ./session.py:80
 msgid "Attach your talks document (slide, code, etc).        If there are multiple files, include them in a zip By uploading the file here,        you hereby agreed to grants us permission to redistribute this file"
 msgstr ""
 
-#: ./session.py:70
+#: ./session.py:79
 msgid "Attachment"
 msgstr ""
 
@@ -78,7 +82,7 @@ msgstr ""
 msgid "Available Rooms"
 msgstr ""
 
-#: ./vocabulary.py:56
+#: ./vocabulary.py:57
 msgid "Beginner"
 msgstr ""
 
@@ -86,15 +90,19 @@ msgstr ""
 msgid "Bio:"
 msgstr ""
 
+#: ./participant.py:177
+msgid "Biography"
+msgstr ""
+
 #: ./browser/register.py:23
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr ""
 
-#: ./participant.py:101
+#: ./participant.py:237
 msgid "Check this option if you need funding to attend."
 msgstr ""
 
-#: ./participant.py:109
+#: ./participant.py:245
 msgid "Comments"
 msgstr ""
 
@@ -106,8 +114,8 @@ msgstr ""
 msgid "Conference Participant"
 msgstr ""
 
-#: ./browser/listings.py:79
-#: ./session.py:78
+#: ./browser/listings.py:108
+#: ./session.py:87
 msgid "Conference Rooms"
 msgstr ""
 
@@ -119,7 +127,7 @@ msgstr ""
 msgid "Conference Type"
 msgstr ""
 
-#: ./participant.py:69
+#: ./participant.py:144
 msgid "Country"
 msgstr ""
 
@@ -131,15 +139,15 @@ msgstr ""
 msgid "Day${curday}"
 msgstr ""
 
-#: ./vocabulary.py:30
+#: ./vocabulary.py:31
 msgid "Discussion"
 msgstr ""
 
-#: ./session.py:48
+#: ./session.py:57
 msgid "E-mail addresses of speakers"
 msgstr ""
 
-#: ./participant.py:43
+#: ./participant.py:87
 msgid "Email address"
 msgstr ""
 
@@ -147,32 +155,40 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: ./participant.py:110
+#: ./participant.py:100
+msgid "External Homepage"
+msgstr ""
+
+#: ./participant.py:246
 msgid "Fill in this field with things you need the organizers to know.        If you are roomsharing and already have a roommate, please mention your roommate's name here"
 msgstr ""
 
-#: ./participant.py:40
+#: ./participant.py:84
 msgid "Full name"
 msgstr ""
 
-#: ./participant.py:95
+#: ./participant.py:231
 msgid "Funding"
 msgstr ""
 
-#: ./participant.py:105
+#: ./participant.py:139
+msgid "Geography"
+msgstr ""
+
+#: ./participant.py:241
 msgid "If you want or need a room, check this option"
 msgstr ""
 
-#: ./vocabulary.py:57
+#: ./vocabulary.py:58
 msgid "Intermediate"
 msgstr ""
 
-#: ./participant.py:138
+#: ./participant.py:275
 msgid "Invalid email address"
 msgstr ""
 
-#: ./browser/listings.py:74
-#: ./session.py:59
+#: ./browser/listings.py:103
+#: ./session.py:68
 msgid "Level"
 msgstr ""
 
@@ -180,16 +196,24 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ./session.py:65
+#: ./session.py:74
 msgid "More details on proposed session"
 msgstr ""
 
-#: ./participant.py:100
+#: ./participant.py:236
 msgid "Need funding"
 msgstr ""
 
+#: ./participant.py:62
+msgid "Not a valid link"
+msgstr ""
+
+#: ./vocabulary.py:44
+msgid "OWASP Conference"
+msgstr ""
+
 #: ./browser/templates/participant_view.pt:36
-#: ./participant.py:59
+#: ./participant.py:116
 msgid "Organization / Company"
 msgstr ""
 
@@ -202,29 +226,37 @@ msgstr ""
 msgid "Participants"
 msgstr ""
 
-#: ./browser/listings.py:111
+#: ./conference.py:58
+msgid "Participants list"
+msgstr ""
+
+#: ./browser/listings.py:140
 #: ./browser/templates/macros.pt:70
 msgid "Pending Sessions"
 msgstr ""
 
-#: ./participant.py:117
+#: ./participant.py:253
 msgid "Person Color Tag"
 msgstr ""
 
-#: ./participant.py:54
+#: ./participant.py:106
 msgid "Phone number"
 msgstr ""
 
-#: ./participant.py:89
+#: ./participant.py:182
 msgid "Photo"
 msgstr ""
 
-#: ./participant.py:129
+#: ./participant.py:88
+msgid "Please input correct mail address,the active code will be sent to it"
+msgstr ""
+
+#: ./participant.py:266
 msgid "Please upload image smaller than 512KB"
 msgstr ""
 
 #: ./browser/templates/participant_view.pt:41
-#: ./participant.py:64
+#: ./participant.py:127
 msgid "Position / Role in Organization"
 msgstr ""
 
@@ -232,31 +264,39 @@ msgstr ""
 msgid "Presented By"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:41
+#: ./browser/templates/conference_view.pt:53
 msgid "Propose Session"
 msgstr ""
 
-#: ./browser/propose.py:44
+#: ./browser/propose.py:46
 msgid "Propose a session"
 msgstr ""
 
-#: ./vocabulary.py:42
+#: ./participant.py:170
+msgid "QQ Number"
+msgstr ""
+
+#: ./vocabulary.py:43
 msgid "Regional Events"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:39
+#: ./browser/templates/conference_view.pt:50
 msgid "Register NOW"
 msgstr ""
 
-#: ./browser/register.py:51
+#: ./browser/register.py:52
 msgid "Register for this event"
+msgstr ""
+
+#: ./browser/templates/conference_view.pt:27
+msgid "Register member"
 msgstr ""
 
 #: ./browser/templates/macros.pt:139
 msgid "Room"
 msgstr ""
 
-#: ./participant.py:104
+#: ./participant.py:240
 msgid "Roomshare"
 msgstr ""
 
@@ -264,16 +304,20 @@ msgstr ""
 msgid "Schedule for ${curday}Day"
 msgstr ""
 
+#: ./participant.py:121
+msgid "Sector"
+msgstr ""
+
 #: ./profiles/default/types/collective.conference.session.xml
 msgid "Session"
 msgstr ""
 
-#: ./session.py:52
+#: ./session.py:61
 msgid "Session Title"
 msgstr ""
 
-#: ./browser/listings.py:69
-#: ./session.py:55
+#: ./browser/listings.py:98
+#: ./session.py:64
 msgid "Session Type"
 msgstr ""
 
@@ -283,7 +327,7 @@ msgstr ""
 msgid "Sessions"
 msgstr ""
 
-#: ./participant.py:48
+#: ./participant.py:93
 msgid "Short Bio"
 msgstr ""
 
@@ -300,32 +344,40 @@ msgstr ""
 msgid "Sponsor"
 msgstr ""
 
-#: ./browser/listings.py:90
+#: ./browser/listings.py:119
 msgid "Submitted Sessions"
 msgstr ""
 
 #: ./conference.py:40
-#: ./session.py:53
+#: ./session.py:62
 msgid "Summary"
 msgstr ""
 
-#: ./participant.py:83
+#: ./participant.py:219
 msgid "T-shirt size"
 msgstr ""
 
-#: ./vocabulary.py:28
+#: ./vocabulary.py:29
 msgid "Talk"
 msgstr ""
 
-#: ./participant.py:49
+#: ./participant.py:94
 msgid "Tell us more about yourself"
 msgstr ""
 
-#: ./browser/register.py:74
+#: ./browser/propose.py:61
+msgid "Thank you for your submission.Your submission is now held for approval and will appear on the site once it is approved"
+msgstr ""
+
+#: ./browser/register.py:75
 msgid "Thank you. You are now registered."
 msgstr ""
 
-#: ./browser/listings.py:65
+#: ./browser/templates/conference_view.pt:30
+msgid "Tips:"
+msgstr ""
+
+#: ./browser/listings.py:94
 #: ./conference.py:38
 msgid "Title"
 msgstr ""
@@ -334,61 +386,77 @@ msgstr ""
 msgid "To"
 msgstr ""
 
+#: ./vocabulary.py:45
+msgid "Topic Research"
+msgstr ""
+
 #: ./browser/templates/macros.pt:60
 msgid "Vegetarian Attendees List"
 msgstr ""
 
-#: ./participant.py:78
+#: ./participant.py:214
 msgid "Vegetarian?"
 msgstr ""
 
-#: ./browser/listings.py:45
+#: ./browser/listings.py:57
 msgid "Vegetarians listing"
 msgstr ""
 
-#: ./session.py:49
+#: ./session.py:58
 msgid "We will find speakers' profile in the registration using these emails. One in each line"
 msgstr ""
 
-#: ./participant.py:70
+#: ./participant.py:145
 msgid "Where you are from"
 msgstr ""
 
-#: ./vocabulary.py:29
+#: ./participant.py:111
+msgid "Work"
+msgstr ""
+
+#: ./vocabulary.py:30
 msgid "Workshop"
 msgstr ""
 
-#: ./participant.py:90
+#: ./participant.py:183
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:56
+#: ./browser/templates/conference_listings.pt:59
 msgid "address:"
 msgstr ""
 
-#: ./conference.py:58
-msgid "click number"
+#: ./participant.py:163
+msgid "bonus"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:29
+#: ./profiles/default/types/collective.conference.conferencefolder.xml
+msgid "conferencefolder"
+msgstr ""
+
+#: ./browser/templates/conference_view.pt:38
 msgid "follow"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:15
+#: ./browser/templates/conference_listings.pt:18
 msgid "hottest events"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:148
+#: ./browser/templates/conference_listings.pt:159
 msgid "more events"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:14
+#: ./browser/templates/conference_listings.pt:17
 msgid "newest events"
 msgstr ""
 
 #. Default: "Sessions"
 #: ./browser/templates/speaker_listing.pt:37
 msgid "part_sessions"
+msgstr ""
+
+#: ./participant.py:157
+msgid "personal address"
 msgstr ""
 
 #: ./conference.py:48
@@ -400,20 +468,36 @@ msgstr ""
 msgid "read_more"
 msgstr ""
 
+#: ./participant.py:133
+msgid "research domain"
+msgstr ""
+
 #. Default: "Summmary"
 #: ./browser/templates/session_view.pt:29
 msgid "session_summary"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:53
+#: ./conference.py:62
+msgid "speakers list"
+msgstr ""
+
+#: ./browser/templates/conference_listings.pt:56
 msgid "sponsor:"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:35
+#: ./participant.py:151
+msgid "the province of your company"
+msgstr ""
+
+#: ./browser/templates/conference_view.pt:44
 msgid "unfollowed"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:22
-msgid "we have${num} follow this"
+#: ./browser/templates/conference_view.pt:23
+msgid "we have ${num} follow this"
+msgstr ""
+
+#: ./browser/templates/conference_view.pt:30
+msgid "you should register as member for join the event."
 msgstr ""
 

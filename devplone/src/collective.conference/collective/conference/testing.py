@@ -8,6 +8,7 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
 
 from zope.configuration import xmlconfig
+from plone.testing import z2
 
 class Sandbox(PloneSandboxLayer):
 
@@ -17,14 +18,17 @@ class Sandbox(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         # Load ZCML
         import collective.conference
-        import dexterity.membrane        
+        import dexterity.membrane
+         
+        z2.installProduct(app, 'Products.membrane')               
  
         xmlconfig.file('configure.zcml', collective.conference, context=configurationContext)
         xmlconfig.file('configure.zcml', dexterity.membrane, context=configurationContext)        
 
                       
     def tearDownZope(self, app):
-        pass
+        z2.uninstallProduct(app, 'Products.membrane')        
+        
     
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'collective.conference:default')

@@ -3,8 +3,9 @@ from zope import interface
 from zope.component.interfaces import ObjectEvent
 
 from collective.conference.interfaces import IFollowedEvent
-
 from collective.conference.interfaces import IUnfollowedEvent
+
+from collective.conference.interfaces import IRegisteredConfEvent,IRegisteredSessionEvent
 
 from collective.conference.interfaces import ILikeEvent
 from collective.conference.interfaces import IUnlikeEvent
@@ -62,9 +63,8 @@ class ClickEvent(ObjectEvent):
     interface.implements(IClickEvent)
 
 
-# 
-#@grok.subscribe(IConference, IClickEvent)
-#def updateCountNumber(obj, event):
-#    """updatecount"""
-#    obj.clicknum = obj.clicknum + 1   
-#    obj.reindexObject() 
+class RegisteredConfEvent(ObjectEvent):
+    interface.implements(IRegisteredConfEvent)
+    
+class RegisteredSessionEvent(ObjectEvent):
+    interface.implements(IRegisteredSessionEvent)    

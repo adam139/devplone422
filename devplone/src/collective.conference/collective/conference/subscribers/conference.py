@@ -10,7 +10,7 @@ from collective.conference.conference import IConference
 
 from collective.conference.events import FollowedEvent,UnfollowedEvent,LikeEvent,UnlikeEvent,FavoriteEvent,UnFavoriteEvent
 from collective.conference.interfaces import IEvaluate,ILikeEvent,IUnlikeEvent,IFavoriteEvent,IUnFavoriteEvent,IFollowedEvent,\
-IUnfollowedEvent
+IUnfollowedEvent,IRegisteredConfEvent,IRegisteredSessionEvent
 
 from zExceptions import Forbidden
 from zope.component import getMultiAdapter
@@ -153,4 +153,57 @@ def UnFollowed(obj,event):
         evlute.delfollow(username)
         obj.followernum = evlute.followerNum
         obj.reindexObject()  
+        
+@grok.subscribe(IConference,IRegisteredConfEvent)
+def Registered(obj,event):
+#    import pdb
+#    pdb.set_trace()
+    mp = getToolByName(obj,'portal_membership')
+    userobject = mp.getAuthenticatedMember()
+#    username = userobject.getId()
+    username = userobject.getUserName()
+#    username = "12@qq.com"    
+#    questionlist = list(userobject.getProperty('conferences'))
+#    if not obj.id in questionlist:
+#        questionlist.append(obj.id)
+#        userobject.setProperties(conferences=questionlist)
+#    plists = obj.participants
+    try:
+        plists = list(obj.participants)
+    except:
+        plists = []
+ 
+    if  not username in plists:
+        plists.append(username)
+        obj.participants= plists
+        obj.reindexObject()         
+
+@grok.subscribe(IConference,IRegisteredSessionEvent)
+def RegisteredSession(obj,event):
+
+    mp = getToolByName(obj,'portal_membership')
+    userobject = mp.getAuthenticatedMember()
+#    username = userobject.getId()
+    username = userobject.getUserName()
+#    username = "12@qq.com"    
+#    questionlist = list(userobject.getProperty('conferences'))
+#    if not obj.id in questionlist:
+#        questionlist.append(obj.id)
+#        userobject.setProperties(conferences=questionlist)
+#    plists = obj.speakers
+    try:
+        slists = list(obj.speakers)
+    except:
+        slists = [] 
+    try:
+        plists = list(obj.participants)
+    except:
+        plists = []         
+    if  not username in plists:
+        plists.append(username)
+        obj.participants= plists
+    if  not username in slists:              
+        slists.append(username)        
+        obj.speakers= slists
+    obj.reindexObject()             
         

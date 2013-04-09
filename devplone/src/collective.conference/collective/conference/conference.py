@@ -54,13 +54,16 @@ class IConference(form.Schema, IImageScaleTraversable):
         title=_(u"Available Rooms"),
         value_type=schema.TextLine()
     )
-#    clicknum = schema.Int(
-#        title=_(u"click number"),
-#        default=0,
-#    )    
-#    
-#    form.omitted('clicknum')    
-
+    participants = schema.List(
+        title=_(u"Participants list"),
+        value_type=schema.TextLine()
+    )  
+    speakers = schema.List(
+        title=_(u"speakers list"),
+        value_type=schema.TextLine()
+    )  
+    
+    form.omitted('participants','speakers')  
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
 # methods and properties. Put methods that are mainly useful for rendering

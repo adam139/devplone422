@@ -96,7 +96,7 @@ class TestView(unittest.TestCase):
         result = view()
 
         self.assertEqual(json.loads(result), {
-                                          'typelist': [["Regional Events", "Regional Events"], ["Workshop", "Workshop"], ["Discussion", "Discussion"]],
+                                          'typelist': [["Regional Events", "Regional Events"], ["OWASP Conference", "OWASP Conference"], ["Topic Research", "Topic Research"]],
                                           }) 
         view = self.portal.restrictedTraverse('@@ajax-conference-province')
         result = view()
@@ -125,14 +125,8 @@ class TestView(unittest.TestCase):
 # Look up and invoke the view via traversal
         view = self.portal.restrictedTraverse('@@ajaxsearch')
         result = view()
-        import pdb
-        pdb.set_trace()
-        self.assertEqual(json.loads(result), {
-                                              'searchresult':"",
-                                              'size': 10,
-                                              'start':0,
-                                              'total':1,                                                      
-                                          })
+
+        self.assertEqual(json.loads(result)['size'],10)
 
                
 

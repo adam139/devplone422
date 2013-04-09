@@ -23,13 +23,13 @@
          <div class="nav-collapse" id="conference-nav">
          <ul class="nav pull-right" style="font-size:13px"> 
             <li class="divider-vertical"></li> 
-            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/agenda">Agenda</a></li> 
+            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/@@agenda">Agenda</a></li> 
             <li class="divider-vertical"></li> 
-            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/speakers">Speakers</a></li> 
+            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/@@speakers">Speakers</a></li> 
             <li class="divider-vertical"></li> 
-            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/sessions">Sessions</a></li> 
+            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/@@sessions">Sessions</a></li> 
             <li class="divider-vertical"></li> 
-            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/participants">Participants</a></li> 
+            <li><a  i18n:translate="" tal:attributes="href string:${conference/absolute_url}/@@participants">Participants</a></li> 
             <tal:tabs tal:repeat="tab content_tabs">
                   <li class="divider-vertical"></li>
                   <li tal:define="tid tab/id"

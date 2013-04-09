@@ -1,3 +1,4 @@
+#-*- coding: UTF-8 -*-
 from five import grok
 from plone.directives import dexterity, form
 
@@ -29,13 +30,21 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.utils import checkEmailAddress
 
 
+import unicodedata
 @grok.provider(IContextSourceBinder)
 def possibleRooms(context):
     conference = context.getConference()
-#    import pdb
+    items = []
+    for section in conference.rooms:
+#        import pdb
+#        pdb.set_trace()
+        token = unicodedata.normalize('NFKD', section).encode('utf-8', 'ignore').lower()
+        items.append(SimpleVocabulary.createTerm(token, token, section))
+    return SimpleVocabulary(items)
 #    pdb.set_trace()
 #  tv = [i.encode("utf-8")  for i in conference.rooms            
-    return SimpleVocabulary.fromValues(conference.rooms)
+#    return SimpleVocabulary.fromValues(conference.rooms)
+
 
 
 
@@ -76,7 +85,8 @@ class ISession(form.Schema, IImageScaleTraversable):
 
     conference_rooms = schema.List(
         title=_(u"Conference Rooms"),
-        value_type=schema.Choice(source=possibleRooms),
+        value_type=schema.Choice(vocabulary="collective.conference.rooms"),        
+#        value_type=schema.Choice(source=possibleRooms),        
         required=False
     )
 

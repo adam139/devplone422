@@ -81,7 +81,7 @@ class TestView(unittest.TestCase):
         obj = portal['conference1'].absolute_url() + '/@@view'        
 
         browser.open(obj)
-        outstr = "conference1"        
+        outstr = "conf text"        
         self.assertTrue(outstr in browser.contents)   
         
     def test_conferencelisting_view(self):
@@ -98,7 +98,7 @@ class TestView(unittest.TestCase):
         obj = portal.absolute_url() + '/@@conference_listings'        
         page = obj + '/@@view'
         browser.open(obj)
-        outstr = "conference1"        
+        outstr = u"长安街"        
         self.assertTrue(outstr in browser.contents)
         
     def test_allconferencelisting_view(self):
@@ -115,6 +115,6 @@ class TestView(unittest.TestCase):
         obj = portal.absolute_url() + '/@@allconference_listings'        
 
         browser.open(obj)
-        outstr = "conference1"        
+        outstr = 'id="event_category_div"'        
         self.assertTrue(outstr in browser.contents)        
         

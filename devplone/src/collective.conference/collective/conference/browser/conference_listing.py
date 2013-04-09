@@ -1,6 +1,7 @@
 #-*- coding: UTF-8 -*-
 from five import grok
 import json
+import datetime
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.interfaces.topic import IATTopic
@@ -16,6 +17,7 @@ from Products.AdvancedQuery import Eq, Between, Le
 from collective.conference import MessageFactory as _
 
 from collective.conference.conference import IConference
+from collective.conference.conferencefolder import IConferencefolder
 from dexterity.membrane.vocabulary import province_type 
 
 grok.templatedir('templates')
@@ -40,12 +42,24 @@ class SiteRootConferenceListingView(grok.View):
         self.request.set('disable_border', True)
 #        self.haveHotAnswer = len(self.fetchHotAnswer())>0    
     
+    def getConferenceFolder(self):
+        context = aq_inner(self.context)
+        tfc = getToolByName(context, 'portal_catalog')
+        topicfolder = tfc({'object_provides': IConferencefolder.__identifier__})
+        
+        mt = getToolByName(context,'portal_membership')
+        canManage = mt.checkPermission('Portlets: Manage portlets',context)        
+        if (len(topicfolder) > 0) and  canManage:
+            tfpath = topicfolder[0].getURL()
+        else:
+            tfpath = None            
+        return tfpath
+
     def getconferences(self,num=10):
  
         """返回前num个conference
         """
         catalog = getToolByName(self.context, 'portal_catalog')
-
         
         maxlen = len(catalog({'object_provides': IConference.__identifier__}))
         if maxlen > num:
@@ -79,8 +93,10 @@ class SiteRootAllConferenceListingView(SiteRootConferenceListingView):
     grok.context(ISiteRoot)
     grok.template('allconference_listings')
     grok.name('allconference_listings')
-  
-                
+     
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)                
         
     def test(self,t,a,b):
         """ test method"""   
@@ -126,8 +142,7 @@ class ajaxsearch(grok.View):
     grok.name('ajaxsearch')
     grok.require('zope2.View')
 
-    def Datecondition(self,key):
-        import datetime
+    def Datecondition(self,key):        
 #        import pdb
 #        pdb.set_trace()
         start = datetime.datetime.today()
@@ -161,13 +176,11 @@ class ajaxsearch(grok.View):
 
         return imgtag    
           
-    def render(self):
-    
+    def render(self):    
         self.portal_state = getMultiAdapter((self.context, self.request), name=u"plone_portal_state")
         searchview = getMultiAdapter((self.context, self.request),name=u"allconference_listings")        
         
         datadic = self.request.form
-
         start = int(datadic['start'])
         datekey = int(datadic['datetype'])
         size = int(datadic['size'])                
@@ -263,12 +276,8 @@ class ajaxsearch(grok.View):
                                     unfollowaction = unfollowaction,
                                     description = description,
                                     imgtag = imgtag)
-                                    
-        
-#            import pdb
-#            pdb.set_trace()             
+           
             outhtml = outhtml + out  
-
            
         data = {'searchresult': outhtml,'start':start,'size':size,'total':brainnum}
         

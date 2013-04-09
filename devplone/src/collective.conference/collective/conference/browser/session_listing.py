@@ -1,6 +1,7 @@
 from five import grok
 from collective.conference.conference import IConference
 from Products.CMFCore.utils import getToolByName
+from plone.memoize.instance import memoize
 from collective.conference import MessageFactory as _
 grok.templatedir('templates')
 
@@ -11,10 +12,14 @@ class SessionListView(grok.View):
 
     title = _(u"Sessions")
 
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
+    @memoize            
     def items(self):
         catalog = getToolByName(self.context, 'portal_catalog')
-#        import pdb
-#        pdb.set_trace()
+
         brains = catalog({
             'portal_type': 'collective.conference.session',
             'path': {

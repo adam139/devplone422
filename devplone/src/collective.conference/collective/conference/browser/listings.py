@@ -6,6 +6,7 @@ from collective.conference.provider.listing import TableListingProvider
 from plone.directives import form
 from zope import schema
 from Products.CMFCore.utils import getToolByName
+from plone.memoize.instance import memoize
 from collective.conference import MessageFactory as _
 
 grok.templatedir('templates')
@@ -20,17 +21,23 @@ class AttendeesListingView(grok.View):
     grok.require('cmf.ModifyPortalContent')
 
     title = _(u'Attendees listing')
-
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
+    @memoize
     def provider(self):
         catalog = getToolByName(self.context, 'portal_catalog')
+
+        try:
+            plists = list(self.context.participants)
+        except:
+            return TableListingProvider(self.request, IParticipantList,[])
         brains = catalog({
-            'portal_type': 'collective.conference.participant',
-            'path': {
-                'query': '/'.join(self.context.getPhysicalPath()),
-                'depth': 2
-            },
-            'sort_on':'created'
-        })
+            'portal_type': 'dexterity.membrane.member',
+            'email':plists,
+            'sort_on':'sortable_title'})        
         return TableListingProvider(self.request, IParticipantList, [
             i.getObject() for i in brains
             ])
@@ -43,22 +50,28 @@ class VegetarianListingView(grok.View):
     grok.require('cmf.ModifyPortalContent')
 
     title = _(u'Vegetarians listing')
-
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
+    @memoize        
     def provider(self):
         catalog = getToolByName(self.context, 'portal_catalog')
+
+        try:
+            plists = list(self.context.participants)
+        except:
+            return TableListingProvider(self.request, IParticipantList,[])
         brains = catalog({
-            'portal_type': 'collective.conference.participant',
-            'path': {
-                'query': '/'.join(self.context.getPhysicalPath()),
-                'depth': 2
-            }
-        })
-        objs = [ i.getObject() for i in brains ]
+            'portal_type': 'dexterity.membrane.member',
+            'email':plists,
+            'sort_on':'sortable_title'})
+        objs = [i.getObject() for i in brains] 
         return TableListingProvider(self.request, IParticipantList, [
             i for i in objs if i.is_vegetarian
-        ])
-
-
+        ])         
+    
 class ISessionList(form.Schema):
 
     title = schema.TextLine(
@@ -88,7 +101,12 @@ class SessionListingView(grok.View):
     grok.require('cmf.ModifyPortalContent')
 
     title = _(u'Submitted Sessions')
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
 
+    @memoize        
     def provider(self):
         catalog = getToolByName(self.context, 'portal_catalog')
         brains = catalog({
@@ -109,7 +127,12 @@ class PendingSessionListingView(grok.View):
     grok.require('cmf.ModifyPortalContent')
 
     title = _(u'Pending Sessions')
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
 
+    @memoize        
     def provider(self):
         catalog = getToolByName(self.context, 'portal_catalog')
         brains = catalog({

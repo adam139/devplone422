@@ -5,6 +5,7 @@
     <property name="metaTypesNotToList" type="lines" purge="False">
         <element value="collective.conference.session"/>
         <element value="collective.conference.participant"/>
+        <element value="collective.conference.conference"/>        
     </property>
   </object>
 </object>

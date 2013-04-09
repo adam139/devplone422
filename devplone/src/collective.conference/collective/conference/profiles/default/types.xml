@@ -6,9 +6,9 @@
      dynamic views" refers to an FTI from Products.CMFDynamicViewFTI,
      which supports Plone's "display" menu.
   -->
-<object name="portal_types" meta_type="Plone Types Tool">
-  <!-- -*- extra stuff goes here -*- -->
+ <object name="portal_types" meta_type="Plone Types Tool">
   <object name="collective.conference.session" meta_type="Dexterity FTI" />
   <object name="collective.conference.participant" meta_type="Dexterity FTI" />
   <object name="collective.conference.conference" meta_type="Dexterity FTI" />
-</object>
+  <object name="collective.conference.conferencefolder" meta_type="Dexterity FTI" />  
+ </object>

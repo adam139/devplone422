@@ -64,7 +64,7 @@ class TestView(unittest.TestCase):
 #        pdb.set_trace()
         outstr = "I am member1"        
         self.assertTrue(outstr in browser.contents)   
-        outstr = "12@qq.com"        
+        outstr = "qq.com"        
         self.assertTrue(outstr in browser.contents)          
         
    

@@ -119,6 +119,7 @@ class IMember(IEmail,IImageScaleTraversable):
     """
     Member
     """
+    
     title = schema.TextLine(title=_(u"Full name"),
             required=True)
 

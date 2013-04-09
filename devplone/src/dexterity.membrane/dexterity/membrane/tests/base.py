@@ -57,7 +57,7 @@ class TestCase(ptc.PloneTestCase):
         ttool = getToolByName(context, 'portal_types')
         fti = ttool.getTypeInfo(portal_type)
         fti.constructInstance(context, id)
-        self.setRoles(())
+#        self.setRoles(())
         obj = getattr(context.aq_inner.aq_explicit, id)
         return obj
 

@@ -42,4 +42,4 @@ class TestSettings(TestCase):
         self.assertTrue(hasattr(config, 'use_email_as_username'))
         self.assertTrue(config.use_email_as_username)
         self.assertTrue(hasattr(config, 'use_uuid_as_userid'))
-        self.assertTrue(config.use_uuid_as_userid)
+        self.assertFalse(config.use_uuid_as_userid)

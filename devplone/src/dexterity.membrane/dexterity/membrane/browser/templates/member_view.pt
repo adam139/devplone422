@@ -66,7 +66,7 @@
             </tal:block>
             <tal:block condition="context/sector">
             <dt i18n:translate="">your job belong to sector</dt>
-            <dd tal:content="context/sector">IT</dd>
+            <dd tal:content="python:view.tranVoc(context.sector)">IT</dd>             
             </tal:block>            
 
             <tal:block condition="context/research_domain">
@@ -120,12 +120,12 @@
           <dl class="dl-horizontal">
             <tal:block condition="context/country">          	                      	
             <dt i18n:translate="">Country</dt>
-            <dd tal:content="context/country"></dd>
+            <dd tal:content="python:view.tranVoc(context.country)"></dd>          
             </tal:block>            
 
             <tal:block condition="context/province">
             <dt i18n:translate="">the province of your company</dt>
-            <dd tal:content="context/province"></dd>
+            <dd tal:content="python:view.tranVoc(context.province)"></dd>
             </tal:block>
             
             <tal:block condition="context/address">

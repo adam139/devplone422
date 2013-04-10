@@ -29,6 +29,18 @@ class MembraneMemberView(grok.View):
     def fullname(self):
         context = self.context
         return context.title
+    
+    def tranVoc(self,value):
+        """ translate vocabulary value to title"""
+        translation_service = getToolByName(self.context,'translation_service')
+        title = translation_service.translate(
+                                                  value,
+                                                  domain='dexterity.membrane',
+                                                  mapping={},
+                                                  target_language='zh_CN',
+                                                  context=self.context,
+                                                  default="translate")
+        return title
          
     
 class EditProfile(dexterity.EditForm):

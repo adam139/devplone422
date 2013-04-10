@@ -40,7 +40,7 @@ class SiteRootConferenceListingView(grok.View):
     def update(self):
         # Hide the editable-object border
         self.request.set('disable_border', True)
-#        self.haveHotAnswer = len(self.fetchHotAnswer())>0    
+  
     
     def getConferenceFolder(self):
         context = aq_inner(self.context)
@@ -74,7 +74,7 @@ class SiteRootConferenceListingView(grok.View):
 
     def getHotConferences(self,num=10):
  
-        """返回前num个conference
+        """按关注人数，返回前num个conference
         """
         catalog = getToolByName(self.context, 'portal_catalog')
         
@@ -128,8 +128,7 @@ class SiteRootAllConferenceListingView(SiteRootConferenceListingView):
         return pobj
          
     def search_multicondition(self,query):
-        catalog = getToolByName(self.context, 'portal_catalog')
-    
+        catalog = getToolByName(self.context, 'portal_catalog')    
         return catalog(query)        
 
                 

@@ -59,7 +59,7 @@
     margin: 0 auto;
 
 }
-
+#content .row-fluid {margin-left:0;}
 .event_list_search ul.fenlei li {
 /*    background: url("event_list_bg4.png") no-repeat scroll left center transparent; */
     display: block;

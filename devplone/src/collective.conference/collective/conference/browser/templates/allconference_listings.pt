@@ -20,10 +20,10 @@
         <!--左边内容-->
         <div class="event_list_page container">
             <!--搜索框、搜索条件选择-->
-            <div class="event_list_search row-fluid">
-                <ul class="search">
+            <div class="event_list_search">
+                <ul class="search row-fluid">
                     <li class="a">
-                        <input type="text" onkeypress="if(event.keyCode==13) {searchEventParent();return false}" id="searchKeyword">
+                        <input type="text"  onkeypress="if(event.keyCode==13) {searchEventParent();return false}" id="searchKeyword">
                     </li>
                     <!-- onkeydown="enterSearch(event,'searchKeyword','currEventText');"-->
                     <li class="b">
@@ -36,7 +36,7 @@
                 <input type="hidden" value="conference_startDate" id="solrSortColumn">
                 <input type="hidden" value="reverse" id="solrSortDirection">
                 
-                <ul class="fenlei" id="dateRangeSearchUl">
+                <ul class="fenlei row-fluid" id="dateRangeSearchUl">
                     <li class="title">
                         按日期：<!-- 按日期： -->
                     </li>
@@ -60,7 +60,7 @@
                     </li>
                 </ul>
 
-                <ul id="addressSelectSearch" class="fenlei">                	
+                <ul id="addressSelectSearch" class="fenlei row-fluid">                	
                     <li class="title">
                     				按地区：
                     </li>
@@ -86,12 +86,10 @@
                     </li>                    
                 </ul>
 
-                <ul id="categorySelectSearch" class="fenlei">
+                <ul id="categorySelectSearch" class="fenlei row-fluid">
                     <li class="title">
                         按分类：<!-- 按分类： -->
                     </li>
-
-
                     <!--活动列表循环-->
                     <li class="all">
                         <span name="0" class="over"><a href="javascript:void(0)">所有</a></span><!-- 所有 -->
@@ -102,24 +100,13 @@
                     	<span name="2"><a href="javascript:void(0)">年度峰会</a></span>
                     	<span name="3"><a href="javascript:void(0)">专题研究</a></span>
                     </li>
-<!--
-                    <li style="z-index: 2;" class="more">
-
-                        <a href="javascript:innerMoreEventCategory()">更多&gt;&gt;</a>
-
-                        <div style="display: none" class="fenlei_more" id="cata_more_div">
-                            <div style="width:150px; height:150px;" class="a">
-                                <div class="city" id="groupRangeSearchMore1"></div>
-                            </div>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
             <!--搜索框、搜索条件选择 End-->
 
             <!--搜索选择结果-->
-            <div class="event_list_search_select row-fluid">
-                <ul id="all_result_recordinfo"><li class="a">已选择：</li><li id="show_site_result"><div onclick="closeSearchEventsDiv(1)" class="select">时间：<span style="cursor: pointer;vertical-align: middle;">2天内&nbsp;</span></div></li><li id="searchresultinfor" class="info">的信息有“<span id="searchresult_count">0</span>”条！</li></ul>
+            <div class="event_list_search_select">
+                <ul class="row-fluid" id="all_result_recordinfo"><li class="a">已选择：</li><li id="show_site_result"><div onclick="closeSearchEventsDiv(1)" class="select">时间：<span style="cursor: pointer;vertical-align: middle;">2天内&nbsp;</span></div></li><li id="searchresultinfor" class="info">的信息有“<span id="searchresult_count">0</span>”条！</li></ul>
 
             </div>
             <!--搜索选择结果 End-->

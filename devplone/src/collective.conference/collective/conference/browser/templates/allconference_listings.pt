@@ -21,7 +21,7 @@
         <div class="event_list_page container">
             <!--搜索框、搜索条件选择-->
             <div class="event_list_search">
-                <ul class="search row-fluid">
+                <ul class="search row-fluid hidden-phone">
                     <li class="a">
                         <input type="text"  onkeypress="if(event.keyCode==13) {searchEventParent();return false}" id="searchKeyword">
                     </li>

@@ -1,0 +1,51 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-04-12 08:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Approve this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Decline this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Dexterity Membrane Workflow"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disable this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disabled"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enable this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enabled"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Pending"
+msgstr ""
+

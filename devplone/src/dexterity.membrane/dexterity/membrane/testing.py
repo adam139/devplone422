@@ -1,6 +1,6 @@
-import os
-import tempfile
-
+#import os
+#import tempfile
+#
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import applyProfile
 from plone.app.testing import PLONE_FIXTURE
@@ -8,6 +8,8 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
 
 from zope.configuration import xmlconfig
+
+from plone.testing import z2
 
 class Sandbox(PloneSandboxLayer):
 
@@ -19,10 +21,11 @@ class Sandbox(PloneSandboxLayer):
         import dexterity.membrane
  
         xmlconfig.file('configure.zcml', dexterity.membrane, context=configurationContext)
-
+        z2.installProduct(app, 'Products.membrane')
                       
     def tearDownZope(self, app):
-        pass
+        z2.uninstallProduct(app, 'Products.membrane')        
+
     
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'dexterity.membrane:default')        

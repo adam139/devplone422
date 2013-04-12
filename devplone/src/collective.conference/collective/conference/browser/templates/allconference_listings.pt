@@ -21,7 +21,7 @@
         <div class="event_list_page container">
             <!--搜索框、搜索条件选择-->
             <div class="event_list_search">
-                <ul class="search row-fluid">
+                <ul class="search row-fluid hidden-phone">
                     <li class="a">
                         <input type="text"  onkeypress="if(event.keyCode==13) {searchEventParent();return false}" id="searchKeyword">
                     </li>
@@ -161,7 +161,6 @@
 			  <script type="text/javascript">
 
 jq(document).ready(function(){
-
     searchEvent();
     jq("#dateRangeSearchUl li").live("click",function() {
         
@@ -174,7 +173,6 @@ jq(document).ready(function(){
     });
 
    jq("#addressSelectSearch li span").live("click",function() {
-
                 if (jq(this).attr("class") == "title" || $(this).attr("class") == "more") {} else 
                 {
                     jq("#addressSelectSearch li> .over").removeClass("over");
@@ -195,9 +193,7 @@ jq(document).ready(function(){
                     document.getElementById("cata_more_div").style.display = "none"
                 }
        return false; 
-    });                     
-
-
+    });                   
 
    jq("#eventListSort a").live("click",function() {             
                 jq("#solrSortColumn").attr("value", jq(this).attr("name"));
@@ -225,11 +221,9 @@ function closeEventMore() {
     jq("#address_more_div").hide();
 }
 
-
 function innerMoreArea() {        
       var action = jq("#ajaxmorearea").attr('data-ajax-target');
-	   var senddata = {"demo":2}
-	   
+	   var senddata = {"demo":2}	   
        jq.post(action, 
            senddata,
            function(data) {
@@ -250,7 +244,6 @@ function innerMoreArea() {
             'json');
 }
 
-
 function closeSearchEventsDiv(flag) {
     if (flag == 1) {
         jq("#dateSearch").val("0");
@@ -268,10 +261,7 @@ function closeSearchEventsDiv(flag) {
         jq("#categorySelectSearch").find("li span[name='0']").addClass("over");
         searchEvent();
     }
-
 }
-
-
 
 // base lib
 function searchEventParent() {

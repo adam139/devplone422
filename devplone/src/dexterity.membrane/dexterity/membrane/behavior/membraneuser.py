@@ -106,7 +106,7 @@ class MembraneUser(object):
     """Methods for Membrane User
     """
 # pending status can login
-    allowed_states = ('enabled','pending')
+    allowed_states = ('enabled')
     _default = {'use_email_as_username': True,
                 'use_uuid_as_userid': True}
 

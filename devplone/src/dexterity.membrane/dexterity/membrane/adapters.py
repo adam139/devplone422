@@ -17,6 +17,5 @@ class MemberRoleProvider(grok.Adapter, MembraneUser):
             if bonus > 100:
                 roles.append('Paid Member')
             else:
-                pass
-#                roles.append('Member')                
+               roles.append('Member')                
             return roles

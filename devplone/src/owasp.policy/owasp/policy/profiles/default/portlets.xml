@@ -152,9 +152,9 @@
     type="plone.portlet.static.Static" visible="True">
   <property name="text">&lt;ul&gt;
                    &lt;li&gt;&lt;a href="/login"&gt;登录&lt;/a&gt;&lt;/li&gt;					
-                    &lt;li&gt;&lt;a href="/register"&gt;注册免费账号&lt;/a&gt;&lt;/li&gt;	
-                   &lt;li&gt;&lt;a href="/createEvent"&gt;创建活动&lt;/a&gt;&lt;/li&gt;	
-                   &lt;li&gt;&lt;a href="/myEventList"&gt;我的活动&lt;/a&gt;&lt;/li&gt;	
+                    &lt;li&gt;&lt;a href="/memberfolder/register"&gt;注册免费账号&lt;/a&gt;&lt;/li&gt;	
+                   &lt;li&gt;&lt;a href="/conferencefolder/++add++collective.conference.conference"&gt;创建活动&lt;/a&gt;&lt;/li&gt;	
+                   &lt;li&gt;&lt;a href="/@@conferences_joined"&gt;我的活动&lt;/a&gt;&lt;/li&gt;	
                &lt;/ul&gt;</property>
   <property name="more_url"/>
   <property name="omit_border">False</property>

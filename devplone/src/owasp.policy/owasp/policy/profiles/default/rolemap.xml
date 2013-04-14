@@ -6,5 +6,11 @@
         <role name="Manager" />
         <role name="Anonymous" />
     </permission>
+	  <permission name="Add portal content" acquire="False">
+			<role name="Member"/>
+			<role name="Site Administrator"/>
+			<role name="Manager"/>
+		</permission>     
   </permissions>
+ 
  </rolemap>

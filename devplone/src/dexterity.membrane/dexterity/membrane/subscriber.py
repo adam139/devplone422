@@ -5,6 +5,9 @@ from time import strftime, localtime
 
 
 from dexterity.membrane.interfaces import ICreateMembraneEvent
+from dexterity.membrane.content.member import IMember
+from Products.DCWorkflow.interfaces import IAfterTransitionEvent
+from Products.DCWorkflow.events import AfterTransitionEvent 
 
 from Products.CMFCore.utils import getToolByName
 
@@ -15,68 +18,75 @@ from zope.component import getUtility
 from plone.uuid.interfaces import IUUID
 
 from Products.statusmessages.interfaces import IStatusMessage
+from Products.CMFPlone import PloneMessageFactory as _p
 #from collective.singing import mail
 
-from AccessControl import ClassSecurityInfo, getSecurityManager
-from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
-from AccessControl.User import nobody
-from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+#@grok.subscribe(IMember, IObjectModifiedEvent)
+#def trigger_member_workflow(member, event):
+#    wtool = getToolByName(member, 'portal_workflow')
+#    wtool.doActionFor(member, 'autotrigger')
 
-#MAIL_NOTIFICATION_TITLE = _(
-#    u"mail_notification_title",
-#    default=u"'${comment_username}' Back to you to ${thread_title} posts")
-#
-#MAIL_NOTIFICATION_MESSAGE = _(
-#    u"mail_notification_message",
-#    default=u"A comment on '${title}' "
-#             "has been posted here: ${link}\n\n"
-#             "---\n"
-#             "${text}\n"
-#             "---\n")
-
-class UnrestrictedUser(BaseUnrestrictedUser):
-    """Unrestricted user that still has an id.
+@grok.subscribe(IMember, IAfterTransitionEvent)
+def sendPasswdResetMail(member, event):
     """
-    def getId(self):
-        """Return the ID of the user.
-        """
-        return self.getUserName()
-    def execute_under_special_role(portal, role, function, *args, **kwargs):
-        """ Execute code under special role priviledges.
-            Example how to call::
-            execute_under_special_role(portal, "Manager",
-            doSomeNormallyNotAllowedStuff,
-            source_folder, target_folder)
-            1.13. Security 483
-            Plone Developer Manual Documentation, Release
-            @param portal: Reference to ISiteRoot object whose access controls we are using
-            @param function: Method to be called with special priviledges
-            @param role: User role we are using for the security context when calling the priviledged code. For @param args: Passed to the function
-            @param kwargs: Passed to the function
-            """
-        sm = getSecurityManager()
-        try:
-            try:
-                # Clone the current access control user and assign a new role for him/her
-                # Note that the username (getId()) is left in exception tracebacks in error_log
-                # so it is important thing to store
-                tmp_user = UnrestrictedUser(sm.getUser().getId(),
-                                            '',
-                                            [role],
-                                            ''
-                                            )
-                # Act as user of the portal
-                tmp_user = tmp_user.__of__(portal.acl_users)
-                newSecurityManager(None, tmp_user)
-        # Call the function
-                return function(*args, **kwargs)
-            except:
-# If special exception handlers are needed, run them here
-                raise
-        finally:
-# Restore the old security manager
-            setSecurityManager(sm)
+    """
+    state = event.new_state.getId()
+  
+    if state == "enabled":
+        registration = getToolByName(member, 'portal_registration')
 
+        email = member.email
+#        import pdb
+#        pdb.set_trace()
+        request = member.REQUEST
+        
+        try:
+            response = registration.registeredNotify(email)
+            IStatusMessage(request).addStatusMessage(
+                        _p(u'create_membrane_account_succesful',
+                          default=u"Your account has been created,we "
+                          "have sent instructions for setting a "
+                          "password to this email address: ${address}",
+                          mapping={u'address': email}),
+                        type='info')
+#            return obj            
+ 
+        except ConflictError:
+                # Let Zope handle this exception.
+                raise            
+        except Exception:
+                ctrlOverview = getMultiAdapter((portal, request),
+                                               name='overview-controlpanel')
+                mail_settings_correct = not ctrlOverview.mailhost_warning()
+                if mail_settings_correct:
+                    # The email settings are correct, so the most
+                    # likely cause of an error is a wrong email
+                    # address.  We remove the account:
+                    # Remove the account:
+                    self.context.acl_users.userFolderDelUsers(
+                        [user_id], REQUEST=request)
+                    IStatusMessage(request).addStatusMessage(
+                        _p(u'status_fatal_password_mail',
+                          default=u"Failed to create your account: we were "
+                          "unable to send instructions for setting a password "
+                          "to your email address: ${address}",
+                          mapping={u'address': data.get('email', '')}),
+                        type='error')
+                    return
+                else:
+                    # This should only happen when an admin registers
+                    # a user.  The admin should have seen a warning
+                    # already, but we warn again for clarity.
+                    IStatusMessage(request).addStatusMessage(
+                        _p(u'status_nonfatal_password_mail',
+                          default=u"This account has been created, but we "
+                          "were unable to send instructions for setting a "
+                          "password to this email address: ${address}",
+                          mapping={u'address': data.get('email', '')}),
+                        type='warning')
+                    return    
+    else:
+        pass
 
 @grok.subscribe(ICreateMembraneEvent)
 def CreateMembraneEvent(event):
@@ -100,8 +110,7 @@ def CreateMembraneEvent(event):
     except:
             id = str(1000000)  
     item =createContentInContainer(members,"dexterity.membrane.member",checkConstraints=False,id=id)
-#    item.id = id    
-#    item.id = IUUID(item)
+
     item.email = event.email
     item.password = event.password
     item.fullname = event.fullname 
@@ -110,45 +119,5 @@ def CreateMembraneEvent(event):
     membrane = getToolByName(item, 'membrane_tool')
     membrane.reindexObject(item)
     
-#    mail_host = getToolByName(site, 'MailHost')
-#    portal_url = getToolByName(site, 'portal_url')
-#    portal = portal_url.getPortalObject()
-#    sender = portal.getProperty('email_from_address')
-#
-#    # Check if a sender address is available
-#    if not sender:
-#        return
-#
-#
-#    # Avoid sending multiple notification emails to the same person
-#
-#    if not item.email:
-#        return 
-#
-#    
-##    sub = obj.Creator()+_(u" Back to you to ")+conversation.title+_(u" posts")
-#    sub = safe_unicode(obj.Creator())
-#    subject = translate(Message(
-#            MAIL_NOTIFICATION_TITLE,
-#            mapping={'comment_username':obj.Creator(),
-#                    'thread_title':conversation.title}),
-#            context=obj.REQUEST)
-#    link = portal.absolute_url() + '/login' 
-#    message = translate(Message(
-#            MAIL_NOTIFICATION_MESSAGE,
-#            mapping={'title': safe_unicode(portal.title),
-#                     'link': "<a href='"+link+"'>"+link+"</a>",
-#                     'text': obj.text.output}),
-#            context=obj.REQUEST)
-#
-#    try:
-#
-#
-#        mail_host.send(mail.create_html_mail(subject,message,'',sender,item.email))
-#            
-#    except SMTPException:
-#        logger.error('SMTP exception while trying to send an ' + 
-#                         'email from %s to %s',
-#                         sender,
-#                         email)
+
         

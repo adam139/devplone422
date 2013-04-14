@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: membrane\n"
-"POT-Creation-Date: 2013-04-10 07:42+0000\n"
-"PO-Revision-Date: 2013-04-10 15:44+0800\n"
+"POT-Creation-Date: 2013-04-13 00:25+0000\n"
+"PO-Revision-Date: 2013-04-13 08:28+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,10 @@ msgstr ""
 #: ./browser/templates/member_view.pt:132
 msgid "Address"
 msgstr "地址"
+
+#: ./browser/register.py:65
+msgid "Agree this?"
+msgstr "同意这个协议？"
 
 #: ./vocabulary.py:26
 msgid "Anhui"
@@ -42,7 +46,7 @@ msgstr "北京"
 msgid "Biography"
 msgstr "自我介绍"
 
-#: ./browser/register.py:29
+#: ./browser/register.py:54
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr "如果你希望您的名称及联系信息发布在与会者列表中，请选择此选项。"
 
@@ -112,17 +116,9 @@ msgstr "福建"
 msgid "Full name"
 msgstr "名称"
 
-#: ./content/member.py:219
-msgid "Funding"
-msgstr "会务支持"
-
 #: ./vocabulary.py:42
 msgid "Gansu"
 msgstr "甘肃"
-
-#: ./content/member.py:174
-msgid "Geography"
-msgstr "地理"
 
 #: ./browser/member_view.py:93
 #: ./browser/templates/member_view.pt:114
@@ -272,7 +268,7 @@ msgstr "QQ号码"
 msgid "Qinghai"
 msgstr "青海"
 
-#: ./browser/register.py:58
+#: ./browser/register.py:100
 msgid "Register for site member"
 msgstr "注册成为本站会员"
 
@@ -305,7 +301,7 @@ msgstr "深圳"
 msgid "Short Bio"
 msgstr "个人简介"
 
-#: ./browser/register.py:28
+#: ./browser/register.py:53
 msgid "Show me in attendee list"
 msgstr "显示我在与会者列表中"
 
@@ -358,10 +354,6 @@ msgstr "素食吗？"
 #: ./content/member.py:180
 msgid "Where you are from"
 msgstr "来自哪里"
-
-#: ./content/member.py:146
-msgid "Work"
-msgstr "工作"
 
 #: ./browser/member_view.py:82
 #: ./browser/templates/member_view.pt:51
@@ -441,6 +433,10 @@ msgstr "会员文件夹"
 msgid "personal address"
 msgstr "个人联系地址"
 
+#: ./browser/register.py:60
+msgid "privacy"
+msgstr "会员注册协议"
+
 #: ./browser/templates/member_view.pt:73
 #: ./content/member.py:168
 msgid "research domain"
@@ -473,3 +469,14 @@ msgstr "行业"
 msgid "yunnan"
 msgstr "云南"
 
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disable this member"
+msgstr "禁止这个会员"
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disabled"
+msgstr "禁止"
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enable this member"
+msgstr "批准这个会员"

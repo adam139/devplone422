@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-10 07:42+0000\n"
+"POT-Creation-Date: 2013-04-13 00:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 
 #: ./browser/templates/member_view.pt:132
 msgid "Address"
+msgstr ""
+
+#: ./browser/register.py:65
+msgid "Agree this?"
 msgstr ""
 
 #: ./vocabulary.py:26
@@ -42,7 +46,7 @@ msgstr ""
 msgid "Biography"
 msgstr ""
 
-#: ./browser/register.py:29
+#: ./browser/register.py:54
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr ""
 
@@ -112,16 +116,8 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: ./content/member.py:219
-msgid "Funding"
-msgstr ""
-
 #: ./vocabulary.py:42
 msgid "Gansu"
-msgstr ""
-
-#: ./content/member.py:174
-msgid "Geography"
 msgstr ""
 
 #: ./browser/member_view.py:93
@@ -272,7 +268,7 @@ msgstr ""
 msgid "Qinghai"
 msgstr ""
 
-#: ./browser/register.py:58
+#: ./browser/register.py:100
 msgid "Register for site member"
 msgstr ""
 
@@ -305,7 +301,7 @@ msgstr ""
 msgid "Short Bio"
 msgstr ""
 
-#: ./browser/register.py:28
+#: ./browser/register.py:53
 msgid "Show me in attendee list"
 msgstr ""
 
@@ -357,10 +353,6 @@ msgstr ""
 
 #: ./content/member.py:180
 msgid "Where you are from"
-msgstr ""
-
-#: ./content/member.py:146
-msgid "Work"
 msgstr ""
 
 #: ./browser/member_view.py:82
@@ -439,6 +431,10 @@ msgstr ""
 
 #: ./content/member.py:193
 msgid "personal address"
+msgstr ""
+
+#: ./browser/register.py:60
+msgid "privacy"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:73

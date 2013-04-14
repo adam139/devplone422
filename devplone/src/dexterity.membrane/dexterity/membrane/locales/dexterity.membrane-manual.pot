@@ -19,3 +19,15 @@ msgstr ""
 
 msgid "China"
 msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disable this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disabled"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enable this member"
+msgstr ""

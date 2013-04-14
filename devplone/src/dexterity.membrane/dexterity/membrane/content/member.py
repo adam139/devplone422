@@ -142,10 +142,10 @@ class IMember(IEmail,IImageScaleTraversable):
         required=True
     )
     
-    form.fieldset('work',
-            label=_(u"Work"),
-            fields=['organization', 'sector','position', 'research_domain']
-    )
+#    form.fieldset('work',
+#            label=_(u"Work"),
+#            fields=['organization', 'sector','position', 'research_domain']
+#    )
     
     organization = schema.TextLine(
         title=_(u"Organization / Company"),
@@ -170,10 +170,10 @@ class IMember(IEmail,IImageScaleTraversable):
 
         )
            
-    form.fieldset('geography',
-            label=_(u"Geography"),
-            fields=['country', 'province','address']
-    )
+#    form.fieldset('geography',
+#            label=_(u"Geography"),
+#            fields=['country', 'province','address']
+#    )
     
     country = schema.Choice(
         title=_(u"Country"),
@@ -215,10 +215,10 @@ class IMember(IEmail,IImageScaleTraversable):
     )
 
 
-    form.fieldset('sponsorship',
-            label=_(u"Funding"),
-            fields=['need_sponsorship', 'roomshare', 'tshirt_size','is_vegetarian','comment']
-    )
+#    form.fieldset('sponsorship',
+#            label=_(u"Funding"),
+#            fields=['need_sponsorship', 'roomshare', 'tshirt_size','is_vegetarian','comment']
+#    )
 
     need_sponsorship = schema.Bool(
             title=_(u"Need funding"),

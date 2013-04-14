@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: eisoo.topic\n"
-"POT-Creation-Date: 2013-04-08 12:56+0000\n"
-"PO-Revision-Date: 2013-04-08 20:57+0800\n"
+"Project-Id-Version: collective.conference\n"
+"POT-Creation-Date: 2013-04-14 02:28+0000\n"
+"PO-Revision-Date: 2013-04-14 10:29+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Language-Code: zh_CN\n"
 "Language-Name: Chinese\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: collective.conference\n"
 
 #: ./profiles/default/types/collective.conference.conference.xml
 msgid "A conference event"
@@ -20,9 +20,9 @@ msgstr "一个会务活动"
 
 #: ./interfaces.py:57
 msgid "A score from 1-100"
-msgstr ""
+msgstr "一个范围为1-100的评分"
 
-#: ./browser/templates/conference_listings.pt:150
+#: ./browser/templates/conference_listings.pt:146
 msgid "Add conference"
 msgstr "添加活动"
 
@@ -71,7 +71,7 @@ msgstr "上载您的演讲文档（ppt等）。如果有多个文件，请务必
 msgid "Attachment"
 msgstr "附件"
 
-#: ./browser/listings.py:22
+#: ./browser/listings.py:23
 msgid "Attendees listing"
 msgstr "与会者列表"
 
@@ -111,7 +111,7 @@ msgstr "会务管理"
 msgid "Conference Participant"
 msgstr "会议参与者"
 
-#: ./browser/listings.py:108
+#: ./browser/listings.py:92
 #: ./session.py:87
 msgid "Conference Rooms"
 msgstr "会议厅"
@@ -172,6 +172,18 @@ msgstr "会务支持"
 msgid "Geography"
 msgstr "地理"
 
+#: ./browser/templates/Ifollowed_conferences.pt:22
+msgid "I have followed (${num}) conferences."
+msgstr "我关注了（${num}）个活动。"
+
+#: ./browser/templates/conferences_joined.pt:22
+msgid "I have joined (${num})conferences"
+msgstr "我已加入了（${num}）个活动。"
+
+#: ./browser/templates/speeches_joined.pt:22
+msgid "I have joined (${num})conferences's speech."
+msgstr "我已申请了（${num}）个活动的演讲。"
+
 #: ./participant.py:241
 msgid "If you want or need a room, check this option"
 msgstr "如果你需要预定客房，请选择此选项"
@@ -184,7 +196,11 @@ msgstr "中级"
 msgid "Invalid email address"
 msgstr "无效的邮件地址"
 
-#: ./browser/listings.py:103
+#: ./browser/templates/conference_view.pt:58
+msgid "Join Conference"
+msgstr "申请参会"
+
+#: ./browser/listings.py:87
 #: ./session.py:68
 msgid "Level"
 msgstr "级别"
@@ -218,7 +234,7 @@ msgstr "单位或公司"
 msgid "Participant"
 msgstr "与会者"
 
-#: ./browser/profile_listing.py:14
+#: ./browser/profile_listing.py:16
 #: ./browser/templates/macros.pt:32
 msgid "Participants"
 msgstr "参会者"
@@ -227,7 +243,7 @@ msgstr "参会者"
 msgid "Participants list"
 msgstr "参会者列表"
 
-#: ./browser/listings.py:140
+#: ./browser/listings.py:129
 #: ./browser/templates/macros.pt:70
 msgid "Pending Sessions"
 msgstr "待批准的会议"
@@ -261,10 +277,6 @@ msgstr "职位"
 msgid "Presented By"
 msgstr "演讲由"
 
-#: ./browser/templates/conference_view.pt:53
-msgid "Propose Session"
-msgstr "申请演讲"
-
 #: ./browser/propose.py:46
 msgid "Propose a session"
 msgstr "申请一次演讲"
@@ -277,15 +289,15 @@ msgstr "QQ号码"
 msgid "Regional Events"
 msgstr "区域峰会"
 
-#: ./browser/templates/conference_view.pt:50
-msgid "Register NOW"
-msgstr "马上报名"
+#: ./browser/templates/conference_view.pt:61
+msgid "Register Session"
+msgstr "申请演讲"
 
 #: ./browser/register.py:52
 msgid "Register for this event"
 msgstr "注册参入本次活动"
 
-#: ./browser/templates/conference_view.pt:27
+#: ./browser/templates/conference_view.pt:31
 msgid "Register member"
 msgstr "注册会员"
 
@@ -313,12 +325,12 @@ msgstr "会议"
 msgid "Session Title"
 msgstr "会议标题"
 
-#: ./browser/listings.py:98
+#: ./browser/listings.py:82
 #: ./session.py:64
 msgid "Session Type"
 msgstr "会议类型"
 
-#: ./browser/session_listing.py:12
+#: ./browser/session_listing.py:13
 #: ./browser/templates/macros.pt:30
 #: ./browser/templates/participant_view.pt:63
 msgid "Sessions"
@@ -332,7 +344,7 @@ msgstr "个人简介"
 msgid "Show me in attendee list"
 msgstr "显示我在与会者列表中"
 
-#: ./browser/speaker_listing.py:14
+#: ./browser/speaker_listing.py:19
 #: ./browser/templates/macros.pt:28
 msgid "Speakers"
 msgstr "演讲嘉宾"
@@ -341,7 +353,7 @@ msgstr "演讲嘉宾"
 msgid "Sponsor"
 msgstr "主办单位"
 
-#: ./browser/listings.py:119
+#: ./browser/listings.py:103
 msgid "Submitted Sessions"
 msgstr "已提交的会议"
 
@@ -370,11 +382,11 @@ msgstr "感谢您的提交，您的提交将等待网站审核后，发布出来
 msgid "Thank you. You are now registered."
 msgstr "你已完成了注册，多谢！"
 
-#: ./browser/templates/conference_view.pt:30
+#: ./browser/templates/conference_view.pt:34
 msgid "Tips:"
 msgstr "提示："
 
-#: ./browser/listings.py:94
+#: ./browser/listings.py:78
 #: ./conference.py:38
 msgid "Title"
 msgstr "标题"
@@ -395,7 +407,7 @@ msgstr "素食与会者列表"
 msgid "Vegetarian?"
 msgstr "素食吗？"
 
-#: ./browser/listings.py:57
+#: ./browser/listings.py:52
 msgid "Vegetarians listing"
 msgstr "素食者列表"
 
@@ -415,6 +427,18 @@ msgstr "工作"
 msgid "Workshop"
 msgstr "专题研究"
 
+#: ./browser/templates/Ifollowed_conferences.pt:27
+msgid "You haven't followed any conference."
+msgstr "我当前没有关注任何活动。"
+
+#: ./browser/templates/conferences_joined.pt:27
+msgid "You haven't joined any conference."
+msgstr "我当前没有申请加入任何活动。"
+
+#: ./browser/templates/speeches_joined.pt:27
+msgid "You haven't joined any speeches."
+msgstr "我当前没有申请任何活动的演讲。"
+
 #: ./participant.py:183
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr "你的相片，建议尺寸为150x195px"
@@ -431,7 +455,7 @@ msgstr "积分"
 msgid "conferencefolder"
 msgstr "活动文件夹"
 
-#: ./browser/templates/conference_view.pt:38
+#: ./browser/templates/conference_view.pt:46
 msgid "follow"
 msgstr "关注"
 
@@ -439,7 +463,13 @@ msgstr "关注"
 msgid "hottest events"
 msgstr "热门活动"
 
-#: ./browser/templates/conference_listings.pt:159
+#: ./browser/templates/Ifollowed_conferences.pt:39
+#: ./browser/templates/conferences_joined.pt:39
+#: ./browser/templates/speeches_joined.pt:39
+msgid "more"
+msgstr "更多"
+
+#: ./browser/templates/conference_listings.pt:155
 msgid "more events"
 msgstr "更多活动"
 
@@ -486,15 +516,21 @@ msgstr "主办者"
 msgid "the province of your company"
 msgstr "所在省份"
 
-#: ./browser/templates/conference_view.pt:44
+#: ./browser/templates/conference_view.pt:52
 msgid "unfollowed"
 msgstr "取消关注"
 
-#: ./browser/templates/conference_view.pt:23
+#: ./browser/templates/conference_view.pt:27
 msgid "we have ${num} follow this"
 msgstr "有${num}人关注本活动"
 
-#: ./browser/templates/conference_view.pt:30
+#: ./browser/templates/Ifollowed_conferences.pt:17
+#: ./browser/templates/conferences_joined.pt:17
+#: ./browser/templates/speeches_joined.pt:17
+msgid "you need login for view followed info."
+msgstr "你需要登录才能查看相关信心。"
+
+#: ./browser/templates/conference_view.pt:34
 msgid "you should register as member for join the event."
 msgstr "为了能参加本站活动，你应注册成为会员。"
 

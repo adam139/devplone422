@@ -40,10 +40,10 @@ class TestEvent(unittest.TestCase):
         
         mp = getToolByName(portal,'portal_membership')
         userobject = mp.getAuthenticatedMember()
-        username = userobject.getId()
-#        import pdb
-#        pdb.set_trace()
-        questionlist = list(userobject.getProperty('myquestions'))
+        username = userobject.getUserName()
+        import pdb
+        pdb.set_trace()
+        questionlist = userobject.getProperty('myquestions')
         evlute = IEvaluate(file)
         
         self.assertTrue(file.id in questionlist)
@@ -55,8 +55,8 @@ class TestEvent(unittest.TestCase):
         
         mp = getToolByName(portal,'portal_membership')
         userobject = mp.getAuthenticatedMember()
-        username = userobject.getId()
-        questionlist = list(userobject.getProperty('myquestions'))
+        username = userobject.getUserName()
+        questionlist = userobject.getProperty('myquestions')
         evlute = IEvaluate(file)
         
         self.assertFalse(file.id in questionlist)
@@ -64,22 +64,23 @@ class TestEvent(unittest.TestCase):
         self.assertEqual(0, evlute.followerNum)
 # fire register conf event        
         event.notify(RegisteredConfEvent(file))
-        clists = list(userobject.getProperty('conferences'))
+        clists = userobject.getProperty('conferences')
         plists = file.participants
         
-        self.assertFalse(file.id in questionlist)
+        self.assertTrue(file.id in clists)
 #        import pdb
 #        pdb.set_trace()
-        username = '12@qq.com'
+#        username = '12@qq.com'
         self.assertTrue(username in plists)
 # fire register session event        
         event.notify(RegisteredSessionEvent(file))
-#        clists = list(userobject.getProperty('conferences'))
-        plists = file.speakers
+        slists = userobject.getProperty('speeches')
+        plists = file.participants
+        speaklists = file.speakers        
         
-#        self.assertFalse(file.id in questionlist)
+        self.assertTrue(file.id in slists)
         self.assertTrue(username in plists)
-           
+        self.assertTrue(username in speaklists)           
 
        
 class TestRendering(unittest.TestCase):

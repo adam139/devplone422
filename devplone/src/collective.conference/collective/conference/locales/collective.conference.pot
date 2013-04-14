@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-08 12:56+0000\n"
+"POT-Creation-Date: 2013-04-14 02:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "A score from 1-100"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:150
+#: ./browser/templates/conference_listings.pt:146
 msgid "Add conference"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Attachment"
 msgstr ""
 
-#: ./browser/listings.py:22
+#: ./browser/listings.py:23
 msgid "Attendees listing"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Conference Participant"
 msgstr ""
 
-#: ./browser/listings.py:108
+#: ./browser/listings.py:92
 #: ./session.py:87
 msgid "Conference Rooms"
 msgstr ""
@@ -175,6 +175,18 @@ msgstr ""
 msgid "Geography"
 msgstr ""
 
+#: ./browser/templates/Ifollowed_conferences.pt:22
+msgid "I have followed (${num}) conferences."
+msgstr ""
+
+#: ./browser/templates/conferences_joined.pt:22
+msgid "I have joined (${num})conferences"
+msgstr ""
+
+#: ./browser/templates/speeches_joined.pt:22
+msgid "I have joined (${num})conferences's speech."
+msgstr ""
+
 #: ./participant.py:241
 msgid "If you want or need a room, check this option"
 msgstr ""
@@ -187,7 +199,11 @@ msgstr ""
 msgid "Invalid email address"
 msgstr ""
 
-#: ./browser/listings.py:103
+#: ./browser/templates/conference_view.pt:58
+msgid "Join Conference"
+msgstr ""
+
+#: ./browser/listings.py:87
 #: ./session.py:68
 msgid "Level"
 msgstr ""
@@ -221,7 +237,7 @@ msgstr ""
 msgid "Participant"
 msgstr ""
 
-#: ./browser/profile_listing.py:14
+#: ./browser/profile_listing.py:16
 #: ./browser/templates/macros.pt:32
 msgid "Participants"
 msgstr ""
@@ -230,7 +246,7 @@ msgstr ""
 msgid "Participants list"
 msgstr ""
 
-#: ./browser/listings.py:140
+#: ./browser/listings.py:129
 #: ./browser/templates/macros.pt:70
 msgid "Pending Sessions"
 msgstr ""
@@ -264,10 +280,6 @@ msgstr ""
 msgid "Presented By"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:53
-msgid "Propose Session"
-msgstr ""
-
 #: ./browser/propose.py:46
 msgid "Propose a session"
 msgstr ""
@@ -280,15 +292,15 @@ msgstr ""
 msgid "Regional Events"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:50
-msgid "Register NOW"
+#: ./browser/templates/conference_view.pt:61
+msgid "Register Session"
 msgstr ""
 
 #: ./browser/register.py:52
 msgid "Register for this event"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:27
+#: ./browser/templates/conference_view.pt:31
 msgid "Register member"
 msgstr ""
 
@@ -316,12 +328,12 @@ msgstr ""
 msgid "Session Title"
 msgstr ""
 
-#: ./browser/listings.py:98
+#: ./browser/listings.py:82
 #: ./session.py:64
 msgid "Session Type"
 msgstr ""
 
-#: ./browser/session_listing.py:12
+#: ./browser/session_listing.py:13
 #: ./browser/templates/macros.pt:30
 #: ./browser/templates/participant_view.pt:63
 msgid "Sessions"
@@ -335,7 +347,7 @@ msgstr ""
 msgid "Show me in attendee list"
 msgstr ""
 
-#: ./browser/speaker_listing.py:14
+#: ./browser/speaker_listing.py:19
 #: ./browser/templates/macros.pt:28
 msgid "Speakers"
 msgstr ""
@@ -344,7 +356,7 @@ msgstr ""
 msgid "Sponsor"
 msgstr ""
 
-#: ./browser/listings.py:119
+#: ./browser/listings.py:103
 msgid "Submitted Sessions"
 msgstr ""
 
@@ -373,11 +385,11 @@ msgstr ""
 msgid "Thank you. You are now registered."
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:30
+#: ./browser/templates/conference_view.pt:34
 msgid "Tips:"
 msgstr ""
 
-#: ./browser/listings.py:94
+#: ./browser/listings.py:78
 #: ./conference.py:38
 msgid "Title"
 msgstr ""
@@ -398,7 +410,7 @@ msgstr ""
 msgid "Vegetarian?"
 msgstr ""
 
-#: ./browser/listings.py:57
+#: ./browser/listings.py:52
 msgid "Vegetarians listing"
 msgstr ""
 
@@ -418,6 +430,18 @@ msgstr ""
 msgid "Workshop"
 msgstr ""
 
+#: ./browser/templates/Ifollowed_conferences.pt:27
+msgid "You haven't followed any conference."
+msgstr ""
+
+#: ./browser/templates/conferences_joined.pt:27
+msgid "You haven't joined any conference."
+msgstr ""
+
+#: ./browser/templates/speeches_joined.pt:27
+msgid "You haven't joined any speeches."
+msgstr ""
+
 #: ./participant.py:183
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr ""
@@ -434,7 +458,7 @@ msgstr ""
 msgid "conferencefolder"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:38
+#: ./browser/templates/conference_view.pt:46
 msgid "follow"
 msgstr ""
 
@@ -442,7 +466,13 @@ msgstr ""
 msgid "hottest events"
 msgstr ""
 
-#: ./browser/templates/conference_listings.pt:159
+#: ./browser/templates/Ifollowed_conferences.pt:39
+#: ./browser/templates/conferences_joined.pt:39
+#: ./browser/templates/speeches_joined.pt:39
+msgid "more"
+msgstr ""
+
+#: ./browser/templates/conference_listings.pt:155
 msgid "more events"
 msgstr ""
 
@@ -489,15 +519,21 @@ msgstr ""
 msgid "the province of your company"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:44
+#: ./browser/templates/conference_view.pt:52
 msgid "unfollowed"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:23
+#: ./browser/templates/conference_view.pt:27
 msgid "we have ${num} follow this"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:30
+#: ./browser/templates/Ifollowed_conferences.pt:17
+#: ./browser/templates/conferences_joined.pt:17
+#: ./browser/templates/speeches_joined.pt:17
+msgid "you need login for view followed info."
+msgstr ""
+
+#: ./browser/templates/conference_view.pt:34
 msgid "you should register as member for join the event."
 msgstr ""
 

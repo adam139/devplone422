@@ -19,6 +19,7 @@ from collective.conference import MessageFactory as _
 from collective.conference.conference import IConference
 from collective.conference.conferencefolder import IConferencefolder
 from dexterity.membrane.vocabulary import province_type 
+from Products.CMFCore import permissions
 
 grok.templatedir('templates')
 
@@ -48,7 +49,7 @@ class SiteRootConferenceListingView(grok.View):
         topicfolder = tfc({'object_provides': IConferencefolder.__identifier__})
         
         mt = getToolByName(context,'portal_membership')
-        canManage = mt.checkPermission('Portlets: Manage portlets',context)        
+        canManage = mt.checkPermission(permissions.AddPortalContent,context)        
         if (len(topicfolder) > 0) and  canManage:
             tfpath = topicfolder[0].getURL()
         else:

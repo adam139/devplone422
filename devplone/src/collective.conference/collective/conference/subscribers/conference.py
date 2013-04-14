@@ -30,7 +30,6 @@ from zope import component
 
 from datetime import datetime
 
-
         
 @grok.subscribe(IConference, ILikeEvent)
 def approve(obj, event):
@@ -163,10 +162,10 @@ def Registered(obj,event):
 #    username = userobject.getId()
     username = userobject.getUserName()
 #    username = "12@qq.com"    
-#    questionlist = list(userobject.getProperty('conferences'))
-#    if not obj.id in questionlist:
-#        questionlist.append(obj.id)
-#        userobject.setProperties(conferences=questionlist)
+    questionlist = list(userobject.getProperty('conferences'))
+    if not obj.id in questionlist:
+        questionlist.append(obj.id)
+        userobject.setProperties(conferences=questionlist)
 #    plists = obj.participants
     try:
         plists = list(obj.participants)
@@ -186,10 +185,10 @@ def RegisteredSession(obj,event):
 #    username = userobject.getId()
     username = userobject.getUserName()
 #    username = "12@qq.com"    
-#    questionlist = list(userobject.getProperty('conferences'))
-#    if not obj.id in questionlist:
-#        questionlist.append(obj.id)
-#        userobject.setProperties(conferences=questionlist)
+    slist = list(userobject.getProperty('speeches'))
+    if not obj.id in slist:
+        slist.append(obj.id)
+        userobject.setProperties(speeches=slist)
 #    plists = obj.speakers
     try:
         slists = list(obj.speakers)

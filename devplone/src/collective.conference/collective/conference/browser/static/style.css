@@ -8,7 +8,7 @@
   padding-top:10px;
   padding-bottom:10px;
 }
-#content ul .nav {list-style-type: none;}
+#content ul .nav,#content .thumbnails {list-style-type: none;}
 .navbar .container {
     width:100%;
 }

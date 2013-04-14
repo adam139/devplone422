@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+<head>
+   <metal:block fill-slot="style_slot">
+      <metal:block use-macro="here/@@collective-conference-macros/macros/styles"/>
+   </metal:block>
+</head>
+<body>
+
+<metal:main fill-slot="main">
+  <metal:main define-macro="main">
+  	<div tal:condition="python:view.isAnonymous" i18n:translate="">you need login for view followed info.</div>
+  	<div tal:condition="python:not view.isAnonymous" tal:omit-tag="">
+			<div class="row-fluid">
+					<span 
+						i18n:translate="">
+						I have joined (<span i18n:name="num" tal:content="view/FollowerNum">25</span>)conferences's speech.</span>
+			</div>
+
+		<div id="ajaxdisplay" tal:define="content python:view.fetchIfollowed(0, 3)" 
+			tal:attributes="data-ajax-target string:${context/absolute_url}/@@speeches_joined_more">
+			<div class="noexist" 
+				tal:condition="not:content" 
+				i18n:translate="">
+				You haven't joined any speeches.
+			</div>
+			<tal:block condition="content">		
+			    <div class="qbox hrbottom followtype" tal:repeat="brain content">
+			    	<div class="row-fluid">
+			    		<a tal:attributes="href brain/getURL" tal:content="brain/Title" />
+			    	</div>
+				</div>						
+			   <a id="ajaxmore-link" tal:condition="python:view.FollowerNum>3" href="javascript:void(0)">
+			   	<span id="ajaxmore" i18n:translate="">more</span>
+			   	</a>
+		    </tal:block>
+		 </div>
+		</div>		 
+  </metal:main>
+</metal:main>
+<metal:js fill-slot="javascript_bottom_slot">
+	<script type="text/javascript">
+	var start = 0;
+
+	jq("#ajaxmore").live("click", function(){
+		var action = jq("#ajaxdisplay").attr('data-ajax-target');
+		start++;
+		jq.post(action, {formstart: start}, function(data){
+			var outhtml = data['outhtml'];
+			jq(outhtml).insertBefore('#ajaxmore-link');
+			var ifmore = data['ifmore'];
+			if (ifmore == 1){
+				jq('#ajaxmore-link').remove();}
+		}, 'json');
+		return false;
+	});
+</script>	
+</metal:js>
+</body>
+</html>

@@ -1,5 +1,6 @@
-
+#-*- coding: UTF-8 -*-
 from five import grok
+import json
 from plone.app.layout.navigation.interfaces import INavigationRoot
 from collective.conference.conference import IConference
 from Products.CMFCore.utils import getToolByName
@@ -7,6 +8,8 @@ from Products.CMFCore.utils import getToolByName
 from zope import event
 from collective.conference.events import ClickEvent,FollowedEvent,UnfollowedEvent,RegisteredConfEvent,RegisteredSessionEvent
 from collective.conference.conference import IConference
+from Products.statusmessages.interfaces import IStatusMessage
+from Products.CMFPlone import PloneMessageFactory as _p
 
 class AjaxFollow(grok.View):
     """AJAX action: follow a question.
@@ -53,6 +56,14 @@ class AjaxRegConf(grok.View):
         
     def render(self):
         event.notify(RegisteredConfEvent(self.context))
+#        import pdb
+#        pdb.set_trace()
+        mess = u"你已成功加入到 " + self.context.title
+        data = {'info':mess}
+
+        self.request.response.setHeader('Content-Type', 'application/json')
+        return json.dumps(data)          
+#        self.request.response.redirect(self.context.absolute_url())        
         
 class AjaxRegSession(grok.View):
     """AJAX action: follow a question.

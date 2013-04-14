@@ -14,6 +14,10 @@
    <div metal:fill-slot="content-title"></div>
    <div metal:fill-slot="content-description"></div>
    <div metal:fill-slot="content-core">
+   	
+   		<dl id="info" class="portalMessage info hidden"><dt>信息</dt>
+            <dd>您已加入Plone。</dd>
+        </dl>
       <div class="row-fluid banner"
          tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html">
          <div class="span1">&nbsp;</div>
@@ -30,8 +34,12 @@
         					<strong i18n:translate="">Tips:</strong><span i18n:translate="">you should register as member for join the event.</span></div>            	
             </div>
             <div tal:condition="python:not isAnonymous">
-            <div  id="follow-box" tal:define="follow python:view.isFollowed();
-            	">
+            <div  id="follow-box" tal:define="follow python:view.isFollowed();">
+            	<!--
+            	<div tal:condition="python:view.isEditable" class="edit">
+            		<a i18n:domain="plone" class="btn" i18n:translate="" tal:attributes="href python:context.absolute_url() + '/edit'">Edit</a>
+            	</div> -->
+            	
 					<span id="fire-follow" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
 						data-ajax-target string:${portal_url}/@@ajax-follow">
 						<img tal:attributes="src string:${view/static}/plus.png" />&nbsp;
@@ -48,11 +56,11 @@
 <!--            <a  i18n:translate=""  id="regconf" class="btn btn-primary btn-large"
                tal:attributes="href string:${context/absolute_url}/register">Register NOW</a> -->
             <a  tal:condition="python:view.isRegister()" i18n:translate=""  href="javascript:void(0)" id="regconf" class="btn btn-primary btn-large"
-               tal:attributes="data-ajax-target string:${context/absolute_url}/@@ajax-register-conf">Register NOW</a>
+               tal:attributes="data-ajax-target string:${context/absolute_url}/@@ajax-register-conf">Join Conference</a>
                           
             <a  tal:condition="python:view.isRegisterSpeaker()" i18n:translate=""  id="regsession" class="btn btn-primary btn-large"
                tal:attributes="href string:${context/absolute_url}/propose;
-               data-ajax-target string:${context/absolute_url}/@@ajax-register-session">Propose Session</a>
+               data-ajax-target string:${context/absolute_url}/@@ajax-register-session">Register Session</a>
          </div>
          </div>
          <div class="span4"
@@ -123,7 +131,9 @@ jq(".unfollowjq").live("click",function() {
 //ajax-register-conf
 jq("#regconf").live("click",function() {	
 		var action = jq(this).attr('data-ajax-target');
-		jq.post(action, function(){
+		jq.post(action, function(data){
+			jq("#info dd").html(data['info']);
+			jq("#info").removeClass('hidden')
 			jq("#regconf").hide();
 		}, 'json');
 	return false;

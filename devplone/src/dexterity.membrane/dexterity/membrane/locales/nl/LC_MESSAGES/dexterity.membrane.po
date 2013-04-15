@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-13 00:25+0000\n"
+"POT-Creation-Date: 2013-04-15 12:37+0000\n"
 "PO-Revision-Date: 2011-05-04 03:00+0200\n"
 "Last-Translator: Maurits van Rees <maurits@vanrees.org>\n"
 "Language-Team: plone-nl@lists.plone.org\n"
@@ -15,11 +15,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: dexterity.membrane\n"
 
+#: ./browser/templates/member_listing.pt:27
+msgid "#"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:132
 msgid "Address"
 msgstr ""
 
-#: ./browser/register.py:65
+#: ./browser/register.py:66
 msgid "Agree this?"
 msgstr ""
 
@@ -31,7 +35,7 @@ msgstr ""
 msgid "Aomen"
 msgstr ""
 
-#: ./browser/member_view.py:49
+#: ./browser/member_view.py:59
 #: ./browser/templates/member_view.pt:19
 msgid "Base information"
 msgstr ""
@@ -48,7 +52,7 @@ msgstr "Biografie"
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr ""
 
-#: ./content/member.py:225
+#: ./content/member.py:226
 msgid "Check this option if you need funding to attend."
 msgstr ""
 
@@ -60,7 +64,7 @@ msgid "Chongqing"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:177
-#: ./content/member.py:233
+#: ./content/member.py:234
 msgid "Comments"
 msgstr ""
 
@@ -81,6 +85,18 @@ msgstr ""
 msgid "Dexterity Membrane Behavior Settings"
 msgstr ""
 
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disable this member"
+msgstr ""
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disabled"
+msgstr ""
+
+#: ./browser/member_view.py:48
+msgid "Edit user bonus"
+msgstr ""
+
 #: ./vocabulary.py:55
 msgid "Education"
 msgstr ""
@@ -93,12 +109,16 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enable this member"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:32
 #: ./content/member.py:135
 msgid "External Homepage"
 msgstr "Externe homepage"
 
-#: ./content/member.py:234
+#: ./content/member.py:235
 msgid "Fill in this field with things you need the organizers to know.        If you are roomsharing and already have a roommate, please mention your roommate's name here"
 msgstr ""
 
@@ -118,7 +138,7 @@ msgstr ""
 msgid "Gansu"
 msgstr ""
 
-#: ./browser/member_view.py:93
+#: ./browser/member_view.py:103
 #: ./browser/templates/member_view.pt:114
 msgid "Geography information"
 msgstr ""
@@ -167,7 +187,7 @@ msgstr ""
 msgid "If checked, the value in the email field will be used as a username/login. If unchecked, your content type must provide a username field."
 msgstr ""
 
-#: ./content/member.py:229
+#: ./content/member.py:230
 msgid "If you want or need a room, check this option"
 msgstr ""
 
@@ -191,12 +211,16 @@ msgstr ""
 msgid "Member"
 msgstr "Lid"
 
+#: ./browser/templates/member_listing.pt:21
+msgid "Member information"
+msgstr ""
+
 #: ./behavior/membraneuser.py:188
 msgid "Membership"
 msgstr "Lidmaatschap"
 
 #: ./browser/templates/member_view.pt:152
-#: ./content/member.py:224
+#: ./content/member.py:225
 msgid "Need funding"
 msgstr ""
 
@@ -204,7 +228,7 @@ msgstr ""
 msgid "Neimenggu"
 msgstr ""
 
-#: ./browser/member_view.py:71
+#: ./browser/member_view.py:81
 #: ./browser/templates/member_view.pt:84
 msgid "Network information"
 msgstr ""
@@ -231,7 +255,7 @@ msgid "Password"
 msgstr "Wachtwoord"
 
 #: ./browser/templates/member_view.pt:172
-#: ./content/member.py:252
+#: ./content/member.py:253
 msgid "Person Color Tag"
 msgstr ""
 
@@ -240,7 +264,7 @@ msgstr ""
 msgid "Phone number"
 msgstr ""
 
-#: ./content/member.py:212
+#: ./content/member.py:213
 msgid "Photo"
 msgstr ""
 
@@ -248,7 +272,7 @@ msgstr ""
 msgid "Please input correct mail address,the active code will be sent to it"
 msgstr ""
 
-#: ./content/member.py:265
+#: ./content/member.py:266
 msgid "Please upload image smaller than 512KB"
 msgstr ""
 
@@ -258,7 +282,7 @@ msgid "Position / Role in Organization"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:102
-#: ./content/member.py:206
+#: ./content/member.py:207
 msgid "QQ Number"
 msgstr ""
 
@@ -266,12 +290,12 @@ msgstr ""
 msgid "Qinghai"
 msgstr ""
 
-#: ./browser/register.py:100
+#: ./browser/register.py:101
 msgid "Register for site member"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:157
-#: ./content/member.py:228
+#: ./content/member.py:229
 msgid "Roomshare"
 msgstr ""
 
@@ -308,7 +332,7 @@ msgid "Sichuan"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:162
-#: ./content/member.py:244
+#: ./content/member.py:245
 msgid "T-shirt size"
 msgstr ""
 
@@ -332,7 +356,7 @@ msgstr "Het wachtwoord en de bevestigen komen niet overeen."
 msgid "Tianjin"
 msgstr ""
 
-#: ./browser/member_view.py:60
+#: ./browser/member_view.py:70
 msgid "Update password"
 msgstr ""
 
@@ -345,7 +369,7 @@ msgid "Use object UUID for the userid?"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:167
-#: ./content/member.py:239
+#: ./content/member.py:240
 msgid "Vegetarian?"
 msgstr ""
 
@@ -353,7 +377,7 @@ msgstr ""
 msgid "Where you are from"
 msgstr ""
 
-#: ./browser/member_view.py:82
+#: ./browser/member_view.py:92
 #: ./browser/templates/member_view.pt:51
 msgid "Work information"
 msgstr ""
@@ -370,7 +394,7 @@ msgstr ""
 msgid "Xizang"
 msgstr ""
 
-#: ./content/member.py:213
+#: ./content/member.py:214
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr ""
 
@@ -386,7 +410,7 @@ msgstr ""
 msgid "change password"
 msgstr ""
 
-#: ./browser/member_view.py:105
+#: ./browser/member_view.py:115
 msgid "conference information"
 msgstr ""
 
@@ -397,6 +421,10 @@ msgstr ""
 #. Default: "Your account has been created,we have sent instructions for setting a password to this email address: ${address}"
 #: ./patch/membership.py:72
 msgid "create_membrane_account_succesful"
+msgstr ""
+
+#: ./browser/templates/member_listing.pt:29
+msgid "email"
 msgstr ""
 
 #: ./vocabulary.py:58
@@ -427,17 +455,33 @@ msgstr ""
 msgid "memberfolder for site member"
 msgstr ""
 
+#: ./browser/templates/member_listing.pt:28
+msgid "name"
+msgstr ""
+
+#: ./browser/templates/member_listing.pt:32
+msgid "operations"
+msgstr ""
+
 #: ./content/member.py:193
 msgid "personal address"
 msgstr ""
 
-#: ./browser/register.py:60
+#: ./browser/register.py:61
 msgid "privacy"
+msgstr ""
+
+#: ./browser/templates/member_listing.pt:30
+msgid "register date"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:73
 #: ./content/member.py:168
 msgid "research domain"
+msgstr ""
+
+#: ./browser/templates/member_listing.pt:31
+msgid "status"
 msgstr ""
 
 #. Default: "Failed to create your account: we were unable to send instructions for setting a password to your email address: ${address}"
@@ -457,6 +501,10 @@ msgstr ""
 #: ./browser/templates/member_view.pt:127
 #: ./content/member.py:187
 msgid "the province of your company"
+msgstr ""
+
+#: ./content/member.py:200
+msgid "user's bonus,user permission was controlled by this"
 msgstr ""
 
 #: ./browser/templates/member_view.pt:68

@@ -1,6 +1,12 @@
 #-*- coding: UTF-8 -*-
+import json
+import hmac
+from hashlib import sha1 as sha
 from Products.CMFCore.utils import getToolByName
-from dexterity.membrane.testing import FUNCTIONAL_TESTING 
+from dexterity.membrane.testing import FUNCTIONAL_TESTING
+
+from zope.component import getUtility
+from plone.keyring.interfaces import IKeyManager 
 
 from plone.app.testing import TEST_USER_ID, login, TEST_USER_NAME, \
     TEST_USER_PASSWORD, setRoles
@@ -66,5 +72,19 @@ class TestView(unittest.TestCase):
         self.assertTrue(outstr in browser.contents)   
         outstr = "qq.com"        
         self.assertTrue(outstr in browser.contents)          
-        
+
+    def test_ajax_member_state(self):
+        request = self.layer['request']        
+        keyManager = getUtility(IKeyManager)
+        secret = keyManager.secret()
+        auth = hmac.new(secret,TEST_USER_NAME, sha).hexdigest()
+        request.form = {
+                        '_authenticator': auth,
+                        'state':'enabled',
+                        'id':'member1',                                                                       
+                        }
+        view = self.portal.restrictedTraverse('@@ajaxmemberstate')
+        result = view()
+
+        self.assertEqual(json.loads(result),True)         
    

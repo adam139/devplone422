@@ -197,6 +197,7 @@ class IMember(IEmail,IImageScaleTraversable):
     bonus = schema.Int(
         # url format
         title=_(u"bonus"),
+        description=_(u"user's bonus,user permission was controlled by this"),        
         required=False,
 #        constraint=is_url,
         )    

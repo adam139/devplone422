@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: membrane\n"
-"POT-Creation-Date: 2013-04-13 00:25+0000\n"
-"PO-Revision-Date: 2013-04-13 08:28+0800\n"
+"POT-Creation-Date: 2013-04-15 12:37+0000\n"
+"PO-Revision-Date: 2013-04-15 15:51+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: dexterity.membrane\n"
 
+#: ./browser/templates/member_listing.pt:27
+msgid "#"
+msgstr ""
+
 #: ./browser/templates/member_view.pt:132
 msgid "Address"
 msgstr "地址"
 
-#: ./browser/register.py:65
+#: ./browser/register.py:66
 msgid "Agree this?"
 msgstr "同意这个协议？"
 
@@ -33,7 +37,7 @@ msgstr "安徽"
 msgid "Aomen"
 msgstr "澳门"
 
-#: ./browser/member_view.py:49
+#: ./browser/member_view.py:59
 #: ./browser/templates/member_view.pt:19
 msgid "Base information"
 msgstr "基本信息"
@@ -50,7 +54,7 @@ msgstr "自我介绍"
 msgid "Check this if you wish your name and contact info         to be published in our attendee listing"
 msgstr "如果你希望您的名称及联系信息发布在与会者列表中，请选择此选项。"
 
-#: ./content/member.py:225
+#: ./content/member.py:226
 msgid "Check this option if you need funding to attend."
 msgstr "选择这个选项，如果你需要主办方支持。"
 
@@ -62,7 +66,7 @@ msgid "Chongqing"
 msgstr "重庆"
 
 #: ./browser/templates/member_view.pt:177
-#: ./content/member.py:233
+#: ./content/member.py:234
 msgid "Comments"
 msgstr "留言"
 
@@ -83,6 +87,18 @@ msgstr "国家"
 msgid "Dexterity Membrane Behavior Settings"
 msgstr "Dexterity会员系统设置"
 
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disable this member"
+msgstr "禁止这个会员"
+
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Disabled"
+msgstr "禁止"
+
+#: ./browser/member_view.py:48
+msgid "Edit user bonus"
+msgstr "编辑会员积分"
+
 #: ./vocabulary.py:55
 msgid "Education"
 msgstr "教育"
@@ -95,12 +111,16 @@ msgstr "邮件地址"
 msgid "Email address"
 msgstr "Email地址"
 
+#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
+msgid "Enable this member"
+msgstr "批准这个会员"
+
 #: ./browser/templates/member_view.pt:32
 #: ./content/member.py:135
 msgid "External Homepage"
 msgstr "我的主页"
 
-#: ./content/member.py:234
+#: ./content/member.py:235
 msgid "Fill in this field with things you need the organizers to know.        If you are roomsharing and already have a roommate, please mention your roommate's name here"
 msgstr "将你需要主办方知道的信息填写在下面。如果你打算和他人共住客房并且已有了同住房客，请在此留下同住房客的姓名。"
 
@@ -120,7 +140,7 @@ msgstr "名称"
 msgid "Gansu"
 msgstr "甘肃"
 
-#: ./browser/member_view.py:93
+#: ./browser/member_view.py:103
 #: ./browser/templates/member_view.pt:114
 msgid "Geography information"
 msgstr "地理信息"
@@ -169,7 +189,7 @@ msgstr "如果启用，UUID将被当作用户ID，否则username将作为用户I
 msgid "If checked, the value in the email field will be used as a username/login. If unchecked, your content type must provide a username field."
 msgstr "如果启用，email字段的值将作为username/login。否则，你的内容类型必须提供一个username字段。"
 
-#: ./content/member.py:229
+#: ./content/member.py:230
 msgid "If you want or need a room, check this option"
 msgstr "如果你需要预定客房，请选择此选项"
 
@@ -193,12 +213,16 @@ msgstr "本地角色"
 msgid "Member"
 msgstr "成员"
 
+#: ./browser/templates/member_listing.pt:21
+msgid "Member information"
+msgstr ""
+
 #: ./behavior/membraneuser.py:188
 msgid "Membership"
 msgstr "从属"
 
 #: ./browser/templates/member_view.pt:152
-#: ./content/member.py:224
+#: ./content/member.py:225
 msgid "Need funding"
 msgstr "需要会务支持"
 
@@ -206,7 +230,7 @@ msgstr "需要会务支持"
 msgid "Neimenggu"
 msgstr "内蒙古"
 
-#: ./browser/member_view.py:71
+#: ./browser/member_view.py:81
 #: ./browser/templates/member_view.pt:84
 msgid "Network information"
 msgstr "网络信息"
@@ -233,7 +257,7 @@ msgid "Password"
 msgstr "密码"
 
 #: ./browser/templates/member_view.pt:172
-#: ./content/member.py:252
+#: ./content/member.py:253
 msgid "Person Color Tag"
 msgstr "个性彩色标签"
 
@@ -242,7 +266,7 @@ msgstr "个性彩色标签"
 msgid "Phone number"
 msgstr "电话号码"
 
-#: ./content/member.py:212
+#: ./content/member.py:213
 msgid "Photo"
 msgstr "相片"
 
@@ -250,7 +274,7 @@ msgstr "相片"
 msgid "Please input correct mail address,the active code will be sent to it"
 msgstr "请输入正确的邮箱，激活码将会发到您的邮箱中。"
 
-#: ./content/member.py:265
+#: ./content/member.py:266
 msgid "Please upload image smaller than 512KB"
 msgstr "请上载小于512KB的图片"
 
@@ -260,7 +284,7 @@ msgid "Position / Role in Organization"
 msgstr "职位"
 
 #: ./browser/templates/member_view.pt:102
-#: ./content/member.py:206
+#: ./content/member.py:207
 msgid "QQ Number"
 msgstr "QQ号码"
 
@@ -268,12 +292,12 @@ msgstr "QQ号码"
 msgid "Qinghai"
 msgstr "青海"
 
-#: ./browser/register.py:100
+#: ./browser/register.py:101
 msgid "Register for site member"
 msgstr "注册成为本站会员"
 
 #: ./browser/templates/member_view.pt:157
-#: ./content/member.py:228
+#: ./content/member.py:229
 msgid "Roomshare"
 msgstr "共用客房"
 
@@ -310,7 +334,7 @@ msgid "Sichuan"
 msgstr "四川"
 
 #: ./browser/templates/member_view.pt:162
-#: ./content/member.py:244
+#: ./content/member.py:245
 msgid "T-shirt size"
 msgstr "文化衫大小"
 
@@ -334,7 +358,7 @@ msgstr "口令字段和确认字段不匹配。"
 msgid "Tianjin"
 msgstr "天津"
 
-#: ./browser/member_view.py:60
+#: ./browser/member_view.py:70
 msgid "Update password"
 msgstr "更新密码"
 
@@ -347,7 +371,7 @@ msgid "Use object UUID for the userid?"
 msgstr "是否采用UUID作为用户ID？"
 
 #: ./browser/templates/member_view.pt:167
-#: ./content/member.py:239
+#: ./content/member.py:240
 msgid "Vegetarian?"
 msgstr "素食吗？"
 
@@ -355,7 +379,7 @@ msgstr "素食吗？"
 msgid "Where you are from"
 msgstr "来自哪里"
 
-#: ./browser/member_view.py:82
+#: ./browser/member_view.py:92
 #: ./browser/templates/member_view.pt:51
 msgid "Work information"
 msgstr "工作信息"
@@ -372,7 +396,7 @@ msgstr "新疆"
 msgid "Xizang"
 msgstr "西藏"
 
-#: ./content/member.py:213
+#: ./content/member.py:214
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr "你的相片，建议尺寸为150x195px"
 
@@ -388,7 +412,7 @@ msgstr "积分"
 msgid "change password"
 msgstr "更改口令"
 
-#: ./browser/member_view.py:105
+#: ./browser/member_view.py:115
 msgid "conference information"
 msgstr "会务信息"
 
@@ -400,6 +424,10 @@ msgstr "咨询"
 #: ./patch/membership.py:72
 msgid "create_membrane_account_succesful"
 msgstr ""
+
+#: ./browser/templates/member_listing.pt:29
+msgid "email"
+msgstr "邮件地址"
 
 #: ./vocabulary.py:58
 msgid "energy"
@@ -429,18 +457,34 @@ msgstr "会员文件夹"
 msgid "memberfolder for site member"
 msgstr "会员文件夹"
 
+#: ./browser/templates/member_listing.pt:28
+msgid "name"
+msgstr "姓名"
+
+#: ./browser/templates/member_listing.pt:32
+msgid "operations"
+msgstr "操作"
+
 #: ./content/member.py:193
 msgid "personal address"
 msgstr "个人联系地址"
 
-#: ./browser/register.py:60
+#: ./browser/register.py:61
 msgid "privacy"
 msgstr "会员注册协议"
+
+#: ./browser/templates/member_listing.pt:30
+msgid "register date"
+msgstr "注册日期"
 
 #: ./browser/templates/member_view.pt:73
 #: ./content/member.py:168
 msgid "research domain"
 msgstr "研究领域"
+
+#: ./browser/templates/member_listing.pt:31
+msgid "status"
+msgstr "状态"
 
 #. Default: "Failed to create your account: we were unable to send instructions for setting a password to your email address: ${address}"
 #: ./patch/membership.py:94
@@ -461,6 +505,10 @@ msgstr "电信"
 msgid "the province of your company"
 msgstr "公司所在省份"
 
+#: ./content/member.py:200
+msgid "user's bonus,user permission was controlled by this"
+msgstr "注意：会员的权限取决与其积分！"
+
 #: ./browser/templates/member_view.pt:68
 msgid "your job belong to sector"
 msgstr "行业"
@@ -469,14 +517,3 @@ msgstr "行业"
 msgid "yunnan"
 msgstr "云南"
 
-#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
-msgid "Disable this member"
-msgstr "禁止这个会员"
-
-#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
-msgid "Disabled"
-msgstr "禁止"
-
-#: profiles/default/workflows/dexterity_membrane_workflow/definition.xml
-msgid "Enable this member"
-msgstr "批准这个会员"

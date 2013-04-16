@@ -33,8 +33,8 @@
           	</tr>
         		</thead>
         <tbody>
-                             <tal:block tal:repeat="lists python:view.getMemberList()">
-                                <tr class="row" tal:define="status python:lists['status']">
+           <tal:block tal:repeat="lists python:view.getMemberList()">
+             <tr class="row" tal:define="status python:lists['status']">
                                     <td class="span1 check">
                                         <input type="checkbox" onclick="checkall()" name="check" class="checkbox" tal:attributes="value python:lists['id']">
                                     </td>
@@ -91,21 +91,22 @@ jq(document).ready(function(){
 			var action = jq("#ajaxreq").attr('data-ajax-target');
 			var id = jq(this).siblings('input').attr('id');
 			var state = {'id': id,state: 'disabled'};			
-
-			jq.post(action, state, function(result){
-				if (result) {			jq(this).animate({backgroundPosition: '0% 100%'});
+			jq(this).animate({backgroundPosition: '0% 100%'});
 			jq(checkboxID)[0].checked = true;
-			jq(this).removeClass('off').addClass('on');}
+			jq(this).removeClass('off').addClass('on');
+			jq.post(action, state, function(result){
+				if (result) {}
 				else {return false;}
 			}, 'json');
 		}else {
 			var action = jq("#ajaxreq").attr('data-ajax-target');
 			var id = jq(this).siblings('input').attr('id');
 			var state = {'id': id, state: 'enabled'};
-			jq.post(action, state, function(result){
-				if (result) {			jq(this).animate({backgroundPosition: '100% 0%'});
+			jq(this).animate({backgroundPosition: '100% 0%'});
 			jq(checkboxID)[0].checked = false;
-			jq(this).removeClass('on').addClass('off');}
+			jq(this).removeClass('on').addClass('off');			
+			jq.post(action, state, function(result){
+				if (result) {	}
 			else {return false;}
 			}, 'json');
 		}

@@ -2,7 +2,7 @@
 import json
 from five import grok
 from time import strftime, localtime 
-
+from zope.component import getMultiAdapter
 
 from dexterity.membrane.interfaces import ICreateMembraneEvent
 from dexterity.membrane.content.member import IMember
@@ -16,6 +16,8 @@ from plone.dexterity.utils import createContentInContainer
 from zope.site.hooks import getSite
 from zope.component import getUtility
 from plone.uuid.interfaces import IUUID
+from ZODB.POSException import ConflictError
+from zExceptions import Forbidden
 
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFPlone import PloneMessageFactory as _p
@@ -55,6 +57,7 @@ def sendPasswdResetMail(member, event):
                 # Let Zope handle this exception.
                 raise            
         except Exception:
+                portal = getSite()
                 ctrlOverview = getMultiAdapter((portal, request),
                                                name='overview-controlpanel')
                 mail_settings_correct = not ctrlOverview.mailhost_warning()
@@ -70,7 +73,7 @@ def sendPasswdResetMail(member, event):
                           default=u"Failed to create your account: we were "
                           "unable to send instructions for setting a password "
                           "to your email address: ${address}",
-                          mapping={u'address': data.get('email', '')}),
+                          mapping={u'address': email}),
                         type='error')
                     return
                 else:
@@ -82,7 +85,7 @@ def sendPasswdResetMail(member, event):
                           default=u"This account has been created, but we "
                           "were unable to send instructions for setting a "
                           "password to this email address: ${address}",
-                          mapping={u'address': data.get('email', '')}),
+                          mapping={u'address': email}),
                         type='warning')
                     return    
     else:

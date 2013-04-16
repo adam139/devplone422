@@ -65,8 +65,6 @@ class MemberFolderView(grok.View):
                     'email':'', 'register_date':'', 'status':'', 'editurl':'',
                     'delurl':''}
             row['id'] = brain.id
-#            import pdb
-#            pdb.set_trace()
             row['name'] = brain.Title
             row['url'] = brain.getURL()
             row['email'] = brain.email
@@ -75,9 +73,8 @@ class MemberFolderView(grok.View):
             row['editurl'] = row['url'] + '/memberajaxedit'
             row['delurl'] = row['url'] + '/delete_confirmation'            
             mlist.append(row)
-
         return mlist         
-class hotelstate(grok.View):
+class memberstate(grok.View):
     grok.context(INavigationRoot)
     grok.name('ajaxmemberstate')
     grok.require('zope2.View')
@@ -92,26 +89,29 @@ class hotelstate(grok.View):
 #        pdb.set_trace()
         obj = catalog({'object_provides': IMember.__identifier__, "id":id})[0].getObject()        
         portal_workflow = getToolByName(self.context, 'portal_workflow')
+# obj current status        
         if state == "disabled":
             try:
                 portal_workflow.doActionFor(obj, 'enable')
+                result = True
                 IStatusMessage(self.request).addStatusMessage(
                         _p(u'account_enabled',
                           default=u"Account:${user} has been enabled",
                           mapping={u'user': obj.title}),
                         type='info')                 
-                result = True
+
             except:
                 result = False
         else:
             try:
                 portal_workflow.doActionFor(obj, 'disable')
+                result = True                
                 IStatusMessage(self.request).addStatusMessage(
                         _p(u'account_disabled',
                           default=u"Account:${user} has been disabled",
                           mapping={u'user': obj.title}),
                         type='info')                 
-                result = True
+
             except:
                 result = False
         obj.reindexObject()

@@ -33,20 +33,10 @@ defaultvalue = u"""
             1.3 用户注册成功后，将产生用户名和密码等账户信息，您可以根据本站规定改变您的密码。用户应谨慎合理的保存、使用其用户名和密码。用户若发现任何非法使用用户账号或存在安全漏洞的情况，请立即通知本站并向公安机关报案。 
             1.4 用户同意，OWASP中国拥有通过邮件、短信电话等形式，向注册用户发送最新活动通知的权利。
             1.5 用户不得将在本站注册获得的账户借给他人使用，否则用户应承担由此产生的全部责任，并与实际使用人承担连带责任。
-        2 用户义务： 用户应遵守《中华人民共和国民用航空法》及中国有关法律、法规和本网站有关规定。
+        2 用户义务： 用户应遵守中华人民共和国有关法律、法规和本网站有关规定。
         3 用户权利： 用户可以获取OWASP最新资源；免费参与OWASP组织的各种沙龙、会议；获取OWASP会议演讲资源；每年免费参与OWASP组织的在线培训。
 """
-defaultBody = """\
-Background
-==========
 
-Please fill this in
-
-Details
-=======
-
-And this
-"""
 class IRegistrationForm(IMember):
 
     publishinfo = schema.Bool(
@@ -59,7 +49,7 @@ class IRegistrationForm(IMember):
 
     privacy = RichText(
             title=_(u"privacy"),
-
+            readonly=True,
             default=defaultvalue,
         )       
     agree = schema.Bool(

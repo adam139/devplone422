@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: membrane\n"
 "POT-Creation-Date: 2013-04-15 12:37+0000\n"
-"PO-Revision-Date: 2013-04-15 15:51+0800\n"
+"PO-Revision-Date: 2013-04-16 20:13+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -134,7 +134,7 @@ msgstr "福建"
 
 #: ./content/member.py:123
 msgid "Full name"
-msgstr "名称"
+msgstr "姓名"
 
 #: ./vocabulary.py:42
 msgid "Gansu"
@@ -215,7 +215,7 @@ msgstr "成员"
 
 #: ./browser/templates/member_listing.pt:21
 msgid "Member information"
-msgstr ""
+msgstr "会员信息"
 
 #: ./behavior/membraneuser.py:188
 msgid "Membership"

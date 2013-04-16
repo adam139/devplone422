@@ -11,3 +11,9 @@
     overflow: hidden;
     cursor: pointer;
 }
+.off {
+	background-position:100% 0;
+}
+.on {
+	background-position:0 100%;
+}

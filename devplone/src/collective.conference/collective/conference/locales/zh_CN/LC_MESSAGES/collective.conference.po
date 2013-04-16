@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.conference\n"
 "POT-Creation-Date: 2013-04-14 02:28+0000\n"
-"PO-Revision-Date: 2013-04-14 10:29+0800\n"
+"PO-Revision-Date: 2013-04-16 20:16+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -376,7 +376,7 @@ msgstr "告诉我们关于你自己的情况"
 
 #: ./browser/propose.py:61
 msgid "Thank you for your submission.Your submission is now held for approval and will appear on the site once it is approved"
-msgstr "感谢您的提交，您的提交将等待网站审核后，发布出来。"
+msgstr "您的演讲申请已成功提交，会务组审核通过后将邮件通知您。感谢您对OWASP中国的支持！"
 
 #: ./browser/register.py:75
 msgid "Thank you. You are now registered."

@@ -129,6 +129,7 @@ class EventJson(grok.View):
                 'depth':2})
         ]
         result = []
+# list parameter write this        
         for brain in catalog.evalAdvancedQuery(And(*queries)):
             result.append(brain.getObject())
         return result
@@ -137,7 +138,8 @@ class EventJson(grok.View):
 class Update(grok.View):
     grok.context(ISession)
     grok.name('updateStartEnd')
-
+    grok.require('zope2.View')
+    
     def render(self):
         self.request.response.setHeader('Content-Type','text/json')
         dayDelta = int(self.request.get('dayDelta', 0))

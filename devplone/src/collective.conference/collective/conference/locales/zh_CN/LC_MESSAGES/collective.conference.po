@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.conference\n"
-"POT-Creation-Date: 2013-04-14 02:28+0000\n"
-"PO-Revision-Date: 2013-04-16 20:16+0800\n"
+"POT-Creation-Date: 2013-04-17 12:18+0000\n"
+"PO-Revision-Date: 2013-04-17 20:20+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Language-Name: Chinese\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.conference\n"
+
+#: ./browser/templates/conference_listing_admin.pt:27
+msgid "#"
+msgstr ""
 
 #: ./profiles/default/types/collective.conference.conference.xml
 msgid "A conference event"
@@ -124,6 +128,10 @@ msgstr "会议"
 msgid "Conference Type"
 msgstr "活动类型"
 
+#: ./browser/templates/conference_listing_admin.pt:21
+msgid "Conferences administration"
+msgstr "会务活动管理"
+
 #: ./participant.py:144
 msgid "Country"
 msgstr "国家"
@@ -132,7 +140,7 @@ msgstr "国家"
 msgid "Country:"
 msgstr "国家："
 
-#: ./browser/templates/agenda.pt:71
+#: ./browser/templates/agenda.pt:70
 msgid "Day${curday}"
 msgstr "第${curday}天"
 
@@ -309,7 +317,7 @@ msgstr "会议厅"
 msgid "Roomshare"
 msgstr "共用客房"
 
-#: ./browser/templates/agenda.pt:80
+#: ./browser/templates/agenda.pt:79
 msgid "Schedule for ${curday}Day"
 msgstr "第${curday}天日程安排"
 
@@ -349,6 +357,7 @@ msgstr "显示我在与会者列表中"
 msgid "Speakers"
 msgstr "演讲嘉宾"
 
+#: ./browser/templates/conference_listing_admin.pt:29
 #: ./conference.py:42
 msgid "Sponsor"
 msgstr "主办单位"
@@ -387,6 +396,7 @@ msgid "Tips:"
 msgstr "提示："
 
 #: ./browser/listings.py:78
+#: ./browser/templates/conference_listing_admin.pt:28
 #: ./conference.py:38
 msgid "Title"
 msgstr "标题"
@@ -458,6 +468,10 @@ msgstr "活动文件夹"
 #: ./browser/templates/conference_view.pt:46
 msgid "follow"
 msgstr "关注"
+
+#: ./browser/templates/conference_listing_admin.pt:31
+msgid "follower number"
+msgstr "关注度"
 
 #: ./browser/templates/conference_listings.pt:18
 msgid "hottest events"

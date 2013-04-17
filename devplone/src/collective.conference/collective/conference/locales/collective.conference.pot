@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-14 02:28+0000\n"
+"POT-Creation-Date: 2013-04-17 12:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.conference\n"
+
+#: ./browser/templates/conference_listing_admin.pt:27
+msgid "#"
+msgstr ""
 
 #: ./profiles/default/types/collective.conference.conference.xml
 msgid "A conference event"
@@ -127,6 +131,10 @@ msgstr ""
 msgid "Conference Type"
 msgstr ""
 
+#: ./browser/templates/conference_listing_admin.pt:21
+msgid "Conferences administration"
+msgstr ""
+
 #: ./participant.py:144
 msgid "Country"
 msgstr ""
@@ -135,7 +143,7 @@ msgstr ""
 msgid "Country:"
 msgstr ""
 
-#: ./browser/templates/agenda.pt:71
+#: ./browser/templates/agenda.pt:70
 msgid "Day${curday}"
 msgstr ""
 
@@ -312,7 +320,7 @@ msgstr ""
 msgid "Roomshare"
 msgstr ""
 
-#: ./browser/templates/agenda.pt:80
+#: ./browser/templates/agenda.pt:79
 msgid "Schedule for ${curday}Day"
 msgstr ""
 
@@ -352,6 +360,7 @@ msgstr ""
 msgid "Speakers"
 msgstr ""
 
+#: ./browser/templates/conference_listing_admin.pt:29
 #: ./conference.py:42
 msgid "Sponsor"
 msgstr ""
@@ -390,6 +399,7 @@ msgid "Tips:"
 msgstr ""
 
 #: ./browser/listings.py:78
+#: ./browser/templates/conference_listing_admin.pt:28
 #: ./conference.py:38
 msgid "Title"
 msgstr ""
@@ -460,6 +470,10 @@ msgstr ""
 
 #: ./browser/templates/conference_view.pt:46
 msgid "follow"
+msgstr ""
+
+#: ./browser/templates/conference_listing_admin.pt:31
+msgid "follower number"
 msgstr ""
 
 #: ./browser/templates/conference_listings.pt:18

@@ -28,7 +28,6 @@
    font-size:15px;
    font-weight:bold;
 }
-
 .fc-view > div > div {
    height:700px !important;
 }
@@ -73,14 +72,16 @@
                </tal:def>
             </li>
          </ul>
-         <div class="panes">
+         <div class="panes row-fluid">
             <tal:block repeat="day view/days">
             <div tal:attributes="id string:calendar-${day/id};">
                <tal:def define="curday python:day['id'] + 1">
                <h2 i18n:translate="">Schedule for <b i18n:name="curday" tal:content="curday">1</b>Day</h2>
-               <tal:block define="rooms context/rooms;">
-               <tal:block repeat="room rooms">
-               <div class="agenda-calendar span2">
+               <tal:block define="rooms context/rooms;rnum python:len(rooms) or 2">
+               <tal:block  repeat="room rooms">
+               <div tal:define="sps python:int(12/rnum) - 1" 
+               	class="agenda-calendar span2" 
+               	tal:attributes="class string:agenda-calendar span${sps}">
                   <h3 tal:content="room"></h3>
                   <div id="calendar-day-1-room-1"
                      class="conference-calendar"

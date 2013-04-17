@@ -28,6 +28,106 @@ class TopicConferenceListingView(grok.View):
     grok.template('conference_listing')
     grok.name('conference_listing')
 
+   
+
+class ConferenceFolderListingView(grok.View):
+    grok.context(IConferencefolder)
+    grok.template('conference_listing_admin')
+    grok.name('view')
+    
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
+        
+    
+
+    
+    def tranVoc(self,value):
+        """ translate vocabulary value to title"""
+        translation_service = getToolByName(self.context,'translation_service')
+        title = translation_service.translate(
+                                                  value,
+                                                  domain='dexterity.membrane',
+                                                  mapping={},
+                                                  target_language='zh_CN',
+                                                  context=self.context,
+                                                  default="translate")
+        return title
+    
+    @property
+    def isEditable(self):
+        context = aq_inner(self.context)
+        pm = getToolByName(context, 'portal_membership')
+        return pm.checkPermission(permissions.ManagePortal,context) 
+
+    def getMemberList(self):
+        """获取申请的会议列表"""
+        mlist = []        
+        catalog = getToolByName(self.context, "portal_catalog")
+        memberbrains = catalog(object_provides=IConference.__identifier__, 
+                                path="/".join(self.context.getPhysicalPath())
+                                )
+
+        for brain in memberbrains:
+           
+            row = {'id':'', 'name':'', 'url':'',
+                    'conference_sponsor':'', 'conference_startDate':'', 'followernum':'', 'editurl':'',
+                    'delurl':''}
+            row['id'] = brain.id
+            row['name'] = brain.Title
+            row['url'] = brain.getURL()
+            row['conference_sponsor'] = brain.conference_sponsor
+            row['conference_startDate'] = brain.conference_startDate.strftime('%Y-%m-%d')
+            row['followernum'] = brain.followernum
+            row['editurl'] = row['url'] + '/confajaxedit'
+            row['delurl'] = row['url'] + '/delete_confirmation'            
+            mlist.append(row)
+        return mlist         
+#class conferencestate(grok.View):
+#    grok.context(INavigationRoot)
+#    grok.name('ajaxconferencestate')
+#    grok.require('zope2.View')
+#    
+#    def render(self):
+#        data = self.request.form
+#        id = data['id']
+#        state = data['state']
+#        
+#        catalog = getToolByName(self.context, 'portal_catalog')
+##        import pdb
+##        pdb.set_trace()
+#        obj = catalog({'object_provides': IMember.__identifier__, "id":id})[0].getObject()        
+#        portal_workflow = getToolByName(self.context, 'portal_workflow')
+## obj current status        
+#        if state == "disabled":
+#            try:
+#                portal_workflow.doActionFor(obj, 'enable')
+#                result = True
+#                IStatusMessage(self.request).addStatusMessage(
+#                        _p(u'account_enabled',
+#                          default=u"Account:${user} has been enabled",
+#                          mapping={u'user': obj.title}),
+#                        type='info')                 
+#
+#            except:
+#                result = False
+#        else:
+#            try:
+#                portal_workflow.doActionFor(obj, 'disable')
+#                result = True                
+#                IStatusMessage(self.request).addStatusMessage(
+#                        _p(u'account_disabled',
+#                          default=u"Account:${user} has been disabled",
+#                          mapping={u'user': obj.title}),
+#                        type='info')                 
+#
+#            except:
+#                result = False
+#        obj.reindexObject()
+#
+#        self.request.response.setHeader('Content-Type', 'application/json')
+#        return json.dumps(result)       
+        
 class FolderConferenceListingView(grok.View):
     grok.context(IATFolder)
     grok.template('conference_listing')

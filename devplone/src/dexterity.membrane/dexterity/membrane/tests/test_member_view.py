@@ -80,7 +80,7 @@ class TestView(unittest.TestCase):
         auth = hmac.new(secret,TEST_USER_NAME, sha).hexdigest()
         request.form = {
                         '_authenticator': auth,
-                        'state':'enabled',
+                        'state':'disabled', #new created member initial status
                         'id':'member1',                                                                       
                         }
         view = self.portal.restrictedTraverse('@@ajaxmemberstate')

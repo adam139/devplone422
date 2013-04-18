@@ -16,6 +16,8 @@ from Products.CMFCore.interfaces import ISiteRoot
 from Products.AdvancedQuery import Eq, Between, Le
 from collective.conference import MessageFactory as _
 
+
+
 from collective.conference.conference import IConference
 from collective.conference.conferencefolder import IConferencefolder
 from dexterity.membrane.vocabulary import province_type 
@@ -27,32 +29,17 @@ class TopicConferenceListingView(grok.View):
     grok.context(IATTopic)
     grok.template('conference_listing')
     grok.name('conference_listing')
+ 
 
-   
-
-class ConferenceFolderListingView(grok.View):
+class Conferences_adminView(grok.View):
     grok.context(IConferencefolder)
     grok.template('conference_listing_admin')
-    grok.name('view')
+    grok.name('conferences_admin')
+    grok.require('cmf.ManagePortal')    
     
     def update(self):
         # Hide the editable-object border
         self.request.set('disable_border', True)
-        
-    
-
-    
-    def tranVoc(self,value):
-        """ translate vocabulary value to title"""
-        translation_service = getToolByName(self.context,'translation_service')
-        title = translation_service.translate(
-                                                  value,
-                                                  domain='dexterity.membrane',
-                                                  mapping={},
-                                                  target_language='zh_CN',
-                                                  context=self.context,
-                                                  default="translate")
-        return title
     
     @property
     def isEditable(self):
@@ -133,6 +120,8 @@ class FolderConferenceListingView(grok.View):
     grok.template('conference_listing')
     grok.name('conference_listing')
 
+
+    
 class SiteRootConferenceListingView(grok.View):
     grok.context(ISiteRoot)
     grok.template('conference_listings')
@@ -189,6 +178,11 @@ class SiteRootConferenceListingView(grok.View):
             return catalog({'object_provides': IConference.__identifier__,
                              'sort_order': 'reverse',
                              'sort_on':'followernum'})  
+
+class ConferenceFolderListingView(SiteRootConferenceListingView):
+    grok.context(IConferencefolder)
+    grok.template('conference_listings')
+    grok.name('view') 
 
 class SiteRootAllConferenceListingView(SiteRootConferenceListingView):
     grok.context(ISiteRoot)

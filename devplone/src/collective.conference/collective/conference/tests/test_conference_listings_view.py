@@ -21,8 +21,6 @@ class TestView(unittest.TestCase):
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ('Manager',))
         import datetime
-#        import pdb
-#        pdb.set_trace()
         start = datetime.datetime.today()
         end = start + datetime.timedelta(7)
 

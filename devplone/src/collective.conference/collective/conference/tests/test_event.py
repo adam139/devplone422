@@ -41,8 +41,8 @@ class TestEvent(unittest.TestCase):
         mp = getToolByName(portal,'portal_membership')
         userobject = mp.getAuthenticatedMember()
         username = userobject.getUserName()
-        import pdb
-        pdb.set_trace()
+#        import pdb
+#        pdb.set_trace()
         questionlist = userobject.getProperty('myquestions')
         evlute = IEvaluate(file)
         

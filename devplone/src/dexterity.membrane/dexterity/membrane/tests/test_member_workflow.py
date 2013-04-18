@@ -66,21 +66,17 @@ class TestView(unittest.TestCase):
         wt = wf.dexterity_membrane_workflow
         dummy = portal['memberfolder']['member1']
         wf.notifyCreated(dummy)
-        import pdb
-        pdb.set_trace()
+
         chain = wf.getChainFor(dummy)
         self.failUnless(chain[0] =='dexterity_membrane_workflow')
-#        self.assertEqual(wf.getChainForPortalType(dummy.portal_type),'dexterity_membrane_workflow')
-#        self.assertEqual( wf.getStatusOf("plone_workflow",dummy),
-#                          {'state': 'disabled', 'comments': ''} )
+
+        review_state = wf.getInfoFor(dummy, 'review_state')
+        self.assertEqual(review_state,'disabled')        
         wf.doActionFor(dummy, 'enable', comment='foo' )
-#        self.assertEqual( wf.getStatusOf("plone_workflow",dummy),
-                          #{'state': 'enabled', 'comments': 'foo'} )
-#        # check publish
-#        self.assert_(wf.isActionSupported(dummy, 'disable'))
-#
-#        # Check with kwargs.
-#        self.assert_(wf.isActionSupported(dummy, 'disable', arg1=1, arg2=2))                
+        review_state = wf.getInfoFor(dummy, 'review_state')
+        self.assertEqual(review_state,'enabled')
+
+              
       
         
    

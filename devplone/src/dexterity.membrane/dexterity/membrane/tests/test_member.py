@@ -29,7 +29,7 @@ class TestMember(TestCase):
                                          u'password',
                                          u'123@qq.com',
                                          u'password'))
-        brain = catalog({'object_provides': IMember.__identifier__,
+        brain = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
                              'sort_order': 'reverse',
                              'sort_on': 'created'})   
         now_count = len(brain)
@@ -138,12 +138,12 @@ class TestMember(TestCase):
         credentials = {'login': 'JOE@example.org', 'password': 'secret'}
         # First the member needs to be enabled before authentication
         # can succeed.
-#        self.assertEqual(auth(credentials), None)
+        self.assertEqual(auth(credentials), None)
 # pending status may login
-        self.assertEqual(auth(credentials), (user_id, 'JOE@example.org'))        
+#        self.assertEqual(auth(credentials), (user_id, 'JOE@example.org'))        
         wf_tool = getToolByName(self.portal, 'portal_workflow')
         self.setRoles(['Reviewer'])
-        wf_tool.doActionFor(member, 'approve')
+        wf_tool.doActionFor(member, 'enable')
         self.setRoles([])
 #        self.assertEqual(auth(credentials), None)        
         self.assertEqual(auth(credentials), (user_id, 'JOE@example.org'))
@@ -211,49 +211,49 @@ class TestMember(TestCase):
         # members are not enabled.
         # Test roles of fresh joe:
         self.assertEqual(joe_member.getRolesInContext(self.portal),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(joe_member.getRolesInContext(self.portal.bob),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(sorted(joe_member.getRolesInContext(self.portal.joe)),
-                         ['Authenticated', 'Creator', 'Editor', 'Reader'])
+                         ['Authenticated','Member'])
         # Test roles of fresh bob:
         self.assertEqual(bob_member.getRolesInContext(self.portal),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(sorted(bob_member.getRolesInContext(self.portal.bob)),
-                         ['Authenticated', 'Creator', 'Editor', 'Reader'])
+                         ['Authenticated','Member'])
         self.assertEqual(bob_member.getRolesInContext(self.portal.joe),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         # We enable/approve both members now.
         wf_tool = getToolByName(self.portal, 'portal_workflow')
         self.setRoles(['Reviewer'])
-        wf_tool.doActionFor(joe, 'approve')
-        wf_tool.doActionFor(bob, 'approve')
+        wf_tool.doActionFor(joe, 'enable')
+        wf_tool.doActionFor(bob, 'enable')
         # Do some reindexing for good measure (alternatively: fire
         # some events).
         #membrane.reindexObject(joe)
         #membrane.reindexObject(bob)
         # Test roles of enabled joe:
         self.assertEqual(joe_member.getRolesInContext(self.portal),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(joe_member.getRolesInContext(self.portal.bob),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(sorted(joe_member.getRolesInContext(self.portal.joe)),
-                         ['Authenticated', 'Creator', 'Editor', 'Reader'])
+                         ['Authenticated', u'Creator', u'Editor', 'Member', u'Reader'])
         # Test roles of enabled bob:
         self.assertEqual(bob_member.getRolesInContext(self.portal),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         self.assertEqual(sorted(bob_member.getRolesInContext(self.portal.bob)),
-                         ['Authenticated', 'Creator', 'Editor', 'Reader'])
+                         ['Authenticated', u'Creator', u'Editor', 'Member', u'Reader'])
         self.assertEqual(bob_member.getRolesInContext(self.portal.joe),
-                         ['Authenticated'])
+                         ['Member','Authenticated'])
         # Now disable both members:
         wf_tool.doActionFor(joe, 'disable')
         wf_tool.doActionFor(bob, 'disable')
         # Test the most important roles again:
         self.assertEqual(sorted(joe_member.getRolesInContext(self.portal.joe)),
-                         ['Authenticated'])
+                         ['Authenticated','Member'])
         self.assertEqual(sorted(bob_member.getRolesInContext(self.portal.bob)),
-                         ['Authenticated'])
+                         ['Authenticated','Member'])
 
     def test_local_roles_are_configurable(self):
         memship = getToolByName(self.portal, 'portal_membership')
@@ -262,13 +262,13 @@ class TestMember(TestCase):
         joe.email = 'joe@example.org'
         wf_tool = getToolByName(self.portal, 'portal_workflow')
         self.setRoles(['Reviewer'])
-        wf_tool.doActionFor(joe, 'approve')
+        wf_tool.doActionFor(joe, 'enable')
         joe.reindexObject()
         joe_id = get_user_id_for_email(self.portal, 'joe@example.org')
         joe_member = memship.getMemberById(joe_id)
         # Test default roles:
         self.assertEqual(sorted(joe_member.getRolesInContext(self.portal.joe)),
-                         ['Authenticated', 'Creator', 'Editor', 'Reader'])
+                         ['Authenticated', 'Creator', 'Editor', 'Member','Reader'])
         # Adjust the registry setting
         from zope.component import getUtility
         from plone.registry.interfaces import IRegistry
@@ -278,7 +278,7 @@ class TestMember(TestCase):
         config.local_roles = set([u'Reader'])
         # Roles should now be trimmed down
         self.assertEqual(sorted(joe_member.getRolesInContext(self.portal.joe)),
-                         ['Authenticated', 'Reader'])
+                         ['Authenticated', 'Member','Reader'])
 
     def test_member_behaviors(self):
         behaviors = [INameFromFullName, IReferenceable,

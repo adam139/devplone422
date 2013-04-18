@@ -47,25 +47,13 @@ class TestView(unittest.TestCase):
                                             emails=["213@qq.com"],
                                             description="a jpeg image")
         
-        portal['conference1'].invokeFactory('collective.conference.participant','participant1',
-                                            title="tom",
-                                            mail="yuejun.tang@gmail.com",
-                                            description="a png image") 
-            
-        portal['conference1'].invokeFactory('collective.conference.participant','participant2',
-                                            title="adam",
-                                            mail="yuejun.tang@gmail.com",
-                                            description="a png image")            
+           
  
         data = getFile('image.jpg').read()
         item = portal['conference1']
         item.logo_image = NamedImage(data, 'image/gif', u'image.gif')
-        data2 = getFile('image.jpg').read()        
-        item2 = portal['conference1']['participant1']
-        item2.photo = NamedImage(data2, 'image/jpeg', u'image.jpg')  
-        data3 = getFile('image.png').read()        
-        item3 = portal['conference1']['participant2']
-        item3.photo = NamedImage(data3, 'image/png', u'image.png')                
+     
+              
         self.portal = portal
     
     def test_session_view(self):
@@ -79,10 +67,10 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
-        obj = portal['conference1']['session2'].absolute_url() + '/@@view'        
+        obj = portal['conference1']['session1'].absolute_url() + '/@@view'        
 
         browser.open(obj)
-        outstr = "demo conference1"        
+        outstr = "Gif image"        
         self.assertTrue(outstr in browser.contents)   
         
    

@@ -99,7 +99,8 @@ def CreateMembraneEvent(event):
     members = mp.getMembersFolder()
     if members is None: return      
     catalog = getToolByName(site,'portal_catalog')
-    from dexterity.membrane.content.member import IMember     
+    from dexterity.membrane.content.member import IMember
+     
     try:
         newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
                              'sort_order': 'reverse',
@@ -116,7 +117,7 @@ def CreateMembraneEvent(event):
 
     item.email = event.email
     item.password = event.password
-    item.fullname = event.fullname 
+    item.title = event.fullname 
     item.password_ctl = event.password_ctl
 
     membrane = getToolByName(item, 'membrane_tool')

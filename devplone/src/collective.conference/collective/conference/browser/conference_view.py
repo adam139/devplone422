@@ -7,6 +7,8 @@ from collective.conference import MessageFactory as _
 from Acquisition import aq_inner
 from Products.CMFCore import permissions
 
+from plone.directives import form,dexterity
+
 grok.templatedir('templates')
 
 class ConferenceView(grok.View):
@@ -65,4 +67,15 @@ class ConferenceView(grok.View):
         pm = getToolByName(self.context, 'portal_membership')
         userobject = pm.getAuthenticatedMember()
         username = userobject.getUserName()        
-        return not (username in plists)          
+        return not (username in plists)
+    
+class EditConf(dexterity.EditForm):
+    grok.name('confajaxedit')
+    grok.context(IConference)    
+    label = _(u'Edit conference')
+# avoid autoform functionality
+    def updateFields(self):
+        pass
+    @property
+    def fields(self):
+        return field.Fields(IConference)             

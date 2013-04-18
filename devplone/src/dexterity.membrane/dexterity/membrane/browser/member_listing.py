@@ -93,12 +93,13 @@ class memberstate(grok.View):
         if state == "disabled":
             try:
                 portal_workflow.doActionFor(obj, 'enable')
+
                 result = True
-                IStatusMessage(self.request).addStatusMessage(
-                        _p(u'account_enabled',
-                          default=u"Account:${user} has been enabled",
-                          mapping={u'user': obj.title}),
-                        type='info')                 
+#                IStatusMessage(self.request).addStatusMessage(
+#                        _p(u'account_enabled',
+#                          default=u"Account:${user} has been enabled",
+#                          mapping={u'user': obj.title}),
+#                        type='info')                 
 
             except:
                 result = False
@@ -106,11 +107,11 @@ class memberstate(grok.View):
             try:
                 portal_workflow.doActionFor(obj, 'disable')
                 result = True                
-                IStatusMessage(self.request).addStatusMessage(
-                        _p(u'account_disabled',
-                          default=u"Account:${user} has been disabled",
-                          mapping={u'user': obj.title}),
-                        type='info')                 
+#                IStatusMessage(self.request).addStatusMessage(
+#                        _p(u'account_disabled',
+#                          default=u"Account:${user} has been disabled",
+#                          mapping={u'user': obj.title}),
+#                        type='info')                 
 
             except:
                 result = False

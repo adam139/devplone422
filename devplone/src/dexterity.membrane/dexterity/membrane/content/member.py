@@ -193,7 +193,8 @@ class IMember(IEmail,IImageScaleTraversable):
         title=_(u"personal address"),       
         required=False,
         ) 
-            
+    
+#    dexterity.write_permission(bonus='cmf.ReviewPortalContent')            
     bonus = schema.Int(
         # url format
         title=_(u"bonus"),

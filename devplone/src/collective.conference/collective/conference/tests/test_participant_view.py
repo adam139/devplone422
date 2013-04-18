@@ -121,6 +121,6 @@ class TestView(unittest.TestCase):
                  
 
         browser.open(obj)
-        outstr = "tangyuejun"        
+        outstr = "row-fluid"        
         self.assertTrue(outstr in browser.contents)          
    

@@ -68,23 +68,8 @@ class TestView(unittest.TestCase):
         obj = portal.absolute_url() + '/@@allconference_listings'        
         page = obj + '/@@view'
         browser.open(obj)
-        outstr = "conference1"        
+        outstr = "searchResultDiv"        
         self.assertTrue(outstr in browser.contents)
         
-    def test_allconferencelisting_view(self):
-
-        app = self.layer['app']
-        portal = self.layer['portal']
-       
-        browser = Browser(app)
-        browser.handleErrors = False
-        browser.addHeader('Authorization', 'Basic %s:%s' % (TEST_USER_NAME, TEST_USER_PASSWORD,))
         
-        import transaction
-        transaction.commit()
-        obj = portal.absolute_url() + '/@@allconference_listings'        
-
-        browser.open(obj)
-        outstr = "conference1"        
-        self.assertTrue(outstr in browser.contents)        
         

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<layers>
+    <layer name="membrane.usersinout.layer"
+           interface="membrane.usersinout.interfaces.IUsersInOutLayer" />
+</layers>

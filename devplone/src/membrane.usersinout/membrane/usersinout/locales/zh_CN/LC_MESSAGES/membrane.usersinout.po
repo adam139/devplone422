@@ -1,0 +1,110 @@
+# Simon Käser <skaeser@raptus.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: membrane.usersinout\n"
+"POT-Creation-Date: 2009-11-06 14:19+0000\n"
+"PO-Revision-Date: 2013-04-20 19:40+0800\n"
+"Last-Translator: adam <yuejun.tang@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: membrane.usersinout\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+#. Default: "Click here to get the errors as a CSV file"
+#: ./browser/usersinout.pt:103
+msgid "Click here to get the errors as a CSV file"
+msgstr "点击这里以CSV格式下载错误信息"
+
+#. Default: "Click on the Export button in order to download the full list of the portal members as a CSV file. The CSV syntax is the same used in the template."
+#: ./browser/usersinout.pt:122
+msgid "Click on the Export button in order to download the full list of the portal members as a CSV file. The CSV syntax is the same used in the template."
+msgstr "点击导出按钮，以CSV格式导出并下载会员资料。CSV文件格式的语法和模板一样。"
+
+#. Default: "Csv file"
+#: ./browser/usersinout.pt:46
+msgid "Csv file"
+msgstr "CSV文件"
+
+#. Default: "Errors detail"
+#: ./browser/usersinout.pt:93
+msgid "Errors detail"
+msgstr "错误详情"
+
+#. Default: "Export"
+#: ./browser/usersinout.pt:118
+msgid "Export"
+msgstr "导出"
+
+#. Default: "Import"
+#: ./browser/usersinout.pt:41
+msgid "Import"
+msgstr "导入"
+
+#: ./browser/usersinout.py:84
+msgid "Members successfully imported."
+msgstr "会员账号已成功导入"
+
+#. Default: "Results"
+#: ./browser/usersinout.pt:79
+msgid "Results"
+msgstr "结果"
+
+#. Default: "Select your CSV file here. Please respect the syntax of the template available ${here}"
+#: ./browser/usersinout.pt:49
+msgid "Select your CSV file here. Please respect the syntax of the template available ${here}"
+msgstr "在这里选择你的CSV文件。请注意参考${here}有效的CSV文件格式 "
+
+#: ./browser/usersinout.py:81
+msgid "Some errors occured. Please check your CSV syntax and retry."
+msgstr "有错误发生，请检查你的CSV文件格式，然后重试。"
+
+#. Default: "Users In/Out"
+#: ./browser/usersinout.pt:16
+msgid "Users In/Out"
+msgstr "用户导入导出"
+
+#. Default: "Users import and export as CSV files."
+#: ./browser/usersinout.pt:28
+msgid "Users import and export as CSV files."
+msgstr "用CSV文件导入/导出会员资料"
+
+#. Default: "UsersInOut"
+#: ./profiles/default/actionicons.xml
+msgid "UsersInOut"
+msgstr "用户导入导出"
+
+#: ./browser/usersinout.py:56
+msgid "Wrong specification of the CSV file. Please correct it and retry."
+msgstr "CSV文件格式错误，请更正后重试"
+
+#. Default: "You will find below the CSV lines that failed."
+#: ./browser/usersinout.pt:94
+msgid "You will find below the CSV lines that failed."
+msgstr "你将在下面发现失败的CSV文件行。"
+
+#. Default: "here"
+#: ./browser/usersinout.pt:50
+msgid "here"
+msgstr "这儿"
+
+#. Default: "Cancel"
+#: ./browser/usersinout.pt:61
+msgid "label_cancel"
+msgstr "取消"
+
+#. Default: "Up to Site Setup"
+#: ./browser/usersinout.pt:21
+msgid "label_up_to_plone_setup"
+msgstr "返回 Plone 设置"
+
+#. Default: "member(s) added."
+#: ./browser/usersinout.pt:86
+msgid "member(s) added."
+msgstr "会员已添加"
+

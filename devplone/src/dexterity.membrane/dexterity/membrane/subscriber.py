@@ -5,6 +5,7 @@ from time import strftime, localtime
 from zope.component import getMultiAdapter
 
 from dexterity.membrane.interfaces import ICreateMembraneEvent
+from dexterity.membrane.content.memberfolder import IMemberfolder
 from dexterity.membrane.content.member import IMember
 from Products.DCWorkflow.interfaces import IAfterTransitionEvent
 from Products.DCWorkflow.events import AfterTransitionEvent 
@@ -91,37 +92,60 @@ def sendPasswdResetMail(member, event):
     else:
         pass
 
+# be call by membrane.usersinout
 @grok.subscribe(ICreateMembraneEvent)
 def CreateMembraneEvent(event):
     """this event be fired by member join event, username,address password parameters to create a membrane object"""
     site = getSite()
-    mp = getToolByName(site,'portal_membership')
-    members = mp.getMembersFolder()
-    if members is None: return      
+#    mp = getToolByName(site,'portal_membership')
+#    members = mp.getMembersFolder()
+#    if members is None: return      
     catalog = getToolByName(site,'portal_catalog')
-    from dexterity.membrane.content.member import IMember
-     
     try:
-        newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
-                             'sort_order': 'reverse',
-                             'sort_on': 'created',
-                             'sort_limit': 1})
-        if bool(newest): 
-            id = str(int(newest[0].id) + 1)
-        else:
-            id = str(1000000)              
-
+        newest = catalog.unrestrictedSearchResults({'object_provides': IMemberfolder.__identifier__})
     except:
-            id = str(1000000)  
-    item =createContentInContainer(members,"dexterity.membrane.member",checkConstraints=False,id=id)
+        return
+       
+#    from dexterity.membrane.content.member import IMember     
+#    try:
+#        newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
+#                             'sort_order': 'reverse',
+#                             'sort_on': 'created',
+#                             'sort_limit': 1})
+#        if bool(newest): 
+#            id = str(int(newest[0].id) + 1)
+#        else:
+#            id = str(1000000)              
+#
+#    except:
+#            id = str(1000000)
+              
+#              registrant_increment
+    memberfolder = newest[0].getObject()
+#    import pdb
+#    pdb.set_trace()
+    oldid = getattr(memberfolder,'registrant_increment','999999')
+    memberid = str(int(oldid) + 1)    
+    try:
+        item =createContentInContainer(memberfolder,"dexterity.membrane.member",checkConstraints=False,id=memberid)
+        setattr(memberfolder,'registrant_increment',memberid)
+        item.email = event.email
+        item.password = event.password
+        item.title = event.title 
+        item.description = event.description
+        item.homepage = event.homepage
+        item.phone = event.phone
+        item.organization = event.organization 
+        item.sector = event.sector
+        item.position = event.position
+        item.province = event.province 
+        item.address = event.address         
 
-    item.email = event.email
-    item.password = event.password
-    item.title = event.fullname 
-    item.password_ctl = event.password_ctl
+        membrane = getToolByName(item, 'membrane_tool')
+        membrane.reindexObject(item)        
+    except:
+        return
 
-    membrane = getToolByName(item, 'membrane_tool')
-    membrane.reindexObject(item)
     
 
         

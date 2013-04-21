@@ -30,21 +30,17 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.utils import checkEmailAddress
 
 
-import unicodedata
+
 @grok.provider(IContextSourceBinder)
 def possibleRooms(context):
-    conference = context.getConference()
-    items = []
-    for section in conference.rooms:
-#        import pdb
-#        pdb.set_trace()
-        token = unicodedata.normalize('NFKD', section).encode('utf-8', 'ignore').lower()
-        items.append(SimpleVocabulary.createTerm(token, token, section))
-    return SimpleVocabulary(items)
-#    pdb.set_trace()
-#  tv = [i.encode("utf-8")  for i in conference.rooms            
+    conference = context.getConference()           
 #    return SimpleVocabulary.fromValues(conference.rooms)
-
+#    category_list = getattr(context.__parent__, 'available_category', [])
+    terms = []
+    for value in conference.rooms:  # I'm assuming these values are Unicode
+        terms.append(SimpleTerm(value,
+token=value.encode('unicode_escape'), title=value))
+    return SimpleVocabulary(terms) 
 
 
 
@@ -85,8 +81,9 @@ class ISession(form.Schema, IImageScaleTraversable):
 
     conference_rooms = schema.List(
         title=_(u"Conference Rooms"),
-        value_type=schema.Choice(vocabulary="collective.conference.rooms"),        
-#        value_type=schema.Choice(source=possibleRooms),        
+#        value_type=schema.Choice(vocabulary="collective.conference.rooms"),        
+        value_type=schema.Choice(source=possibleRooms),
+        unique = True,        
         required=False
     )
 

@@ -29,8 +29,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDefault.utils import checkEmailAddress
 
-
-
 @grok.provider(IContextSourceBinder)
 def possibleRooms(context):
     conference = context.getConference()           
@@ -39,16 +37,13 @@ def possibleRooms(context):
     terms = []
     for value in conference.rooms:  # I'm assuming these values are Unicode
         terms.append(SimpleTerm(value,
-token=value.encode('unicode_escape'), title=value))
-    return SimpleVocabulary(terms) 
-
-
+                                token=value.encode('unicode_escape'), title=value))
+    return SimpleVocabulary(terms)
 
 class ISession(form.Schema, IImageScaleTraversable):
     """
     Conference Session
     """
-
     form.widget(emails='plone.z3cform.textlines.TextLinesFieldWidget')
     emails = schema.List(title=_(u"E-mail addresses of speakers"), 
         description=_(u"We will find speakers' profile in the registration using these emails. One in each line"),

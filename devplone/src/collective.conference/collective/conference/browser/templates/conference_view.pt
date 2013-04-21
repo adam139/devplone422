@@ -40,7 +40,7 @@
             		<a i18n:domain="plone" class="btn" i18n:translate="" tal:attributes="href python:context.absolute_url() + '/edit'">Edit</a>
             	</div> -->
             	
-					<span id="fire-follow" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
+					<span id="fire-follow" class="ajaxbutton" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
 						data-ajax-target string:${portal_url}/@@ajax-follow">
 						<img tal:attributes="src string:${view/static}/plus.png" />&nbsp;
 						<a class="followjq btn btn-primary" href="javascript:void(0)" i18n:translate="follow">follow</a>
@@ -55,12 +55,34 @@
 				</div>		
 <!--            <a  i18n:translate=""  id="regconf" class="btn btn-primary btn-large"
                tal:attributes="href string:${context/absolute_url}/register">Register NOW</a> -->
-            <a  tal:condition="python:view.isRegister()" i18n:translate=""  href="javascript:void(0)" id="regconf" class="btn btn-primary btn-large"
+         <div  class="ajaxbutton" tal:define="regable python:view.isRegister();">               
+					<span  tal:attributes="style python: regable and 'display:inline;;' or 'display:none;;'">               
+            <a 	i18n:translate=""  href="javascript:void(0)" 
+            	id="regconf" class="btn btn-primary btn-large"
                tal:attributes="data-ajax-target string:${context/absolute_url}/@@ajax-register-conf">Join Conference</a>
-                          
-            <a  tal:condition="python:view.isRegisterSpeaker()" i18n:translate=""  id="regsession" class="btn btn-primary btn-large"
+           </span>
+					<span  tal:attributes="style python: regable and 'display:none;;' or 'display:inline;;'">               
+            <a 	i18n:translate=""  href="javascript:void(0)" 
+            	id="unregconf" class="btn btn-primary btn-large"
+               tal:attributes="data-ajax-target string:${context/absolute_url}/@@ajax-unregister-conf">Quit Conference</a>
+           </span>
+          </div>
+         <div  tal:define="regsesable python:view.isRegisterSpeaker();">            
+					<span  tal:attributes="style python: regsesable and 'display:inline;;' or 'display:none;;'">                         
+            <a  i18n:translate=""  
+            	id="regsession" class="btn btn-primary btn-large"
                tal:attributes="href string:${context/absolute_url}/propose;
                data-ajax-target string:${context/absolute_url}/@@ajax-register-session">Register Session</a>
+           </span>
+           <!--
+					<span  tal:attributes="style python: regsesable and 'display:none;;' or 'display:inline;;'">                         
+            <a  i18n:translate=""  
+            	id="unregsession" class="btn btn-primary btn-large"
+               tal:attributes="href string:${context/absolute_url}/propose;
+               data-ajax-target string:${context/absolute_url}/@@ajax-unregister-session">UnRegister Session</a>
+           </span>
+           -->           
+          </div> 
          </div>
          </div>
          <div class="span4"
@@ -134,7 +156,19 @@ jq("#regconf").live("click",function() {
 		jq.post(action, function(data){
 			jq("#info dd").html(data['info']);
 			jq("#info").removeClass('hidden')
-			jq("#regconf").hide();
+			jq("#regconf").parent().hide();
+			jq("#unregconf").parent().show();			
+		}, 'json');
+	return false;
+});
+//ajax-unregister-conf
+jq("#unregconf").live("click",function() {	
+		var action = jq(this).attr('data-ajax-target');
+		jq.post(action, function(data){
+			jq("#info dd").html(data['info']);
+			jq("#info").removeClass('hidden')
+			jq("#unregconf").parent().hide();
+			jq("#regconf").parent().show();			
 		}, 'json');
 	return false;
 });
@@ -143,7 +177,7 @@ jq("#regconf").live("click",function() {
 jq("#regsession").live("click",function() {	
 		var action = jq(this).attr('data-ajax-target');
 		jq.post(action, function(){
-			jq("#regsession").hide();
+			jq("#regsession").parent().hide();
 		}, 'json');
 	return false;
 });

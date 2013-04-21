@@ -8,6 +8,7 @@
   padding-top:10px;
   padding-bottom:10px;
 }
+.ajaxbutton .btn-primary {margin-bottom:6px;}
 #content ul .nav,#content .thumbnails {list-style-type: none;}
 .navbar .container {
     width:100%;

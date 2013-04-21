@@ -5,7 +5,7 @@ from zope.component.interfaces import ObjectEvent
 from collective.conference.interfaces import IFollowedEvent
 from collective.conference.interfaces import IUnfollowedEvent
 
-from collective.conference.interfaces import IRegisteredConfEvent,IRegisteredSessionEvent
+from collective.conference.interfaces import IRegisteredConfEvent,IUnRegisteredConfEvent,IRegisteredSessionEvent
 
 from collective.conference.interfaces import ILikeEvent
 from collective.conference.interfaces import IUnlikeEvent
@@ -65,6 +65,9 @@ class ClickEvent(ObjectEvent):
 
 class RegisteredConfEvent(ObjectEvent):
     interface.implements(IRegisteredConfEvent)
+    
+class UnRegisteredConfEvent(ObjectEvent):
+    interface.implements(IUnRegisteredConfEvent)    
     
 class RegisteredSessionEvent(ObjectEvent):
     interface.implements(IRegisteredSessionEvent)    

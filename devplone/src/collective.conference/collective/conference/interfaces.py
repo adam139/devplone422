@@ -14,7 +14,9 @@ class IUnfollowedEvent(IObjectEvent):
 
 class IRegisteredConfEvent(IObjectEvent):
     """ pass"""    
-    
+
+class IUnRegisteredConfEvent(IObjectEvent):
+    """ pass"""      
 
 class IRegisteredSessionEvent(IObjectEvent):
     """ pass"""    

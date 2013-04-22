@@ -66,7 +66,13 @@ class ISession(form.Schema, IImageScaleTraversable):
         description=u'',
         required=False,
     )
-
+    
+    minutes = schema.Int(
+        title=_(u"minutes"),
+        description=_(u'minutes that the speech will need'),        
+        required=True,
+        )
+       
     attachment = NamedBlobFile(title=_(u"Attachment"),
         description=_(u"Attach your talks document (slide, code, etc).\
         If there are multiple files, include them in a zip By uploading the file here,\

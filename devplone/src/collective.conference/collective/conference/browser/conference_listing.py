@@ -16,8 +16,6 @@ from Products.CMFCore.interfaces import ISiteRoot
 from Products.AdvancedQuery import Eq, Between, Le
 from collective.conference import MessageFactory as _
 
-
-
 from collective.conference.conference import IConference
 from collective.conference.conferencefolder import IConferencefolder
 from dexterity.membrane.vocabulary import province_type 
@@ -181,7 +179,7 @@ class SiteRootConferenceListingView(grok.View):
 
 class ConferenceFolderListingView(SiteRootConferenceListingView):
     grok.context(IConferencefolder)
-    grok.template('conference_listings')
+    grok.template('conferencefolder_listings')
     grok.name('view') 
 
 class SiteRootAllConferenceListingView(SiteRootConferenceListingView):

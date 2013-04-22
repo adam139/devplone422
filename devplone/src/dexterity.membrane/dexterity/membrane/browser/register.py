@@ -69,7 +69,6 @@ class IRegistrationForm(IMember):
 
     privacy = RichText(
             title=_(u"privacy"),
-#            readonly=True,
             default=defaultvalue,
         )       
     agree = schema.Bool(

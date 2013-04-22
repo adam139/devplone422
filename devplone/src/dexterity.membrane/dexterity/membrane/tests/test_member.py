@@ -1,3 +1,4 @@
+#-*- coding: UTF-8 -*-
 import unittest
 
 from Products.CMFCore.utils import getToolByName
@@ -24,11 +25,23 @@ class TestMember(TestCase):
         newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
                              'sort_order': 'reverse',
                              'sort_on': 'created'})                            
-        start_count = len(newest)        
-        event.notify(CreateMembraneEvent(u'fullname',
+        start_count = len(newest)
+# create memberfolder
+        memberfolder = self._createType(
+            self.portal, 'dexterity.membrane.memberfolder', 'memberfolder')
+         
+# email,password,title,description,homepage,phone,organization,sector,position,province,address               
+        event.notify(CreateMembraneEvent(u'12@qq.com',
                                          u'password',
-                                         u'123@qq.com',
-                                         u'password'))
+                                         u'唐军',
+                                         u'',
+                                         u'http://315ok.org',
+                                         u'135',
+                                         u'315ok',
+                                         u'IT',
+                                         u'CEO',
+                                         u'HuNan',
+                                         u'xt'))
         brain = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
                              'sort_order': 'reverse',
                              'sort_on': 'created'})   
@@ -36,10 +49,17 @@ class TestMember(TestCase):
 
         self.assertEqual(start_count + 1,now_count)
         self.assertEqual(brain[0].id,str(1000000))
-        event.notify(CreateMembraneEvent(u'fullname2',
+        event.notify(CreateMembraneEvent(u'13@qq.com',
                                          u'password',
-                                         u'124@qq.com',
-                                         u'password'))
+                                         u'唐军2',
+                                         u'',
+                                         u'http://315ok.org',
+                                         u'135',
+                                         u'315ok',
+                                         u'IT',
+                                         u'CEO',
+                                         u'HuNan',
+                                         u'xt'))
         newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
                              'sort_order': 'reverse',
                              'sort_on': 'created',

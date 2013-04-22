@@ -61,6 +61,45 @@
    </property>
    <property name="visible">False</property>
   </object>
+  <object name="membermanage" meta_type="CMF Action" i18n:domain="owasp.policy">
+   <property name="title" i18n:translate="">member manage</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/memberfolder/@@view</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"/>
+   <property name="permissions">
+    <element value="Plone Site Setup: Overview"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+  <object name="conferencemanage" meta_type="CMF Action" i18n:domain="owasp.policy">
+   <property name="title" i18n:translate="">conference manage</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/conferencefolder/@@conferences_admin</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"/>
+   <property name="permissions">
+    <element value="Plone Site Setup: Overview"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+  <object name="createdconferences" meta_type="CMF Action" i18n:domain="owasp.policy">
+   <property name="title" i18n:translate="">Created conferences</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/@@myconferences</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python:member is not None</property>
+   <property name="permissions">
+    <element value="View"/>
+   </property>
+   <property name="visible">True</property>
+  </object>   
   <object name="followed" meta_type="CMF Action" i18n:domain="owasp.policy">
    <property name="title" i18n:translate="">my followed</property>
    <property name="description" i18n:translate=""></property>
@@ -73,7 +112,7 @@
     <element value="View"/>
    </property>
    <property name="visible">True</property>
-  </object>
+  </object>    
   <object name="conference" meta_type="CMF Action" i18n:domain="owasp.policy">
    <property name="title" i18n:translate="">my conferences</property>
    <property name="description" i18n:translate=""></property>

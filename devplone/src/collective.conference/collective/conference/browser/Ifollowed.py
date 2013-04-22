@@ -68,9 +68,12 @@ class MyConferences(grok.View):
 
                 
     def fetchIfollowed(self, start=0, size=10):
+#        import pdb
+#        pdb.set_trace()
         mp = getToolByName(self.context,'portal_membership')
         userobject = mp.getAuthenticatedMember()
         username = userobject.getUserName()
+        userid = userobject.getId()        
         catalog = getToolByName(self.context, 'portal_catalog')
 
         qbrain = catalog({'object_provides': IConference.__identifier__,
@@ -78,8 +81,16 @@ class MyConferences(grok.View):
                              'sort_order': 'reverse',
                              'sort_on': 'created',
                              'b_start': start,
-                             'b_size': size})                             
-
+                             'b_size': size})
+                                     
+        if len(qbrain) == 0:
+            qbrain = catalog({'object_provides': IConference.__identifier__,
+                             'Creator':userid,
+                             'sort_order': 'reverse',
+                             'sort_on': 'created',
+                             'b_start': start,
+                             'b_size': size})            
+    
         return qbrain         
         
 class MyConferencesMore(grok.View):

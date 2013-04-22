@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-21 23:58+0000\n"
+"POT-Creation-Date: 2013-04-22 01:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,7 @@ msgid "A score from 1-100"
 msgstr ""
 
 #: ./browser/templates/conference_listings.pt:146
+#: ./browser/templates/conferencefolder_listings.pt:76
 msgid "Add conference"
 msgstr ""
 
@@ -54,11 +55,11 @@ msgstr ""
 msgid "Agenda"
 msgstr ""
 
-#: ./session.py:87
+#: ./session.py:93
 msgid "Agenda Background Color"
 msgstr ""
 
-#: ./session.py:94
+#: ./session.py:100
 msgid "Agenda Text Color"
 msgstr ""
 
@@ -70,11 +71,11 @@ msgstr ""
 msgid "All Sessions"
 msgstr ""
 
-#: ./session.py:71
+#: ./session.py:77
 msgid "Attach your talks document (slide, code, etc).        If there are multiple files, include them in a zip By uploading the file here,        you hereby agreed to grants us permission to redistribute this file"
 msgstr ""
 
-#: ./session.py:70
+#: ./session.py:76
 msgid "Attachment"
 msgstr ""
 
@@ -119,7 +120,7 @@ msgid "Conference Participant"
 msgstr ""
 
 #: ./browser/listings.py:92
-#: ./session.py:78
+#: ./session.py:84
 msgid "Conference Rooms"
 msgstr ""
 
@@ -473,6 +474,7 @@ msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr ""
 
 #: ./browser/templates/conference_listings.pt:59
+#: ./browser/templates/conferencefolder_listings.pt:49
 msgid "address:"
 msgstr ""
 
@@ -496,6 +498,14 @@ msgstr ""
 msgid "hottest events"
 msgstr ""
 
+#: ./session.py:71
+msgid "minutes"
+msgstr ""
+
+#: ./session.py:72
+msgid "minutes that the speech will need"
+msgstr ""
+
 #: ./browser/templates/Ifollowed_conferences.pt:39
 #: ./browser/templates/conferences_joined.pt:39
 #: ./browser/templates/my_conferences.pt:39
@@ -503,6 +513,7 @@ msgid "more"
 msgstr ""
 
 #: ./browser/templates/conference_listings.pt:155
+#: ./browser/templates/conferencefolder_listings.pt:85
 msgid "more events"
 msgstr ""
 
@@ -542,6 +553,7 @@ msgid "speakers list"
 msgstr ""
 
 #: ./browser/templates/conference_listings.pt:56
+#: ./browser/templates/conferencefolder_listings.pt:46
 msgid "sponsor:"
 msgstr ""
 

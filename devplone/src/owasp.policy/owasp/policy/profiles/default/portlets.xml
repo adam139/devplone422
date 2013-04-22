@@ -126,7 +126,7 @@
     manager="ContentWellPortlets.FooterPortletManager4"
     type="plone.portlet.static.Static" visible="True">
   <property name="text">&lt;ul class="help"&gt;
-                   &lt;li&gt;我们的生活以活动开始，以活动结束，活动是人们的生活中心。我们相信，任何人都可以是活动组织者，这就是为什么我们会创建会鸽。会鸽为活动组织者提供了所有的工具，无论它是一个会议、会展、研讨班、补习班、演唱会还是公司产品发布会，会鸽为活动参与者建立新一代社交、商务平台，让活动活起来！&lt;/li&gt;	
+                   &lt;li&gt;我们的生活以活动开始，以活动结束，活动是人们的生活中心。我们相信，任何人都可以是活动组织者，这就是为什么我们会创建OWASP会务系统。OWASP会务系统为活动组织者提供了所有的工具，无论它是一个会议、会展、研讨班、补习班、演唱会还是公司产品发布会，OWASP会务系统为活动参与者建立新一代社交、商务平台，让活动活起来！&lt;/li&gt;	
                    &lt;/li&gt;
                &lt;/ul&gt;</property>
   <property name="more_url"/>
@@ -167,8 +167,8 @@
   <property name="text">&lt;ul&gt;
                    &lt;li&gt;&lt;a href="/about_us"&gt;关于OWASP &lt;/a&gt; 		&lt;!-- 关于OWASP --&gt;
                    &lt;/li&gt;
-                   &lt;li id="_company_history"&gt;&lt;a href="/company_history"&gt;OWASP历程&lt;/a&gt;&lt;/li&gt;					
-                   &lt;li id="_jobs"&gt;&lt;a href="/jobs"&gt;加入OWASP &lt;/a&gt;&lt;/li&gt;		&lt;!-- 加入OWASP --&gt;
+                   &lt;li id="company_history"&gt;&lt;a href="/company_history"&gt;OWASP历程&lt;/a&gt;&lt;/li&gt;					
+                   &lt;li id="jobs"&gt;&lt;a href="/jobs"&gt;加入OWASP &lt;/a&gt;&lt;/li&gt;		&lt;!-- 加入OWASP --&gt;
                    &lt;li&gt;&lt;a href="/privacy"&gt;隐私声明&lt;/a&gt;			&lt;!-- 隐私声明 --&gt;
                    &lt;/li&gt;
                    &lt;li&gt;&lt;a href="/contact_us"&gt;联系OWASP &lt;/a&gt;	&lt;!-- 联系OWASP --&gt;

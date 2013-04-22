@@ -26,7 +26,13 @@ class TestView(unittest.TestCase):
                              conference_type="Regional Events",
                              address=u"长安街",
                              title="conference1",
-                             description="demo conference1")              
+                             description="demo conference1")   
+        portal['conferencefolder'].invokeFactory('collective.conference.conference', 'conference2',
+                             province="Beijin",
+                             conference_type="Regional Events",
+                             address=u"长安街",
+                             title="conference2",
+                             description="demo conference2")                     
         self.portal = portal
                 
     def test_conferencelisting_view(self):
@@ -40,9 +46,23 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
+        obj = portal['conferencefolder'].absolute_url() + '/@@view'        
+        browser.open(obj)
+        outstr = "conference1"        
+        self.assertTrue(outstr in browser.contents)
+       
+    def test_conferencelisting_admin_view(self):
+
+        app = self.layer['app']
+        portal = self.layer['portal']
+       
+        browser = Browser(app)
+        browser.handleErrors = False
+        browser.addHeader('Authorization', 'Basic %s:%s' % (TEST_USER_NAME, TEST_USER_PASSWORD,))
+        
+        import transaction
+        transaction.commit()
         obj = portal['conferencefolder'].absolute_url() + '/@@conferences_admin'        
         browser.open(obj)
         outstr = "row-fluid"        
-        self.assertTrue(outstr in browser.contents)
-       
-        
+        self.assertTrue(outstr in browser.contents)        

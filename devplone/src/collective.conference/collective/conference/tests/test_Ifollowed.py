@@ -150,7 +150,50 @@ class TestView(unittest.TestCase):
                         }
         view = self.portal.restrictedTraverse('@@conferences_joined_more')
         result = view()
+
+
+## I created conferences
+    def test_created_conference_view(self):
+
+        app = self.layer['app']
+        portal = self.layer['portal']
+                       
+       
+        browser = Browser(app)
+        browser.handleErrors = False
+        browser.addHeader('Authorization', 'Basic %s:%s' % (TEST_USER_NAME, TEST_USER_PASSWORD,))
         
+        import transaction
+        transaction.commit()
+        obj = portal.absolute_url() + '/@@myconferences'        
+
+        browser.open(obj)
+        outstr = "conference1"
+       
+        self.assertFalse(outstr in browser.contents)
+        outstr = "conference2"        
+        self.assertTrue(outstr in browser.contents)
+        outstr = "conference3"        
+        self.assertTrue(outstr in browser.contents)
+        outstr = "conference4"        
+        self.assertTrue(outstr in browser.contents)                        
+        
+    def test_ajax_created_conference_ifmore(self):
+        app = self.layer['app']
+        portal = self.layer['portal']
+       
+        request = self.layer['request']        
+        keyManager = getUtility(IKeyManager)
+        secret = keyManager.secret()
+        auth = hmac.new(secret, TEST_USER_NAME, sha).hexdigest()
+        request.form = {
+                        '_authenticator': auth,
+                        'formstart': 1,    
+                        }
+        view = self.portal.restrictedTraverse('@@myconferencesmore')
+        result = view()
+        self.assertEqual(json.loads(result)['ifmore'],1)
+                
     def test_followed_conference_view(self):
 
         app = self.layer['app']

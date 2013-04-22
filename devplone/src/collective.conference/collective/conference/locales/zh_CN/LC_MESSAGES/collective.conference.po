@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.conference\n"
-"POT-Creation-Date: 2013-04-21 23:58+0000\n"
-"PO-Revision-Date: 2013-04-21 20:41+0800\n"
+"POT-Creation-Date: 2013-04-22 01:41+0000\n"
+"PO-Revision-Date: 2013-04-22 09:43+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,7 @@ msgid "A score from 1-100"
 msgstr "一个范围为1-100的评分"
 
 #: ./browser/templates/conference_listings.pt:146
+#: ./browser/templates/conferencefolder_listings.pt:76
 msgid "Add conference"
 msgstr "添加活动"
 
@@ -51,11 +52,11 @@ msgstr "高级"
 msgid "Agenda"
 msgstr "日程"
 
-#: ./session.py:87
+#: ./session.py:93
 msgid "Agenda Background Color"
 msgstr "日程背景颜色"
 
-#: ./session.py:94
+#: ./session.py:100
 msgid "Agenda Text Color"
 msgstr "日程文本颜色"
 
@@ -67,11 +68,11 @@ msgstr "所有参会者"
 msgid "All Sessions"
 msgstr "所有会议"
 
-#: ./session.py:71
+#: ./session.py:77
 msgid "Attach your talks document (slide, code, etc).        If there are multiple files, include them in a zip By uploading the file here,        you hereby agreed to grants us permission to redistribute this file"
 msgstr "上载您的演讲文档（ppt等）。如果有多个文件，请务必压缩成一个zip文件。"
 
-#: ./session.py:70
+#: ./session.py:76
 msgid "Attachment"
 msgstr "附件"
 
@@ -116,7 +117,7 @@ msgid "Conference Participant"
 msgstr "会议参与者"
 
 #: ./browser/listings.py:92
-#: ./session.py:78
+#: ./session.py:84
 msgid "Conference Rooms"
 msgstr "会议厅"
 
@@ -186,7 +187,7 @@ msgstr "地理"
 
 #: ./browser/templates/my_conferences.pt:22
 msgid "I have created (${num}) conferences."
-msgstr ""
+msgstr "我已经创建了(${num})个活动。"
 
 #: ./browser/templates/Ifollowed_conferences.pt:22
 msgid "I have followed (${num}) conferences."
@@ -451,7 +452,7 @@ msgstr "专题研究"
 
 #: ./browser/templates/my_conferences.pt:27
 msgid "You haven't created any conference."
-msgstr ""
+msgstr "我当前没有创建任何活动。"
 
 #: ./browser/templates/Ifollowed_conferences.pt:27
 msgid "You haven't followed any conference."
@@ -470,6 +471,7 @@ msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr "你的相片，建议尺寸为150x195px"
 
 #: ./browser/templates/conference_listings.pt:59
+#: ./browser/templates/conferencefolder_listings.pt:49
 msgid "address:"
 msgstr "地址："
 
@@ -493,6 +495,14 @@ msgstr "关注度"
 msgid "hottest events"
 msgstr "热门活动"
 
+#: ./session.py:71
+msgid "minutes"
+msgstr "分钟"
+
+#: ./session.py:72
+msgid "minutes that the speech will need"
+msgstr "演讲需要的时长，以分钟计"
+
 #: ./browser/templates/Ifollowed_conferences.pt:39
 #: ./browser/templates/conferences_joined.pt:39
 #: ./browser/templates/my_conferences.pt:39
@@ -500,6 +510,7 @@ msgid "more"
 msgstr "更多"
 
 #: ./browser/templates/conference_listings.pt:155
+#: ./browser/templates/conferencefolder_listings.pt:85
 msgid "more events"
 msgstr "更多活动"
 
@@ -539,6 +550,7 @@ msgid "speakers list"
 msgstr "演讲人列表"
 
 #: ./browser/templates/conference_listings.pt:56
+#: ./browser/templates/conferencefolder_listings.pt:46
 msgid "sponsor:"
 msgstr "主办者"
 

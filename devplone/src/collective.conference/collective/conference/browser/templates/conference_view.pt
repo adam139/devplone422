@@ -34,19 +34,17 @@
         					<strong i18n:translate="">Tips:</strong><span i18n:translate="">you should register as member for join the event.</span></div>            	
             </div>
             <div tal:condition="python:not isAnonymous">
-            <div  id="follow-box" tal:define="follow python:view.isFollowed();">
-            	<!--
             	<div tal:condition="python:view.isEditable" class="edit">
             		<a i18n:domain="plone" class="btn" i18n:translate="" tal:attributes="href python:context.absolute_url() + '/edit'">Edit</a>
-            	</div> -->
-            	
+            	</div>           	
+            <div  id="follow-box" tal:define="follow python:view.isFollowed();">            	
 					<span id="fire-follow" class="ajaxbutton" tal:attributes="style python: follow and 'display:none;;' or 'display:inline;;';
 						data-ajax-target string:${portal_url}/@@ajax-follow">
 						<img tal:attributes="src string:${view/static}/plus.png" />&nbsp;
 						<a class="followjq btn btn-primary" href="javascript:void(0)" i18n:translate="follow">follow</a>
 						<input type="hidden" tal:attributes="value id" />
 					</span>
-					<span id="fire-unfollow" tal:attributes="style python: follow and 'display:inline;;' or 'display:none;;';
+					<span id="fire-unfollow" class="ajaxbutton" tal:attributes="style python: follow and 'display:inline;;' or 'display:none;;';
 						data-ajax-target string:${portal_url}/@@ajax-unfollow">
 						<img  tal:attributes="src string:${view/static}/subtract.png"/>&nbsp;
 						<a class="unfollowjq btn btn-primary" href="javascript:void(0)" i18n:translate="unfollowed">unfollowed</a>

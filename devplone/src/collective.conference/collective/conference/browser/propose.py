@@ -43,7 +43,7 @@ class ProposalForm(form.SchemaAddForm):
 #    grok.require("zope.Public")
     grok.require('zope2.View')    
     schema = IProposalForm
-    label = _(u"Propose a session")
+    label = _(u"Propose a Session")
 
     def create(self, data):
         obj = Session()

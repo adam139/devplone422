@@ -153,12 +153,12 @@ class SiteRootConferenceListingView(grok.View):
         if maxlen > num:
             return catalog({'object_provides': IConference.__identifier__,
                              'sort_order': 'reverse',
-                             'sort_on': 'created',
+                             'sort_on': 'conference_startDate',
                              'sort_limit': num})
         else:
             return catalog({'object_provides': IConference.__identifier__,
                              'sort_order': 'reverse',
-                             'sort_on':'created'})    
+                             'sort_on':'conference_startDate'})    
 
     def getHotConferences(self,num=10):
  

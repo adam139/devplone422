@@ -7,6 +7,8 @@ from collective.conference import MessageFactory as _
 from Acquisition import aq_inner
 from Products.CMFCore import permissions
 
+from z3c.form import form, field
+
 from plone.directives import form,dexterity
 
 grok.templatedir('templates')
@@ -78,4 +80,5 @@ class EditConf(dexterity.EditForm):
         pass
     @property
     def fields(self):
-        return field.Fields(IConference)             
+        return field.Fields(IConference).select('title', 'description','logo_image','sponsor',
+                                                'province','address','rooms')             

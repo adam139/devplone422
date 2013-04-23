@@ -16,6 +16,18 @@ class SessionListView(grok.View):
         # Hide the editable-object border
         self.request.set('disable_border', True)
         
+    def tranVoc(self,value):
+        """ translate vocabulary value to title"""
+        translation_service = getToolByName(self.context,'translation_service')
+        title = translation_service.translate(
+                                                  value,
+                                                  domain='collective.conference',
+                                                  mapping={},
+                                                  target_language='zh_CN',
+                                                  context=self.context,
+                                                  default="translate")
+        return title        
+        
     @memoize            
     def items(self):
         catalog = getToolByName(self.context, 'portal_catalog')

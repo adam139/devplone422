@@ -9,6 +9,9 @@ from five import grok
 from zope.globalrequest import getRequest
 from plone.autoform.interfaces import OMITTED_KEY
 
+from Products.CMFCore.utils import getToolByName
+from Acquisition import aq_inner
+
 class SchemaTable(SequenceTable):
 
     def __init__(self, context, request, schema, cssClasses={}):
@@ -50,6 +53,20 @@ class FieldColumn(grok.MultiAdapter, Column):
     @property
     def header(self):
         return self.field.title
+    
+    def tranVoc(self,value,domain):
+        """ translate vocabulary value to title"""
+
+        context = aq_inner(self.context[0])
+        translation_service = getToolByName(context,'translation_service')
+        title = translation_service.translate(
+                                                  value,
+                                                  domain=domain,
+                                                  mapping={},
+                                                  target_language='zh_CN',
+                                                  context=context,
+                                                  default="translate")
+        return title     
 
     def renderCell(self, item):
         obj = self.table.schema(item, item)
@@ -58,6 +75,10 @@ class FieldColumn(grok.MultiAdapter, Column):
             return u''
         if self.field.__name__ == 'title':
             return '<a href="%s">%s</a>' % (item.absolute_url(), result)
+        if self.field.__name__ in ['session_type','level']:
+            return self.tranVoc(result,'collective.conference')
+        if self.field.__name__ in ['sector','province']:
+            return self.tranVoc(result,'dexterity.membrane')        
         return result
 
 class TableListingProvider(object):

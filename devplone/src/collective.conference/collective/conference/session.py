@@ -32,8 +32,7 @@ from Products.CMFDefault.utils import checkEmailAddress
 @grok.provider(IContextSourceBinder)
 def possibleRooms(context):
     conference = context.getConference()           
-#    return SimpleVocabulary.fromValues(conference.rooms)
-#    category_list = getattr(context.__parent__, 'available_category', [])
+
     terms = []
     for value in conference.rooms:  # I'm assuming these values are Unicode
         terms.append(SimpleTerm(value,

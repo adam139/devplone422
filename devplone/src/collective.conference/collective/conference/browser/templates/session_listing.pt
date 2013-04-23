@@ -34,7 +34,7 @@
             <section>
                <div class="thumbnail conference-session">
                   <h2><a tal:attributes="href session/absolute_url">
-                        [<span tal:replace="session/session_type"></span>] 
+                        [<span tal:replace="python:view.tranVoc(session.session_type)"></span>] 
                         <span tal:replace="session/title"></span></a></h2>
                   <p tal:replace="structure python:text_to_html(session.description)"></p>
                   <p style="text-align:right">

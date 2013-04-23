@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.conference\n"
-"POT-Creation-Date: 2013-04-22 01:41+0000\n"
-"PO-Revision-Date: 2013-04-22 09:43+0800\n"
+"POT-Creation-Date: 2013-04-23 08:41+0000\n"
+"PO-Revision-Date: 2013-04-23 16:42+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -213,7 +213,7 @@ msgstr "中级"
 msgid "Invalid email address"
 msgstr "无效的邮件地址"
 
-#: ./browser/templates/conference_view.pt:60
+#: ./browser/templates/conference_view.pt:58
 msgid "Join Conference"
 msgstr "申请参会"
 
@@ -295,14 +295,14 @@ msgid "Presented By"
 msgstr "演讲由"
 
 #: ./browser/propose.py:46
-msgid "Propose a session"
+msgid "Propose a Session"
 msgstr "申请一次演讲"
 
 #: ./participant.py:170
 msgid "QQ Number"
 msgstr "QQ号码"
 
-#: ./browser/templates/conference_view.pt:65
+#: ./browser/templates/conference_view.pt:63
 msgid "Quit Conference"
 msgstr "退出活动"
 
@@ -310,7 +310,7 @@ msgstr "退出活动"
 msgid "Regional Events"
 msgstr "区域峰会"
 
-#: ./browser/templates/conference_view.pt:72
+#: ./browser/templates/conference_view.pt:70
 msgid "Register Session"
 msgstr "申请演讲"
 
@@ -483,7 +483,7 @@ msgstr "积分"
 msgid "conferencefolder"
 msgstr "活动文件夹"
 
-#: ./browser/templates/conference_view.pt:46
+#: ./browser/templates/conference_view.pt:44
 msgid "follow"
 msgstr "关注"
 
@@ -558,7 +558,7 @@ msgstr "主办者"
 msgid "the province of your company"
 msgstr "所在省份"
 
-#: ./browser/templates/conference_view.pt:52
+#: ./browser/templates/conference_view.pt:50
 msgid "unfollowed"
 msgstr "取消关注"
 

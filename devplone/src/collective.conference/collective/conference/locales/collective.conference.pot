@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-22 01:41+0000\n"
+"POT-Creation-Date: 2013-04-23 08:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Invalid email address"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:60
+#: ./browser/templates/conference_view.pt:58
 msgid "Join Conference"
 msgstr ""
 
@@ -298,14 +298,14 @@ msgid "Presented By"
 msgstr ""
 
 #: ./browser/propose.py:46
-msgid "Propose a session"
+msgid "Propose a Session"
 msgstr ""
 
 #: ./participant.py:170
 msgid "QQ Number"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:65
+#: ./browser/templates/conference_view.pt:63
 msgid "Quit Conference"
 msgstr ""
 
@@ -313,7 +313,7 @@ msgstr ""
 msgid "Regional Events"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:72
+#: ./browser/templates/conference_view.pt:70
 msgid "Register Session"
 msgstr ""
 
@@ -486,7 +486,7 @@ msgstr ""
 msgid "conferencefolder"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:46
+#: ./browser/templates/conference_view.pt:44
 msgid "follow"
 msgstr ""
 
@@ -561,7 +561,7 @@ msgstr ""
 msgid "the province of your company"
 msgstr ""
 
-#: ./browser/templates/conference_view.pt:52
+#: ./browser/templates/conference_view.pt:50
 msgid "unfollowed"
 msgstr ""
 

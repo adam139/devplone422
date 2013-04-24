@@ -49,9 +49,12 @@ class Conferences_adminView(grok.View):
         """获取申请的会议列表"""
         mlist = []        
         catalog = getToolByName(self.context, "portal_catalog")
-        memberbrains = catalog(object_provides=IConference.__identifier__, 
-                                path="/".join(self.context.getPhysicalPath())
-                                )
+        memberbrains = catalog({'object_provides':IConference.__identifier__, 
+                                'path':"/".join(self.context.getPhysicalPath()),
+                             'sort_order': 'reverse',
+                             'sort_on': 'conference_startDate'}                                             
+                                              )
+
 
         for brain in memberbrains:
            

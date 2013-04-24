@@ -20,17 +20,22 @@ class TestView(unittest.TestCase):
     def setUp(self):
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ('Manager',))
+        import datetime        
+        start = datetime.datetime.today()
+        end = start + datetime.timedelta(7)
         portal.invokeFactory('collective.conference.conferencefolder', 'conferencefolder')
         portal['conferencefolder'].invokeFactory('collective.conference.conference', 'conference1',
                              province="Beijin",
                              conference_type="Regional Events",
                              address=u"长安街",
+                             startDate =start,
                              title="conference1",
                              description="demo conference1")   
         portal['conferencefolder'].invokeFactory('collective.conference.conference', 'conference2',
                              province="Beijin",
                              conference_type="Regional Events",
                              address=u"长安街",
+                             startDate =end,                             
                              title="conference2",
                              description="demo conference2")                     
         self.portal = portal
@@ -46,6 +51,7 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
+
         obj = portal['conferencefolder'].absolute_url() + '/@@view'        
         browser.open(obj)
         outstr = "conference1"        

@@ -14,7 +14,7 @@
 </head>
 <body>
    <div metal:fill-slot="content-title"> 
-      <h1>[<span tal:replace="python:view.tranVoc(session.session_type)"></span>] 
+      <h1>[<span tal:replace="python:view.tranVoc(context.session_type)"></span>] 
             <span tal:content="context/title"></span>
       </h1> 
    </div>

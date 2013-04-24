@@ -106,26 +106,14 @@ def CreateMembraneEvent(event):
     except:
         return
        
-#    from dexterity.membrane.content.member import IMember     
-#    try:
-#        newest = catalog.unrestrictedSearchResults({'object_provides': IMember.__identifier__,
-#                             'sort_order': 'reverse',
-#                             'sort_on': 'created',
-#                             'sort_limit': 1})
-#        if bool(newest): 
-#            id = str(int(newest[0].id) + 1)
-#        else:
-#            id = str(1000000)              
-#
-#    except:
-#            id = str(1000000)
-              
-#              registrant_increment
+
     memberfolder = newest[0].getObject()
 #    import pdb
 #    pdb.set_trace()
     oldid = getattr(memberfolder,'registrant_increment','999999')
-    memberid = str(int(oldid) + 1)    
+    memberid = str(int(oldid) + 1)
+    importid = event.id
+        
     try:
         item =createContentInContainer(memberfolder,"dexterity.membrane.member",checkConstraints=False,id=memberid)
         setattr(memberfolder,'registrant_increment',memberid)

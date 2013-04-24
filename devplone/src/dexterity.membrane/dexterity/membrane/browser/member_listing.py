@@ -52,11 +52,13 @@ class MemberFolderView(grok.View):
         return pm.checkPermission(permissions.ManagePortal,context) 
 
     def getMemberList(self):
-        """获取申请的会议列表"""
+        """获取会员列表"""
         mlist = []        
         catalog = getToolByName(self.context, "portal_catalog")
         memberbrains = catalog(object_provides=IMember.__identifier__, 
-                                path="/".join(self.context.getPhysicalPath())
+                                path="/".join(self.context.getPhysicalPath(),
+                                              sort_on="reverse",
+                                              sort_order="created")
                                 )
 
         for brain in memberbrains:

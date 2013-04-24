@@ -85,7 +85,7 @@
          </div>
          <div class="span4"
             tal:define="scale context/@@images;
-            small python:scale.scale('logo_image', width=400, height=400)">
+            small python:scale.scale('logo_image', width=200, height=200)">
             <img tal:attributes="src small/url;
             width small/width;
             height small/height"/>

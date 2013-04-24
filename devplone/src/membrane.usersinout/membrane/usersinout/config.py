@@ -22,7 +22,8 @@ CSV_HEADER2 = [
 CSV_HEADER = [
     'email',
     'password',
-    'roles',        
+    'roles',
+    'id',        
     'title',
     'description',
     'homepage',
@@ -36,6 +37,7 @@ CSV_HEADER = [
     ]              
 
 MEMBER_PROPERTIES = [
+    'id',
     'title',
     'description',
     'homepage',

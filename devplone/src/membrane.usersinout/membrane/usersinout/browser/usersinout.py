@@ -51,6 +51,12 @@ class UsersInOut (BrowserView):
                                 email=userId) 
         return bool(memberbrains)       
 
+    def IdIsExist(self,userId):
+        catalog = getToolByName(self.context, "portal_catalog")
+
+        memberbrains = catalog(object_provides=IMember.__identifier__, 
+                                id=userId) 
+        return bool(memberbrains) 
             
     def importUsers(self):
         """Import users from CSV file.
@@ -107,6 +113,8 @@ class UsersInOut (BrowserView):
 #                groups = [g.strip() for g in datas.pop('groups').split(',') if g]
                 username = datas['email']
                 if self.memberIsExist(username):continue
+                id = datas['id']
+                if self.IdIsExist(id):continue                
                 password = datas.pop('password')
                 title = datas.pop('title')
                 description = datas['description']
@@ -122,7 +130,7 @@ class UsersInOut (BrowserView):
 # send a add memberuser event
                 try:
                     event.notify(CreateMembraneEvent(
-                                                username,password,title,description,
+                                                id,username,password,title,description,
                                                 homepage,phone,organization,sector,
                                                 position,province,address))
 

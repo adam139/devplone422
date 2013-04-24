@@ -14,22 +14,20 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main" tal:define="pview context/@@plone;">
 		<ul class="nav nav-tabs" id="tab">
-            <li class="active"><a data-toggle="tab" href="#newest" i18n:translate="">newest events</a></li>
+            <li class="active">
+            	<a data-toggle="tab" href="#newest" i18n:translate="">newest events</a>
+            </li>
             <li class=""><a data-toggle="tab" href="#hottest" i18n:translate="">hottest events</a></li>
       </ul>
 <div class="tab-content" id="myTabContent">
-            <div id="newest" class="tab-pane fade active in">
-         
-<div tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html;
+   <div id="newest" class="tab-pane fade active in">         
+		<div tal:define="text_to_html nocall:here/@@collective-conference-macros/text_to_html;
                      conferences python:view.getconferences();
                      num python:len(conferences)">
-
-
        <div class="row-fluid" 
        	tal:condition="num"
        	tal:repeat="row python:range(int((num +1)/2))"
-       	style="padding-top:10px;margin-top:10px;padding-bottom:10px;margin-bottom:10px"
-         >
+       	style="padding-top:10px;margin-top:10px;padding-bottom:10px;margin-bottom:10px">
          
          <div class="span6" tal:repeat="brain python:range(2)" >
          	<div tal:omit-tag="" tal:define="indx python:(row*2 + brain);

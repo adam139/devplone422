@@ -27,6 +27,8 @@ class MemberFolderView(grok.View):
     def update(self):
         # Hide the editable-object border
         self.request.set('disable_border', True)
+        context = aq_inner(self.context)
+        self.pm = getToolByName(context, 'portal_membership')
         
     
     def fullname(self):
@@ -47,29 +49,40 @@ class MemberFolderView(grok.View):
     
     @property
     def isEditable(self):
-        context = aq_inner(self.context)
-        pm = getToolByName(context, 'portal_membership')
-        return pm.checkPermission(permissions.ManagePortal,context) 
+        return self.pm.checkPermission(permissions.ManagePortal,context) 
 
+    def _getUserData(self,userId):
+
+        member = self.pm.getMemberById(userId)
+        try:
+            groups = member.getGroups()
+        except:
+            return ""
+        roles = [role for role in member.getRoles() if role != 'Authenticated']
+        roles = ','.join(roles)
+        return roles
+        
     def getMemberList(self):
         """获取会员列表"""
         mlist = []        
         catalog = getToolByName(self.context, "portal_catalog")
         memberbrains = catalog(object_provides=IMember.__identifier__, 
-                                path="/".join(self.context.getPhysicalPath(),
-                                              sort_on="reverse",
-                                              sort_order="created")
-                                )
+                                path="/".join(self.context.getPhysicalPath()),
+                                              sort_order="reverse",
+                                              sort_on="created")
+                    
 
         for brain in memberbrains:
            
-            row = {'id':'', 'name':'', 'url':'',
+            row = {'id':'', 'name':'', 'url':'','roles':'',
                     'email':'', 'register_date':'', 'status':'', 'editurl':'',
                     'delurl':''}
             row['id'] = brain.id
             row['name'] = brain.Title
             row['url'] = brain.getURL()
-            row['email'] = brain.email
+            email = brain.email
+            row['roles'] = self._getUserData(email)
+            row['email'] = email
             row['register_date'] = brain.created.strftime('%Y-%m-%d')
             row['status'] = brain.review_state
             row['editurl'] = row['url'] + '/memberajaxedit'
@@ -87,8 +100,6 @@ class memberstate(grok.View):
         state = data['state']
         
         catalog = getToolByName(self.context, 'portal_catalog')
-#        import pdb
-#        pdb.set_trace()
         obj = catalog({'object_provides': IMember.__identifier__, "id":id})[0].getObject()        
         portal_workflow = getToolByName(self.context, 'portal_workflow')
 # obj current status        

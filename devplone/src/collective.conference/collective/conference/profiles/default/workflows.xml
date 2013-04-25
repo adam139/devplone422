@@ -10,6 +10,9 @@
        <type type_id="collective.conference.session">
            <bound-workflow workflow_id="conference_session_workflow"/>
        </type>
+       <type type_id="collective.conference.conference">
+           <bound-workflow workflow_id="conference_session_workflow"/>
+       </type>       
     </bindings>
 
 </object>

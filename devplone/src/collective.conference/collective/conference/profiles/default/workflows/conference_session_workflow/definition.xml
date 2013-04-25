@@ -2,7 +2,7 @@
 <dc-workflow workflow_id="conference_session_workflow" 
 	xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 	i18n:domain="plone" 	
-	title="Conference Participant Workflow" 
+	title="Conference session Workflow" 
 	description="" 
 	state_variable="review_state" 
 	initial_state="pending" 
@@ -11,6 +11,7 @@
  <permission>Modify portal content</permission>
  <permission>Reply to item</permission>
  <permission>View</permission>
+ 
  <state state_id="pending" title="Pending" i18n:attributes="title">
   <description>Submitted, pending review.</description>
   <exit-transition transition_id="accept"/>
@@ -40,6 +41,7 @@
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>   
   </permission-map>
   <permission-map name="Reply to item" acquired="True">
   </permission-map>
@@ -68,8 +70,7 @@
  </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
   <description>Previous transition</description>
-  <default>
-   
+  <default>   
    <expression>transition/getId|nothing</expression>
   </default>
   <guard>
@@ -77,8 +78,7 @@
  </variable>
  <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
   <description>The ID of the user who performed the previous transition</description>
-  <default>
-   
+  <default>   
    <expression>user/getUserName</expression>
   </default>
   <guard>
@@ -86,8 +86,7 @@
  </variable>
  <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
   <description>Comment about the last transition</description>
-  <default>
-   
+  <default>   
    <expression>python:state_change.kwargs.get('comment', '')</expression>
   </default>
   <guard>
@@ -95,8 +94,7 @@
  </variable>
  <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
   <description>Provides access to workflow history</description>
-  <default>
-   
+  <default>   
    <expression>state_change/getHistory</expression>
   </default>
   <guard>
@@ -106,8 +104,7 @@
  </variable>
  <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
   <description>When the previous transition was performed</description>
-  <default>
-   
+  <default>   
    <expression>state_change/getDateTime</expression>
   </default>
   <guard>

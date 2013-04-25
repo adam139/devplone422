@@ -19,9 +19,9 @@ class ConferenceView(grok.View):
     grok.template('conference_view')
     grok.require('zope2.View')
 
-#    def update(self):
-#        # Hide the editable-object border
-#        self.request.set('disable_border', True)
+    def update(self):
+        # Hide the editable-object border
+        self.request.set('disable_border', True)
         
     @property
     def isAnonymous(self):

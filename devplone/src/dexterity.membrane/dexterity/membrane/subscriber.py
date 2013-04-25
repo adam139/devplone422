@@ -110,9 +110,9 @@ def CreateMembraneEvent(event):
     memberfolder = newest[0].getObject()
 #    import pdb
 #    pdb.set_trace()
-    oldid = getattr(memberfolder,'registrant_increment','999999')
-    memberid = str(int(oldid) + 1)
-    importid = event.id
+#    oldid = getattr(memberfolder,'registrant_increment','999999')
+#    memberid = str(int(oldid) + 1)
+    memberid = event.id
         
     try:
         item =createContentInContainer(memberfolder,"dexterity.membrane.member",checkConstraints=False,id=memberid)

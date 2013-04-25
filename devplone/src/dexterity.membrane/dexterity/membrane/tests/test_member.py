@@ -31,7 +31,8 @@ class TestMember(TestCase):
             self.portal, 'dexterity.membrane.memberfolder', 'memberfolder')
          
 # email,password,title,description,homepage,phone,organization,sector,position,province,address               
-        event.notify(CreateMembraneEvent(u'12@qq.com',
+        event.notify(CreateMembraneEvent('1000000',
+                                         u'12@qq.com',
                                          u'password',
                                          u'唐军',
                                          u'',
@@ -49,7 +50,8 @@ class TestMember(TestCase):
 
         self.assertEqual(start_count + 1,now_count)
         self.assertEqual(brain[0].id,str(1000000))
-        event.notify(CreateMembraneEvent(u'13@qq.com',
+        event.notify(CreateMembraneEvent('1000001',
+                                         u'13@qq.com',
                                          u'password',
                                          u'唐军2',
                                          u'',

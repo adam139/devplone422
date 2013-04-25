@@ -24,8 +24,8 @@
 				<table class="table table-striped table-bordered table-condensed">
 	        <thead>
           	<tr>
-            <th class="span1" i18n:translate="">#</th>
             <th class="span2" i18n:translate="">name</th>
+            <th class="span1" i18n:translate="">roles</th>
             <th class="span2" i18n:translate="">email</th>
             <th class="span2" i18n:translate="">register date</th>
             <th class="span2" i18n:translate="">status</th>
@@ -35,13 +35,13 @@
         <tbody>
            <tal:block tal:repeat="lists python:view.getMemberList()">
              <tr class="row" tal:define="status python:lists['status']">
-                                    <td class="span1 check">
-                                        <input type="checkbox" onclick="checkall()" name="check" class="checkbox" tal:attributes="value python:lists['id']">
-                                    </td>
-                                    <td class="span2" >
+                                    <td class="span2">
                                         <a tal:attributes="href python:lists['url']">
                                         	<span tal:content="python:lists['name']"></span>
                                         </a>
+                                    </td>
+                                    <td class="span1" >
+                                        	<span tal:content="python:lists['roles']"></span>
                                     </td>
                                     <td class="span2"  tal:content="python:lists['email']">
                                     </td>

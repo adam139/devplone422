@@ -111,7 +111,7 @@ class RegistrationForm(form.SchemaAddForm):
 
 
     def create(self, data):
-        inc = getattr(self.context, 'registrant_increment', 999999) + 1
+        inc = str(int(getattr(self.context, 'registrant_increment', '999999')) + 1)
         data['id'] = '%s' % inc
         self.context.registrant_increment = inc
         obj = _createObjectByType("dexterity.membrane.member", 
@@ -125,8 +125,7 @@ class RegistrationForm(form.SchemaAddForm):
         for k, v in data.items():
             setattr(obj, k, v)
 
-        registration = getToolByName(self.context, 'portal_registration')
-            
+        registration = getToolByName(self.context, 'portal_registration')            
 
 #        portal_workflow = getToolByName(self.context, 'portal_workflow')
 #        if publishinfo:

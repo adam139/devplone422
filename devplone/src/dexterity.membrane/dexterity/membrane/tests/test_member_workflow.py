@@ -58,7 +58,7 @@ class TestView(unittest.TestCase):
            
         self.portal = portal
     
-    def test_member_listing_view(self):
+    def test_member_workflow(self):
         app = self.layer['app']
         portal = self.layer['portal']
         wf = getToolByName(portal, 'portal_workflow')
@@ -73,8 +73,12 @@ class TestView(unittest.TestCase):
         review_state = wf.getInfoFor(dummy, 'review_state')
         self.assertEqual(review_state,'disabled')        
         wf.doActionFor(dummy, 'enable', comment='foo' )
+
+## available variants is actor,action,comments,time, and review_history        
         review_state = wf.getInfoFor(dummy, 'review_state')
         self.assertEqual(review_state,'enabled')
+        comment = wf.getInfoFor(dummy, 'comments')
+        self.assertEqual(comment,'foo')        
 
               
       

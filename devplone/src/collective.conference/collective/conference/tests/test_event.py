@@ -10,7 +10,8 @@ from zope.component import getUtility
 from collective.conference.events import FollowedEvent
 from collective.conference.events import UnfollowedEvent
 
-from collective.conference.events import RegisteredConfEvent,RegisteredSessionEvent
+from collective.conference.events import RegisteredConfEvent,UnRegisteredConfEvent,\
+RegisteredSessionEvent
 
 
 from plone.app.testing import TEST_USER_ID
@@ -27,6 +28,7 @@ class TestEvent(unittest.TestCase):
         portal = self.layer['portal']
         setRoles(portal, TEST_USER_ID, ('Manager',))
         portal.invokeFactory('collective.conference.conference', 'conference1',
+                             title=u'conference1',
                              participants=['member1'])
         portal['conference1'].invokeFactory('collective.conference.session', 'session1',
                              description=u"description",
@@ -66,12 +68,30 @@ class TestEvent(unittest.TestCase):
         event.notify(RegisteredConfEvent(file))
         clists = userobject.getProperty('conferences')
         plists = file.participants
-        
         self.assertTrue(file.id in clists)
-#        import pdb
-#        pdb.set_trace()
 #        username = '12@qq.com'
         self.assertTrue(username in plists)
+                        
+        recorders = userobject.getProperty('bonusrecorder')
+        useremail = userobject.getUserName()
+     
+        self.assertTrue(useremail in recorders[-1])
+        self.assertTrue(file.title in recorders[-1])        
+# fire unregister conf event        
+        event.notify(UnRegisteredConfEvent(file))
+        clists = userobject.getProperty('conferences')
+        plists = file.participants
+        self.assertFalse(file.id in clists)
+#        username = '12@qq.com'
+        self.assertFalse(username in plists)
+                        
+        recorders = userobject.getProperty('bonusrecorder')
+        useremail = userobject.getUserName()
+     
+        self.assertTrue(useremail in recorders[-1])
+        self.assertTrue(file.title in recorders[-1])
+        
+          
 # fire register session event        
         event.notify(RegisteredSessionEvent(file))
         slists = userobject.getProperty('speeches')

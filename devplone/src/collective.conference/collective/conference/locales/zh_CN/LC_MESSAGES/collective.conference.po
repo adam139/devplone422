@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.conference\n"
-"POT-Creation-Date: 2013-04-23 08:41+0000\n"
+"POT-Creation-Date: 2013-04-26 09:14+0000\n"
 "PO-Revision-Date: 2013-04-23 16:42+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: 315ok.org <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "一个会务活动"
 msgid "A score from 1-100"
 msgstr "一个范围为1-100的评分"
 
-#: ./browser/templates/conference_listings.pt:146
+#: ./browser/templates/conference_listings.pt:144
 #: ./browser/templates/conferencefolder_listings.pt:76
 msgid "Add conference"
 msgstr "添加活动"
@@ -52,11 +52,11 @@ msgstr "高级"
 msgid "Agenda"
 msgstr "日程"
 
-#: ./session.py:93
+#: ./session.py:92
 msgid "Agenda Background Color"
 msgstr "日程背景颜色"
 
-#: ./session.py:100
+#: ./session.py:99
 msgid "Agenda Text Color"
 msgstr "日程文本颜色"
 
@@ -68,11 +68,11 @@ msgstr "所有参会者"
 msgid "All Sessions"
 msgstr "所有会议"
 
-#: ./session.py:77
+#: ./session.py:76
 msgid "Attach your talks document (slide, code, etc).        If there are multiple files, include them in a zip By uploading the file here,        you hereby agreed to grants us permission to redistribute this file"
 msgstr "上载您的演讲文档（ppt等）。如果有多个文件，请务必压缩成一个zip文件。"
 
-#: ./session.py:76
+#: ./session.py:75
 msgid "Attachment"
 msgstr "附件"
 
@@ -117,7 +117,7 @@ msgid "Conference Participant"
 msgstr "会议参与者"
 
 #: ./browser/listings.py:92
-#: ./session.py:84
+#: ./session.py:83
 msgid "Conference Rooms"
 msgstr "会议厅"
 
@@ -149,11 +149,11 @@ msgstr "第${curday}天"
 msgid "Discussion"
 msgstr "论坛"
 
-#: ./session.py:48
+#: ./session.py:47
 msgid "E-mail addresses of speakers"
 msgstr "演讲人邮件地址"
 
-#: ./browser/conference_view.py:75
+#: ./browser/conference_view.py:77
 msgid "Edit conference"
 msgstr "编辑活动"
 
@@ -218,7 +218,7 @@ msgid "Join Conference"
 msgstr "申请参会"
 
 #: ./browser/listings.py:87
-#: ./session.py:59
+#: ./session.py:58
 msgid "Level"
 msgstr "级别"
 
@@ -226,7 +226,7 @@ msgstr "级别"
 msgid "Logo"
 msgstr "标志"
 
-#: ./session.py:65
+#: ./session.py:64
 msgid "More details on proposed session"
 msgstr "会议的详细情况"
 
@@ -342,12 +342,12 @@ msgstr "行业"
 msgid "Session"
 msgstr "会议"
 
-#: ./session.py:52
+#: ./session.py:51
 msgid "Session Title"
 msgstr "会议标题"
 
 #: ./browser/listings.py:82
-#: ./session.py:55
+#: ./session.py:54
 msgid "Session Type"
 msgstr "会议类型"
 
@@ -380,7 +380,7 @@ msgid "Submitted Sessions"
 msgstr "已提交的会议"
 
 #: ./conference.py:40
-#: ./session.py:53
+#: ./session.py:52
 msgid "Summary"
 msgstr "摘要"
 
@@ -434,7 +434,7 @@ msgstr "素食吗？"
 msgid "Vegetarians listing"
 msgstr "素食者列表"
 
-#: ./session.py:49
+#: ./session.py:48
 msgid "We will find speakers' profile in the registration using these emails. One in each line"
 msgstr "我们将通过此处留存的邮件地址查询到演讲嘉宾的其他信息。邮件地址每行一个。"
 
@@ -470,7 +470,7 @@ msgstr "我当前没有申请任何活动的演讲。"
 msgid "Your photo or avatar. Recommended size is 150x195"
 msgstr "你的相片，建议尺寸为150x195px"
 
-#: ./browser/templates/conference_listings.pt:59
+#: ./browser/templates/conference_listings.pt:57
 #: ./browser/templates/conferencefolder_listings.pt:49
 msgid "address:"
 msgstr "地址："
@@ -491,15 +491,15 @@ msgstr "关注"
 msgid "follower number"
 msgstr "关注度"
 
-#: ./browser/templates/conference_listings.pt:18
+#: ./browser/templates/conference_listings.pt:20
 msgid "hottest events"
 msgstr "热门活动"
 
-#: ./session.py:71
+#: ./session.py:70
 msgid "minutes"
 msgstr "分钟"
 
-#: ./session.py:72
+#: ./session.py:71
 msgid "minutes that the speech will need"
 msgstr "演讲需要的时长，以分钟计"
 
@@ -509,12 +509,12 @@ msgstr "演讲需要的时长，以分钟计"
 msgid "more"
 msgstr "更多"
 
-#: ./browser/templates/conference_listings.pt:155
+#: ./browser/templates/conference_listings.pt:153
 #: ./browser/templates/conferencefolder_listings.pt:85
 msgid "more events"
 msgstr "更多活动"
 
-#: ./browser/templates/conference_listings.pt:17
+#: ./browser/templates/conference_listings.pt:18
 msgid "newest events"
 msgstr "最新活动"
 
@@ -549,7 +549,7 @@ msgstr "会议概览"
 msgid "speakers list"
 msgstr "演讲人列表"
 
-#: ./browser/templates/conference_listings.pt:56
+#: ./browser/templates/conference_listings.pt:54
 #: ./browser/templates/conferencefolder_listings.pt:46
 msgid "sponsor:"
 msgstr "主办者"

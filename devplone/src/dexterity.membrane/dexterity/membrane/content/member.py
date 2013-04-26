@@ -200,6 +200,7 @@ class IMember(IEmail,IImageScaleTraversable):
         title=_(u"bonus"),
         description=_(u"user's bonus,user permission was controlled by this"),        
         required=False,
+        default=0,
 #        constraint=is_url,
         )    
     

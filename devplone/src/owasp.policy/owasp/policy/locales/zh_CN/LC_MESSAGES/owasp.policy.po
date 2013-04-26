@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: membrane\n"
-"POT-Creation-Date: 2013-04-22 00:47+0000\n"
-"PO-Revision-Date: 2013-04-22 08:48+0800\n"
+"POT-Creation-Date: 2013-04-26 09:16+0000\n"
+"PO-Revision-Date: 2013-04-26 17:20+0800\n"
 "Last-Translator: adam <yuejun.tang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,10 @@ msgstr "活动管理"
 #: ./profiles/default/actions.xml
 msgid "member manage"
 msgstr "会员管理"
+
+#: ./profiles/default/actions.xml
+msgid "member properties"
+msgstr "会员信息"
 
 #: ./profiles/default/actions.xml
 msgid "my conferences"

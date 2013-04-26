@@ -17,7 +17,7 @@ from zope.component import getMultiAdapter
 from zope.interface import alsoProvides
 from zope.lifecycleevent.interfaces import IObjectAddedEvent,IObjectRemovedEvent
 from zope.annotation.interfaces import IAnnotations
-
+from dexterity.membrane.content.member import IMember
 
 from plone.dexterity.utils import createContentInContainer
 from Products.CMFCore.utils import getToolByName
@@ -152,6 +152,15 @@ def UnFollowed(obj,event):
         evlute.delfollow(username)
         obj.followernum = evlute.followerNum
         obj.reindexObject()  
+
+def getMember(context,email):
+    catalog = getToolByName(context, "portal_catalog")
+    memberbrains = catalog(object_provides=IMember.__identifier__,
+                               email=email)
+
+    if len(memberbrains) == 0:return None
+    return memberbrains[0].getObject()
+    
         
 @grok.subscribe(IConference,IRegisteredConfEvent)
 def Registered(obj,event):
@@ -172,8 +181,20 @@ def Registered(obj,event):
     if  not username in plists:
         plists.append(username)
         obj.participants= plists
-        obj.reindexObject()         
-
+        obj.reindexObject()
+                 
+    recorders = list(userobject.getProperty('bonusrecorder'))
+    member = getMember(obj,username)
+    if not(member  is None):
+        username = member.title
+        member.bonus = member.bonus + 2
+        member.reindexObject()
+        
+    start = datetime.today().strftime('%Y-%m-%d')
+    recorder = "%s 于%s因参加活动<a href='%s'>%s</a>而获取%s积分。" %(username,start,obj.absolute_url(),obj.title,2)
+    
+    recorders.append(recorder)
+    userobject.setProperties(bonusrecorder=recorders)
         
 @grok.subscribe(IConference,IUnRegisteredConfEvent)
 def UnRegistered(obj,event):
@@ -194,7 +215,18 @@ def UnRegistered(obj,event):
         plists.remove(username)
         obj.participants= plists
         obj.reindexObject() 
-        
+    recorders = list(userobject.getProperty('bonusrecorder'))
+    member = getMember(obj,username)
+    if not(member  is None):
+        username = member.title
+        member.bonus = member.bonus - 2
+        member.reindexObject()    
+    start = datetime.today().strftime('%Y-%m-%d')
+    recorder = "%s 于%s因没有参加活动<a href='%s'>%s</a>而扣除%s积分。" %(username,start,obj.absolute_url(),obj.title,2)
+    
+    recorders.append(recorder)
+    userobject.setProperties(bonusrecorder=recorders)
+            
 @grok.subscribe(IConference,IRegisteredSessionEvent)
 def RegisteredSession(obj,event):
 

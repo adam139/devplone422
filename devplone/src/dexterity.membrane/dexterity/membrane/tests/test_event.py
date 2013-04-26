@@ -40,7 +40,7 @@ class TestEvent(unittest.TestCase):
                              description="I am member1")
                   
         self.portal = portal    
-    def test_followed_event(self):
+    def test_joined_event(self):
         pass
         
 #        file=self.portal['memberfolder']['member1']

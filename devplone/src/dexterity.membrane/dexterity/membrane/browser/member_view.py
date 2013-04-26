@@ -6,7 +6,10 @@ from plone.directives import form
 from zope import schema
 from z3c.form import form, field
 from Products.CMFCore.utils import getToolByName
-from dexterity.membrane.content.member import IMember 
+from dexterity.membrane.content.member import IMember
+from zope.interface import Interface
+ 
+from plone.memoize.instance import memoize
 
 from dexterity.membrane.behavior.membraneuser import IProvidePasswords 
 from plone.app.layout.navigation.interfaces import INavigationRoot
@@ -14,6 +17,25 @@ from dexterity.membrane import _
 from plone.directives import dexterity
 
 grok.templatedir('templates')
+
+class MemberUrlView(grok.View):
+    grok.name('member_url')
+    grok.require('zope2.View')
+    grok.context(Interface)
+
+    @memoize    
+    def render(self):
+        pm =getToolByName(self.context,'portal_membership')
+        userobj = pm.getAuthenticatedMember()
+        catalog = getToolByName(self.context,'portal_catalog')
+        email = userobj.getUserName()
+        try:
+            member = catalog({'object_provides': IMember.__identifier__, "email":email})[0].getObject()
+            return member.absolute_url()
+        except:
+            return ""      
+            
+
 
 class MembraneMemberView(grok.View):
     grok.context(IMember)     

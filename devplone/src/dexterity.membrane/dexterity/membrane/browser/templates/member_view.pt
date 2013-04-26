@@ -27,7 +27,14 @@
           <dl class="dl-horizontal">                      	
             <dt i18n:translate="">Email</dt>
             <dd tal:content="python:(context.email or '').replace('@',' (at) ')">vader@empire.com</dd>
-
+            
+            <tal:block condition="context/bonus">
+            <dt i18n:translate="">bonus</dt>
+            <dd tal:content="context/bonus"></dd>
+            <dt i18n:translate="">bonus recorders</dt>
+            <dd><a tal:attributes="href python:context.absolute_url() + '/@@bonus_recorders'">Click</a></dd>            
+            </tal:block>
+            
             <tal:block condition="context/homepage">
             <dt i18n:translate="">External Homepage</dt>
             <dd tal:content="context/homepage"></dd>

@@ -21,7 +21,7 @@ grok.templatedir('templates')
 class MemberFolderView(grok.View):
     grok.context(IMemberfolder)     
     grok.template('member_listing')
-    grok.name('view')
+    grok.name('admin_view')
     grok.require('cmf.ManagePortal')
 
     def update(self):

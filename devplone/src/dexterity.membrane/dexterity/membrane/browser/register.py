@@ -104,8 +104,8 @@ def validateCaptca(value):
 class RegistrationForm(form.SchemaAddForm):
     grok.name('register')
     grok.context(IMemberfolder)
-#    grok.require("zope.Public")
-    grok.require('zope2.View')    
+    grok.require("zope.Public")
+#    grok.require('zope2.View')    
     schema = IRegistrationForm
     label = _(u"Register for site member")
 

@@ -16,7 +16,13 @@ from plone.dexterity.utils import createContentInContainer
 
 from zope.site.hooks import getSite
 from zope.component import getUtility
-from plone.uuid.interfaces import IUUID
+  
+
+#from Products.CMFCore.Expression import Expression
+#from Products.CMFPlone.PloneBaseTool import getExprContext
+from Products.PlonePAS.interfaces.events import IUserInitialLoginInEvent
+
+from zope.interface import Interface
 from ZODB.POSException import ConflictError
 from zExceptions import Forbidden
 
@@ -39,8 +45,7 @@ def sendPasswdResetMail(member, event):
         registration = getToolByName(member, 'portal_registration')
 
         email = member.email
-#        import pdb
-#        pdb.set_trace()
+
         request = member.REQUEST
         
         try:
@@ -133,7 +138,33 @@ def CreateMembraneEvent(event):
         membrane.reindexObject(item)        
     except:
         return
-
     
+@grok.subscribe(Interface, IUserInitialLoginInEvent)
+def userInitialLogin(obj, event):
+    """Redirects initially logged in users to getting started wizard"""
+
+  
+    # get portal object
+    portal = getSite()
+  
+    # check if we have an access to request object
+    request = getattr(portal, 'REQUEST', None)
+    if not request:
+        return  
+    # now complile and render our expression to url
+
+    try:
+        member_url_view = getMultiAdapter((portal, request),name=u"member_url") 
+        url = member_url_view()
+    except Exception, e:
+        logException(u'Error during user initial login redirect')
+        return
+    else:
+        # check if came_from is not empty, then clear it up, otherwise further
+        # Plone scripts will override our redirect
+        if request.get('came_from'):
+            request['came_from'] = ''
+            request.form['came_from'] = ''
+        request.RESPONSE.redirect(url)    
 
         

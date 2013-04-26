@@ -20,6 +20,7 @@ grok.templatedir('templates')
 
 class MemberUrlView(grok.View):
     grok.name('member_url')
+#    grok.require("zope.Public")    
     grok.require('zope2.View')
     grok.context(Interface)
 

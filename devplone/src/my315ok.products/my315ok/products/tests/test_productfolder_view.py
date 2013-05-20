@@ -15,7 +15,7 @@ def getFile(filename):
     filename = os.path.join(os.path.dirname(__file__), filename)
     return open(filename, 'r')
 
-class TestHotelFolderView(unittest.TestCase):
+class TestProductsFolderView(unittest.TestCase):
     
     layer = MY315OK_PRODUCTS_FUNCTIONAL_TESTING
 
@@ -87,7 +87,7 @@ class TestHotelFolderView(unittest.TestCase):
         browser.open(page)
         obj = portal.absolute_url() + '/productfolder1/product1'    
         open('/tmp/test.html', 'w').write(browser.contents)
-        outstr = '<a href="%s/@@images/image/large" class="lightbox">'  % obj
+        outstr = '<a href="%s/@@images/image/large" title="a gif image" class="lightbox">'  % obj
 
         self.assertTrue(outstr in browser.contents)
         

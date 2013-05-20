@@ -61,12 +61,14 @@ class baseview(grok.View):
         clargelink = []
         imgviewurl = []
         imgtitle = []
+        imgcaption = []        
            
         for i in self.prdt_images():            
                 try:
                     objurl = i.getURL()
                     base =  objurl + "/@@images/" + fieldname + "/"
                     tl = i.Title
+                    caption = i.Description
                     surl = base  + small
                     purl = base  + preview
                     lurl = base  + large 
@@ -80,6 +82,7 @@ class baseview(grok.View):
                     clargelink.append(lurl)
                     imgviewurl.append(imgobjurl)
                     imgtitle.append(tl)
+                    imgcaption.append(caption)
                 except:
                     continue            
         imglists["small"] = csmall
@@ -87,6 +90,7 @@ class baseview(grok.View):
         imglists["large"] = clargelink
         imglists["imgurl"] = imgviewurl
         imglists["title"] = imgtitle
+        imglists["caption"] = imgcaption        
         return imglists
     
     def mainimage(self,fieldname="image"):
@@ -178,8 +182,8 @@ class mediapageview(baseview):
 #                pdb.set_trace()
                 if s == total:
                     break
-                output = output + '<div class="%s"><h2 class="title"><a title="%s" href="%s">%s</a></h2><div class="mainphoto grid_3"><a href="%s" class="lightbox">%s</a></div></div>' \
-                %(span_num,imglists['title'][s],imglists['imgurl'][s],imglists['title'][s],imglists['large'][s],imglists['preview'][s])
+                output = output + '<div class="%s"><h2 class="title"><a title="%s" href="%s">%s</a></h2><div class="mainphoto grid_3"><a href="%s" title="%s" class="lightbox">%s</a></div></div>' \
+                %(span_num,imglists['title'][s],imglists['imgurl'][s],imglists['title'][s],imglists['large'][s],imglists['caption'][s],imglists['preview'][s])
             output = output + '</div>'
             
         return output

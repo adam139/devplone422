@@ -3,7 +3,7 @@ from zope import interface
 from zope.component import adapts
 from zope.component.interfaces import ObjectEvent
 
-from dexterity.membrane.interfaces import ICreateMembraneEvent
+from dexterity.membrane.interfaces import ICreateMembraneEvent,ICreateBonusRecorderEvent
 
 class CreateMembraneEvent(object):
     interface.implements(ICreateMembraneEvent)
@@ -22,4 +22,24 @@ class CreateMembraneEvent(object):
         self.sector = sector
         self.position = position
         self.province = province 
-        self.address = address 
+        self.address = address
+         
+class CreateBonusRecordEvent(object):
+    interface.implements(ICreateBonusRecorderEvent)
+    
+    def __init__(self,who,when,what,obj_title,obj_url,result,bonus):
+        """recorder text
+        who
+        when
+        what
+        result
+        bonus """
+        self.who = who
+        self.when = when
+        self.what = what
+        self.obj_title = obj_title
+        self.obj_url = obj_url
+        self.result = result
+        self.bonus = bonus        
+                        
+       

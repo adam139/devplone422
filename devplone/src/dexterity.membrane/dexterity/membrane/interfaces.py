@@ -6,3 +6,6 @@ from dexterity.membrane import  _
 # event
 class  ICreateMembraneEvent(Interface):
     """新增一个Membrane object"""
+    
+class  ICreateBonusRecorderEvent(Interface):
+    """create a bonus recorder"""    

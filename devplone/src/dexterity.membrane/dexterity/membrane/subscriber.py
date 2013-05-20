@@ -4,7 +4,7 @@ from five import grok
 from time import strftime, localtime 
 from zope.component import getMultiAdapter
 
-from dexterity.membrane.interfaces import ICreateMembraneEvent
+from dexterity.membrane.interfaces import ICreateMembraneEvent,ICreateBonusRecorderEvent
 from dexterity.membrane.content.memberfolder import IMemberfolder
 from dexterity.membrane.content.member import IMember
 from Products.DCWorkflow.interfaces import IAfterTransitionEvent
@@ -34,6 +34,14 @@ from Products.CMFPlone import PloneMessageFactory as _p
 #def trigger_member_workflow(member, event):
 #    wtool = getToolByName(member, 'portal_workflow')
 #    wtool.doActionFor(member, 'autotrigger')
+
+def getMember(context,email):
+    catalog = getToolByName(context, "portal_catalog")
+    memberbrains = catalog(object_provides=IMember.__identifier__,
+                               email=email)
+
+    if len(memberbrains) == 0:return None
+    return memberbrains[0].getObject()
 
 @grok.subscribe(IMember, IAfterTransitionEvent)
 def sendPasswdResetMail(member, event):
@@ -109,16 +117,14 @@ def CreateMembraneEvent(event):
     try:
         newest = catalog.unrestrictedSearchResults({'object_provides': IMemberfolder.__identifier__})
     except:
-        return
-       
+        return      
 
     memberfolder = newest[0].getObject()
 #    import pdb
 #    pdb.set_trace()
 #    oldid = getattr(memberfolder,'registrant_increment','999999')
 #    memberid = str(int(oldid) + 1)
-    memberid = event.id
-        
+    memberid = event.id        
     try:
         item =createContentInContainer(memberfolder,"dexterity.membrane.member",checkConstraints=False,id=memberid)
         setattr(memberfolder,'registrant_increment',memberid)
@@ -141,12 +147,9 @@ def CreateMembraneEvent(event):
     
 @grok.subscribe(Interface, IUserInitialLoginInEvent)
 def userInitialLogin(obj, event):
-    """Redirects initially logged in users to getting started wizard"""
-
-  
+    """Redirects initially logged in users to getting started wizard"""  
     # get portal object
-    portal = getSite()
-  
+    portal = getSite()  
     # check if we have an access to request object
     request = getattr(portal, 'REQUEST', None)
     if not request:
@@ -167,4 +170,36 @@ def userInitialLogin(obj, event):
             request.form['came_from'] = ''
         request.RESPONSE.redirect(url)    
 
+# be call by bonus operation
+@grok.subscribe(ICreateBonusRecorderEvent)
+def CreateBonusRecorderEvent(event):
+
+    who = event.who  #this should be a email address 
+
+    site = getSite()
+    pm = getToolByName(site,'portal_membership')
+    userobject=pm.getMemberById(who)
+#    userobject = mp.getAuthenticatedMember()
+#    username = userobject.getUserName()
+#    username = "12@qq.com"    
+    recorders = list(userobject.getProperty('bonusrecorder'))
+    member = getMember(site,who)
+    if not(member  is None):
+        who = member.title
+        member.bonus = member.bonus + 2
+        member.reindexObject()
+    recorder = u"%s于%s日，因为%s<a href='%s'>%s<a>而%s%s积分。" %(who,
+                                        event.when,
+                                        event.what,
+                                        event.obj_url,                                        
+                                        event.obj_title,
+                                        event.result,
+                                        event.bonus)        
+#    start = datetime.today().strftime('%Y-%m-%d')
+#    recorder = "%s 于%s因参加活动<a href='%s'>%s</a>而获取%s积分。" %(username,start,obj.absolute_url(),obj.title,2)
+#    
+    recorders.append(recorder)
+    userobject.setProperties(bonusrecorder=recorders)                        
+                            
+    
         

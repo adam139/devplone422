@@ -13,6 +13,7 @@ from zope.component import queryUtility
 from zope.component import getMultiAdapter
 
 from Products.CMFCore.interfaces import ISiteRoot
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from Products.AdvancedQuery import Eq, Between, Le
 from collective.conference import MessageFactory as _
 
@@ -59,7 +60,7 @@ class Conferences_adminView(grok.View):
         for brain in memberbrains:
            
             row = {'id':'', 'name':'', 'url':'',
-                    'conference_sponsor':'', 'conference_startDate':'', 'followernum':'', 'editurl':'',
+                    'conference_sponsor':'', 'conference_startDate':'', 'followernum':'','status':'','editurl':'',
                     'delurl':''}
             row['id'] = brain.id
             row['name'] = brain.Title
@@ -67,54 +68,57 @@ class Conferences_adminView(grok.View):
             row['conference_sponsor'] = brain.conference_sponsor
             row['conference_startDate'] = brain.conference_startDate.strftime('%Y-%m-%d')
             row['followernum'] = brain.followernum
+            row['status'] = brain.review_state
+#            import pdb
+#            pdb.set_trace()
             row['editurl'] = row['url'] + '/confajaxedit'
             row['delurl'] = row['url'] + '/delete_confirmation'            
             mlist.append(row)
         return mlist         
-#class conferencestate(grok.View):
-#    grok.context(INavigationRoot)
-#    grok.name('ajaxconferencestate')
-#    grok.require('zope2.View')
-#    
-#    def render(self):
-#        data = self.request.form
-#        id = data['id']
-#        state = data['state']
-#        
-#        catalog = getToolByName(self.context, 'portal_catalog')
-##        import pdb
-##        pdb.set_trace()
-#        obj = catalog({'object_provides': IMember.__identifier__, "id":id})[0].getObject()        
-#        portal_workflow = getToolByName(self.context, 'portal_workflow')
-## obj current status        
-#        if state == "disabled":
-#            try:
-#                portal_workflow.doActionFor(obj, 'enable')
-#                result = True
+class conferencestate(grok.View):
+    grok.context(INavigationRoot)
+    grok.name('ajaxconferencestate')
+    grok.require('zope2.View')
+    
+    def render(self):
+        data = self.request.form
+        id = data['id']
+        state = data['state']
+        
+        catalog = getToolByName(self.context, 'portal_catalog')
+        obj = catalog({'object_provides': IConference.__identifier__, "id":id})[0].getObject()        
+        portal_workflow = getToolByName(self.context, 'portal_workflow')
+# obj current status        
+        if state == "pending":
+            try:
+                portal_workflow.doActionFor(obj, 'accept')
+                portal_workflow.doActionFor(obj, 'publish')                
+
+                result = True
 #                IStatusMessage(self.request).addStatusMessage(
 #                        _p(u'account_enabled',
 #                          default=u"Account:${user} has been enabled",
 #                          mapping={u'user': obj.title}),
 #                        type='info')                 
-#
-#            except:
-#                result = False
-#        else:
-#            try:
-#                portal_workflow.doActionFor(obj, 'disable')
-#                result = True                
+
+            except:
+                result = False
+        else:
+            try:
+                portal_workflow.doActionFor(obj, 'retract')
+                result = True                
 #                IStatusMessage(self.request).addStatusMessage(
 #                        _p(u'account_disabled',
 #                          default=u"Account:${user} has been disabled",
 #                          mapping={u'user': obj.title}),
 #                        type='info')                 
-#
-#            except:
-#                result = False
-#        obj.reindexObject()
-#
-#        self.request.response.setHeader('Content-Type', 'application/json')
-#        return json.dumps(result)       
+
+            except:
+                result = False
+        obj.reindexObject()
+
+        self.request.response.setHeader('Content-Type', 'application/json')
+        return json.dumps(result)       
         
 class FolderConferenceListingView(grok.View):
     grok.context(IATFolder)

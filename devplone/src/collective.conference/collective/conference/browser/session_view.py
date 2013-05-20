@@ -5,7 +5,7 @@ from Acquisition import aq_parent
 from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 from collective.conference import MessageFactory as _
-
+from plone.directives import form,dexterity
 grok.templatedir('templates')
 
 class SessionView(grok.View):
@@ -45,4 +45,15 @@ class SessionView(grok.View):
                                                   target_language='zh_CN',
                                                   context=self.context,
                                                   default="translate")
-        return title 
+        return title
+    
+class EditConf(dexterity.EditForm):
+    grok.name('sessionajaxedit')
+    grok.context(ISession)    
+    label = _(u'Edit session')
+# avoid autoform functionality
+    def updateFields(self):
+        pass
+    @property
+    def fields(self):
+        return field.Fields(ISession).select('title','description','minutes','conference_rooms')                  

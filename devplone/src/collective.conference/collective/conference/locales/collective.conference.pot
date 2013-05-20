@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-26 09:14+0000\n"
+"POT-Creation-Date: 2013-05-20 04:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Domain: collective.conference\n"
 
 #: ./browser/templates/conference_listing_admin.pt:27
+#: ./browser/templates/session_listing_admin.pt:27
 msgid "#"
 msgstr ""
 
@@ -120,6 +121,7 @@ msgid "Conference Participant"
 msgstr ""
 
 #: ./browser/listings.py:92
+#: ./browser/templates/session_listing_admin.pt:29
 #: ./session.py:83
 msgid "Conference Rooms"
 msgstr ""
@@ -158,6 +160,10 @@ msgstr ""
 
 #: ./browser/conference_view.py:77
 msgid "Edit conference"
+msgstr ""
+
+#: ./browser/session_view.py:53
+msgid "Edit session"
 msgstr ""
 
 #: ./participant.py:87
@@ -354,10 +360,14 @@ msgstr ""
 msgid "Session Type"
 msgstr ""
 
-#: ./browser/session_listing.py:13
+#: ./browser/session_listing.py:16
 #: ./browser/templates/macros.pt:30
 #: ./browser/templates/participant_view.pt:63
 msgid "Sessions"
+msgstr ""
+
+#: ./browser/templates/session_listing_admin.pt:21
+msgid "Sessions administration"
 msgstr ""
 
 #: ./participant.py:93
@@ -373,7 +383,6 @@ msgstr ""
 msgid "Speakers"
 msgstr ""
 
-#: ./browser/templates/conference_listing_admin.pt:29
 #: ./conference.py:42
 msgid "Sponsor"
 msgstr ""
@@ -413,7 +422,7 @@ msgstr ""
 
 #: ./browser/listings.py:78
 #: ./browser/templates/conference_listing_admin.pt:28
-#: ./conference.py:38
+#: ./browser/templates/session_listing_admin.pt:28
 msgid "Title"
 msgstr ""
 
@@ -486,11 +495,15 @@ msgstr ""
 msgid "conferencefolder"
 msgstr ""
 
+#: ./browser/templates/session_listing_admin.pt:30
+msgid "created date"
+msgstr ""
+
 #: ./browser/templates/conference_view.pt:44
 msgid "follow"
 msgstr ""
 
-#: ./browser/templates/conference_listing_admin.pt:31
+#: ./browser/templates/conference_listing_admin.pt:30
 msgid "follower number"
 msgstr ""
 

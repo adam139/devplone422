@@ -105,3 +105,19 @@
 }
 .event_list_search_paixu div.paixu a.b {
     background: url("event_list_bg9.png") no-repeat scroll right center transparent;
+}
+.iphone-style {
+    display: block;
+    width: 87px;
+    height: 28px;
+    background: url("check-square.png") no-repeat;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.off {
+	background-position:100% 0;
+}
+.on {
+	background-position:0 100%;
+}

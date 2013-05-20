@@ -99,7 +99,7 @@ class TestView(unittest.TestCase):
         
         import transaction
         transaction.commit()
-        obj = portal['memberfolder'].absolute_url() + '/view'        
+        obj = portal['memberfolder'].absolute_url() + '/@@admin_view'        
 
         browser.open(obj)
  

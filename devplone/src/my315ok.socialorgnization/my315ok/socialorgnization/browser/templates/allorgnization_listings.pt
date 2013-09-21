@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div metal:fill-slot="main">
-		<div id="ajaxsearch" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajaxsearch"></div>
+		<div id="ajaxsearch" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@oajaxsearch"></div>
 		<div id="ajaxmorearea" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajax-conference-province"></div>		
 		<div id="ajaxmoretype" style="display: none" tal:attributes="data-ajax-target string:${portal_url}/@@ajax-conference-type"></div>			
 

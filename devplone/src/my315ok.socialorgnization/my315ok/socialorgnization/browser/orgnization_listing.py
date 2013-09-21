@@ -357,7 +357,7 @@ class ajaxsearch(grok.View):
     """AJAX action for search.
     """    
     grok.context(ISiteRoot)
-    grok.name('ajaxsearch')
+    grok.name('oajaxsearch')
     grok.require('zope2.View')
 
     def Datecondition(self,key):        

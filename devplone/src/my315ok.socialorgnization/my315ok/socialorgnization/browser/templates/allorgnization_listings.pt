@@ -371,7 +371,9 @@ var showSearchEventResult = function(D, u, C) {
         a += '<td class="alert alert-block span12" colspan="7">警告！：没有搜索到您要找的信息。</td></tr>'
     }
 
-     document.getElementById("searchResultDiv").innerHTML = a;    
+//     document.getElementById("searchResultDiv").innerHTML = a; 
+$("#searchResultDiv").html(a);
+   
 
 };
 function showResultRemind(d, a, c, e) {

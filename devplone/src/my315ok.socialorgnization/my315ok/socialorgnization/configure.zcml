@@ -1,0 +1,46 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    i18n_domain="my315ok.socialorgnization">
+
+    <!-- Include configuration for dependencies listed in setup.py -->
+    <includeDependencies package="." />
+    <!-- Grok the package to initialise schema interfaces and content classes -->
+    <grok:grok package="." />
+
+  <i18n:registerTranslations directory="locales" />
+  <!-- for dexterity enable indexer -->
+  <include package="collective.dexteritytextindexer"/>  
+
+    <!-- Register an extension profile to make the product installable -->
+  <include package=".behavior" />
+  <include package=".browser" />  
+
+  <genericsetup:registerProfile
+      name="default"
+      title="a social orgnization management content type based dexterity"
+      directory="profiles/default"
+      description="Extension profile for a social orgnization management content type based dexterity"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+  
+<!-- register indexer -->
+   <adapter name="orgnization_address" factory=".indexer.indexer_orgnization_address"/>
+   <adapter name="orgnization_legalPerson" factory=".indexer.indexer_orgnization_legalperson"/>
+   <adapter name="orgnization_supervisor" factory=".indexer.indexer_orgnization_supervisor"/>
+   <adapter name="orgnization_registerCode" factory=".indexer.indexer_orgnization_registercode"/>
+   <adapter name="orgnization_orgnizationType" factory=".indexer.indexer_orgnization_orgnizationtype"/>  
+   <adapter name="orgnization_announcementType" factory=".indexer.indexer_orgnization_announcementtype"/>  
+   <adapter name="orgnization_passDate" factory=".indexer.indexer_orgnization_passdate"/> 
+   
+   <adapter name="orgnization_annual_survey" factory=".indexer.indexer_orgnization_annual_survey"/>
+   <adapter name="orgnization_survey_year" factory=".indexer.indexer_orgnization_survey_year"/>  
+   <adapter name="orgnization_audit_item" factory=".indexer.indexer_orgnization_audit_item"/>  
+   <adapter name="orgnization_audit_result" factory=".indexer.indexer_orgnization_audit_result"/>                
+
+</configure>

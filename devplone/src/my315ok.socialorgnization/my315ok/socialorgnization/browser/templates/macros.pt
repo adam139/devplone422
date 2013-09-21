@@ -1,0 +1,6 @@
+<metal:block define-macro="styles">
+       <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++my315ok.socialorgnization/style.css"
+            />
+</metal:block>  

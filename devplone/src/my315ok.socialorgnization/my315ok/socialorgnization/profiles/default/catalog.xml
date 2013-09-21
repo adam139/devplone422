@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+    <index name="orgnization_registerCode" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_registerCode"/>
+    </index>
+    <column value="orgnization_registerCode"/>
+    <index name="orgnization_address" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_address"/>
+    </index>
+    <column value="orgnization_address"/>
+    <index name="orgnization_legalPerson" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_legalPerson"/>
+    </index>
+    <column value="orgnization_legalPerson"/>
+    <index name="orgnization_supervisor" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_supervisor"/>
+    </index>
+    <column value="orgnization_supervisor"/>        
+    
+    <index name="orgnization_announcementType" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_announcementType"/>
+    </index>
+    <column value="orgnization_announcementType"/>
+    
+    <index name="orgnization_orgnizationType" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_orgnizationType"/>
+    </index>
+    <column value="orgnization_orgnizationType"/>    
+            
+    <index name="orgnization_passDate" meta_type="DateIndex">
+        <indexed_attr value="orgnization_passDate"/>
+    </index>
+    <column value="orgnization_passDate"/> 
+    
+    <index name="orgnization_annual_survey" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_annual_survey"/>
+    </index>
+    <column value="orgnization_annual_survey"/> 
+    <index name="orgnization_survey_year" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_survey_year"/>
+    </index>
+    <column value="orgnization_survey_year"/> 
+    <index name="orgnization_audit_item" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_audit_item"/>
+    </index>
+    <column value="orgnization_audit_item"/> 
+    <index name="orgnization_audit_result" meta_type="FieldIndex">
+        <indexed_attr value="orgnization_audit_result"/>
+    </index>
+    <column value="orgnization_audit_result"/>                  
+
+</object>

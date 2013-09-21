@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>湘潭市社会组织管理信息网－－行政许可公示</title>
+<script src="modernizr-2.6.2.min.js"
+  tal:define="navroot context/@@plone_portal_state/navigation_root_url"	
+	tal:attributes="src string:${navroot}/++resource++my315ok.socialorgnization/roll.js"></script>
+
+<link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++my315ok.socialorgnization/rollstyle.css"
+            />
+</head>
+<body>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr> 
+    <td valign="top" align="right">
+    	<table width="100%" cellspacing="1" cellpadding="0" border="0" bgcolor="#cfcfcf" align="center">
+			<tbody><tr class="theader">
+			  <td width="55%" valign="middle" height="25" bgcolor="#ededed" align="center">社会组织名称</td>
+			  <td width="25%" valign="middle" bgcolor="#ededed" align="center">许可事项</td>
+			  <td width="20%" valign="middle" bgcolor="#ededed" align="center">结果</td>
+			</tr>
+		</tbody></table>
+    <div id="oRollV">
+	  <div id="oRollV1">
+    <table width="100%" cellspacing="1" cellpadding="3" border="0" bgcolor="#E6E7E8" class="text1">                  
+        <tbody tal:content="structure python: view.getMemberList()" >
+        	<tr style="font-size:12px;"> 
+          <td width="55%" height="28" bgcolor="#FFFFFF" align="left">中国中亚友好协会</td>
+          <td width="25%" bgcolor="#FFFFFF" align="center">成立登记</td>
+          <td width="20%" bgcolor="#FFFFFF" align="center">准予</td>
+        </tr></tbody>
+    </table>
+    </div>
+	  <div id="oRollV2">
+
+    </div>    
+    </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+<script type="text/javascript" language="javascript">StartRollV();</script>
+</body>
+</html>

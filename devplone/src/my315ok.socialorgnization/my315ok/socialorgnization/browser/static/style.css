@@ -1,0 +1,130 @@
+#content .action-bar {margin-bottom:10px;}
+.banner {
+  background-color: #F5F5F5;
+  background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);
+  background-repeat: repeat-x;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0 1px 0 #FFFFFF inset;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.ajaxbutton .btn-primary {margin-bottom:6px;}
+#content ul .nav,#content .thumbnails {list-style-type: none;}
+.navbar .container {
+    width:100%;
+}
+
+.conference-session {
+    border-bottom:1px solid #eee;
+}
+
+/* allconference-listing */
+.event_list_search ul.search li {
+    display: inline;
+    float: left;
+}
+#content .event_list_search li {display:block}
+.event_list_search ul.search li.a input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 22px;
+    line-height: 20px;
+    margin: 4px 0 0 20px;
+    width: 505px;
+}
+.event_list_search ul.search li.b {
+    margin-left: 15px;
+}
+.event_list_search ul.search li.a {
+    background: url("event_list_bg2.png") no-repeat scroll center center transparent;
+    height: 36px;
+    width: 548px;
+}
+.event_list_search ul.search li.b a {
+    background: url("event_list_bg3.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 15px;
+    text-align: center;
+    width: 101px;
+}
+.event_list_search ul.fenlei {
+    border-bottom: 1px dotted #D9D9D9;
+    clear: both;
+    height: 31px;
+    line-height: 31px;
+    margin: 0 auto;
+
+}
+#content .row-fluid {margin-left:0;}
+.event_list_search ul.fenlei li {
+/*    background: url("event_list_bg4.png") no-repeat scroll left center transparent; */
+    display: block;
+    float: left;
+    height: 31px;
+    padding: 0 8px;
+}
+.event_list_search_select li.a {    font-weight: bold;
+    line-height: 50px;
+    padding-left: 10px;}
+.event_list_search ul.fenlei li.title {
+    background: none repeat scroll 0 center transparent;
+    font-weight: bold;
+    padding: 0 3px;
+}
+.event_list_search ul.fenlei li a {
+    color: #333333;
+}
+
+.event_list_search ul.fenlei .over a {
+    color: #279006;
+    font-weight: bold;
+}
+
+
+.event_list_search_select li {
+    display:inline;
+    list-style:none;
+    float: left;
+}
+.event_list_search_select li.info {
+    line-height: 50px;
+    padding-left: 2px;
+}
+.event_list_search_select li.info span {    color: #279006;
+    font-weight: bold;}
+.event_list_search_paixu div.paixu a {
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+#province_list_div
+{margin-bottom: 6px;}
+#province_list_div span {padding: 0 6px;}
+.event_list_search_paixu div.paixu a.a {
+    background: url("event_list_bg7.png") no-repeat scroll right center transparent;
+}
+.event_list_search_paixu div.paixu a.b {
+    background: url("event_list_bg9.png") no-repeat scroll right center transparent;
+}
+.iphone-style {
+    display: block;
+    width: 87px;
+    height: 28px;
+    background: url("check-square.png") no-repeat;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.off {
+	background-position:100% 0;
+}
+.on {
+	background-position:0 100%;
+}

@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="my315ok.socialorgnization">
+
+  <!-- Register static resource directory -->
+	<browser:resourceDirectory
+  		name="my315ok.socialorgnization"
+  		directory="static" />
+<!--  		
+  <browser:defaultView
+        name="view"
+        for=".conference.IConference"
+    />  
+  -->  		
+    <browser:page
+        name="my315ok-socialorgnization-macros"
+        for="*"
+        permission="zope2.View"
+        class=".macros.Macros"/>  		       
+</configure>

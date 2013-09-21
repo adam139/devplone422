@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-09-20 01:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./browser/templates/orgnization_view.pt:33
+msgid "Add administrative licence"
+msgstr ""
+
+#: ./browser/templates/orgnization_view.pt:24
+msgid "Add annual survey"
+msgstr ""
+
+#: ./browser/templates/orgnization_listing_admin.pt:25
+msgid "Add organization"
+msgstr ""
+
+#: ./content/orgnization.py:33
+msgid "Address"
+msgstr ""
+
+#: ./browser/templates/orgnization_administrative_licence.pt:24
+#: ./browser/templates/orgnization_annual_survey.pt:24
+#: ./browser/templates/orgnization_view.pt:42
+msgid "Edit"
+msgstr ""
+
+#: ./browser/orgnization.py:81
+msgid "Edit Organization"
+msgstr ""
+
+#: ./browser/orgnization.py:70
+msgid "Edit Organization Licence"
+msgstr ""
+
+#: ./browser/orgnization.py:59
+msgid "Edit Organization Survey"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:123
+#: ./browser/templates/orgnization_listing_admin.pt:46
+msgid "Number"
+msgstr ""
+
+#: ./browser/templates/orgnization_listing_admin.pt:19
+msgid "Organization administration"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnization.xml
+msgid "Orgnization"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationfolder.xml
+msgid "Orgnization Folder"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationadministrative.xml
+msgid "Orgnization administrative licence"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationsurvey.xml
+msgid "Orgnization annual survey"
+msgstr ""
+
+#: ./content/orgnization.py:66
+msgid "Pass Date"
+msgstr ""
+
+#: ./browser/templates/orgnization_listing_admin.pt:47
+msgid "Title"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationfolder.xml
+msgid "a folder contain some orgnizations"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:126
+#: ./browser/templates/orgnization_listing_admin.pt:49
+msgid "address"
+msgstr ""
+
+#: ./content/orgnization.py:60
+msgid "announcement Type"
+msgstr ""
+
+#: ./vocabulary.py:10
+msgid "biangeng"
+msgstr ""
+
+#: ./vocabulary.py:52
+msgid "biangengdengji"
+msgstr ""
+
+#: ./vocabulary.py:39
+msgid "buhege"
+msgstr ""
+
+#: ./vocabulary.py:65
+msgid "buyu"
+msgstr ""
+
+#: ./vocabulary.py:9
+msgid "chengli"
+msgstr ""
+
+#: ./vocabulary.py:51
+msgid "chenglidengji"
+msgstr ""
+
+#: ./vocabulary.py:37
+msgid "hege"
+msgstr ""
+
+#. Default: "A code identifying this sector. register codes are defined by national standards bodies and based on revision 2 of the NACE standard."
+#: ./content/orgnization.py:48
+msgid "help_register_code"
+msgstr ""
+
+#: ./vocabulary.py:38
+msgid "jibenhege"
+msgstr ""
+
+#: ./vocabulary.py:25
+msgid "jijinhui"
+msgstr ""
+
+#. Default: "register code"
+#: ./content/orgnization.py:46
+msgid "label_register_code"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:128
+#: ./browser/templates/orgnization_listing_admin.pt:51
+#: ./content/orgnization.py:37
+msgid "legal person"
+msgstr ""
+
+#: ./vocabulary.py:24
+msgid "minfei"
+msgstr ""
+
+#: ./content/orgnization.py:55
+msgid "organization Type"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:124
+#: ./content/orgnization.py:93
+msgid "organization name"
+msgstr ""
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnization.xml
+msgid "orgnization content type"
+msgstr ""
+
+#: ./content/orgnization.py:25
+msgid "orgnization name"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:129
+#: ./browser/templates/orgnization_listing_admin.pt:52
+msgid "pass date"
+msgstr ""
+
+#: ./browser/templates/orgnization_listing_admin.pt:34
+msgid "quick search"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:125
+#: ./browser/templates/orgnization_listing_admin.pt:48
+msgid "register code"
+msgstr ""
+
+#: ./content/orgnization.py:29
+msgid "sector"
+msgstr ""
+
+#: ./vocabulary.py:23
+msgid "shetuan"
+msgstr ""
+
+#: ./browser/templates/allorgnization_listings.pt:127
+#: ./browser/templates/orgnization_listing_admin.pt:50
+msgid "sponsor"
+msgstr ""
+
+#: ./content/orgnization.py:41
+msgid "supervisor organization"
+msgstr ""
+
+#: ./content/orgnization.py:124
+msgid "the item had been audited"
+msgstr ""
+
+#: ./content/orgnization.py:100
+msgid "the result of annual survey"
+msgstr ""
+
+#: ./content/orgnization.py:130
+msgid "the result of item that had been audited"
+msgstr ""
+
+#: ./content/orgnization.py:105
+msgid "the year for survey"
+msgstr ""
+
+#: ./vocabulary.py:64
+msgid "zhunyu"
+msgstr ""
+
+#: ./vocabulary.py:11
+msgid "zhuxiao"
+msgstr ""
+

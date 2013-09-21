@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="my315ok.socialorgnization">
+
+    <!-- Grok schemata -->
+    <grok:grok package="." />
+
+  <!-- -*- extra stuff goes here -*- -->
+  <plone:behavior
+      title="Name from parent id"
+      description="Use the full name as name (basis for the id)"
+      provides=".customizetitle.INameFromParentId"
+      factory=".customizetitle.NameFromParentId"
+      for="plone.dexterity.interfaces.IDexterityContent"      
+      marker=".customizetitle.INameFromParentId"
+            />
+</configure>
+

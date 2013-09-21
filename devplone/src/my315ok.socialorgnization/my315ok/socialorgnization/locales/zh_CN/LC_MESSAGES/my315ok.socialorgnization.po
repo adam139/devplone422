@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: my315ok.products\n"
+"POT-Creation-Date: 2013-09-20 01:12+0000\n"
+"PO-Revision-Date: 2013-09-20 09:13+0800\n"
+"Last-Translator: adam <yuejun.tang@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+"X-Poedit-Language: Chinese\n"
+
+#: ./browser/templates/orgnization_view.pt:33
+msgid "Add administrative licence"
+msgstr "添加行政许可"
+
+#: ./browser/templates/orgnization_view.pt:24
+msgid "Add annual survey"
+msgstr "添加年检记录"
+
+#: ./browser/templates/orgnization_listing_admin.pt:25
+msgid "Add organization"
+msgstr "添加社会组织"
+
+#: ./content/orgnization.py:33
+msgid "Address"
+msgstr "住所"
+
+#: ./browser/templates/orgnization_administrative_licence.pt:24
+#: ./browser/templates/orgnization_annual_survey.pt:24
+#: ./browser/templates/orgnization_view.pt:42
+msgid "Edit"
+msgstr "编辑"
+
+#: ./browser/orgnization.py:81
+msgid "Edit Organization"
+msgstr "编辑社会组织"
+
+#: ./browser/orgnization.py:70
+msgid "Edit Organization Licence"
+msgstr "编辑行政许可信息"
+
+#: ./browser/orgnization.py:59
+msgid "Edit Organization Survey"
+msgstr "编辑年检信息"
+
+#: ./browser/templates/allorgnization_listings.pt:123
+#: ./browser/templates/orgnization_listing_admin.pt:46
+msgid "Number"
+msgstr "序号"
+
+#: ./browser/templates/orgnization_listing_admin.pt:19
+msgid "Organization administration"
+msgstr "社会组织管理"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnization.xml
+msgid "Orgnization"
+msgstr "社会组织"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationfolder.xml
+msgid "Orgnization Folder"
+msgstr "社会组织文件夹"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationadministrative.xml
+msgid "Orgnization administrative licence"
+msgstr "社会组织行政许可"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationsurvey.xml
+msgid "Orgnization annual survey"
+msgstr "社会组织年检"
+
+#: ./content/orgnization.py:66
+msgid "Pass Date"
+msgstr "批准时间"
+
+#: ./browser/templates/orgnization_listing_admin.pt:47
+msgid "Title"
+msgstr "组织名称"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnizationfolder.xml
+msgid "a folder contain some orgnizations"
+msgstr "一个包含社会组织信息的文件夹"
+
+#: ./browser/templates/allorgnization_listings.pt:126
+#: ./browser/templates/orgnization_listing_admin.pt:49
+msgid "address"
+msgstr "住所"
+
+#: ./content/orgnization.py:60
+msgid "announcement Type"
+msgstr "公告类型"
+
+#: ./vocabulary.py:10
+msgid "biangeng"
+msgstr "变更"
+
+#: ./vocabulary.py:52
+msgid "biangengdengji"
+msgstr "变更登记"
+
+#: ./vocabulary.py:39
+msgid "buhege"
+msgstr "不合格"
+
+#: ./vocabulary.py:65
+msgid "buyu"
+msgstr "不予"
+
+#: ./vocabulary.py:9
+msgid "chengli"
+msgstr "成立"
+
+#: ./vocabulary.py:51
+msgid "chenglidengji"
+msgstr "成立登记"
+
+#: ./vocabulary.py:37
+msgid "hege"
+msgstr "合格"
+
+#. Default: "A code identifying this sector. register codes are defined by national standards bodies and based on revision 2 of the NACE standard."
+#: ./content/orgnization.py:48
+msgid "help_register_code"
+msgstr "每个社会组织有唯一的登记证号"
+
+#: ./vocabulary.py:38
+msgid "jibenhege"
+msgstr "基本合格"
+
+#: ./vocabulary.py:25
+msgid "jijinhui"
+msgstr "基金会"
+
+#. Default: "register code"
+#: ./content/orgnization.py:46
+msgid "label_register_code"
+msgstr "登记证号"
+
+#: ./browser/templates/allorgnization_listings.pt:128
+#: ./browser/templates/orgnization_listing_admin.pt:51
+#: ./content/orgnization.py:37
+msgid "legal person"
+msgstr "法人"
+
+#: ./vocabulary.py:24
+msgid "minfei"
+msgstr "民非"
+
+#: ./content/orgnization.py:55
+msgid "organization Type"
+msgstr "社会组织类型"
+
+#: ./browser/templates/allorgnization_listings.pt:124
+#: ./content/orgnization.py:93
+msgid "organization name"
+msgstr "社会组织名称"
+
+#: ./profiles/default/types/my315ok.socialorgnization.orgnization.xml
+msgid "orgnization content type"
+msgstr "社会组织内容类型"
+
+#: ./content/orgnization.py:25
+msgid "orgnization name"
+msgstr "社会组织名称"
+
+#: ./browser/templates/allorgnization_listings.pt:129
+#: ./browser/templates/orgnization_listing_admin.pt:52
+msgid "pass date"
+msgstr "批准时间"
+
+#: ./browser/templates/orgnization_listing_admin.pt:34
+msgid "quick search"
+msgstr "快速查询"
+
+#: ./browser/templates/allorgnization_listings.pt:125
+#: ./browser/templates/orgnization_listing_admin.pt:48
+msgid "register code"
+msgstr "登记证号"
+
+#: ./content/orgnization.py:29
+msgid "sector"
+msgstr "行业"
+
+#: ./vocabulary.py:23
+msgid "shetuan"
+msgstr "社会团体"
+
+#: ./browser/templates/allorgnization_listings.pt:127
+#: ./browser/templates/orgnization_listing_admin.pt:50
+msgid "sponsor"
+msgstr "业务主管单位"
+
+#: ./content/orgnization.py:41
+msgid "supervisor organization"
+msgstr "业务主管单位"
+
+#: ./content/orgnization.py:124
+msgid "the item had been audited"
+msgstr "审批事项"
+
+#: ./content/orgnization.py:100
+msgid "the result of annual survey"
+msgstr "年检结果"
+
+#: ./content/orgnization.py:130
+msgid "the result of item that had been audited"
+msgstr "年检结果"
+
+#: ./content/orgnization.py:105
+msgid "the year for survey"
+msgstr "年度"
+
+#: ./vocabulary.py:64
+msgid "zhunyu"
+msgstr "准予"
+
+#: ./vocabulary.py:11
+msgid "zhuxiao"
+msgstr "注销"
+

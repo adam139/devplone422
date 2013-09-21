@@ -19,7 +19,16 @@
            <h3><span tal:replace="python:context.title">Organization administration</span>年检记录</h3>           
        </div>
        <div class="row-fluid action-bar" tal:define="iseditable python:view.isEditable">
-	<div class="span3 offset9">
+	<div class="span3 offset6">
+		<span>
+			<a tal:attributes="href python:context.getParentNode().absolute_url()" 
+				title="more details"  
+				i18n:attributes="title"
+				class="btn btn-primary"
+				i18n:translate="">more details</a>
+		</span>
+	</div>	        	
+	<div class="span3">
 		<span tal:condition="iseditable">
 			<a tal:attributes="href python:context.absolute_url() +'/@@ajaxedit'" 
 				title="Edit"  
